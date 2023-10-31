@@ -13,9 +13,13 @@ return function (App $app) {
   require_once('map.php');
 
   $loader = new \Twig\Loader\FilesystemLoader('../pages/');
-  $twig = new \Twig\Environment($loader, [
-    'cache' => '../var/cache/templates/',
-  ]);
+
+  $twig_config = [];
+  if (isset($app->mode) && $app->mode === 'production') {
+    $twig_config['cache'] = '../var/cache/templates/';
+  }
+
+  $twig = new \Twig\Environment($loader, $twig_config);
 
   foreach ($map as $route => $page) {
     $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page) {
