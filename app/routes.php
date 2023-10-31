@@ -10,7 +10,7 @@ use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 return function (App $app) {
-  require_once('map.php');
+  require_once('../pages/map.php');
 
   $loader = new \Twig\Loader\FilesystemLoader('../pages/');
 

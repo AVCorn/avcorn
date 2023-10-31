@@ -1,0 +1,28 @@
+{% extends "template/main.html" %}
+
+{% block title %}
+  Contact Us
+{% endblock %}
+
+{% block content %}
+  <div id="content-edit">
+    <h1>Contact Us</h1>
+    <form>
+      <label>
+        Email:
+        <input name="email" type="email" />
+      </label>
+
+      <label>
+        Message:
+        <textarea name="message" rows="16" cols="80"></textarea>
+      </label>
+    </form>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  <div id="footer-edit">
+    &copy; 2023 Ben Young
+  </div>
+{% endblock %}

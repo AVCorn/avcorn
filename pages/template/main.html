@@ -2,22 +2,20 @@
 <html>
   <head>
     <title>{% block title %}{% endblock %}</title>
-    {% include "template/include/admin.html" %}
+
+    {% include "template/include/head.html" %}
   </head>
 
   <body>
-  <div id="content">
-    {% block content %}
-      <div id="content-edit"></div>
-    {% endblock %}
-  </div>
+    {% include "template/include/header.html" %}
+    {% include "template/include/navigation.html" %}
 
-  <div id="footer">
-    {% block footer %}
-      <div id="footer-edit">
-        &copy; 2023 aVCorn
-      </div>
-    {% endblock %}
-  </div>
+    <article id="content">
+      {% block content %}
+        <div id="content-edit"></div>
+      {% endblock %}
+    </article>
+
+    {% include "template/include/footer.html" %}
   </body>
 </html>
