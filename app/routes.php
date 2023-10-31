@@ -10,13 +10,17 @@ use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 return function (App $app) {
-    $app->options('/{routes:.*}', function (Request $request, Response $response) {
-        // CORS Pre-Flight OPTIONS Request Handler
-        return $response;
-    });
+  require_once('map.php');
 
-    $app->get('/', function (Request $request, Response $response) {
-        $response->getBody()->write('Hello world!');
-        return $response;
+  $loader = new \Twig\Loader\FilesystemLoader('../pages/');
+  $twig = new \Twig\Environment($loader, [
+    'cache' => '../var/cache/templates/',
+  ]);
+
+  foreach ($map as $route => $page) {
+    $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page) {
+      $response->getBody()->write($twig->render($page, []));
+      return $response;
     });
+  }
 };
