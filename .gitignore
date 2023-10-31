@@ -5,4 +5,4 @@
 /logs/*
 !/logs/README.md
 .phpunit.result.cache
-*/.DS_Storeo
+*/.DS_Store

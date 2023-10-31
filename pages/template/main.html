@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>{% block title %}{% endblock %}</title>
-    </head>
-    <body>
-        <div id="content">{% block content %}{% endblock %}</div>
-        <div id="footer">
-            {% block footer %}
-                &copy; 2023 aVCorn
-            {% endblock %}
-        </div>
-    </body>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    {% include "template/include/admin.html" %}
+  </head>
+
+  <body>
+  <div id="content">
+    {% block content %}
+      <div id="content-edit"></div>
+    {% endblock %}
+  </div>
+
+  <div id="footer">
+    {% block footer %}
+      <div id="footer-edit">
+        &copy; 2023 aVCorn
+      </div>
+    {% endblock %}
+  </div>
+  </body>
 </html>
