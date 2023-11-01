@@ -1,3 +1,4 @@
+$white: #fff;
 $topbar-responsive-bg: #2c3840;
 $topbar-responsive-animation-type: fade-in; // or use slide-down or none
 
@@ -89,6 +90,7 @@ $topbar-responsive-animation-type: fade-in; // or use slide-down or none
   }
 }
 
+/*
 @include breakpoint(small only) {
   .topbar-responsive-links {
     animation-fill-mode: both;
@@ -104,3 +106,4 @@ $topbar-responsive-animation-type: fade-in; // or use slide-down or none
     }
   }
 }
+*/

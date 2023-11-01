@@ -1,3 +1,4 @@
+$white: #fff;
 $marketing-site-footer-bg: #2c3840;
 
 .marketing-site-footer {
@@ -17,11 +18,11 @@ $marketing-site-footer-bg: #2c3840;
     margin-bottom: 1rem;
   }
 
-  @include breakpoint(small only) {
+  /*@include breakpoint(small only) {
     .columns {
       margin-bottom: 2rem;
     }
-  }
+  }*/
 }
 
 .marketing-site-footer-name {
@@ -67,12 +68,12 @@ $marketing-site-footer-bg: #2c3840;
       color: lighten($marketing-site-footer-bg, 40%);
     }
 
-    @include breakpoint(medium down) {
+    /*@include breakpoint(medium down) {
       justify-content: center;
-    }
+    }*/
   }
 
-  @include breakpoint(medium down) {
+  /*@include breakpoint(medium down) {
     text-align: center;
-  }
+  }*/
 }
