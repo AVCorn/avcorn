@@ -4,6 +4,10 @@
   padding: 1rem 1.5rem;
 }
 
+.topbar-responsive::before, .topbar-responsive::after {
+  content: none;
+}
+
 .topbar-responsive .topbar-responsive-logo {
   color: #fefefe;
   vertical-align: middle;

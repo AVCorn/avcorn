@@ -1,20 +1,24 @@
-<nav class="top-bar topbar-responsive">
-  <div class="top-bar-title">
-    <span data-responsive-toggle="topbar-responsive" data-hide-for="medium">
-      <button class="menu-icon" type="button" data-toggle></button>
-    </span>
-    <a class="topbar-responsive-logo" href="#"><strong>aVCorn</strong></a>
-  </div>
-  <div id="topbar-responsive" class="topbar-responsive-links">
-    <div class="top-bar-right">
-      <ul class="menu simple vertical medium-horizontal">
-        {% set activeflag = 'true' %}
-        {% include "template/include/navigation.html" %}
-      </ul>
-    </div>
-  </div>
-</nav>
+<header>
+  <nav class="top-bar topbar-responsive">
 
-{% block header %}
-  <div id="header-edit"></div>
-{% endblock %}
+    <div class="top-bar-title">
+      <span class="hide-for-medium responsive-toggle" data-responsive-toggle="nav-menu">
+        <button class="menu-icon" type="button" data-toggle></button>
+      </span>
+      <a class="topbar-responsive-logo" href="#"><strong>aVCorn</strong></a>
+    </div>
+
+    <div id="nav-menu" class="topbar-responsive-links">
+      <div class="top-bar-right">
+        <ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu>
+          {% set activeflag = 'true' %}
+          {% include "template/include/navigation.html" %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  {% block header %}
+    <div id="header-edit"></div>
+  {% endblock %}
+</header>

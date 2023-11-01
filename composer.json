@@ -36,6 +36,7 @@
         "phpstan/extension-installer": "^1.2.0",
         "phpstan/phpstan": "^1.8",
         "phpunit/phpunit": "^9.5.26",
+        "scssphp/scssphp": "^1.11",
         "squizlabs/php_codesniffer": "^3.7"
     },
     "config": {
@@ -59,10 +60,10 @@
         "start": "php -S localhost:8080 -t public",
         "test": "phpunit",
         "post-install-cmd": [
-          "bower install"
+          "yarn install"
         ],
         "post-update-cmd": [
-          "bower install"
-        ],
+          "yarn install"
+        ]
     }
 }
