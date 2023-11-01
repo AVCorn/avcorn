@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html class="whatinput-types-initial whatinput-types-mouse" land="en">
   <head>
     <title>{% block title %}{% endblock %}</title>
 
     {% include "template/include/head.html" %}
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
   </head>
 
   <body>
-    {% include "template/include/header.html" %}
-    {% include "template/include/navigation.html" %}
+    <div class="none">
 
-    <article id="content">
-      {% block content %}
-        <div id="content-edit"></div>
-      {% endblock %}
-    </article>
+      {% include "template/include/header.html" %}
 
-    {% include "template/include/footer.html" %}
+      <article id="content" class="docs-component row clearfix">
+        {% block content %}
+          <div id="content-edit"></div>
+        {% endblock %}
+      </article>
+
+      <br />
+
+      {% include "template/include/footer.html" %}
+    </div>
   </body>
 </html>
