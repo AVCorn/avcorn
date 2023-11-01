@@ -1,13 +1,27 @@
 {% extends "template/main.html" %}
 
 {% block title %}
-  Home
+  aVCorn - Home
 {% endblock %}
 
 {% block content %}
   <div id="content-edit">
-    <p class="important">
-      Welcome to my awesome homepage.
+    <h1>aVCorn - The Simple Client CMS</h1>
+
+    <p style="color:grey; font-weight:bold;">"The nut doesn't fall from from the tree!"</p>
+
+    <img style="float:right;" src="images/logo.png" alt="aVCorn Logo" title="The nut doesn't fall from from the tree!" />
+
+    <p>
+      aVCorn is a simple VC CMS for basic content websites, no databases required.
+      The original intent is for fast deploying, fast developing, and lightweight performance for low traffic website design clients.
+      Written in PHP, and utilizing the Twig templating engine.
     </p>
+
+    <p>
+      We'll walk you through how to setup and manage your new website.
+    </p>
+
+    <span class="button"><a href="/about">Get Started &gt;&gt;</a></span>
   </div>
 {% endblock %}
