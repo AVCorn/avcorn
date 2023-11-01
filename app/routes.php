@@ -10,9 +10,9 @@ use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 return function (App $app) {
-  require_once('../pages/config/config.php');
+  require_once('../view/config/config.php');
 
-  $loader = new \Twig\Loader\FilesystemLoader('../pages/');
+  $loader = new \Twig\Loader\FilesystemLoader('../view/');
 
   $twig_config = [];
   if (isset($app->mode) && $app->mode === 'production') {
@@ -26,7 +26,7 @@ return function (App $app) {
     $config['page'] = $page;
 
     $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page, $config) {
-      $response->getBody()->write($twig->render($page, $config));
+      $response->getBody()->write($twig->render('pages/'.$page, $config));
       return $response;
     });
   }
