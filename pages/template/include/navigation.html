@@ -1,5 +1,7 @@
 <nav>
   {% for item in navigation %}
-    <a href="{{ item.href }}">{{ item.label }}</a>
+    <a href="{{ item.href }}" class="{% if item.href == path %}active{% endif %}">
+      {{ item.label }}
+    </a>
   {% endfor %}
 </nav>

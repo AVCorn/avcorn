@@ -22,7 +22,10 @@ return function (App $app) {
   $twig = new \Twig\Environment($loader, $twig_config);
 
   foreach ($config['map'] as $route => $page) {
-    $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page, &$config) {
+    $config['path'] = $route;
+    $config['page'] = $page;
+
+    $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page, $config) {
       $response->getBody()->write($twig->render($page, $config));
       return $response;
     });
