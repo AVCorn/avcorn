@@ -5,32 +5,32 @@
 {% endblock %}
 
 {% block content %}
-  <div id="content-edit">
+  <div class="editable">
     <h1>Contact Us</h1>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       Expedita dolorem accusantium architecto id quidem, itaque nesciunt quam ducimus atque.
     </p>
+  </div>
 
     <form>
       <label>
-        Email:
+        <span class="editable">Email:</span>
         <input name="email" type="email" />
       </label>
 
       <label>
-        Message:
+        <span class="editable">Message:</span>
         <textarea name="message" rows="16" cols="80"></textarea>
       </label>
 
-      <input class="button" type="submit" name="submit" value="Submit" />
+      <span class="editable"><input class="button" type="submit" name="submit" value="Submit" /></span>
     </form>
-  </div>
 {% endblock %}
 
 {% block footer %}
-  <div id="footer-edit">
+  <div class="editable"
     &copy; 2023 Ben Young
   </div>
 {% endblock %}
