@@ -10,7 +10,7 @@ use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 return function (App $app) {
-  require_once('../pages/map.php');
+  require_once('../pages/config/config.php');
 
   $loader = new \Twig\Loader\FilesystemLoader('../pages/');
 
@@ -21,9 +21,9 @@ return function (App $app) {
 
   $twig = new \Twig\Environment($loader, $twig_config);
 
-  foreach ($map as $route => $page) {
-    $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page) {
-      $response->getBody()->write($twig->render($page, []));
+  foreach ($config['map'] as $route => $page) {
+    $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page, &$config) {
+      $response->getBody()->write($twig->render($page, $config));
       return $response;
     });
   }
