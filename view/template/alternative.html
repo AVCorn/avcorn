@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="whatinput-types-initial whatinput-types-mouse" land="en">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+
+    {% include "template/include/head.html" %}
+
+    <link rel="stylesheet" type="text/css" href="assets/styles/alt.css" />
+  </head>
+
+  <body>
+    {% include "template/include/admin.html" %}
+
+    <div id="top" class="hero-full-screen">
+
+      <div class="top-content-section">
+        <div class="top-bar">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li class="menu-text">
+                <img class="show-for-medium" src="assets/images/logo-md.png" alt="aVCorn" title="The nut doesn't fall far from the tree!" />
+              </li>
+              {% include "template/include/navigation.html" %}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="middle-content-section editable">
+        <h1>Super Compelling Headline</h1>
+        <button class="button large">Button</button>
+        <button class="button large">Button</button>
+      </div>
+
+      <div class="bottom-content-section" data-magellan data-threshold="0">
+        <a href="#main-content-section"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 12c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-18.005-1.568l1.415-1.414 4.59 4.574 4.579-4.574 1.416 1.414-5.995 5.988-6.005-5.988z"/></svg></a>
+      </div>
+    </div>
+
+    <br />
+
+    <div id="main-content-section" class="row column small-10 editable" data-magellan-target="main-content-section">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+
+    <div class="row expanded padding-2" style="background-color: #E6E8EB;">
+
+      <div class="column small-4 grid-x grid-padding-x align-center">
+        <div class="card-article-hover card small-11 editable">
+          <a href="">
+            <img src="https://unsplash.it/600/400?1">
+          </a>
+          <div class="card-section">
+            <p class="meta-data article-subtext">HEALTH | 20 MIN READ</p>
+            <a href="">
+              <h3 class="article-title">Why is that acorn looking at me like that?</h3>
+            </a>
+            <p class="article-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos corporis autem, iusto impedit veniam unde earum neque...</p>
+          </div>
+          <div class="card-divider flex-container align-middle">
+            <img class="avatar" src="https://avatars.githubusercontent.com/u/1200752?v=4" width="50px" alt="avatar">
+            <a href="" class="author">Ben Young</a>
+          </div>
+          <div class="hover-border">
+          </div>
+        </div>
+      </div>
+
+      <div class="column small-4 grid-x grid-padding-x align-center">
+        <div class="card-article-hover card small-11 end editable">
+          <a href="">
+            <img src="https://unsplash.it/600/400?2">
+          </a>
+          <div class="card-section">
+            <p class="meta-data article-subtext">FOOTBALL | 10 MIN READ</p>
+            <a href="">
+              <h3 class="article-title">Children Need Sports and Other Activites!</h3>
+            </a>
+            <p class="article-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos corporis autem, iusto impedit veniam unde earum neque...</p>
+          </div>
+          <div class="card-divider flex-container align-middle">
+            <img class="avatar" src="https://placehold.it/50x50" alt="avatar">
+            <a href="" class="author">Ryan Jellybean</a>
+          </div>
+          <div class="hover-border">
+          </div>
+        </div>
+      </div>
+
+      <div class="column small-4 grid-x grid-padding-x align-center">
+        <div class="card-article-hover card small-11 editable">
+          <a href="">
+            <img src="https://unsplash.it/600/400?3">
+          </a>
+          <div class="card-section">
+            <p class="meta-data article-subtext">GARDENING | 15 MIN READ</p>
+            <a href="">
+              <h3 class="article-title">Succulents, how much water do they need?</h3>
+            </a>
+            <p class="article-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos corporis autem, iusto impedit veniam unde earum neque...</p>
+          </div>
+          <div class="card-divider flex-container align-middle">
+            <img class="avatar" src="assets/images/logo-md.png" width="50px" alt="avatar">
+            <a href="" class="author">Nut Head</a>
+          </div>
+          <div class="hover-border">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="responsive-blog-footer">
+      <div class="row">
+        <div class="up-arrow" style="text-align:center;">
+          <a href="#top">
+            <i class="fa fa-chevron-circle-up" aria-hidden="true">
+            </i>
+          </a>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="row editable">
+        <div class="medium-8 columns small-order-2 medium-order-1 about-container">
+          <div class="row">
+            <div class="hide-for-small-only medium-4 columns about-section">
+              <img src="https://avatars.githubusercontent.com/u/1200752?v=4">
+            </div>
+            <div class="medium-8 columns about-section">
+              <h4>About Me</h4>
+              <p>paragraph about how amazing and awesome i am paragraph about how amazing and awesome i am paragraph about how amazing and awesome i am</p>
+              <a href="">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="small-12 medium-4 columns small-order-1 medium-order-2 mailing-container">
+          <h4 class="mailing-list">Join my mailing list</h4>
+          <input type="text" placeholder="Email Address">
+          <a class="button expanded subscribe-button" href="#">Subscribe Now</a>
+        </div>
+      </div>
+      <div class="row columns flex-container align-justify">
+         <p>2023 &copy; aVCorn - All rights reserved.</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

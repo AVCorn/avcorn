@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <div style="background:#34404b; color:#fff;" class="row text-center padding-2">
+    <div style="background:#34404b; color:#fff;" class="row expanded text-center padding-2">
       <div class="editable">
         <h2 style="font-weight:bold;">aVCorn In Numbers</h2>
         <p style="color:#ccc;">Here's some stats to breakdown absolutely nothing useful.
@@ -135,13 +135,19 @@
 
     <hr />
 
-    <section class="row editable">
+    <section class="row expanded padding-2 editable">
         <h3 class="subheader text-center">Brands Using Our Stack</h3>
-        <ul>
-          <li>Me</li>
-          <li>No one in particular</li>
-          <li>Future You</li>
-        </ul>
+        <div class="row expanded text-center">
+          {% for i in 0..2 %}
+            <!--<div>-->
+              {% for n in 0..3 %}
+                <div class="column small-3">
+                  <img class="padding-1 small-10" src="assets/images/brands/logo-{{ random(0, 53) }}.svg" style="height:100px;"" alt="Logo" />
+                </div>
+              {% endfor %}
+            <!--</div>-->
+          {% endfor %}
+        </div>
     </section>
 
   </div>
