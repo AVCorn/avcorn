@@ -230,3 +230,116 @@
     text-align: center;
   }
 }
+
+
+.sign-in-form {
+  padding: 1rem 1.5em;
+  border-radius: .5rem;
+  background-color: #3d454f;
+}
+
+.sign-in-form h4 {
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.sign-in-form label {
+  text-transform: uppercase;
+  color: #eee;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.sign-in-form input {
+  color: #333;
+}
+
+.sign-in-form input:focus {
+  opacity: .8;
+}
+
+.sign-in-form-username,
+.sign-in-form-password {
+  border-radius: 30px;
+  border: none;
+  opacity: .1;
+  transition: all ease .4s;
+}
+
+.sign-in-form-button {
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  color: #fff;
+  background-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+  padding: 1rem;
+  transition: all ease .4s;
+  font-weight: bold;
+}
+
+.sign-in-form-button:hover {
+  background-color: #44c8ed;
+  border-color: #44c8ed;
+}
+
+
+.show-password {
+  width: 100%;
+}
+
+.show-password label {
+  position: absolute;
+  left: -9999px;
+  text-indent: -9999px;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password + .unmask {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-indent: -9999px;
+  width: 25px;
+  height: 25px;
+  background: #aaa;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  -webkit-appearance: none;
+  margin-top: 1.3rem;
+}
+
+.password + .unmask:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 17px;
+  height: 17px;
+  background: #e3e3e3;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.password[type="text"] + .unmask:after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 13px;
+  height: 13px;
+  background: #aaa;
+  z-index: 2;
+  border-radius: 50%;
+}
