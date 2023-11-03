@@ -8,15 +8,15 @@ $navigation = [
     'label' => 'Home',
   ],
   [
-    'href' => '/about',
-    'label' => 'About',
-  ],
-  [
     'href' => '/designs',
     'label' => 'Designs',
   ],
   [
-    'href' => '/contact',
-    'label' => 'Contact',
+    'href' => '/guide',
+    'label' => 'Guide',
+  ],
+  [
+    'href' => '/contribute',
+    'label' => 'Contribute',
   ],
 ];
