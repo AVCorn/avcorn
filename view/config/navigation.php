@@ -12,8 +12,8 @@ $navigation = [
     'label' => 'About',
   ],
   [
-    'href' => '/alternative',
-    'label' => 'Example',
+    'href' => '/designs',
+    'label' => 'Designs',
   ],
   [
     'href' => '/contact',

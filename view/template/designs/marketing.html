@@ -5,7 +5,7 @@
 
     {% include "template/include/head.html" %}
 
-    <link rel="stylesheet" type="text/css" href="assets/styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="assets/styles/designs/marketing.css" />
   </head>
 
   <body>
@@ -13,12 +13,20 @@
 
     <div class="none">
 
-      {% include "template/include/header.html" %}
+      <header>
+        {% include "template/include/header.html" %}
+
+        <div class="row text-center">
+          {% block header %}
+            <div class="editable"></div>
+          {% endblock %}
+        </div>
+      </header>
 
       <article id="content" class="docs-component row expanded clearfix">
-        {% block content %}
-          <div  class="editable"></div>
-        {% endblock %}
+          {% block content %}
+            <div  class="editable"></div>
+          {% endblock %}
       </article>
 
       <br />

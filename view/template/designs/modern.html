@@ -5,7 +5,7 @@
 
     {% include "template/include/head.html" %}
 
-    <link rel="stylesheet" type="text/css" href="assets/styles/alt.css" />
+    <link rel="stylesheet" type="text/css" href="assets/styles/designs/modern.css" />
   </head>
 
   <body>
@@ -26,10 +26,16 @@
         </div>
       </div>
 
-      <div class="middle-content-section editable">
-        <h1>Super Compelling Headline</h1>
-        <button class="button large">Button</button>
-        <button class="button large">Button</button>
+      <div class="middle-content-section">
+        <div class="row">
+          {% block header %}
+            <h1>Different Designs</h1>
+            <a href="/designs?design=marketing" class="button large">Marketing</a>
+            <a href="/designs?design=portfolio" class="button large">Portfolio</a>
+            <a href="/designs?design=modern" class="button large disabled">Modern</a>
+            <a href="/designs?design=simple" class="button large">Simple</a>
+          {% endblock %}
+        </div>
       </div>
 
       <div class="bottom-content-section" data-magellan data-threshold="0">

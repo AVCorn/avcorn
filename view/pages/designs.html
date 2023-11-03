@@ -1,14 +1,22 @@
-{% extends "template/alternative.html" %}
+{% extends "template/switcher.html" %}
 
 {% block title %}
   aVCorn - Alternative Page Design
 {% endblock %}
 
+{% block header %}
+  <h1>Different Designs</h1>
+  <a href="/designs?design=marketing" class="button large {% if design == "marketing" %}disabled{% endif %}">Marketing</a>
+  <a href="/designs?design=portfolio" class="button large {% if design == "portfolio" %}disabled{% endif %}">Portfolio</a>
+  <a href="/designs?design=modern" class="button large {% if design == "modern" %}disabled{% endif %}">Modern</a>
+  <a href="/designs?design=simple" class="button large {% if design == "simple" %}disabled{% endif %}">Simple</a>
+{% endblock %}
+
 {% block content %}
-  <div class="editable">
+  <div class="row editable">
     <br />
 
-    <img class="thumbnail float-right" src="https://unsplash.it/300/400">
+    <img class="thumbnail float-right margin-1" src="https://unsplash.it/300/400">
 
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit.

@@ -22,10 +22,10 @@ return function (App $app) {
   $twig = new \Twig\Environment($loader, $twig_config);
 
   foreach ($config['map'] as $route => $page) {
-    $config['path'] = $route;
-    $config['page'] = $page;
 
     $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page, $config) {
+      $config['get'] = $request->getQueryParams();
+
       $response->getBody()->write($twig->render('pages/'.$page, $config));
       return $response;
     });
