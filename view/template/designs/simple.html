@@ -5,23 +5,41 @@
 
     {% include "template/include/head.html" %}
 
-    <link rel="stylesheet" type="text/css" href="assets/styles/designs/marketing.css" />
+    <script>
+      $(function() {
+        $(window).scroll(function() {
+          var winTop = $(window).scrollTop();
+          if (winTop >= 30) {
+            $("body").addClass("sticky-shrinknav-wrapper");
+          } else{
+            $("body").removeClass("sticky-shrinknav-wrapper");
+          }
+        });
+      });
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="assets/styles/designs/simple.css" />
   </head>
 
   <body>
-    {% include "template/include/admin.html" %}
+    <!-- {% include "template/include/admin.html" %} -->
 
     <div class="none">
 
-      <header>
-        {% include "template/include/header.html" %}
+      <header class="sticky-shrinknav-header">
+        <h1 class="sticky-shrinknav-header-title">aVCorn</h1>
 
-        <div class="row text-center">
-          {% block header %}
-            <div class="editable"></div>
-          {% endblock %}
-        </div>
+        <ul class="menu align-center sticky-shrinknav-menu">
+          {% include "template/include/navigation.html" %}
+        </ul>
       </header>
+
+      <br class="clearfix" />
+      <div class="row text-center">
+        {% block header %}
+
+        {% endblock %}
+      </div>
 
       <article id="content" class="docs-component row expanded clearfix">
           {% block content %}
@@ -31,7 +49,20 @@
 
       <br />
 
-      {% include "template/include/footer.html" %}
+      <footer class="social-footer">
+        <div class="social-footer-left">
+          <a href="#"><img class="logo" src="/assets/images/logo-md.png" alt="aVCorn"></a>
+        </div>
+        <div class="social-footer-icons">
+          <ul class="menu simple">
+            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+            <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </footer>
+
     </div>
   </body>
 </html>
