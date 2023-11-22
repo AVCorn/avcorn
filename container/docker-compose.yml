@@ -14,5 +14,4 @@ services:
         ports:
             - "8080:8080"
         volumes:
-            - ../code:/var/www
-            - ../code/logs:/var/www/logs
+            - ./code:/var/www

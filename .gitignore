@@ -2,7 +2,9 @@
 .vscode/
 
 /vendor
+/code/vendor
 /node_modules
+/code/node_modules
 
 /code/logs/*
 !/code/logs/README.md
