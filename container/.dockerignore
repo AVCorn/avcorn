@@ -1,0 +1,9 @@
+lib/composer
+lib/npm
+node_modules
+
+.git
+.gitignore
+Gruntfile.js
+phpcs.xml
+phpstan.neon.dist

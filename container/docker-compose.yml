@@ -5,8 +5,8 @@ volumes:
         driver: local
 
 services:
-    slim:
-        image: php:7-alpine
+    web:
+        image: php:8.2-cli
         working_dir: /var/www
         command: php -S 0.0.0.0:8080 -t public
         environment:
@@ -14,5 +14,5 @@ services:
         ports:
             - "8080:8080"
         volumes:
-            - .:/var/www
-            - logs:/var/www/logs
+            - ../code:/var/www
+            - ../code/logs:/var/www/logs
