@@ -2,7 +2,7 @@
   "name": "avcorn",
   "version": "0.1.0",
   "private": true,
-  "workspaces": ["./code/lib/npm/*"],
+  "workspaces": ["./lib/npm/*"],
   "dependencies": {
     "foundation": "^4.2.1-1",
     "jquery": "^3.7.1"

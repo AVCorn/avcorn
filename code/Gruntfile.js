@@ -24,8 +24,8 @@ module.exports = function(grunt) {
           loadPath: ['node_modules/foundation/scss']
         },
         files: {
-          'code/public/assets/styles/footer.css': 'view/styles/footer.scss',
-          'code/public/assets/styles/topbar.css': 'view/styles/topbar.scss'
+          'public/assets/styles/footer.css': 'view/styles/footer.scss',
+          'public/assets/styles/topbar.css': 'view/styles/topbar.scss'
         }
       }
     }

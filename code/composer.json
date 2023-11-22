@@ -49,16 +49,16 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "code/src/"
+            "App\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/unit/"
+            "Tests\\": "../tests/unit/"
         }
     },
     "scripts": {
-        "start": "php -S localhost:8080 -t code/public",
+        "start": "php -S localhost:8080 -t public",
         "test": "phpunit",
         "post-install-cmd": [
           "yarn install"
