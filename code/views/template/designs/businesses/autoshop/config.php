@@ -8,7 +8,7 @@ $config['navigation'] = [
     'label' => 'Home',
   ],
   [
-    'href' => '/walkthrough?design=autoshop',
+    'href' => '/guide?design=autoshop',
     'label' => 'Walkthrough',
   ],
   [
@@ -28,3 +28,8 @@ $config['navigation'] = [
     'label' => 'Gallery',
   ]
 ];
+
+$config['info']['company'] = 'Nuthead Auto Shop';
+$config['info']['title'] = 'Nuthead Auto Shop';
+$config['info']['motto'] = 'The Craziest Auto Shop Around!';
+$config['info']['slogan'] = 'The Craziest Auto Shop Around!';

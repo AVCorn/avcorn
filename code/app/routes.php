@@ -26,7 +26,7 @@ return function (App $app) {
     $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page, $config) {
       $config['get'] = $request->getQueryParams();
 
-      if (isset($config['themes'][$config['get']['design']])) {
+      if (isset($config['get']['design']) && isset($config['themes'][$config['get']['design']])) {
         require_once('../views/template/designs/'.$config['themes'][$config['get']['design']].'/config.php');
       }
 
