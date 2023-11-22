@@ -18,7 +18,7 @@
       });
     </script>
 
-    <link rel="stylesheet" type="text/css" href="assets/styles/designs/simple.css" />
+    <link rel="stylesheet" type="text/css" href="assets/styles/designs/autoshop.css" />
   </head>
 
   <body>
@@ -27,7 +27,10 @@
     <div class="none">
 
       <header class="sticky-shrinknav-header">
-        <h1 class="sticky-shrinknav-header-title">{{ info.title }}</h1>
+        <h1 class="sticky-shrinknav-header-title clearfix">
+          <img src="assets/images/logo-lg.png" alt="Nut Head" title="Dr. Nuthaniel O. Head" />
+          {{ info.title }}
+        </h1>
 
         <ul class="menu align-center sticky-shrinknav-menu">
           {% include "template/components/navigation.html" %}
@@ -51,10 +54,12 @@
 
       <footer class="social-footer">
         <div class="social-footer-left">
-          <a href="#"><img class="logo" src="/assets/images/logo-md.png" alt="{{ info.company }}"></a>
+          <span>2023 &copy; Auto Shop</span>
         </div>
         <div class="social-footer-icons">
           <ul class="menu simple">
+            <li><a href="/sitemap">Sitemap</a></li>
+            <li></li>
             <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
             <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
             <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>

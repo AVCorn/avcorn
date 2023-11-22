@@ -1,14 +1,8 @@
-{% set design = "marketing" %}
-
-{% if get.design == "marketing" %}
-  {% set design = "marketing" %}
-{% elseif get.design == "modern" %}
-  {% set design = "modern" %}
-{% elseif get.design == "portfolio" %}
-  {% set design = "portfolio" %}
-{% elseif get.design == "simple" %}
-  {% set design = "simple" %}
+{% if get.design in themes|keys %}
+  {% set design = themes[get.design] %}
+{% else %}
+  {% set design = "default" %}
 {% endif %}
 
-{% set design_path = "template/designs/"~design~".html" %}
+{% set design_path = "template/designs/"~design~"/main.html" %}
 {% extends design_path %}
