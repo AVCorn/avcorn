@@ -26,6 +26,10 @@ return function (App $app) {
     $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page, $config) {
       $config['get'] = $request->getQueryParams();
 
+      if (isset($config['themes'][$config['get']['design']])) {
+        require_once('../views/template/designs/'.$config['themes'][$config['get']['design']].'/config.php');
+      }
+
       $response->getBody()->write($twig->render('pages/'.$page, $config));
       return $response;
     });

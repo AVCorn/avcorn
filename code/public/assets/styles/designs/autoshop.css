@@ -54,7 +54,7 @@ body {
 }
 
 .sticky-shrinknav-menu a {
-  color: #595959;
+  color: #000;
 }
 
 .sticky-shrinknav-menu li:hover a {
@@ -91,7 +91,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 
 
 .social-footer {
-  color: #595959;
+  color: #000;
   padding: 1rem;
   background: #b3b3b3;
   display: -webkit-flex;
@@ -106,7 +106,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 }
 
 .social-footer a {
-	color: #595959;
+	color: #000;
 }
 
 .social-footer .social-footer-icons li:last-of-type {
@@ -115,7 +115,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 
 .social-footer .social-footer-icons .fa {
   font-size: 1.3rem;
-  color: #595959;
+  color: #000;
 }
 
 .social-footer .social-footer-icons .fa:hover {
