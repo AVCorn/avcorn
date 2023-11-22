@@ -1,22 +1,38 @@
-FROM composer as builder
-WORKDIR /app/
+FROM composer:2.2 as vendor
 
-COPY ./code/composer.* ./
+WORKDIR /app
+
+COPY ./code/composer.json composer.json
+COPY ./code/composer.lock composer.lock
 
 RUN composer install \
-    --no-interaction \
-    --no-plugins \
-    --no-scripts \
-    --no-dev \
     --prefer-dist
 
+COPY ./code/ .
+RUN composer dump-autoload
 
-FROM php:8.2-cli
-WORKDIR /usr/src/app
 
-RUN apt update && apt install -y curl
+FROM php:8.2-apache
+WORKDIR /var/www/html
 
-COPY --from=builder . ./lib/composer
+RUN apt update
+RUN apt install -y curl git
+
+COPY --from=vendor app/vendor/ ./vendor/
 COPY ./code/ .
 
-RUN php -S 0.0.0.0:8080 -t public
+RUN a2enmod rewrite
+
+#COPY my-apache-site.conf /etc/apache2/sites-available/my-apache-site.conf
+
+#RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
+#    a2dissite 000-default && \
+#    a2ensite my-apache-site && \
+#    service apache2 restart
+
+#RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ && \
+#    docker-php-ext-install gd
+
+RUN service apache2 restart
+
+EXPOSE 80

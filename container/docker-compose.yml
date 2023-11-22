@@ -6,7 +6,7 @@ volumes:
 
 services:
     web:
-        image: php:8.2-cli
+        image: php:8.2-apache
         working_dir: /var/www
         command: php -S 0.0.0.0:8080 -t public
         environment:
