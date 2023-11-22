@@ -1,1 +1,1 @@
-Your aVCorn application's log files will be written to this directory.
+Your AVCorn application's log files will be written to this directory.

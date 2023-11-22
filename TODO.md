@@ -18,10 +18,30 @@
 - [x] Modern Design
 - [x] Portfolio Design
 - [x] Simple Design
+- [ ] Auto Shop Template
 - [ ] Church Template
-- [ ] Car Shop Template
-- [ ] Restaurant Template
 - [ ] Coffee Shop Template
+- [ ] Restaurant Template
+
+## Components
+- [x] Admin
+- [ ] Contact
+- [ ] Gallery
+- [x] Navigation
+- [x] Secondary Naviagtion
+- [ ] Sitemap
+
+## Pages
+- [ ] About
+- [ ] Contact
+- [ ] Contribute
+- [ ] Designs
+- [ ] Gallery
+- [ ] Guide
+- [ ] Home
+- [ ] Services
+- [ ] Sitemap
+- [ ] Testimonials
 
 ## Admin
 - [x] Login Design

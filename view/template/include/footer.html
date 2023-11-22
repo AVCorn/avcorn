@@ -62,12 +62,12 @@
   <div class="marketing-site-footer-bottom">
     <div class="row large-unstack align-middle">
       <div class="column small-8 editable">
-        <p>&copy; 2023 aVCorn - No rights reserved</p>
+        <p>&copy; 2023 {{ info.company }} - No rights reserved</p>
       </div>
       <div class="column small-4">
         <ul class="menu marketing-site-footer-bottom-links">
           {% set activeflag = 'false' %}
-          {% include "template/include/navigation-footer.html" %}
+          {% include "template/components/navigationFooter.html" %}
 
           <li><a href="#" data-open="exampleModal1">Admin</a><li>
         </ul>

@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    {% include "template/include/admin.html" %}
+    <!-- {% include "template/components/admin.html" %} -->
 
     <div id="top" class="hero-full-screen">
 
@@ -18,9 +18,9 @@
           <div class="top-bar-left">
             <ul class="menu">
               <li class="menu-text">
-                <img class="show-for-medium" src="assets/images/logo-md.png" alt="aVCorn" title="The nut doesn't fall far from the tree!" />
+                <img class="show-for-medium" src="assets/images/logo-md.png" alt="{{ info.company }}" title="The nut doesn't fall far from the tree!" />
               </li>
-              {% include "template/include/navigation.html" %}
+              {% include "template/components/navigation.html" %}
             </ul>
           </div>
         </div>
@@ -170,7 +170,7 @@
         </div>
       </div>
       <div class="row columns flex-container align-justify">
-         <p>2023 &copy; aVCorn - All rights reserved.</p>
+         <p>2023 &copy; {{ info.company }} - All rights reserved.</p>
       </div>
     </footer>
 

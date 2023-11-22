@@ -1,16 +1,18 @@
 {% extends "template/switcher.html" %}
 
 {% block title %}
-  {{ info.title }} - About Us
+  {{ info.title }} - Sitemap
 {% endblock %}
 
 {% block content %}
   <div class="row editable">
-    <h1>About Us</h1>
+    <h1>Sitemap</h1>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       Expedita dolorem accusantium architecto id quidem, itaque nesciunt quam ducimus atque.
     </p>
+
+    {% include "template/components/sitemap.html" %}
   </div>
 {% endblock %}
