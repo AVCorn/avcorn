@@ -27,10 +27,23 @@
     <div class="none">
 
       <header class="sticky-shrinknav-header">
-        <h1 class="sticky-shrinknav-header-title clearfix">
-          <img src="assets/images/logo-lg.png" alt="Nut Head" title="Dr. Nuthaniel O. Head" />
-          {{ info.title }}
-        </h1>
+        <div class="row">
+          <div class="columns small-5">
+            <img class="logo" src="assets/images/logo-autoshop.png" alt="{{ info.company }}" title="{{ info.title }}" />
+          </div>
+
+          <div class="address columns small-7">
+            <strong style="color:#991111;">Address:</strong>
+            {{ info.address }}
+            <br/>
+            {{ info.city }}
+            {{ info.zip }}
+            <br />
+            <br />
+            <strong style="color:#991111;">Phone:</strong>
+            {{ info.phone }}
+          </div>
+        </div>
 
         <ul class="menu align-center sticky-shrinknav-menu">
           {% include "template/components/navigation.html" %}

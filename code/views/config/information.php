@@ -12,7 +12,9 @@ $information = [
   'copyright' => '&copy; 2023',
   'legal' => '- No rights reserved',
 
-  'address' => '100 W Rincon<br /> San Francisco, CA 94015',
+  'address' => '100 W Rincon',
+  'city' => 'San Francisco, CA',
+  'zip' => '94015',
   'phone' => '1 (800) 555-5555',
   'email' => 'notreal@fakeemail.com',
 

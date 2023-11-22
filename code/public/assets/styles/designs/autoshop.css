@@ -25,6 +25,20 @@ body {
   overflow: hidden;
   transition: all 0.5s ease;
   z-index: 2000;
+  text-align: right;
+  font-size:1.2em;
+}
+
+.sticky-shrinknav-header .row {
+  margin-top: -50px;
+}
+
+.sticky-shrinknav-header .logo {
+  text-align:left;
+}
+
+.sticky-shrinknav-header .address {
+  margin-top: 40px;
 }
 
 .sticky-shrinknav-menu {
