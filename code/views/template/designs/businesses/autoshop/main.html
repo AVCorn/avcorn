@@ -5,6 +5,8 @@
 
     {% include "template/include/head.html" %}
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
     <script>
       $(function() {
         $(window).scroll(function() {
@@ -27,21 +29,23 @@
     <div class="none">
 
       <header class="sticky-shrinknav-header">
-        <div class="row">
-          <div class="columns small-5">
-            <img class="logo" src="assets/images/logos/logo-autoshop.png" alt="{{ info.company }}" title="{{ info.title }}" />
-          </div>
+        <div class="header-top">
+          <div class="row">
+            <div class="columns small-5">
+              <img class="logo" src="assets/images/logos/logo-autoshop.png" alt="{{ info.company }}" title="{{ info.title }}" />
+            </div>
 
-          <div class="address columns small-7">
-            <strong style="color:#991111;">Address:</strong>
-            {{ info.address }}
-            <br/>
-            {{ info.city }}
-            {{ info.zip }}
-            <br />
-            <br />
-            <strong style="color:#991111;">Phone:</strong>
-            {{ info.phone }}
+            <div class="address columns small-7">
+              <strong style="color:#991111;">Address:</strong>
+              {{ info.address }}
+              <br/>
+              {{ info.city }}
+              {{ info.zip }}
+              <br />
+              <br />
+              <strong style="color:#991111;">Phone:</strong>
+              {{ info.phone }}
+            </div>
           </div>
         </div>
 
