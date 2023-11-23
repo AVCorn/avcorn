@@ -21,6 +21,14 @@ a:hover .thumbnail {
   border: 2px solid #ccc;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0px 0px 5px #000;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  text-shadow: 0px 0px 3px #000;
+}
+
 .sticky-shrinknav-header {
   width: 100%;
   height: 300px;
@@ -44,6 +52,7 @@ a:hover .thumbnail {
   z-index: 2000;
   text-align: right;
   font-size:1.2em;
+  text-shadow: 0px 0px 3px #000;
 }
 
 .sticky-shrinknav-header .row {
@@ -91,11 +100,14 @@ a:hover .thumbnail {
 
 .sticky-shrinknav-menu a {
   color: #0f090a;
-  font-size:1.2em;
+  font-size:1em;
+  line-height: 1.7em;
+  text-shadow: 0px 0px 5px #666;
 }
 
 .sticky-shrinknav-menu li:hover a {
 	color: #fefefe;
+  text-shadow: 0px 0px 5px #066;
 }
 
 .sticky-shrinknav-header-title {
@@ -174,6 +186,8 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   box-shadow: 0 0 0 1px rgba(232, 13, 33, 0.5);
   border-radius: 2px;
   transition: all 0.5s ease;
+  text-shadow: 0px 0px 5px #666;
+  color:#eee;
 }
 
 .button:hover {
@@ -181,6 +195,8 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   background: linear-gradient(0deg, #e7444a 0%, #e7444a 10%, #c9172a 40%, #900d10 85%, #900d10 100%);
   box-shadow: 0 0 0 1px rgba(144, 13, 16, 0.5);
   border: 1px #aaa solid;
+  text-shadow: 0px 0px 5px #300;
+  color:#ccc;
 }
 
 .subheader {
@@ -194,3 +210,4 @@ h1 {
 a {
   transition: all 0.5s ease;
 }
+
