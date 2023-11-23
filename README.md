@@ -8,7 +8,9 @@ Written in PHP, and utilizing the Twig templating engine.
 
 "The nut doesn't fall from from the tree!"
 
-## Install the Application Locally
+## Application Environment
+
+### Install the Application (Locally)
 
 You will require PHP 7.4 or newer.
 
@@ -22,9 +24,8 @@ cd code
 composer start
 ```
 
-Or you can use `docker-compose` to run the app with `docker`, so you can run this command:
+Or you can use `docker-compose` to run the app with `docker`, so you can run this command (no need to `cd`):
 ```bash
-cd code
 docker-compose up -d
 ```
 After that, open `http://localhost:8080` in your browser.
@@ -37,10 +38,29 @@ composer test
 
 That's it!
 
-## Install the Application Remotely
+### Run Production (Docker)
 
+In order to run the environment in a production level environment:
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/blaher/avcorn/main/install.sh)"
+. ./scripts/start.sh
 ```
 
-[Check Development Progress](TODO.md)
+We offer a convient way to shell in to this container:
+```bash
+. ./scripts/shell.sh
+```
+
+If you want to clean up the docker containers made:
+```bash
+. ./scripts/stop.sh
+```
+
+### Install the Application Remotely (AWS)
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/blaher/avcorn/main/scripts/install.sh)"
+```
+
+## Links
+[Check Development Progress](docs/TODO.md)
+[Contributing](docs/CONTRIBUTING.md)
