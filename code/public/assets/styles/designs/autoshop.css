@@ -12,7 +12,13 @@ a {
 }
 
 .thumbnail {
-  border: 2px solid #ccc
+  border: 2px solid #999;
+  transition: all 0.3s ease;
+  background:#eee;
+}
+
+a:hover .thumbnail {
+  border: 2px solid #ccc;
 }
 
 .sticky-shrinknav-header {
@@ -34,7 +40,7 @@ a {
   top: 0;
   left: 0;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   z-index: 2000;
   text-align: right;
   font-size:1.2em;
@@ -64,7 +70,7 @@ a {
   width: 100%;
   background: rgba(179, 179, 179, 1);
   background: linear-gradient(180deg, #bac1cf 0%, #bac1cf 10%, #bac1cf 40%, #707386 70%, #707386 80%, #707386 90%, #0f090a 100%);
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   border-top: 3px solid #991111;
   border-bottom:1px #4c5d71 solid;
   font-size: 1.2rem;
@@ -121,7 +127,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 
 
 .social-footer {
-  color: #000;
+  color: #333;
   padding: 1rem;
   background: #b3b3b3;
   background: linear-gradient(180deg, #bac1cf 0%, #bac1cf 10%, #bac1cf 40%, #707386 70%, #707386 80%, #707386 90%, #0f090a 100%);
@@ -139,6 +145,11 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 
 .social-footer a {
 	color: #000;
+}
+
+.social-footer a:hover {
+  color: #333;
+  transition: all 0.5s ease;
 }
 
 .social-footer .social-footer-icons li:last-of-type {
@@ -161,6 +172,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 	border: 1px #eee solid;
   box-shadow: 0 0 0 1px rgba(232, 13, 33, 0.5);
   border-radius: 2px;
+  transition: all 0.5s ease;
 }
 
 .button:hover {
@@ -170,6 +182,14 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   border: 1px #aaa solid;
 }
 
+.subheader {
+  color:#ccc;
+}
+
 h1 {
 	border-bottom: 1px #454545 solid;
+}
+
+a {
+  transition: all 0.5s ease;
 }
