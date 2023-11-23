@@ -62,5 +62,5 @@ If you want to clean up the docker containers made:
 ```
 
 ## Links
-[Check Development Progress](docs/TODO.md)
-[Contributing](docs/CONTRIBUTING.md)
+* [Check Development Progress](docs/TODO.md)
+* [Contributing](docs/CONTRIBUTING.md)
