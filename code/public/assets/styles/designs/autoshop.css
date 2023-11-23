@@ -2,7 +2,7 @@
 body {
   padding-top: 330px;
   background-color: #222222;
-  background: linear-gradient(180deg, #000 0%, #222 20%, #222 50%, #222 90%, #000 100%);
+  background: linear-gradient(180deg, #000 0%, #222 20%, #222 50%, #222 80%, #111 100%);
   color: #eee;
   font-family: Roboto,Arial,sans-serif;
 }
@@ -34,7 +34,7 @@ a:hover .thumbnail {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #000;
-  background: linear-gradient(180deg, #222 0%, #000 66%, #000 100%);
+  background: linear-gradient(180deg, #202020 0%, #000 60%, #000 80%, #000 100%);
   text-align: center;
   position: fixed;
   top: 0;
@@ -72,7 +72,8 @@ a:hover .thumbnail {
   background: linear-gradient(180deg, #bac1cf 0%, #bac1cf 10%, #bac1cf 40%, #707386 70%, #707386 80%, #707386 90%, #0f090a 100%);
   transition: all 0.3s ease;
   border-top: 3px solid #991111;
-  border-bottom:1px #4c5d71 solid;
+  box-shadow: #4c5d71 0 1px 2px;
+  margin-bottom:2px;
   font-size: 1.2rem;
 }
 
