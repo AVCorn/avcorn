@@ -73,11 +73,13 @@ a {
 .sticky-shrinknav-menu li {
   border-radius: 2px;
   transition: all 0.3s ease;
+  margin:0 0 2px 0;
 }
 
 .sticky-shrinknav-menu li:hover {
-  box-shadow: 0 0 0 1px #e80d21;
+  box-shadow: 0 0 0 1px rgba(232, 13, 33, 0.5);
   background-color: #e80d21;
+  background: linear-gradient(180deg, #f4b6a7 0%, #e7444a 35%, #c9172a 40%, #900d10 95%, #900d10 100%);
 }
 
 .sticky-shrinknav-menu a {
@@ -154,12 +156,18 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 }
 
 .button {
-	background-color: #d00c1e;
+	background: #d00c1e;
+  background: linear-gradient(180deg, #f4b6a7 0%, #e7444a 35%, #c9172a 40%, #900d10 95%, #900d10 100%);
 	border: 1px #eee solid;
+  box-shadow: 0 0 0 1px rgba(232, 13, 33, 0.5);
+  border-radius: 2px;
 }
 
 .button:hover {
-  background-color: #bc0000;
+  background: #bc0000;
+  background: linear-gradient(0deg, #e7444a 0%, #e7444a 10%, #c9172a 40%, #900d10 85%, #900d10 100%);
+  box-shadow: 0 0 0 1px rgba(144, 13, 16, 0.5);
+  border: 1px #aaa solid;
 }
 
 h1 {
