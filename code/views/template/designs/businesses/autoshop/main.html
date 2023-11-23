@@ -29,27 +29,25 @@
     <div class="none">
 
       <header class="sticky-shrinknav-header">
-        <div class="header-top">
-          <div class="row">
-            <div class="columns small-5">
-              <img class="logo" src="assets/images/logos/logo-autoshop.png" alt="{{ info.company }}" title="{{ info.title }}" />
-            </div>
+        <div class="row header-top">
+          <div class="columns small-8 small-centered medium-6 medium-centered large-5 large-uncentered">
+            <img class="logo" src="assets/images/logos/logo-autoshop.png" alt="{{ info.company }}" title="{{ info.title }}" />
+          </div>
 
-            <div class="address columns small-7">
-              <strong style="color:#991111;">Address:</strong>
-              {{ info.address }}
-              <br/>
-              {{ info.city }}
-              {{ info.zip }}
-              <br />
-              <br />
-              <strong style="color:#991111;">Phone:</strong>
-              {{ info.phone }}
-            </div>
+          <div class="address columns large-7 hide-for-medium-only hide-for-small-only">
+            <strong style="color:#991111;">Address:</strong>
+            {{ info.address }}
+            <br/>
+            {{ info.city }}
+            {{ info.zip }}
+            <br />
+            <br />
+            <strong style="color:#991111;">Phone:</strong>
+            {{ info.phone }}
           </div>
         </div>
 
-        <ul class="menu align-center sticky-shrinknav-menu">
+        <ul class="menu align-center sticky-shrinknav-menu clearfix">
           {% include "template/components/navigation.html" %}
         </ul>
       </header>
