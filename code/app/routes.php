@@ -27,7 +27,11 @@ return function (App $app) {
       $config['get'] = $request->getQueryParams();
 
       if (isset($config['get']['design']) && isset($config['themes'][$config['get']['design']])) {
-        require_once('../views/template/designs/'.$config['themes'][$config['get']['design']].'/config.php');
+        $config_path = '../views/template/designs/'.$config['themes'][$config['get']['design']].'/config.php';
+
+        if (file_exists($config_path)) {
+          require_once($config_path);
+        }
       }
 
       $response->getBody()->write($twig->render('pages/'.$page, $config));
