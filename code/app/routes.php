@@ -14,6 +14,7 @@ return function (App $app) {
 
   $loader = new \Twig\Loader\FilesystemLoader('../views/');
 
+  // Cache pages only on production
   $twig_config = [];
   if (isset($app->mode) && $app->mode === 'production') {
     $twig_config['cache'] = '../var/cache/templates/';
@@ -21,11 +22,13 @@ return function (App $app) {
 
   $twig = new \Twig\Environment($loader, $twig_config);
 
+  // route through the map list
   foreach ($config['map'] as $route => $page) {
 
     $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page, $config) {
       $config['get'] = $request->getQueryParams();
 
+      // Override main config with template's
       if (isset($config['get']['design']) && isset($config['themes'][$config['get']['design']])) {
         $config_path = '../views/template/designs/'.$config['themes'][$config['get']['design']].'/config.php';
 
@@ -34,6 +37,18 @@ return function (App $app) {
         }
       }
 
+      // For template's {{ linkparams }}
+      $config['linkparams'] = '';
+      $urlparams = false;
+      if (isset($config['get']['design'])) {
+        $config['linkparams'] .= '&design=' . $config['get']['design'];
+        $urlparams = true;
+      }
+      if ($urlparams) {
+        $config['linkparams'] = '?a=vc'.$config['linkparams'];
+      }
+
+      // Render the template with Twig
       $response->getBody()->write($twig->render('pages/'.$page, $config));
       return $response;
     });

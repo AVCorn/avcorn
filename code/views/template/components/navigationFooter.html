@@ -1,6 +1,6 @@
 {% for item in navigationFooter %}
   <li class="{% if activeflag == 'true' %}{% if item.href == path %}active{% endif %}{% endif %}">
-    <a href="{{ item.href }}">
+    <a href="{{ item.href }}{{ linkparams }}">
       {{ item.label }}
     </a>
   </li>
