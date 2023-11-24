@@ -58,6 +58,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 
 .sticky-shrinknav-header .logo {
   text-align:left;
+  margin-bottom: 10px;
 }
 
 .sticky-shrinknav-header .address {
@@ -151,6 +152,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  text-shadow: 0px 0px 10px #555;
 }
 
 .social-footer a {
