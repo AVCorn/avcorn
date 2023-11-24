@@ -10,4 +10,5 @@ $map = [
   '/designs' => 'designs.html',
   '/guide' => 'guide.html',
   '/services' => 'services.html',
+  '/testimonials' => 'testimonials.html',
 ];

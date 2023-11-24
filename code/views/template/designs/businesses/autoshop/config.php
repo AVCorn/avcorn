@@ -4,27 +4,31 @@ declare(strict_types=1);
 
 $config['navigation'] = [
   [
-    'href' => '/?design=autoshop',
+    'href' => '/',
     'label' => 'Home',
   ],
   [
-    'href' => '/guide?design=autoshop',
+    'href' => '/designs',
+    'label' => 'Designs',
+  ],
+  [
+    'href' => '/guide',
     'label' => 'Walkthrough',
   ],
   [
-    'href' => '/testimonials?design=autoshop',
+    'href' => '/testimonials',
     'label' => 'Testimonials',
   ],
   [
-    'href' => '/about?design=autoshop',
+    'href' => '/about',
     'label' => 'About Us',
   ],
   [
-    'href' => '/contact?design=autoshop',
+    'href' => '/contact',
     'label' => 'Contact',
   ],
   [
-    'href' => '/gallery?design=autoshop',
+    'href' => '/gallery',
     'label' => 'Gallery',
   ]
 ];

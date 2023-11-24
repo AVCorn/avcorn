@@ -10,24 +10,27 @@ body {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   bottom: 0;
-  height: 3.75rem;
+  height: 3.2rem;
   line-height: 3.75rem;
   width: 100%;
-  background-color: rgba(23, 121, 186, 0.1);
   transition: all 0.5s ease;
 }
 
 .sticky-shrinknav-menu li {
-  border-radius: 2px;
   transition: all 0.3s ease;
 }
 
 .sticky-shrinknav-menu li:hover {
-  box-shadow: 0 0 0 1px #fefefe;
+  border-bottom: #fefefe 5px solid;
 }
 
 .sticky-shrinknav-menu a {
   color: #fefefe;
+}
+
+.sticky-shrinknav-menu .active a {
+  font-weight: bold;
+  background: none;
 }
 
 .sticky-shrinknav-header-title {
@@ -68,7 +71,7 @@ body.sticky-shrinknav-wrapper {
 
 body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
   height: 3.75rem;
-  background-color: rgba(23, 121, 186, 0.9);
+  background-color: rgba(23, 121, 186, 0.95);
 }
 
 body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-title {

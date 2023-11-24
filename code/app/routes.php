@@ -25,11 +25,16 @@ return function (App $app) {
   // route through the map list
   foreach ($config['map'] as $route => $page) {
 
+    $config['uri'] = $route;
+    $config['design'] = 'default';
+    $config['template'] = $page;
+
     $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page, $config) {
       $config['get'] = $request->getQueryParams();
 
       // Override main config with template's
       if (isset($config['get']['design']) && isset($config['themes'][$config['get']['design']])) {
+        $config['design'] = $config['get']['design'];
         $config_path = '../views/template/designs/'.$config['themes'][$config['get']['design']].'/config.php';
 
         if (file_exists($config_path)) {
@@ -40,8 +45,8 @@ return function (App $app) {
       // For template's {{ linkparams }}
       $config['linkparams'] = '';
       $urlparams = false;
-      if (isset($config['get']['design'])) {
-        $config['linkparams'] .= '&design=' . $config['get']['design'];
+      if (isset($config['design'])) {
+        $config['linkparams'] .= '&design=' . $config['design'];
         $urlparams = true;
       }
       if ($urlparams) {

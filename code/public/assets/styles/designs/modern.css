@@ -60,6 +60,19 @@
 .hero-full-screen .top-bar .menu a {
   color: #fefefe;
   font-weight: bold;
+  transition: border 0.5s ease, margin 0.5s ease;
+  border: #2daebf 0 solid;
+}
+
+.hero-full-screen .top-bar .menu a:hover {
+  color: #eee;
+  background:rgba(200, 200, 200, 0.3);
+  border-bottom: #2daebf 5px solid;
+  margin: 5px 0 0 0;
+}
+
+.menu .active>a {
+  background:rgba(0, 0, 0, 0.3);
 }
 
 @charset "UTF-8";
@@ -182,4 +195,28 @@
 .responsive-blog-footer .fa-chevron-circle-up:hover {
   color: #b0b0b0;
   transition: color 0.3s ease-in;
+}
+
+.thumbnail {
+  transition: border 0.5s ease, margin 0.5s ease;
+  border: #eee 5px solid;
+  margin: 0 0 16px 0;
+}
+
+.thumbnail:hover {
+  border: #2daebf 1px solid;
+  margin: 0 0 19px 0;
+}
+
+.button {
+  transition: border 0.5s ease;
+  border-bottom: transparent 5px solid;
+}
+
+.button:hover {
+  border-bottom: #2daebf 5px solid;
+}
+
+a {
+  transition: 0.5s ease;
 }
