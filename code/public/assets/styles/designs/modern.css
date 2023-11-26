@@ -217,6 +217,10 @@
   border-bottom: #2daebf 5px solid;
 }
 
+.columns {
+  animation: width 1s ease;
+}
+
 a {
   transition: 0.5s ease;
 }
