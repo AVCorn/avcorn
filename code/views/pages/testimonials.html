@@ -1,0 +1,465 @@
+{% extends "template/switcher.html" %}
+
+{% block title %}
+  {{ info.title }} - Testimonials
+{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" type="text/css" href="assets/styles/components/testimonial.css" />
+{% endblock %}
+
+{% block header %}
+    <div class="row padding-1 editable">
+      <h1>Testimonials</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+  <div class="row padding-2 editable">
+    <img style="width:200px;" class="float-right margin-2 hover-shake" src="assets/images/nutty/nutty-customerservice.png" title="I love our customers!" alt="" />
+
+    <p>
+      At AVCorn, we strive our very best to provide the best quality experience possible for our customers.
+      We commit to make sure our quality and the value in what we provide exceeds any cost to our users.
+      Everyday, we ensure all of our high standards are met.
+      <i>
+        Rambling on an on with plenty of senseless jargon and filler content.
+        Why is this part italized?
+        I don't know!
+        Just because I felt like it.
+        I really need to think of more text here to fill our this section to make it look more appealing.
+        You guys really need to pay me more.
+        Oh, that's right, I'm not getting paid.
+        This is my own project.
+        I'm a programmer Jim, not a GOD DAM copy writer!
+        Okay, enough rambling, I think I have filled out enough text for this space...
+        For now.
+      </i>
+    </p>
+    <p>
+      Our users come first.
+      Our business goals are our customer's.
+      And we love doing business!
+      We also love our customers.
+      But not in any sexual way, more as like friends.
+      Just...
+      Friends with business benefits.
+      <a href="#nohomo" title="It's funny if you think this does anything">#nohomo</a>
+      The fulfillment we feel in our hearts is sourced from the ambition we fill our customer's hearts with.
+      <i>
+        Blah, blah, blah, blah, blah.
+        And yes, I lied.
+        I need to fill out more content.
+        Jokes on you!
+        But I'm going to get a lot of crap for this...
+        Just don't cancle me.
+        You all know what I'm about.
+        I really wish I could either hire a copy writer, or just remember to use ChatGPT to auto generate copy.
+        You would think as a programmer who specializes in AI, I would be more prone to doing ONE of those things.
+        Anyways...
+      </i>
+      Our users are our customers.
+      So, we want to see all of our customers smiling.
+      Even if they want to or not!
+    </p>
+
+    <p>
+      So, without further ado. Here are some fabulous reviews from our amazing and happy customers:
+    </p>
+  </div>
+
+<div class="row padding-1">
+    <div class="row margin-1">
+      <div class="testimonial-block-vertical columns small-12 medium-10 large-8">
+        <div class="testimonial-block-vertical-quote">
+          <div class="editable">
+            <p>
+              <strong>AVCorn is the best thing to happen since sliced bread!</strong>
+              Only problem is I'm allergic to gluten.
+              And slices.
+              And bread.
+              The french toast you guys gave me as a Christmas gift gave me a really upset stomach.
+            </p>
+          </div>
+        </div>
+
+        <div class="rating-block">
+          <div class="rating-block-rating is-voted">
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star selected">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-block-vertical-person editable">
+          <img class="testimonial-block-vertical-avatar" src="https://i.pravatar.cc/60?1" alt="" />
+
+          <div>
+            <p class="testimonial-block-vertical-name">Emily Toast</p>
+            <p class="testimonial-block-vertical-info">A Happy Customer</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns small-0 medium-2 large-4"></div>
+    </div>
+
+    <div class="row margin-1">
+      <div class="columns small-0 medium-2 large-4"></div>
+
+      <div class="testimonial-block-vertical testimonial-right columns small-12 medium-10 large-8">
+        <div class="testimonial-block-vertical-quote editable">
+          <p>
+            Orginally our company's profit was -$10,000/mo.
+            But after switching to AVCorn for our technology needs...
+            <strong>Our profit increased 200% after switching to AVCorn!</strong>
+            We are now reporting a losst of $20,000/mo.
+            That's incredible!
+          </p>
+        </div>
+
+        <div class="rating-block">
+          <div class="rating-block-rating is-voted">
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star selected">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-block-vertical-person text-right editable">
+          <div>
+            <p class="testimonial-block-vertical-name">Walter Fancypants</p>
+            <p class="testimonial-block-vertical-info">Important person, at some Company</p>
+          </div>
+
+          <img class="testimonial-block-vertical-avatar" src="https://i.pravatar.cc/60?2" alt="" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="row margin-1">
+      <div class="testimonial-block-vertical columns small-12 medium-10 large-8">
+        <div class="testimonial-block-vertical-quote editable">
+          <p>
+            No, I'm not going to give you guys a review saying <strong>AVCorn is awesome</strong>...
+            You're waisting my time and money.
+            Get out of my office before I call the police!
+          </p>
+        </div>
+
+        <div class="rating-block">
+          <div class="rating-block-rating is-voted">
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star selected">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-block-vertical-person editable">
+          <img class="testimonial-block-vertical-avatar" src="https://i.pravatar.cc/60?3" alt="" />
+
+          <div>
+            <p class="testimonial-block-vertical-name">John Slamdesk</p>
+            <p class="testimonial-block-vertical-info">Another <em>Happy</em> Customer</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns small-0 medium-2 large-4"></div>
+    </div>
+    <div class="row margin-1">
+      <div class="columns small-0 medium-2 large-4"></div>
+
+      <div class="testimonial-block-vertical testimonial-right columns small-12 medium-10 large-8">
+        <div class="testimonial-block-vertical-quote editable">
+          <p>
+            As a discerning online enthusiast seeking quality and substance, I am delighted to share my effusive praise for AVCorn. Navigating the digital landscape in search of a platform that encapsulates <strong>sophistication, utility, and innovation</strong> can often feel like traversing a labyrinth, but AVCorn stands as a beacon of excellence amid the vastness of the internet.
+          </p>
+          <p>
+            From the moment I entered the digital realm of AVCorn, I was enveloped in a seamless user experience that seamlessly combines aesthetic appeal with intuitive functionality. The meticulously crafted design elements create an ambiance that speaks volumes about the dedication to precision and attention to detail.
+          </p>
+          <p>
+            <strong>What truly sets AVCorn apart is its unwavering commitment to delivering an unparalleled user journey.</strong> The interface is a testament to the fusion of artistry and technology, where elegance meets efficiency. The intuitive layout guides users effortlessly, ensuring a delightful exploration through its diverse offerings.
+          </p>
+          <p>
+            The dedication to user engagement and interaction are evident in every facet of AVCorn. The vibrant community fostered here encapsulates a spirit of inclusivity and sharing. Through forums, discussions, and interactive features, users are not merely spectators but active participants, contributing to the dynamic tapestry that defines this digital haven.
+          </p>
+          <p>
+            Moreover, the responsiveness and adaptability of AVCorn across various devices and screen sizes are commendable. Whether accessed on a desktop, tablet, or mobile device, the seamless transition and consistent performance underscore a commitment to accessibility and user convenience.
+          </p>
+          <p>
+            Bravo to the visionary minds and dedicated team behind AVCorn for creating <strong>an exemplary digital sanctuary</strong> that transcends expectations and sets a benchmark for excellence in the online sphere.
+          </p>
+        </div>
+
+        <div class="rating-block">
+          <div class="rating-block-rating is-voted">
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star selected">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-block-vertical-person text-right editable">
+          <div>
+            <p class="testimonial-block-vertical-name">Ryan Jellybean</p>
+            <p class="testimonial-block-vertical-info">A Real Person</p>
+          </div>
+
+          <img class="testimonial-block-vertical-avatar hover-shake" width="60px" src="/assets/images/content/ryan-jellybean.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-1">
+      <div class="testimonial-block-vertical columns small-12 medium-10 large-8">
+        <div class="testimonial-block-vertical-quote editable">
+          <p>
+            AVCorn is the absolute greatest thing in my existence.
+            I'm completely not bias or anything, since I wrote it all.
+            <strong>It makes my life so much easier.</strong>
+            If I could use AVCorn for everything in life, I would.
+            But I can't, becaue AVCorn really only does one specific thing.
+            And that makes me sad.
+            Nutty looks cute too.
+          </p>
+        </div>
+
+        <div class="rating-block">
+          <div class="rating-block-rating is-voted">
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star selected">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-block-vertical-person editable">
+          <img class="testimonial-block-vertical-avatar" width="60px" src="https://avatars.githubusercontent.com/u/1200752?v=4" alt="" />
+
+          <div>
+            <p class="testimonial-block-vertical-name">Benjamin Young</p>
+            <p class="testimonial-block-vertical-info">The non-biased writer of AVCorn</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns small-0 medium-2 large-4"></div>
+    </div>
+
+    <div class="row margin-1">
+      <div class="columns small-0 medium-2 large-4"></div>
+
+      <div class="testimonial-block-vertical testimonial-right columns small-12 medium-10 large-8">
+        <div class="testimonial-block-vertical-quote editable">
+          <p>
+            I just met you guys?
+            I havn't even had the chance to use your product or services...
+            Why would <strong>I give AVCorn a fantastic review</strong>?
+            I don't even know what AVCorn is like...
+          </p>
+        </div>
+
+        <div class="rating-block">
+          <div class="rating-block-rating is-voted">
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star selected">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-block-vertical-person text-right editable">
+          <div>
+            <p class="testimonial-block-vertical-name">Mr. Confused</p>
+            <p class="testimonial-block-vertical-info">Probably Can't Afford Us</p>
+          </div>
+
+          <img class="testimonial-block-vertical-avatar" src="https://i.pravatar.cc/60?4" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-1">
+      <div class="testimonial-block-vertical columns small-12 medium-10 large-8">
+        <div class="testimonial-block-vertical-quote editable">
+          <p>
+            AVCorn <strong>is okay</strong>, I guess...
+          </p>
+        </div>
+
+        <div class="rating-block">
+          <div class="rating-block-rating is-voted">
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star selected">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-block-vertical-person editable">
+          <div>
+            <p class="testimonial-block-vertical-name">Nut Head</p>
+            <p class="testimonial-block-vertical-info">The AVCorn Mascot</p>
+          </div>
+
+          <img class="testimonial-block-vertical-avatar hover-shake" width="60px" src="/assets/images/nutty/nutty.png" alt="" />
+        </div>
+      </div>
+
+      <div class="columns small-0 medium-2 large-4"></div>
+    </div>
+
+  </div>
+{% endblock %}
