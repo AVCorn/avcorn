@@ -25,6 +25,20 @@
   margin-top: 1em;
 }
 
+.testimonial-block-vertical-quote p:last-child {
+  margin-bottom: 2em;
+}
+
+.testimonial-block-vertical-quote p:last-child:after {
+  content: "”";
+  font-size: 6rem;
+  color: #aaa;
+  float: right;
+  height: 4rem;
+  line-height: 6rem;
+  margin: 0 1rem;
+}
+
 .testimonial-block-vertical-quote::after {
   content: '';
   bottom: -1.25rem;
