@@ -1,10 +1,20 @@
-
 .testimonial-block-vertical-quote {
   background: rgba(23, 121, 186, 0.25);
   padding: 1rem;
   border-radius: 0;
   margin-bottom: 1.875rem;
   position: relative;
+  min-height: 6rem;
+}
+
+.testimonial-block-vertical-quote p::before {
+  content: "“";
+  font-size: 6rem;
+  color: #aaa;
+  float: left;
+  height: 4rem;
+  line-height: 6rem;
+  margin: 0 1rem;
 }
 
 .testimonial-block-vertical-quote p {
