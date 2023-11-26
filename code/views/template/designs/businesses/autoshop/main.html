@@ -21,6 +21,9 @@
     </script>
 
     <link rel="stylesheet" type="text/css" href="assets/styles/designs/autoshop.css" />
+
+    {% block styles %}{% endblock %}
+    {% block scripts %}{% endblock %}
   </head>
 
   <body>
@@ -55,7 +58,7 @@
       <br class="clearfix" />
       <div class="row text-center">
         {% block header %}
-
+          <div class="editable"></div>
         {% endblock %}
       </div>
 

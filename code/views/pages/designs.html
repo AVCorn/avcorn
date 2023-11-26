@@ -5,13 +5,15 @@
 {% endblock %}
 
 {% block header %}
-  <h1 class="editable">Different Designs</h1>
+  <div class="row padding-1">
+    <h1 class="editable">Different Designs</h1>
 
-  <br class="clearfix" />
-  <a href="/designs?design=marketing" class="button large {% if design == "marketing" %}disabled{% endif %}">Marketing</a>
-  <a href="/designs?design=portfolio" class="button large {% if design == "portfolio" %}disabled{% endif %}">Portfolio</a>
-  <a href="/designs?design=modern" class="button large {% if design == "modern" %}disabled{% endif %}">Modern</a>
-  <a href="/designs?design=simple" class="button large {% if design == "simple" %}disabled{% endif %}">Simple</a>
+    <br class="clearfix" />
+    <a href="/designs?design=marketing" class="button large {% if design == "marketing" %}disabled{% endif %}">Marketing</a>
+    <a href="/designs?design=portfolio" class="button large {% if design == "portfolio" %}disabled{% endif %}">Portfolio</a>
+    <a href="/designs?design=modern" class="button large {% if design == "modern" %}disabled{% endif %}">Modern</a>
+    <a href="/designs?design=simple" class="button large {% if design == "simple" %}disabled{% endif %}">Simple</a>
+  </div>
 {% endblock %}
 
 {% block content %}

@@ -6,6 +6,9 @@
     {% include "template/include/head.html" %}
 
     <link rel="stylesheet" type="text/css" href="assets/styles/designs/modern.css" />
+    
+    {% block styles %}{% endblock %}
+    {% block scripts %}{% endblock %}
   </head>
 
   <body>
@@ -29,13 +32,7 @@
       <div class="middle-content-section">
         <div class="row">
           {% block header %}
-          <h1 class="editable">Different Designs</h1>
-
-          <br class="clearfix" />
-          <a href="/designs?design=marketing" class="button large {% if design == "marketing" %}disabled{% endif %}">Marketing</a>
-          <a href="/designs?design=portfolio" class="button large {% if design == "portfolio" %}disabled{% endif %}">Portfolio</a>
-          <a href="/designs?design=modern" class="button large {% if design == "modern" %}disabled{% endif %}">Modern</a>
-          <a href="/designs?design=simple" class="button large {% if design == "simple" %}disabled{% endif %}">Simple</a>
+            <div class="editable"></div>
           {% endblock %}
         </div>
       </div>
@@ -49,7 +46,7 @@
 
     <div id="main-content-section" class="row column small-10" data-magellan-target="main-content-section">
       {% block content %}
-
+        <div class="editable"></div>
       {% endblock %}
     </div>
 
@@ -97,7 +94,7 @@
             </p>
           </div>
           <div class="card-divider flex-container align-middle">
-            <img class="avatar" src="https://placehold.it/50x50" alt="avatar" />
+            <img class="avatar" src="https://i.pravatar.cc/50" alt="avatar" />
             <a href="#" class="author">Ryan Jellybean</a>
           </div>
           <div class="hover-border">
