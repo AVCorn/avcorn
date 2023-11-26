@@ -7,7 +7,7 @@
   min-height: 6rem;
 }
 
-.testimonial-block-vertical-quote p::before {
+.testimonial-block-vertical-quote p:first-child:before {
   content: "“";
   font-size: 6rem;
   color: #aaa;
@@ -19,6 +19,10 @@
 
 .testimonial-block-vertical-quote p {
   margin-bottom: 0;
+}
+
+.testimonial-block-vertical-quote p:not(:first-child) {
+  margin-top: 1em;
 }
 
 .testimonial-block-vertical-quote::after {
