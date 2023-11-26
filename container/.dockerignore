@@ -1,0 +1,5 @@
+.git
+.gitignore
+Gruntfile.js
+phpcs.xml
+phpstan.neon.dist

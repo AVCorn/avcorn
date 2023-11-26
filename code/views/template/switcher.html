@@ -1,0 +1,9 @@
+{% if get.design in themes|keys %}
+  {% set design_folder = themes[get.design] %}
+{% else %}
+  {% set design_folder= "default" %}
+{% endif %}
+
+{% set design_path = "template/designs/"~design_folder~"/"~layout~".html" %}
+
+{% extends design_path %}
