@@ -4,5 +4,6 @@
   {% set design_folder= "default" %}
 {% endif %}
 
-{% set design_path = "template/designs/"~design_folder~"/main.html" %}
+{% set design_path = "template/designs/"~design_folder~"/"~layout~".html" %}
+
 {% extends design_path %}

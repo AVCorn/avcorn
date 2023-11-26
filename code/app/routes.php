@@ -28,6 +28,7 @@ return function (App $app) {
     $config['uri'] = $route;
     $config['design'] = 'default';
     $config['template'] = $page;
+    $config['layout'] = 'main';
 
     $app->get($route, function (Request $request, Response $response, array $args) use (&$twig, $page, $config) {
       $config['get'] = $request->getQueryParams();
