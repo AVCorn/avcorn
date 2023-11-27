@@ -4,7 +4,7 @@ AVCorn is a simple VC CMS for basic content websites, no databases required.
 The original intent is for fast deploying, fast developing, and lightweight performance for low traffic website design clients.
 Written in PHP, and utilizing the Twig templating engine.
 
-![AVCorn Logo](docs/images/nutty-readme.png "The nut doesn't fall from from the tree!")
+![AVCorn Logo](docs/images/readme-banner.png "The nut doesn't fall from from the tree!")
 
 _"The nut doesn't fall from from the tree!"_
 
@@ -63,4 +63,5 @@ If you want to clean up the docker containers made:
 
 ## Links
 * [Development Progress](docs/TODO.md)
-* [Contributing](docs/CONTRIBUTING.md)
+* [Contributing Guidelines](docs/CONTRIBUTING.md)
+* [License](docs/LICENSE.md)
