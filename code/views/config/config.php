@@ -7,6 +7,7 @@ require_once('navigation.php');
 require_once('navigation-footer.php');
 require_once('information.php');
 require_once('themes.php');
+require_once('sitemap.php');
 
 $config = [
   'map' => $map,
@@ -14,4 +15,5 @@ $config = [
   'navigationFooter' => $navigationFooter,
   'info' => $information,
   'themes' => $themes,
+  'sitemap' => $sitemap,
 ];
