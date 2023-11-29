@@ -10,6 +10,7 @@ $themes = [
   'portfolio' => 'examples/portfolio',
   'simple' => 'examples/simple',
 
+  'agency' => 'businesses/agency',
   'autoshop' => 'businesses/autoshop',
   'church' => 'businesses/church',
   'coffeeshop' => 'businesses/coffeeshop',

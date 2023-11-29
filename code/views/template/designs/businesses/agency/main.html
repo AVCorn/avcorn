@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="whatinput-types-initial whatinput-types-mouse" land="en">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+
+    {% include "template/include/head.html" %}
+
+    <link rel="stylesheet" type="text/css" href="assets/styles/designs/agency.css" />
+    
+    {% block styles %}{% endblock %}
+    {% block scripts %}{% endblock %}
+
+    <style>
+    	body {
+    		background: #000;
+    		text-shadow: 0px 0px 2em #000;
+    		color: #fff;
+    	}
+
+    	.header {
+    		background: url("assets/images/content/agency-bg.jpg") center center no-repeat;
+    		background-size: cover;
+    		font-family: Halcom-Bold, Bold-Fallback, Arial, sans-serif, Arial, sans-serif;
+    		font-size: 1.5em;
+    		height: 100vh;
+    	}
+
+    	.header .logo {
+    		font-size: 2em;
+    		font-weight: bold;
+    		padding: 0.5em 0;
+    	}
+
+    	.header .logo .indent {
+    		margin-left: 4em;
+    	}
+
+    	.header .navigation {
+    		padding: 2em 0;
+    		font-weight: bold;
+    	}
+
+    	.header .navigation .fa {
+    		margin-left: 1em;
+    	}
+
+    	.header .subtitle {
+    		margin: 1em 0 0 0;
+    		font-size: 7em;
+    		line-height: 0.8em;
+    	}
+
+    	.header .subtitle .brand {
+    		font-size: 0.8em;
+    	}
+
+    	.header .pointer {
+    		bottom: 1em;
+    		position: absolute;
+    		transform: rotate(90deg);
+    	}
+
+    	.header .pointer svg {
+    		animation: bounce 1.8s infinite;
+    	}
+
+    	.page {
+    		background: url("assets/images/content/agency-bg-bottom.jpg") bottom center no-repeat;
+    		background-size: 100%;
+    	}
+
+    	.footer {
+    		font-size: 1em;
+    		font-weight: bold;
+    		margin-top: 6em;
+    	}
+
+    	.footer .navigation a {
+    		color: #fff;
+    	}
+
+    	.footer .navigation li {
+    		font-size: 1.5em;
+    		font-weight: bold;
+    	}
+
+    	.footer .navigation li li {
+    		font-size: 0.8em;
+    		font-weight: normal;
+    	}
+
+    	.footer .social {
+    		font-size: 1.5em;
+    	}
+
+    	.footer .social a {
+    		padding: 0.4em;
+    	}
+
+    	.footer .copyright {
+    		font-size: 1em;
+    		font-weight: normal;
+    		margin: 5em 0 0 0;
+    	}
+
+    	@keyframes bounce {
+		    0%, 100%, 20%, 50%, 80% {
+		        transform:translateX(0)
+		    }
+
+		    40% {
+		        transform:translateX(-30px)
+		    }
+
+		    60% {
+		        transform:translateX(-15px)
+		    }
+		}
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script>
+    	$(function() {
+			var rellax = new Rellax('.rellax');
+		});
+	</script>
+  </head>
+
+  <body>
+    <div class="none page">
+
+      <header class="header">
+      	<div class="columns large-1">
+      		<br />
+      	</div>
+
+        <div class="logo columns large-4">
+        	Raymond Jay
+        	<div class="indent">Designs</div>
+        </div>
+
+        <div class="navigation columns large-6 text-right rellax" rellax" data-rellax-speed="1">
+        	Menu
+        	<i class="fa fa-bars"></i>
+        </div>
+
+      	<div class="columns large-1">
+      		<br />
+      	</div>
+
+        <div class="subtitle columns large-12 rellax" data-rellax-speed="2">
+        	We are<br />
+        	<span class="brand">RJ Designs</span>
+        </div>
+
+      <div class="pointer columns large-12 text-center rellax" data-magellan data-threshold="0" data-rellax-speed="1">
+        <a href="#content" class="content">
+			<svg viewBox="0 0 20 25" width="1em">
+				<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+			</svg>
+        </a>
+      </div>
+      </header>
+
+      <article id="content" class="content row expanded clearfix" data-magellan-target="content">
+      	<div class="content-left row">
+	      	<h1>We Are RJ Designs</h1>
+	      	<p>
+				In the dynamic landscape of the digital age, a compelling online presence is the cornerstone of success for small businesses. At our modern website design company, we specialize in crafting bespoke digital solutions tailored specifically for small businesses, empowering them to thrive in the competitive online sphere.
+			</p>
+			<p>
+				Our team comprises visionary designers, adept developers, and innovative strategists committed to delivering cutting-edge website designs that not only captivate but also convert visitors into loyal customers. We understand the unique needs of small businesses, recognizing the pivotal role a well-crafted website plays in establishing credibility, expanding reach, and driving growth.
+			</p>
+		</div>
+
+		<div class="row expanded">
+			<div class="float-left rellax" data-rellax-speed="1">
+				<img src="assets/images/logos/logo.png" />
+			</div>
+
+			<div class="content-right row">
+				<h2>Great Looking and Sales Driven Web Design Like No Other</h2>
+				<p>
+					We take a holistic approach to website design, starting with in-depth consultations to comprehend the essence of each business. By amalgamating creativity with functionality, we create intuitive, responsive, and visually stunning websites that resonate with the brand identity, reflecting its values, ethos, and aspirations.
+				</p>
+				<p>
+					Utilizing the latest technologies and adhering to industry best practices, our designs prioritize user experience, ensuring seamless navigation and engagement across devices. Whether it's an e-commerce platform, a service-oriented site, or a content-driven blog, our designs are versatile and adaptable, catering to diverse business objectives.
+				</p>
+				<p>
+					Beyond aesthetics, our commitment to empowering small businesses extends to providing user-friendly content management systems (CMS), enabling easy updates and maintenance without technical expertise. We emphasize not only the initial launch but also provide ongoing support, optimization, and security to safeguard against evolving digital threats.
+				</p>
+				<a class="button" href="#">Read More &gt;</a>
+			</div>
+		</div>
+
+		<div class="content-prompt row padding-3 rellax clearfix" data-rellax-speed="0.5">
+			<p>In a world of complexity, we offer ease and expertise through integrated solutions and first-class client services.</p>
+		</div>
+
+		<div class="row expanded">
+			something here
+		</div>
+
+		<div class="content-prompt row padding-3 rellax" data-rellax-speed="0.5">
+			<p>Instinctive generosity is what guides us. That's why we develop research and analysis that leads debate in the industry.</p>
+		</div>
+
+		<div class="content-left row clearfix">
+			<div class="float-right rellax" data-rellax-speed="1">
+				<img src="assets/images/logos/logo.png" />
+			</div>
+
+			<h2>Our Customers Are Our Greatest Value</h2>
+			<p>
+				Transparency and collaboration lie at the core of our work ethos. Throughout the design process, we foster open communication, welcoming client feedback and revisions to ensure the final product aligns perfectly with their vision.
+			</p>
+			<p>
+				In a world where the digital landscape evolves rapidly, our company stands as a beacon of innovation and reliability for small businesses aspiring to make a mark online. We believe that a well-crafted website isn't just a digital address but a strategic asset that propels small businesses toward sustainable growth, fostering connections and unlocking boundless opportunities in the digital realm. Partner with us, and together, let's build an online presence that sets your business apart in today's competitive market.
+			</p>
+			<a class="button" href="/designs">See Other Work &gt;</a>
+		</div>
+
+		<div class="row">
+			<h2>Our Clients</h2>
+			<p>Clients Here</p>
+			<a class="button" href="/contact">Contact Today &gt;</a>
+		</div>
+          <!--{% block content %}
+            <div  class="editable"></div>
+          {% endblock %}-->
+      </article>
+
+      <footer class="footer row padding-3">
+      	<ul class="navigation menu rellax" data-rellax-speed="0.5">
+      		<li class="columns small-3 padding-1">
+      			Polices
+      			<ul class="nested vertical menu">
+      				<li><a href="#">Privacy Policy</a></li>
+      				<li><a href="#">Cookies</a></li>
+      				<li><a href="#">Our Policies</a></li>
+      			</ul>
+      		</li>
+      		<li class="columns small-3 padding-1">
+      			<a href="/contact">Contact</a>
+      		</li>
+      		<li class="columns small-3 padding-1">
+      			<a href="/sitemap">Sitemap</a>
+      		</li>
+      		<li class="columns small-3 padding-1">
+      			Connect
+      			<ul class="social nested menu">
+      				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+      				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+      				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+      				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+      			</ul>
+      		</li>
+      	</ul>
+
+      	<div class="copyright text-center">
+      		&copy; 2024 RJ Designs
+      	</div>
+      </footer>
+    </div>
+  </body>
+</html>
