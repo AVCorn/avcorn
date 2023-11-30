@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html class="whatinput-types-initial whatinput-types-mouse" land="en">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+
+    {% include "template/include/head.html" %}
+
+    <!--<link rel="stylesheet" type="text/css" href="assets/styles/designs/agency.css" />-->
+    
+    {% block styles %}{% endblock %}
+    {% block scripts %}{% endblock %}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+    	body {
+    		background: #000;
+    		text-shadow: 0px 0px 2em #000;
+    		color: #fff;
+    	}
+
+    	.header {
+    		background: url("assets/images/content/agency-bg.jpg") center center no-repeat;
+    		background-size: cover;
+    		font-family: Halcom-Bold, Bold-Fallback, Arial, sans-serif, Arial, sans-serif;
+    		font-size: 1.5em;
+    		height: 100vh;
+    	}
+
+    	.header .logo {
+    		background: rgba(0, 0, 0, 0.5);
+    		color: #fff;
+    		font-size: 2em;
+    		font-weight: bold;
+    		padding: 0.5em 1em;
+    	}
+
+    	.header .logo .indent {
+    		margin-left: 4em;
+    	}
+
+    	.header .navigation {
+    		padding: 1em 0;
+    		font-weight: bold;
+    	}
+
+    	.header .navigation-inside {
+    		/*background: rgba(0, 0, 0, 0.5);*/
+    		display: inline;
+    		padding: 0.5em 1em;
+    	}
+
+    	.header .navigation .fa {
+    		margin-left: 1em;
+    	}
+
+    	.header .navigation a {
+    		color: #fff;
+    	}
+
+    	.header .navigation a:hover {
+    		background: rgba(200, 200, 200, 0.5);
+    	}
+
+    	.header .subtitle {
+    		margin: 0.5em 0 0 0;
+    		font-size: 7em;
+    		line-height: 0.8em;
+    	}
+
+    	.header .subtitle .brand {
+    		font-size: 0.8em;
+    	}
+
+    	.header .connect a {
+    		font-size: 1em;
+    		font-weight: bold;
+    		margin:0 2em;
+    	}
+
+    	.header .pointer {
+    		bottom: 1em;
+    		position: absolute;
+    		transform: rotate(90deg);
+    	}
+
+    	.header .pointer svg {
+    		rotate: 90deg;
+    		animation: bounce 1.8s infinite;
+    	}
+
+    	.page {
+    		background: url("assets/images/content/agency-bg-bottom.jpg") bottom center no-repeat;
+    		background-size: 100%;
+    	}
+
+    	.owners-left {
+    		background: grey;
+    		position: absolute;
+    		text-align: right;
+    	}
+
+    	.footer {
+    		font-size: 1em;
+    		font-weight: bold;
+    		margin-top: 1em;
+    	}
+
+    	.footer .navigation {
+    		background: rgba(0, 0, 0, 0.5);
+    		padding: 0 48px;
+    	}
+
+    	.footer .navigation a {
+    		color: #fff;
+    		transition: all 0.5s ease;
+    	}
+
+    	.footer .navigation li {
+    		font-size: 1.5em;
+    		font-weight: bold;
+    		transition: all 0.5s ease;
+    	}
+
+    	.footer .navigation li:hover {
+    		text-decoration: underline;
+    	}
+
+    	.footer .navigation li li:hover {
+    		background: rgba(200, 200, 200, 0.5);
+    		text-decoration: none;
+    	}
+
+    	.footer .navigation li li {
+    		font-size: 0.8em;
+    		font-weight: normal;
+    	}
+
+    	.footer .social {
+    		font-size: 1.5em;
+    	}
+
+    	.footer .social a {
+    		padding: 0.4em;
+    	}
+
+    	.footer .copyright {
+    		background: rgba(0, 0, 0, 0.5);
+    		font-size: 1em;
+    		font-weight: normal;
+    	}
+
+    	.descriptor {
+    		margin: 0 4em;
+    	}
+
+    	.banner {
+    		background: #001b3a;
+    	}
+
+    	.banner .overlay {
+    		background: rgba(200, 200, 200, 0.1);
+    		transition: all 1s ease;
+    	}
+
+    	.banner .overlay:hover {
+    		background: rgba(200, 200, 200, 0.3);
+    	}
+
+    	.banner a {
+    		background: rgba(0, 0, 0, 0.5);
+    		background: linear-gradient(0deg, rgba(5, 5, 5, 1) 0%, rgba(200, 200, 200, 0) 100%);
+    		color: #fff;
+    		font-size: 2em;
+    		height: 360px;
+    		padding: 0 1em;
+    		transition: all 1s ease;
+    	}
+
+    	.banner a:hover {
+    		opacity: 50%;
+    	}
+
+    	.banner a:hover svg {
+    		animation: bounce 1s;
+    	}
+
+    	.banner .banner-text {
+    		font-size: 0.8em;
+    		font-weight: bold;
+    		margin-bottom: 0.6em;
+    	}
+
+    	.underlay {
+    		background: #06170a;
+    		text-shadow: none;
+    	}
+
+    	.spacer {
+    		clear: both;
+    		height: 8em;
+    		width: 100%;
+    	}
+
+    	.shadow {
+    		box-shadow: #000 0 0 5px;
+    	}
+
+    	.button {
+    		box-shadow: #000 0 0 5px;
+    		font-size: 1.2em;
+    		text-shadow: none;
+    	}
+
+    	.button-sm {
+    		background: #06170a;
+    		font-size: 1em;
+    		padding: 1em 4em;
+    	}
+
+    	.grow, .grow img, .button {
+    		transition: all 1s ease;
+    	}
+
+    	.grow:hover, .button:hover {
+    		transform: scale(1.2);
+    	}
+
+    	.grow:hover img {
+    		transform: scale(1.1);
+    	}
+
+    	a {
+    		transition: all 0.5s ease;
+    	}
+
+    	@keyframes bounce {
+		    0%, 100%, 20%, 50%, 80% {
+		        transform:translateX(0)
+		    }
+
+		    40% {
+		        transform:translateX(-30px)
+		    }
+
+		    60% {
+		        transform:translateX(-15px)
+		    }
+			}
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+    	$(function() {
+    		var wow = new WOW();
+				wow.init();
+
+				var rellax = new Rellax('.rellax');
+			});
+		</script>
+  </head>
+
+  <body>
+    <div class="none page">
+
+      <header class="header">
+      	<div class="columns large-1">
+      		<br />
+      	</div>
+
+        <a href="/{{ linkparams }}" class="logo columns large-4">
+        	Raymond Jay
+        	<div class="indent">Designs</div>
+        </a>
+
+        <div class="navigation columns large-6 text-right rellax" data-rellax-speed="1">
+        	<a class="navigation-inside">
+	        	Menu
+	        	<i class="fa fa-bars"></i>
+	        </a>
+        </div>
+
+      	<div class="columns large-1">
+      		<br />
+      	</div>
+
+        <div class="subtitle columns large-12 rellax" data-rellax-speed="2">
+        	We are<br />
+        	<span class="brand">RJ Designs</span>
+        </div>
+
+        <div class="connect columns large-12 text-right padding-3">
+      		<a class="button" href="/contact{{ linkparams }}">Connect</a>
+      	</div>
+
+	      <div class="pointer columns large-12 text-center rellax" data-magellan data-threshold="0" data-rellax-speed="1">
+	        <a href="#content" class="content">
+						<svg viewBox="0 0 20 25" width="1em">
+							<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+						</svg>
+	        </a>
+	      </div>
+      </header>
+
+      <article id="content" class="content row expanded clearfix" data-magellan-target="content">
+      	<div class="content-left row wow animate__fadeIn" data-wow-duration="2s" data-wow-offset="10">
+	      	<h1>We Are RJ Designs</h1>
+	      	<p class="text-justify">
+				In the dynamic landscape of the digital age, a compelling online presence is the cornerstone of success for small businesses. At our modern website design company, we specialize in crafting bespoke digital solutions tailored specifically for small businesses, empowering them to thrive in the competitive online sphere.
+			</p>
+			<p class="text-justify">
+				Our team comprises visionary designers, adept developers, and innovative strategists committed to delivering cutting-edge website designs that not only captivate but also convert visitors into loyal customers. We understand the unique needs of small businesses, recognizing the pivotal role a well-crafted website plays in establishing credibility, expanding reach, and driving growth.
+			</p>
+		</div>
+
+		<div class="spacer"><br /></div>
+
+		<div class="row expanded owners">
+			<div class="owners-left large-6 float-left shadow rellax" data-rellax-speed="1">
+				<img style="height:400px;"  src="assets/images/content/owners-2.jpg" />
+				<img style="height:400px;"  src="assets/images/content/owners.jpg" />
+			</div>
+
+			<div class="grid-x grid-margin-x">
+				<div class="cell large-3">
+					<br />
+				</div>
+
+				<div class="cell large-9 padding-1 underlay row">
+					<div class="columns large-4">
+						<br />
+					</div>
+
+					<div class="columns large-8 padding-1 text-justify">
+						<br />
+						<br />
+
+						<h2>Great Looking and Sales Driven Web Design Like No Other</h2>
+
+						<br />
+
+						<p>
+							We take a holistic approach to website design, starting with in-depth consultations to comprehend the essence of each business. By amalgamating creativity with functionality, we create intuitive, responsive, and visually stunning websites that resonate with the brand identity, reflecting its values, ethos, and aspirations.
+						</p>
+						<p>
+							Utilizing the latest technologies and adhering to industry best practices, our designs prioritize user experience, ensuring seamless navigation and engagement across devices. Whether it's an e-commerce platform, a service-oriented site, or a content-driven blog, our designs are versatile and adaptable, catering to diverse business objectives.
+						</p>
+						<p>
+							Beyond aesthetics, our commitment to empowering small businesses extends to providing user-friendly content management systems (CMS), enabling easy updates and maintenance without technical expertise. We emphasize not only the initial launch but also provide ongoing support, optimization, and security to safeguard against evolving digital threats.
+						</p>
+					</div>
+				</div>
+
+				<div class="cell large-8">
+					<br />
+				</div>
+
+				<div class="cell large-4 padding-2">
+					<a class="button" href="#">Read More &gt;</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="spacer"><br /></div>
+
+		<div class="h3 content-prompt row padding-3 text-justify rellax clearfix wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.5">
+			<p>In a world of complexity, we offer ease and expertise through integrated solutions and first-class client services.</p>
+		</div>
+
+		<div class="spacer"><br /></div>
+
+		<ul class="banner grid-x wow animate__fadeIn" data-wow-duration="2s">
+			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+				<div class="overlay cell grid-x">
+					<a class="cell grid-x align-bottom" href="#">
+						<div class="banner-text cell large-8 padding-1">
+							Something
+						</div>
+						<div class="cell large-4 text-right padding-1">
+							<svg viewBox="0 0 20 25" width="1em">
+								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+							</svg>
+						</div>
+					</a>
+			</li>
+
+			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+				<div class="overlay cell grid-x">
+					<a class="cell grid-x align-bottom" href="#">
+						<div class="banner-text cell large-8 padding-1">
+							Something
+						</div>
+						<div class="cell large-4 text-right padding-1">
+							<svg viewBox="0 0 20 25" width="1em">
+								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+							</svg>
+						</div>
+					</a>
+			</li>
+
+			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+				<div class="overlay cell grid-x">
+					<a class="cell grid-x align-bottom" href="#">
+						<div class="banner-text cell large-8 padding-1">
+							Something
+						</div>
+						<div class="cell large-4 text-right padding-1">
+							<svg viewBox="0 0 20 25" width="1em">
+								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+							</svg>
+						</div>
+					</a>
+			</li>
+
+			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+				<div class="overlay cell grid-x">
+					<a class="cell grid-x align-bottom" href="#">
+						<div class="banner-text cell large-8 padding-1">
+							Something
+						</div>
+						<div class="cell large-4 text-right padding-1">
+							<svg viewBox="0 0 20 25" width="1em">
+								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+							</svg>
+						</div>
+					</a>
+			</li>
+
+			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+				<div class="overlay cell grid-x">
+					<a class="cell grid-x align-bottom" href="#">
+						<div class="banner-text cell large-8 padding-1">
+							Something
+						</div>
+						<div class="cell large-4 text-right padding-1">
+							<svg viewBox="0 0 20 25" width="1em">
+								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+							</svg>
+						</div>
+					</a>
+			</li>
+
+			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+				<div class="overlay cell grid-x">
+					<a class="cell grid-x align-bottom" href="#">
+						<div class="banner-text cell large-8 padding-1">
+							Something
+						</div>
+						<div class="cell large-4 text-right padding-1">
+							<svg viewBox="0 0 20 25" width="1em">
+								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+							</svg>
+						</div>
+					</a>
+			</li>
+		</ul>
+
+		<div class="spacer"><br /></div>
+		<div class="spacer"><br /></div>
+
+		<div class="h3 content-prompt row padding-3 text-justify rellax wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.3">
+			<p>Instinctive generosity is what guides us. That's why we develop research and analysis that leads debate in the industry.</p>
+		</div>
+
+		<div class="spacer"><br /></div>
+
+		<div class="content-left row clearfix">
+			<div class="columns large-5 text-justify">
+				<h2>Our Customers Are Our Greatest Value</h2>
+
+				<p>
+					Transparency and collaboration lie at the core of our work ethos. Throughout the design process, we foster open communication, welcoming client feedback and revisions to ensure the final product aligns perfectly with their vision.
+				</p>
+				<p>
+					In a world where the digital landscape evolves rapidly, our company stands as a beacon of innovation and reliability for small businesses aspiring to make a mark online. We believe that a well-crafted website isn't just a digital address but a strategic asset that propels small businesses toward sustainable growth, fostering connections and unlocking boundless opportunities in the digital realm. Partner with us, and together, let's build an online presence that sets your business apart in today's competitive market.
+				</p>
+
+				<div class="text-center">
+					<a class="button button-sm" href="/designs{{ linkparams }}">See Other Work &gt;</a>
+				</div>
+			</div>
+
+			<div class="columns large-7 text-center padding-1 rellax" data-rellax-speed="1">
+				<div class="spacer"><br /></div>
+				<div class="spacer"><br /></div>
+
+				<a class="grow" href="#">
+					<img class="wow animate__fadeIn" src="assets/images/designs/design-modern.png" data-wow-duration="2s" />
+				</a>
+
+				<br />
+
+					<p class="descriptor text-justify padding-3 wow animate__fadeIn" data-wow-duration="2s">Our design innovations are parrell to our client's success and provide their customers with a confidence in their product or service's quality.</p>
+			</div>
+		</div>
+
+		<div class="spacer"><br /></div>
+
+		<div class="clients text-center row">
+			<h2 class="h1 wow animate__fadeIn" data-wow-duration="2s"">Our Clients</h2>
+			<ul class="menu grid-x grid-margin-x margin-3 wow animate__fadeIn" data-wow-duration="2s">
+				<li class="cell large-2"></li>
+
+				<li class="cell large-3 padding-1">
+					<img class="cell small-12 grow" src="/assets/images/logos/logo-autoshop.png" title="Nuthead Auto shop" alt="Nuthead Auto Shop" />
+				</li>
+
+				<li class="cell large-3 padding-1">
+					<img class="cell small-12 grow" src="/assets/images/logos/logo-kitchen.png" title="La' Nutteria" alt="La' Nutteria" />
+				</li>
+
+				<li class="cell large-3 grid-x padding-1">
+					<img class="cell small-5 grow" src="/assets/images/logos/logo.png" title="" alt="" />
+					<strong class="cell small-7">AVCorn</strong>
+				</li>
+
+				<li class="cell large-1"></li>
+			</ul>
+
+			<br />
+
+			<a class="button wow animate__fadeIn" data-wow-duration="2s" href="/contact{{ linkparams }}">Contact Today &gt;</a>
+		</div>
+      </article>
+
+      <br />
+
+      <footer class="footer row padding-3 wow animate__fadeIn" data-wow-duration="2s">
+      	<ul class="navigation menu">
+      		<li class="columns large-4 padding-3">
+      			Polices
+      			<ul>
+      				<li>
+      					<a href="#">Privacy Policy</a>
+      				</li>
+      				<li>
+      					<a href="#">Cookies</a>
+      				</li>
+      				<li>
+      					<a href="#">Our Policies</a>
+      				</li>
+      			</ul>
+      		</li>
+      		<li class="columns large-4 padding-3 text-center">
+      			<a href="/sitemap{{ linkparams }}">Sitemap</a>
+      		</li>
+      		<li class="columns large-4 padding-3 text-center">
+      			Connect
+      			<ul class="social nested menu">
+      				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+      				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+      				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+      				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+      			</ul>
+      		</li>
+      	</ul>
+
+      	<div class="copyright padding-1 text-center">
+      		&copy; 2024 RJ Designs
+      		<br />
+      		<a href="http://github.com/blaher/avcorn">Powered by AVCorn</a>
+      	</div>
+      </footer>
+    </div>
+  </body>
+</html>
