@@ -54,6 +54,14 @@
     		margin-left: 1em;
     	}
 
+    	.header .navigation a {
+    		color: #fff;
+    	}
+
+    	.header .navigation a:hover {
+    		background: rgba(200, 200, 200, 0.5);
+    	}
+
     	.header .subtitle {
     		margin: 0.5em 0 0 0;
     		font-size: 7em;
@@ -98,13 +106,29 @@
     		margin-top: 1em;
     	}
 
+    	.footer .navigation {
+    		background: rgba(0, 0, 0, 0.5);
+    		padding: 0 48px;
+    	}
+
     	.footer .navigation a {
     		color: #fff;
+    		transition: all 0.5s ease;
     	}
 
     	.footer .navigation li {
     		font-size: 1.5em;
     		font-weight: bold;
+    		transition: all 0.5s ease;
+    	}
+
+    	.footer .navigation li:hover {
+    		text-decoration: underline;
+    	}
+
+    	.footer .navigation li li:hover {
+    		background: rgba(200, 200, 200, 0.5);
+    		text-decoration: none;
     	}
 
     	.footer .navigation li li {
@@ -121,6 +145,7 @@
     	}
 
     	.footer .copyright {
+    		background: rgba(0, 0, 0, 0.5);
     		font-size: 1em;
     		font-weight: normal;
     	}
@@ -144,7 +169,7 @@
 
     	.banner a {
     		background: rgba(0, 0, 0, 0.5);
-    		background: linear-gradient(0deg, rgba(0, 0, 10, 1) 0%, rgba(200, 200, 200, 0.1) 100%);
+    		background: linear-gradient(0deg, rgba(5, 5, 5, 1) 0%, rgba(200, 200, 200, 0) 100%);
     		color: #fff;
     		font-size: 2em;
     		height: 360px;
@@ -179,7 +204,14 @@
 
     	.button {
     		box-shadow: #000 0 0 5px;
+    		font-size: 1.2em;
     		text-shadow: none;
+    	}
+
+    	.button-sm {
+    		background: #06170a;
+    		font-size: 1em;
+    		padding: 1em 4em;
     	}
 
     	.grow, .grow img, .button {
@@ -192,6 +224,10 @@
 
     	.grow:hover img {
     		transform: scale(1.1);
+    	}
+
+    	a {
+    		transition: all 0.5s ease;
     	}
 
     	@keyframes bounce {
@@ -235,10 +271,10 @@
         </div>
 
         <div class="navigation columns large-6 text-right rellax" data-rellax-speed="1">
-        	<div class="navigation-inside">
+        	<a class="navigation-inside">
 	        	Menu
 	        	<i class="fa fa-bars"></i>
-	        </div>
+	        </a>
         </div>
 
       	<div class="columns large-1">
@@ -324,9 +360,9 @@
 
 				<div class="spacer"><br /></div>
 
-				<h3 class="content-prompt row padding-3 text-justify rellax clearfix wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.5">
+				<div class="h3 content-prompt row padding-3 text-justify rellax clearfix wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.5">
 					<p>In a world of complexity, we offer ease and expertise through integrated solutions and first-class client services.</p>
-				</h3>
+				</div>
 
 				<div class="spacer"><br /></div>
 
@@ -419,22 +455,26 @@
 				<div class="spacer"><br /></div>
 				<div class="spacer"><br /></div>
 
-				<h3 class="content-prompt row padding-3 text-justify rellax wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.3">
+				<div class="h3 content-prompt row padding-3 text-justify rellax wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.3">
 					<p>Instinctive generosity is what guides us. That's why we develop research and analysis that leads debate in the industry.</p>
-				</h3>
+				</div>
 
 				<div class="spacer"><br /></div>
 
 				<div class="content-left row clearfix">
 					<div class="columns large-5 text-justify">
 						<h2>Our Customers Are Our Greatest Value</h2>
+
 						<p>
 							Transparency and collaboration lie at the core of our work ethos. Throughout the design process, we foster open communication, welcoming client feedback and revisions to ensure the final product aligns perfectly with their vision.
 						</p>
 						<p>
 							In a world where the digital landscape evolves rapidly, our company stands as a beacon of innovation and reliability for small businesses aspiring to make a mark online. We believe that a well-crafted website isn't just a digital address but a strategic asset that propels small businesses toward sustainable growth, fostering connections and unlocking boundless opportunities in the digital realm. Partner with us, and together, let's build an online presence that sets your business apart in today's competitive market.
 						</p>
-						<a class="button" href="/designs">See Other Work &gt;</a>
+
+						<div class="text-center">
+							<a class="button button-sm" href="/designs">See Other Work &gt;</a>
+						</div>
 					</div>
 
 					<div class="columns large-7 text-center padding-1 rellax" data-rellax-speed="1">
@@ -453,21 +493,21 @@
 
 				<div class="spacer"><br /></div>
 
-				<div class="clients text-center row wow animate__fadeIn" data-wow-duration="2s">
-					<h2>Our Clients</h2>
-					<ul class="menu grid-x grid-margin-x margin-3">
+				<div class="clients text-center row">
+					<h2 class="h1 wow animate__fadeIn" data-wow-duration="2s"">Our Clients</h2>
+					<ul class="menu grid-x grid-margin-x margin-3 wow animate__fadeIn" data-wow-duration="2s">
 						<li class="cell large-2"></li>
 
 						<li class="cell large-3 padding-1">
-							<img class="cell small-12" src="/assets/images/logos/logo-autoshop.png" title="Nuthead Auto shop" alt="Nuthead Auto Shop" />
+							<img class="cell small-12 grow" src="/assets/images/logos/logo-autoshop.png" title="Nuthead Auto shop" alt="Nuthead Auto Shop" />
 						</li>
 
 						<li class="cell large-3 padding-1">
-							<img class="cell small-12"  src="/assets/images/logos/logo-kitchen.png" title="La' Nutteria" alt="La' Nutteria" />
+							<img class="cell small-12 grow" src="/assets/images/logos/logo-kitchen.png" title="La' Nutteria" alt="La' Nutteria" />
 						</li>
 
 						<li class="cell large-3 grid-x padding-1">
-							<img class="cell small-5"  src="/assets/images/logos/logo.png" title="" alt="" />
+							<img class="cell small-5 grow" src="/assets/images/logos/logo.png" title="" alt="" />
 							<strong class="cell small-7">AVCorn</strong>
 						</li>
 
@@ -476,7 +516,7 @@
 
 					<br />
 
-					<a class="button" href="/contact">Contact Today &gt;</a>
+					<a class="button wow animate__fadeIn" data-wow-duration="2s" href="/contact">Contact Today &gt;</a>
 				</div>
           <!--{% block content %}
             <div  class="editable"></div>
@@ -487,7 +527,7 @@
 
       <footer class="footer row padding-3 wow animate__fadeIn" data-wow-duration="2s">
       	<ul class="navigation menu">
-      		<li class="columns small-3 padding-1">
+      		<li class="columns large-4 padding-3">
       			Polices
       			<ul>
       				<li>
@@ -501,13 +541,10 @@
       				</li>
       			</ul>
       		</li>
-      		<li class="columns small-3 padding-1">
-      			<a href="/contact">Contact</a>
-      		</li>
-      		<li class="columns small-3 padding-1">
+      		<li class="columns large-4 padding-3 text-center">
       			<a href="/sitemap">Sitemap</a>
       		</li>
-      		<li class="columns small-3 padding-1">
+      		<li class="columns large-4 padding-3 text-center">
       			Connect
       			<ul class="social nested menu">
       				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -518,7 +555,7 @@
       		</li>
       	</ul>
 
-      	<div class="copyright text-center">
+      	<div class="copyright padding-1 text-center">
       		&copy; 2024 RJ Designs
       		<br />
       		<a href="http://github.com/blaher/avcorn">Powered by AVCorn</a>
