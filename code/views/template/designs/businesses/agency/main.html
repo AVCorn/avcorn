@@ -46,9 +46,23 @@
     	}
 
     	.header .navigation-inside {
-    		/*background: rgba(0, 0, 0, 0.5);*/
     		display: inline;
     		padding: 0.5em 1em;
+    	}
+
+    	.header .navigation .navigation-inside:hover {
+    		background: rgba(200, 200, 200, 0.5);
+    	}
+
+    	.header .navigation li li {
+    		font-size: 0.8em;
+    		font-weight: normal;
+    		padding: 0.5em 1em;
+    	}
+
+    	.header .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
+    		content: "";
+    		display: none;
     	}
 
     	.header .navigation .fa {
@@ -59,7 +73,16 @@
     		color: #fff;
     	}
 
-    	.header .navigation a:hover {
+    	.header .navigation a:hover, .header .navigation .is-active a {
+    		color: #fff !important;
+    	}
+
+    	.header .navigation .submenu {
+    		background: rgba(0, 0, 0, 0.5);
+    		border: 0 none;
+    	}
+
+    	.header .navigation .submenu li:hover {
     		background: rgba(200, 200, 200, 0.5);
     	}
 
@@ -276,10 +299,19 @@
         </a>
 
         <div class="navigation columns large-6 text-right rellax" data-rellax-speed="1">
-        	<a class="navigation-inside">
-	        	Menu
-	        	<i class="fa fa-bars"></i>
-	        </a>
+        	<ul class="navigation-inside dropdown menu" data-dropdown-menu>
+						<li>
+							<a href="#">
+								Menu
+								<i class="fa fa-bars"></i>
+							</a>
+							<ul class="menu text-left">
+								<li><a href="/about{{ linkparams }}">About Us</a></li>
+								<li><a href="/clients{{ linkparams }}">Our Work</a></li>
+								<li><a href="/contact{{ linkparams }}">Contact Us</a></li>
+							</ul>
+						</li>
+	    		</ul>
         </div>
 
       	<div class="columns large-1">
