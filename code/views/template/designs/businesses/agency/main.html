@@ -29,9 +29,10 @@
     	}
 
     	.header .logo {
+    		background: rgba(0, 0, 0, 0.5);
     		font-size: 2em;
     		font-weight: bold;
-    		padding: 0.5em 0;
+    		padding: 0.5em 1em;
     	}
 
     	.header .logo .indent {
@@ -39,8 +40,14 @@
     	}
 
     	.header .navigation {
-    		padding: 2em 0;
+    		padding: 1em 0;
     		font-weight: bold;
+    	}
+
+    	.header .navigation-inside {
+    		/*background: rgba(0, 0, 0, 0.5);*/
+    		display: inline;
+    		padding: 0.5em 1em;
     	}
 
     	.header .navigation .fa {
@@ -48,13 +55,19 @@
     	}
 
     	.header .subtitle {
-    		margin: 1em 0 0 0;
+    		margin: 0.5em 0 0 0;
     		font-size: 7em;
     		line-height: 0.8em;
     	}
 
     	.header .subtitle .brand {
     		font-size: 0.8em;
+    	}
+
+    	.header .connect a {
+    		font-size: 1em;
+    		font-weight: bold;
+    		margin:0 2em;
     	}
 
     	.header .pointer {
@@ -112,10 +125,41 @@
     		font-weight: normal;
     	}
 
+    	.descriptor {
+    		margin: 0 4em;
+    	}
+
     	.banner {
-    		background: #fff;
-    		color: #000;
-    		height: 20em;
+    		background: #001b3a;
+    	}
+
+    	.banner .overlay {
+    		background: rgba(200, 200, 200, 0.1);
+    		transition: all 1s ease;
+    	}
+
+    	.banner .overlay:hover {
+    		background: rgba(200, 200, 200, 0.3);
+    	}
+
+    	.banner a {
+    		background: rgba(0, 0, 0, 0.5);
+    		background: linear-gradient(0deg, rgba(0, 0, 10, 1) 0%, rgba(200, 200, 200, 0.1) 100%);
+    		color: #fff;
+    		font-size: 2em;
+    		height: 360px;
+    		padding: 0 1em;
+    		transition: all 1s ease;
+    	}
+
+    	.banner a:hover {
+    		opacity: 50%;
+    	}
+
+    	.banner .banner-text {
+    		font-size: 0.8em;
+    		font-weight: bold;
+    		margin-bottom: 0.6em;
     	}
 
     	.underlay {
@@ -136,6 +180,18 @@
     	.button {
     		box-shadow: #000 0 0 5px;
     		text-shadow: none;
+    	}
+
+    	.grow, .grow img, .button {
+    		transition: all 1s ease;
+    	}
+
+    	.grow:hover, .button:hover {
+    		transform: scale(1.2);
+    	}
+
+    	.grow:hover img {
+    		transform: scale(1.1);
     	}
 
     	@keyframes bounce {
@@ -179,8 +235,10 @@
         </div>
 
         <div class="navigation columns large-6 text-right rellax" data-rellax-speed="1">
-        	Menu
-        	<i class="fa fa-bars"></i>
+        	<div class="navigation-inside">
+	        	Menu
+	        	<i class="fa fa-bars"></i>
+	        </div>
         </div>
 
       	<div class="columns large-1">
@@ -191,6 +249,10 @@
         	We are<br />
         	<span class="brand">RJ Designs</span>
         </div>
+
+        <div class="connect columns large-12 text-right padding-3">
+      		<a class="button" href="/contact">Connect</a>
+      	</div>
 
 	      <div class="pointer columns large-12 text-center rellax" data-magellan data-threshold="0" data-rellax-speed="1">
 	        <a href="#content" class="content">
@@ -204,10 +266,10 @@
       <article id="content" class="content row expanded clearfix" data-magellan-target="content">
       	<div class="content-left row wow animate__fadeIn" data-wow-duration="2s" data-wow-offset="10">
 	      	<h1>We Are RJ Designs</h1>
-	      	<p>
+	      	<p class="text-justify">
 						In the dynamic landscape of the digital age, a compelling online presence is the cornerstone of success for small businesses. At our modern website design company, we specialize in crafting bespoke digital solutions tailored specifically for small businesses, empowering them to thrive in the competitive online sphere.
 					</p>
-					<p>
+					<p class="text-justify">
 						Our team comprises visionary designers, adept developers, and innovative strategists committed to delivering cutting-edge website designs that not only captivate but also convert visitors into loyal customers. We understand the unique needs of small businesses, recognizing the pivotal role a well-crafted website plays in establishing credibility, expanding reach, and driving growth.
 					</p>
 				</div>
@@ -230,11 +292,14 @@
 								<br />
 							</div>
 
-							<div class="columns large-8 padding-1">
+							<div class="columns large-8 padding-1 text-justify">
 								<br />
 								<br />
 
 								<h2>Great Looking and Sales Driven Web Design Like No Other</h2>
+
+								<br />
+
 								<p>
 									We take a holistic approach to website design, starting with in-depth consultations to comprehend the essence of each business. By amalgamating creativity with functionality, we create intuitive, responsive, and visually stunning websites that resonate with the brand identity, reflecting its values, ethos, and aspirations.
 								</p>
@@ -259,20 +324,102 @@
 
 				<div class="spacer"><br /></div>
 
-				<h3 class="content-prompt row padding-3 rellax clearfix wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.5">
+				<h3 class="content-prompt row padding-3 text-justify rellax clearfix wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.5">
 					<p>In a world of complexity, we offer ease and expertise through integrated solutions and first-class client services.</p>
 				</h3>
 
 				<div class="spacer"><br /></div>
 
-				<div class="banner row expanded wow animate__fadeIn" data-wow-duration="2s">
-					Something here later.
-				</div>
+				<ul class="banner grid-x wow animate__fadeIn" data-wow-duration="2s">
+					<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="#">
+								<div class="banner-text cell large-8 padding-1">
+									Something
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
+
+					<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="#">
+								<div class="banner-text cell large-8 padding-1">
+									Something
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
+
+					<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="#">
+								<div class="banner-text cell large-8 padding-1">
+									Something
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
+
+					<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="#">
+								<div class="banner-text cell large-8 padding-1">
+									Something
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
+
+					<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="#">
+								<div class="banner-text cell large-8 padding-1">
+									Something
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
+
+					<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="#">
+								<div class="banner-text cell large-8 padding-1">
+									Something
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
+				</ul>
 
 				<div class="spacer"><br /></div>
 				<div class="spacer"><br /></div>
 
-				<h3 class="content-prompt row padding-3 rellax wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.3">
+				<h3 class="content-prompt row padding-3 text-justify rellax wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.3">
 					<p>Instinctive generosity is what guides us. That's why we develop research and analysis that leads debate in the industry.</p>
 				</h3>
 
@@ -290,11 +437,17 @@
 						<a class="button" href="/designs">See Other Work &gt;</a>
 					</div>
 
-					<div class="columns large-7 text-center rellax" data-rellax-speed="1">
+					<div class="columns large-7 text-center padding-1 rellax" data-rellax-speed="1">
 						<div class="spacer"><br /></div>
 						<div class="spacer"><br /></div>
-						<img class="wow animate__fadeIn" src="assets/images/designs/design-modern.png" data-wow-duration="2s" />
-						<p class="wow animate__fadeIn" data-wow-duration="2s">I'll change this out later.</p>
+
+						<a class="grow" href="#">
+							<img class="wow animate__fadeIn" src="assets/images/designs/design-modern.png" data-wow-duration="2s" />
+						</a>
+
+						<br />
+
+							<p class="descriptor text-justify padding-3 wow animate__fadeIn" data-wow-duration="2s">Our design innovations are parrell to our client's success and provide their customers with a confidence in their product or service's quality.</p>
 					</div>
 				</div>
 
@@ -302,7 +455,27 @@
 
 				<div class="clients text-center row wow animate__fadeIn" data-wow-duration="2s">
 					<h2>Our Clients</h2>
-					<p>Clients Here</p>
+					<ul class="menu grid-x grid-margin-x margin-3">
+						<li class="cell large-2"></li>
+
+						<li class="cell large-3 padding-1">
+							<img class="cell small-12" src="/assets/images/logos/logo-autoshop.png" title="Nuthead Auto shop" alt="Nuthead Auto Shop" />
+						</li>
+
+						<li class="cell large-3 padding-1">
+							<img class="cell small-12"  src="/assets/images/logos/logo-kitchen.png" title="La' Nutteria" alt="La' Nutteria" />
+						</li>
+
+						<li class="cell large-3 grid-x padding-1">
+							<img class="cell small-5"  src="/assets/images/logos/logo.png" title="" alt="" />
+							<strong class="cell small-7">AVCorn</strong>
+						</li>
+
+						<li class="cell large-1"></li>
+					</ul>
+
+					<br />
+
 					<a class="button" href="/contact">Contact Today &gt;</a>
 				</div>
           <!--{% block content %}
