@@ -15,17 +15,17 @@
 
     <style>
     	body {
-    		background: #000;
-    		text-shadow: 0px 0px 2em #000;
-    		color: #fff;
+    		color: rgb(0, 0, 20);
     	}
 
     	.header {
-    		background: url("assets/images/content/agency-bg.jpg") center center no-repeat;
+    		background: url("https://unsplash.it/2560/800") center center no-repeat;
     		background-size: cover;
+    		color: #fff;
     		font-family: Halcom-Bold, Bold-Fallback, Arial, sans-serif, Arial, sans-serif;
     		font-size: 1.5em;
-    		height: 100vh;
+    		height: 400px;
+    		text-shadow: 0px 0px 2em #000;
     	}
 
     	.header .logo {
@@ -46,6 +46,7 @@
     	}
 
     	.header .navigation-inside {
+    		background: rgba(256, 256, 256, 0.5);
     		display: inline;
     		padding: 0.5em 1em;
     	}
@@ -78,60 +79,38 @@
     	}
 
     	.header .navigation .submenu {
-    		background: rgba(0, 0, 0, 0.5);
+    		background: rgba(256, 256, 256, 0.6);
     		border: 0 none;
+    		color: #000;
+    	}
+
+    	.header .navigation .submenu a, .header .navigation .submenu .is-active a, .header .navigation .submenu a:hover {
+    		color: #000 !important;
     	}
 
     	.header .navigation .submenu li:hover {
-    		background: rgba(200, 200, 200, 0.5);
+    		background: rgba(200, 200, 200, 0.6);
     	}
 
     	.header .subtitle {
     		margin: 0.5em 0 0 0;
-    		font-size: 7em;
+    		font-size: 4em;
     		line-height: 0.8em;
     	}
 
-    	.header .subtitle .brand {
-    		font-size: 0.8em;
-    	}
-
-    	.header .connect a {
-    		font-size: 1em;
-    		font-weight: bold;
-    		margin:0 2em;
-    	}
-
-    	.header .pointer {
-    		bottom: 1em;
-    		position: absolute;
-    		transform: rotate(90deg);
-    	}
-
-    	.header .pointer svg {
-    		rotate: 90deg;
-    		animation: bounce 1.8s infinite;
-    	}
-
-    	.page {
-    		background: url("assets/images/content/agency-bg-bottom.jpg") bottom center no-repeat;
-    		background-size: 100%;
-    	}
-
-    	.owners-left {
-    		background: grey;
-    		position: absolute;
-    		text-align: right;
-    	}
-
     	.footer {
+    		background: #000120 url("assets/images/content/agency-bg-bottom-inside.jpg") center 33% no-repeat;
+    		background-size: cover;
+    		color: #fff;
     		font-size: 1em;
     		font-weight: bold;
     		margin-top: 1em;
+    		padding-top: 2em;
+    		text-shadow: 0px 0px 2em #000;
     	}
 
     	.footer .navigation {
-    		background: rgba(0, 0, 0, 0.5);
+    		background: rgba(0, 0, 16, 0.5);
     		padding: 0 48px;
     	}
 
@@ -144,15 +123,15 @@
     		font-size: 1.5em;
     		font-weight: bold;
     		transition: all 0.5s ease;
+    		vertical-align: top;
     	}
 
     	.footer .navigation li:hover {
-    		text-decoration: underline;
+    		background: rgba(200, 200, 200, 0.5);
     	}
 
     	.footer .navigation li li:hover {
     		background: rgba(200, 200, 200, 0.5);
-    		text-decoration: none;
     	}
 
     	.footer .navigation li li {
@@ -162,6 +141,12 @@
 
     	.footer .social {
     		font-size: 1.5em;
+    		margin: 0;
+    	}
+
+    	.footer .social li {
+    		display: inline-block;
+    		flex: none;
     	}
 
     	.footer .social a {
@@ -169,50 +154,13 @@
     	}
 
     	.footer .copyright {
-    		background: rgba(0, 0, 0, 0.5);
+    		background: rgba(0, 0, 16, 0.5);
     		font-size: 1em;
     		font-weight: normal;
     	}
 
     	.descriptor {
     		margin: 0 4em;
-    	}
-
-    	.banner {
-    		background: #001b3a;
-    	}
-
-    	.banner .overlay {
-    		background: rgba(200, 200, 200, 0.1);
-    		transition: all 1s ease;
-    	}
-
-    	.banner .overlay:hover {
-    		background: rgba(200, 200, 200, 0.3);
-    	}
-
-    	.banner a {
-    		background: rgba(0, 0, 0, 0.5);
-    		background: linear-gradient(0deg, rgba(5, 5, 5, 1) 0%, rgba(200, 200, 200, 0) 100%);
-    		color: #fff;
-    		font-size: 2em;
-    		height: 360px;
-    		padding: 0 1em;
-    		transition: all 1s ease;
-    	}
-
-    	.banner a:hover {
-    		opacity: 50%;
-    	}
-
-    	.banner a:hover svg {
-    		animation: bounce 1s;
-    	}
-
-    	.banner .banner-text {
-    		font-size: 0.8em;
-    		font-weight: bold;
-    		margin-bottom: 0.6em;
     	}
 
     	.underlay {
@@ -233,7 +181,6 @@
     	.button {
     		box-shadow: #000 0 0 5px;
     		font-size: 1.2em;
-    		text-shadow: none;
     	}
 
     	.button-sm {
@@ -319,21 +266,8 @@
       	</div>
 
         <div class="subtitle columns large-12 rellax" data-rellax-speed="2">
-        	We are<br />
-        	<span class="brand">RJ Designs</span>
+        	{% block header %}{% endblock %}
         </div>
-
-        <div class="connect columns large-12 text-right padding-3">
-      		<a class="button" href="/contact{{ linkparams }}">Connect</a>
-      	</div>
-
-	      <div class="pointer columns large-12 text-center rellax" data-magellan data-threshold="0" data-rellax-speed="1">
-	        <a href="#content" class="content">
-						<svg viewBox="0 0 20 25" width="1em">
-							<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-						</svg>
-	        </a>
-	      </div>
       </header>
 
       <article id="content" class="content row expanded clearfix" data-magellan-target="content">
@@ -344,41 +278,51 @@
 
       <br />
 
-      <footer class="footer row padding-3 wow animate__fadeIn" data-wow-duration="2s">
-      	<ul class="navigation menu">
-      		<li class="columns large-4 padding-3">
-      			Polices
-      			<ul>
-      				<li>
-      					<a href="#">Privacy Policy</a>
-      				</li>
-      				<li>
-      					<a href="#">Cookies</a>
-      				</li>
-      				<li>
-      					<a href="#">Our Policies</a>
-      				</li>
-      			</ul>
-      		</li>
-      		<li class="columns large-4 padding-3 text-center">
-      			<a href="/sitemap{{ linkparams }}">Sitemap</a>
-      		</li>
-      		<li class="columns large-4 padding-3 text-center">
-      			Connect
-      			<ul class="social nested menu">
-      				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-      				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-      				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-      				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-      			</ul>
-      		</li>
-      	</ul>
+      <footer class="footer wow animate__fadeIn" data-wow-duration="2s">
+      	<div class="row">
+	      	<ul class="navigation menu expanded">
+	      		<li class="padding-1 text-left">
+	      			Polices
+	      			<ul class="menu vertical align-left">
+	      				<li>
+	      					<a href="#">Privacy Policy</a>
+	      				</li>
+	      				<li>
+	      					<a href="#">Cookies</a>
+	      				</li>
+	      				<li>
+	      					<a href="#">Our Policies</a>
+	      				</li>
+	      			</ul>
+	      		</li>
 
-      	<div class="copyright padding-1 text-center">
-      		&copy; 2024 RJ Designs
-      		<br />
-      		<a href="http://github.com/blaher/avcorn">Powered by AVCorn</a>
-      	</div>
+	      		<li class="padding-1 text-center">
+	      			<a href="/contact{{ linkparams }}">Contact</a>
+	      		</li>
+	      		
+
+	      		<li class="padding-1 text-center">
+	      			<a href="/sitemap{{ linkparams }}">Sitemap</a>
+	      		</li>
+
+	      		<li class="padding-1 text-right">
+	      			<span class="padding-1">Connect</span>
+
+	      			<ul class="social align-right">
+	      				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+	      				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+	      				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+	      				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+	      			</ul>
+	      		</li>
+	      	</ul>
+
+	      	<div class="copyright padding-1 text-center">
+	      		&copy; 2024 RJ Designs
+	      		<br />
+	      		<a href="http://github.com/blaher/avcorn">Powered by AVCorn</a>
+	      	</div>
+	      </div>
       </footer>
     </div>
   </body>

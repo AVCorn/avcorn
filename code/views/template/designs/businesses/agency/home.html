@@ -144,15 +144,15 @@
     		font-size: 1.5em;
     		font-weight: bold;
     		transition: all 0.5s ease;
+    		vertical-align: top;
     	}
 
     	.footer .navigation li:hover {
-    		text-decoration: underline;
+    		background: rgba(200, 200, 200, 0.5);
     	}
 
     	.footer .navigation li li:hover {
     		background: rgba(200, 200, 200, 0.5);
-    		text-decoration: none;
     	}
 
     	.footer .navigation li li {
@@ -162,6 +162,12 @@
 
     	.footer .social {
     		font-size: 1.5em;
+    	}
+
+    	.footer .social li {
+    		display: inline-block;
+    		flex: none;
+    		margin: 0;
     	}
 
     	.footer .social a {
@@ -307,7 +313,7 @@
 					</a>
 					<ul class="menu text-left">
 						<li><a href="/about{{ linkparams }}">About Us</a></li>
-						<li><a href="/clients{{ linkparams }}">Our Work</a></li>
+						<li><a href="/designs{{ linkparams }}">Our Work</a></li>
 						<li><a href="/contact{{ linkparams }}">Contact Us</a></li>
 					</ul>
 				</li>
@@ -403,11 +409,11 @@
 		<div class="spacer"><br /></div>
 
 		<ul class="banner grid-x wow animate__fadeIn" data-wow-duration="2s">
-			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+			<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?1') center center no-repeat; background-size:100%;">
 				<div class="overlay cell grid-x">
 					<a class="cell grid-x align-bottom" href="#">
 						<div class="banner-text cell large-8 padding-1">
-							Something
+							Farmers Market Client
 						</div>
 						<div class="cell large-4 text-right padding-1">
 							<svg viewBox="0 0 20 25" width="1em">
@@ -417,11 +423,11 @@
 					</a>
 			</li>
 
-			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+			<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?2') center center no-repeat; background-size:100%;">
 				<div class="overlay cell grid-x">
-					<a class="cell grid-x align-bottom" href="#">
+					<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
 						<div class="banner-text cell large-8 padding-1">
-							Something
+							Legal Client
 						</div>
 						<div class="cell large-4 text-right padding-1">
 							<svg viewBox="0 0 20 25" width="1em">
@@ -431,11 +437,11 @@
 					</a>
 			</li>
 
-			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+			<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?3') center center no-repeat; background-size:100%;">
 				<div class="overlay cell grid-x">
-					<a class="cell grid-x align-bottom" href="#">
+					<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
 						<div class="banner-text cell large-8 padding-1">
-							Something
+							Automotive Client
 						</div>
 						<div class="cell large-4 text-right padding-1">
 							<svg viewBox="0 0 20 25" width="1em">
@@ -445,11 +451,11 @@
 					</a>
 			</li>
 
-			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+			<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?4') center center no-repeat; background-size:100%;">
 				<div class="overlay cell grid-x">
-					<a class="cell grid-x align-bottom" href="#">
+					<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
 						<div class="banner-text cell large-8 padding-1">
-							Something
+							Church Client
 						</div>
 						<div class="cell large-4 text-right padding-1">
 							<svg viewBox="0 0 20 25" width="1em">
@@ -459,11 +465,11 @@
 					</a>
 			</li>
 
-			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+			<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?5') center center no-repeat; background-size:100%;">
 				<div class="overlay cell grid-x">
-					<a class="cell grid-x align-bottom" href="#">
+					<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
 						<div class="banner-text cell large-8 padding-1">
-							Something
+							Lawn Service Client
 						</div>
 						<div class="cell large-4 text-right padding-1">
 							<svg viewBox="0 0 20 25" width="1em">
@@ -473,11 +479,11 @@
 					</a>
 			</li>
 
-			<li class="cell grid-x large-4" style="background:url('/assets/images/logos/logo.png') center center no-repeat; background-size:100%;">
+			<li class="cell grid-x large-4">
 				<div class="overlay cell grid-x">
-					<a class="cell grid-x align-bottom" href="#">
+					<a class="cell grid-x align-bottom" href="/clients">
 						<div class="banner-text cell large-8 padding-1">
-							Something
+							Our Work
 						</div>
 						<div class="cell large-4 text-right padding-1">
 							<svg viewBox="0 0 20 25" width="1em">
@@ -518,7 +524,7 @@
 				<div class="spacer"><br /></div>
 
 				<a class="grow" href="#">
-					<img class="wow animate__fadeIn" src="assets/images/designs/design-modern.png" data-wow-duration="2s" />
+					<img class="wow animate__fadeIn" src="https://unsplash.it/300?1" data-wow-duration="2s" />
 				</a>
 
 				<br />
@@ -532,22 +538,37 @@
 		<div class="clients text-center row">
 			<h2 class="h1 wow animate__fadeIn" data-wow-duration="2s"">Our Clients</h2>
 			<ul class="menu grid-x grid-margin-x margin-3 wow animate__fadeIn" data-wow-duration="2s">
-				<li class="cell large-2"></li>
-
 				<li class="cell large-3 padding-1">
-					<img class="cell small-12" src="/assets/images/logos/logo-autoshop.png" title="Nuthead Auto shop" alt="Nuthead Auto Shop" />
+					<img class="cell small-12" src="https://unsplash.it/300/100?1" alt="" />
 				</li>
 
 				<li class="cell large-3 padding-1">
-					<img class="cell small-12" src="/assets/images/logos/logo-kitchen.png" title="La' Nutteria" alt="La' Nutteria" />
+					<img class="cell small-12" src="https://unsplash.it/300/100?2" alt="" />
 				</li>
 
-				<li class="cell large-3 grid-x padding-1">
-					<img class="cell small-5" src="/assets/images/logos/logo.png" title="" alt="" />
-					<strong class="cell small-7">AVCorn</strong>
+				<li class="cell large-3 padding-1">
+					<img class="cell small-12" src="https://unsplash.it/300/100?3" alt="" />
 				</li>
 
-				<li class="cell large-1"></li>
+				<li class="cell large-3 padding-1">
+					<img class="cell small-12" src="https://unsplash.it/300/100?4" alt="" />
+				</li>
+
+				<li class="cell large-3 padding-1">
+					<img class="cell small-12" src="https://unsplash.it/300/100?5" alt="" />
+				</li>
+
+				<li class="cell large-3 padding-1">
+					<img class="cell small-12" src="https://unsplash.it/300/100?6" alt="" />
+				</li>
+
+				<li class="cell large-3 padding-1">
+					<img class="cell small-12" src="https://unsplash.it/300/100?7" alt="" />
+				</li>
+
+				<li class="cell large-3 padding-1">
+					<img class="cell small-12" src="https://unsplash.it/300/100?8" alt="" />
+				</li>
 			</ul>
 
 			<br />
@@ -559,10 +580,10 @@
       <br />
 
       <footer class="footer row padding-3 wow animate__fadeIn" data-wow-duration="2s">
-      	<ul class="navigation menu">
-      		<li class="columns large-4 padding-3">
+      	<ul class="navigation menu expanded padding-3">
+      		<li class="padding-1 text-left">
       			Polices
-      			<ul>
+      			<ul class="menu vertical align-left">
       				<li>
       					<a href="#">Privacy Policy</a>
       				</li>
@@ -574,12 +595,20 @@
       				</li>
       			</ul>
       		</li>
-      		<li class="columns large-4 padding-3 text-center">
+
+      		<li class="padding-1 text-center">
+      			<a href="/contact{{ linkparams }}">Contact</a>
+      		</li>
+      		
+
+      		<li class="padding-1 text-center">
       			<a href="/sitemap{{ linkparams }}">Sitemap</a>
       		</li>
-      		<li class="columns large-4 padding-3 text-center">
-      			Connect
-      			<ul class="social nested menu">
+
+      		<li class="padding-1 text-right">
+      			<span class="padding-1">Connect</span>
+
+      			<ul class="social align-right">
       				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
       				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
       				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -587,13 +616,6 @@
       			</ul>
       		</li>
       	</ul>
-
-      	<div class="copyright padding-1 text-center">
-      		&copy; 2024 RJ Designs
-      		<br />
-      		<a href="http://github.com/blaher/avcorn">Powered by AVCorn</a>
-      	</div>
-      </footer>
     </div>
   </body>
 </html>
