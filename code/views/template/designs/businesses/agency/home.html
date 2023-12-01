@@ -97,9 +97,15 @@
     	}
 
     	.header .connect a {
+    		background: rgba(0, 30, 50);
     		font-size: 1em;
     		font-weight: bold;
     		margin:0 2em;
+    	}
+
+    	.header .connect a:hover {
+    		color: rgb(254, 254, 254);
+    		background: rgb(23, 121, 186);
     	}
 
     	.header .pointer {
@@ -222,7 +228,7 @@
     	}
 
     	.underlay {
-    		background: #06170a;
+    		background: rgba(0, 30, 50);
     		text-shadow: none;
     	}
 
@@ -243,7 +249,7 @@
     	}
 
     	.button-sm {
-    		background: #06170a;
+    		background: rgba(0, 30, 50);
     		font-size: 1em;
     		padding: 1em 4em;
     	}
@@ -387,6 +393,8 @@
 						<p>
 							Beyond aesthetics, our commitment to empowering small businesses extends to providing user-friendly content management systems (CMS), enabling easy updates and maintenance without technical expertise. We emphasize not only the initial launch but also provide ongoing support, optimization, and security to safeguard against evolving digital threats.
 						</p>
+
+						<br />
 					</div>
 				</div>
 
@@ -395,6 +403,7 @@
 				</div>
 
 				<div class="cell large-4 padding-2">
+					<br />
 					<a class="button" href="#">Read More &gt;</a>
 				</div>
 			</div>
@@ -573,7 +582,9 @@
 
 			<br />
 
-			<a class="button wow animate__fadeIn" data-wow-duration="2s" href="/contact{{ linkparams }}">Contact Today &gt;</a>
+			<a class="button wow animate__fadeIn" data-wow-duration="2s" href="/contact{{ linkparams }}">
+				<strong class="h5" style="font-weight:bold;">Contact Today &gt;</strong>
+			</a>
 		</div>
       </article>
 
