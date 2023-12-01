@@ -130,6 +130,15 @@
     		text-align: right;
     	}
 
+    	.customers .underlay {
+    		background: rgb(11, 45, 67);
+    	}
+
+    	.customers-right {
+    		position: absolute;
+    		text-align: left;
+    	}
+
     	.footer {
     		font-size: 1em;
     		font-weight: bold;
@@ -137,7 +146,7 @@
     	}
 
     	.footer .navigation {
-    		background: rgba(0, 0, 0, 0.5);
+    		background: rgba(20, 20, 20, 0.7);
     		padding: 0 48px;
     	}
 
@@ -186,6 +195,10 @@
     		font-weight: normal;
     	}
 
+    	.intro {
+    		background: rgba(50, 50, 50, 0.5);
+    	}
+
     	.descriptor {
     		margin: 0 4em;
     	}
@@ -230,6 +243,10 @@
     	.underlay {
     		background: rgba(0, 30, 50);
     		text-shadow: none;
+    	}
+
+    	.underlay .button {
+    		box-shadow: none;
     	}
 
     	.spacer {
@@ -311,19 +328,19 @@
         </a>
 
         <div class="navigation columns large-6 text-right rellax" data-rellax-speed="1">
-			<ul class="navigation-inside dropdown menu" data-dropdown-menu>
-				<li>
-					<a href="#">
-						Menu
-						<i class="fa fa-bars"></i>
-					</a>
-					<ul class="menu text-left">
-						<li><a href="/about{{ linkparams }}">About Us</a></li>
-						<li><a href="/designs{{ linkparams }}">Our Work</a></li>
-						<li><a href="/contact{{ linkparams }}">Contact Us</a></li>
+					<ul class="navigation-inside dropdown menu" data-dropdown-menu>
+						<li>
+							<a href="#">
+								Menu
+								<i class="fa fa-bars"></i>
+							</a>
+							<ul class="menu text-left">
+								<li><a href="/about{{ linkparams }}">About Us</a></li>
+								<li><a href="/designs{{ linkparams }}">Our Work</a></li>
+								<li><a href="/contact{{ linkparams }}">Contact Us</a></li>
+							</ul>
+						</li>
 					</ul>
-				</li>
-			</ul>
         </div>
 
       	<div class="columns large-1">
@@ -348,249 +365,266 @@
 	      </div>
       </header>
 
+      <div class="spacer"><br /></div>
+
       <article id="content" class="content row expanded clearfix" data-magellan-target="content">
-      	<div class="content-left row wow animate__fadeIn" data-wow-duration="2s" data-wow-offset="10">
-	      	<h1>We Are RJ Designs</h1>
+      	<div class="intro columns large-7 large-centered wow animate__fadeIn animate__slideInUp align-center padding-3" data-wow-duration="2s">
+	      	<h1 class="h2 text-uppercase text-center">Aesthetically Pleasing and Sales Driven Website Design</h1>
+
 	      	<p class="text-justify">
-				In the dynamic landscape of the digital age, a compelling online presence is the cornerstone of success for small businesses. At our modern website design company, we specialize in crafting bespoke digital solutions tailored specifically for small businesses, empowering them to thrive in the competitive online sphere.
-			</p>
-			<p class="text-justify">
-				Our team comprises visionary designers, adept developers, and innovative strategists committed to delivering cutting-edge website designs that not only captivate but also convert visitors into loyal customers. We understand the unique needs of small businesses, recognizing the pivotal role a well-crafted website plays in establishing credibility, expanding reach, and driving growth.
-			</p>
-		</div>
-
-		<div class="spacer"><br /></div>
-
-		<div class="row expanded owners">
-			<div class="owners-left large-6 float-left shadow rellax" data-rellax-speed="1">
-				<img src="assets/images/content/owners.jpg" title="Mr. Deep Clean and some nerd" alt="Mr. Deep Clean and some nerd" />
-			</div>
-
-			<div class="grid-x grid-margin-x">
-				<div class="cell large-3">
-					<br />
+						In the dynamic landscape of the digital age, a compelling online presence is the cornerstone of success for small businesses. At our modern website design company, we specialize in crafting bespoke digital solutions tailored specifically for small businesses, empowering them to thrive in the competitive online sphere.
+					</p>
+					<p class="text-justify">
+						Our team comprises visionary designers, adept developers, and innovative strategists committed to delivering cutting-edge website designs that not only captivate but also convert visitors into loyal customers. We understand the unique needs of small businesses, recognizing the pivotal role a well-crafted website plays in establishing credibility, expanding reach, and driving growth.
+					</p>
 				</div>
 
-				<div class="cell large-9 padding-1 underlay row">
-					<div class="columns large-4">
-						<br />
-					</div>
-
-					<div class="columns large-8 padding-1 text-justify">
-						<br />
-						<br />
-
-						<h2>Great Looking and Sales Driven Web Design Like No Other</h2>
-
-						<br />
-
-						<p>
-							We take a holistic approach to website design, starting with in-depth consultations to comprehend the essence of each business. By amalgamating creativity with functionality, we create intuitive, responsive, and visually stunning websites that resonate with the brand identity, reflecting its values, ethos, and aspirations.
-						</p>
-						<p>
-							Utilizing the latest technologies and adhering to industry best practices, our designs prioritize user experience, ensuring seamless navigation and engagement across devices. Whether it's an e-commerce platform, a service-oriented site, or a content-driven blog, our designs are versatile and adaptable, catering to diverse business objectives.
-						</p>
-						<p>
-							Beyond aesthetics, our commitment to empowering small businesses extends to providing user-friendly content management systems (CMS), enabling easy updates and maintenance without technical expertise. We emphasize not only the initial launch but also provide ongoing support, optimization, and security to safeguard against evolving digital threats.
-						</p>
-
-						<br />
-					</div>
-				</div>
-
-				<div class="cell large-8">
-					<br />
-				</div>
-
-				<div class="cell large-4 padding-2">
-					<br />
-					<a class="button" href="#">Read More &gt;</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="spacer"><br /></div>
-
-		<div class="h3 content-prompt row padding-3 text-justify rellax clearfix wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.5">
-			<p>In a world of complexity, we offer ease and expertise through integrated solutions and first-class client services.</p>
-		</div>
-
-		<div class="spacer"><br /></div>
-
-		<ul class="banner grid-x wow animate__fadeIn" data-wow-duration="2s">
-			<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?1') center center no-repeat; background-size:100%;">
-				<div class="overlay cell grid-x">
-					<a class="cell grid-x align-bottom" href="#">
-						<div class="banner-text cell large-8 padding-1">
-							Farmers Market Client
-						</div>
-						<div class="cell large-4 text-right padding-1">
-							<svg viewBox="0 0 20 25" width="1em">
-								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-							</svg>
-						</div>
-					</a>
-			</li>
-
-			<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?2') center center no-repeat; background-size:100%;">
-				<div class="overlay cell grid-x">
-					<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
-						<div class="banner-text cell large-8 padding-1">
-							Legal Client
-						</div>
-						<div class="cell large-4 text-right padding-1">
-							<svg viewBox="0 0 20 25" width="1em">
-								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-							</svg>
-						</div>
-					</a>
-			</li>
-
-			<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?3') center center no-repeat; background-size:100%;">
-				<div class="overlay cell grid-x">
-					<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
-						<div class="banner-text cell large-8 padding-1">
-							Automotive Client
-						</div>
-						<div class="cell large-4 text-right padding-1">
-							<svg viewBox="0 0 20 25" width="1em">
-								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-							</svg>
-						</div>
-					</a>
-			</li>
-
-			<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?4') center center no-repeat; background-size:100%;">
-				<div class="overlay cell grid-x">
-					<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
-						<div class="banner-text cell large-8 padding-1">
-							Church Client
-						</div>
-						<div class="cell large-4 text-right padding-1">
-							<svg viewBox="0 0 20 25" width="1em">
-								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-							</svg>
-						</div>
-					</a>
-			</li>
-
-			<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?5') center center no-repeat; background-size:100%;">
-				<div class="overlay cell grid-x">
-					<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
-						<div class="banner-text cell large-8 padding-1">
-							Lawn Service Client
-						</div>
-						<div class="cell large-4 text-right padding-1">
-							<svg viewBox="0 0 20 25" width="1em">
-								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-							</svg>
-						</div>
-					</a>
-			</li>
-
-			<li class="cell grid-x large-4">
-				<div class="overlay cell grid-x">
-					<a class="cell grid-x align-bottom" href="/clients">
-						<div class="banner-text cell large-8 padding-1">
-							Our Work
-						</div>
-						<div class="cell large-4 text-right padding-1">
-							<svg viewBox="0 0 20 25" width="1em">
-								<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-							</svg>
-						</div>
-					</a>
-			</li>
-		</ul>
-
-		<div class="spacer"><br /></div>
-		<div class="spacer"><br /></div>
-
-		<div class="h3 content-prompt row padding-3 text-justify rellax wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.3">
-			<p>Instinctive generosity is what guides us. That's why we develop research and analysis that leads debate in the industry.</p>
-		</div>
-
-		<div class="spacer"><br /></div>
-
-		<div class="content-left row clearfix">
-			<div class="columns large-5 text-justify">
-				<h2>Our Customers Are Our Greatest Value</h2>
-
-				<p>
-					Transparency and collaboration lie at the core of our work ethos. Throughout the design process, we foster open communication, welcoming client feedback and revisions to ensure the final product aligns perfectly with their vision.
-				</p>
-				<p>
-					In a world where the digital landscape evolves rapidly, our company stands as a beacon of innovation and reliability for small businesses aspiring to make a mark online. We believe that a well-crafted website isn't just a digital address but a strategic asset that propels small businesses toward sustainable growth, fostering connections and unlocking boundless opportunities in the digital realm. Partner with us, and together, let's build an online presence that sets your business apart in today's competitive market.
-				</p>
-
-				<div class="text-center">
-					<a class="button button-sm" href="/designs{{ linkparams }}">See Other Work &gt;</a>
-				</div>
-			</div>
-
-			<div class="columns large-7 text-center padding-1 rellax" data-rellax-speed="1">
 				<div class="spacer"><br /></div>
 				<div class="spacer"><br /></div>
 
-				<a class="grow" href="#">
-					<img class="wow animate__fadeIn" src="https://unsplash.it/300?1" data-wow-duration="2s" />
-				</a>
+				<div class="owners row expanded">
+					<div class="owners-left large-6 float-left shadow rellax wow animate__fadeIn" data-rellax-speed="1" data-wow-duration="2s">
+						<img src="assets/images/content/owners.jpg" title="Mr. Deep Clean and some nerd" alt="Mr. Deep Clean and some nerd" />
+					</div>
 
-				<br />
+					<div class="grid-x grid-margin-x">
+						<div class="cell large-3">
+							<br />
+						</div>
 
-					<p class="descriptor text-justify padding-3 wow animate__fadeIn" data-wow-duration="2s">Our design innovations are parrell to our client's success and provide their customers with a confidence in their product or service's quality.</p>
-			</div>
-		</div>
+						<div class="cell large-9 padding-1 underlay row">
+							<div class="columns large-4">
+								<br />
+							</div>
 
-		<div class="spacer"><br /></div>
+							<div class="columns large-8 padding-1 text-justify">
+								<br />
+								<br />
 
-		<div class="clients text-center row">
-			<h2 class="h1 wow animate__fadeIn" data-wow-duration="2s"">Our Clients</h2>
-			<ul class="menu grid-x grid-margin-x margin-3 wow animate__fadeIn" data-wow-duration="2s">
-				<li class="cell large-3 padding-1">
-					<img class="cell small-12" src="https://unsplash.it/300/100?1" alt="" />
-				</li>
+								<h2>We Are RJ Designs</h2>
 
-				<li class="cell large-3 padding-1">
-					<img class="cell small-12" src="https://unsplash.it/300/100?2" alt="" />
-				</li>
+								<br />
 
-				<li class="cell large-3 padding-1">
-					<img class="cell small-12" src="https://unsplash.it/300/100?3" alt="" />
-				</li>
+								<p>
+									We take a holistic approach to website design, starting with in-depth consultations to comprehend the essence of each business. By amalgamating creativity with functionality, we create intuitive, responsive, and visually stunning websites that resonate with the brand identity, reflecting its values, ethos, and aspirations.
+								</p>
+								<p>
+									Utilizing the latest technologies and adhering to industry best practices, our designs prioritize user experience, ensuring seamless navigation and engagement across devices. Whether it's an e-commerce platform, a service-oriented site, or a content-driven blog, our designs are versatile and adaptable, catering to diverse business objectives.
+								</p>
+								<p>
+									Beyond aesthetics, our commitment to empowering small businesses extends to providing user-friendly content management systems (CMS), enabling easy updates and maintenance without technical expertise. We emphasize not only the initial launch but also provide ongoing support, optimization, and security to safeguard against evolving digital threats.
+								</p>
 
-				<li class="cell large-3 padding-1">
-					<img class="cell small-12" src="https://unsplash.it/300/100?4" alt="" />
-				</li>
+								<br />
+							</div>
+						</div>
 
-				<li class="cell large-3 padding-1">
-					<img class="cell small-12" src="https://unsplash.it/300/100?5" alt="" />
-				</li>
+						<div class="cell large-8">
+							<br />
+						</div>
 
-				<li class="cell large-3 padding-1">
-					<img class="cell small-12" src="https://unsplash.it/300/100?6" alt="" />
-				</li>
+						<div class="cell large-4 padding-2">
+							<a class="button" href="#">Read More &gt;</a>
+						</div>
+					</div>
+				</div>
 
-				<li class="cell large-3 padding-1">
-					<img class="cell small-12" src="https://unsplash.it/300/100?7" alt="" />
-				</li>
+				<div class="spacer"><br /></div>
 
-				<li class="cell large-3 padding-1">
-					<img class="cell small-12" src="https://unsplash.it/300/100?8" alt="" />
-				</li>
-			</ul>
+				<div class="h3 content-prompt row padding-3 text-justify rellax clearfix wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.5">
+					<p>In a world of complexity, we offer ease and expertise through integrated solutions and first-class client services.</p>
+				</div>
 
-			<br />
+				<ul class="banner grid-x wow animate__fadeIn" data-wow-duration="2s">
+					<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?1') center center no-repeat; background-size:100%;">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="#">
+								<div class="banner-text cell large-8 padding-1">
+									Farmers Market Client
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
 
-			<a class="button wow animate__fadeIn" data-wow-duration="2s" href="/contact{{ linkparams }}">
-				<strong class="h5" style="font-weight:bold;">Contact Today &gt;</strong>
-			</a>
-		</div>
+					<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?2') center center no-repeat; background-size:100%;">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
+								<div class="banner-text cell large-8 padding-1">
+									Legal Client
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
+
+					<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?3') center center no-repeat; background-size:100%;">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
+								<div class="banner-text cell large-8 padding-1">
+									Automotive Client
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
+
+					<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?4') center center no-repeat; background-size:100%;">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
+								<div class="banner-text cell large-8 padding-1">
+									Church Client
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
+
+					<li class="cell grid-x large-4" style="background:url('https://unsplash.it/600?5') center center no-repeat; background-size:100%;">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="/designs{{ linkparams }}">
+								<div class="banner-text cell large-8 padding-1">
+									Lawn Service Client
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
+
+					<li class="cell grid-x large-4">
+						<div class="overlay cell grid-x">
+							<a class="cell grid-x align-bottom" href="/clients">
+								<div class="banner-text cell large-8 padding-1">
+									Our Work
+								</div>
+								<div class="cell large-4 text-right padding-1">
+									<svg viewBox="0 0 20 25" width="1em">
+										<path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+									</svg>
+								</div>
+							</a>
+					</li>
+				</ul>
+
+				<div class="spacer"><br /></div>
+				<div class="spacer"><br /></div>
+
+				<div class="h3 content-prompt row padding-3 text-justify rellax wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.3">
+					<p>Instinctive generosity is what guides us. That's why we develop research and analysis that leads debate in the industry.</p>
+				</div>
+
+				<div class="spacer"><br /></div>
+
+				<div class="customers row expanded">
+					<div class="customers-right columns large-12 float-right rellax" data-rellax-speed="1">
+						<div class="spacer"><br /></div>
+						<div class="spacer"><br /></div>
+
+						<a class="columns large-5 grow" href="#">
+							<img class="shadow wow animate__fadeIn" src="https://unsplash.it/400?1" data-wow-duration="2s" />
+						</a>
+					</div>
+
+					<div class="grid-x grid-margin-x">
+						<div class="cell large-8 padding-1 underlay row">
+							<div class="columns large-2">
+								<br />
+							</div>
+
+							<div class="columns large-8 padding-1 text-justify">
+								<h2>Our Customer's Success Online Is Our Greatest Value</h2>
+
+								<p>
+									Transparency and collaboration lie at the core of our work ethos. Throughout the design process, we foster open communication, welcoming client feedback and revisions to ensure the final product aligns perfectly with their vision.
+								</p>
+								<p>
+									In a world where the digital landscape evolves rapidly, our company stands as a beacon of innovation and reliability for small businesses aspiring to make a mark online. We believe that a well-crafted website isn't just a digital address but a strategic asset that propels small businesses toward sustainable growth, fostering connections and unlocking boundless opportunities in the digital realm. Partner with us, and together, let's build an online presence that sets your business apart in today's competitive market.
+								</p>
+
+								<br />
+								<br />
+
+								<div class="text-center">
+									<a class="button button-sm" href="/designs{{ linkparams }}">See Other Work &gt;</a>
+								</div>
+							</div>
+
+							<div class="columns large-2">
+								<br />
+							</div>
+						</div>
+
+						<div class="cell large-4">
+							<br />
+						</div>
+					</div>
+				</div>
+
+				<div class="spacer"><br /></div>
+
+				<div class="clients text-center row">
+					<h2 class="h1 wow animate__fadeIn" data-wow-duration="2s"">Our Clients</h2>
+
+					<ul class="menu grid-x grid-margin-x margin-3 wow animate__fadeIn" data-wow-duration="2s">
+						<li class="cell large-3 padding-1">
+							<img class="cell small-12" src="https://unsplash.it/300/100?1" alt="" />
+						</li>
+
+						<li class="cell large-3 padding-1">
+							<img class="cell small-12" src="https://unsplash.it/300/100?2" alt="" />
+						</li>
+
+						<li class="cell large-3 padding-1">
+							<img class="cell small-12" src="https://unsplash.it/300/100?3" alt="" />
+						</li>
+
+						<li class="cell large-3 padding-1">
+							<img class="cell small-12" src="https://unsplash.it/300/100?4" alt="" />
+						</li>
+
+						<li class="cell large-3 padding-1">
+							<img class="cell small-12" src="https://unsplash.it/300/100?5" alt="" />
+						</li>
+
+						<li class="cell large-3 padding-1">
+							<img class="cell small-12" src="https://unsplash.it/300/100?6" alt="" />
+						</li>
+
+						<li class="cell large-3 padding-1">
+							<img class="cell small-12" src="https://unsplash.it/300/100?7" alt="" />
+						</li>
+
+						<li class="cell large-3 padding-1">
+							<img class="cell small-12" src="https://unsplash.it/300/100?8" alt="" />
+						</li>
+					</ul>
+
+					<br />
+
+					<a class="button wow animate__fadeIn" data-wow-duration="2s" href="/contact{{ linkparams }}">
+						<strong class="h5" style="font-weight:bold;">Contact Today &gt;</strong>
+					</a>
+				</div>
       </article>
 
-      <br />
+      <div class="spacer"><br /></div>
 
-      <footer class="footer row padding-3 wow animate__fadeIn" data-wow-duration="2s">
+      <footer class="footer row padding-3 wow animate__fadeIn animate__slideInUp" data-wow-duration="2s">
       	<ul class="navigation menu expanded padding-3">
       		<li class="padding-1 text-left">
       			Polices
