@@ -1,5 +1,6 @@
 .idea/
 .vscode/
+*.sublime-workspace
 
 /vendor
 /code/vendor
