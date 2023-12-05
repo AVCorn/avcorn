@@ -1,9 +1,9 @@
 body {
   padding-top: 330px;
-  background-color: #222;
+  background: #222;
   background: linear-gradient(180deg, #000 0%, #222 20%, #222 50%, #222 80%, #111 100%);
   color: #eee;
-  font-family: Roboto,Arial,sans-serif;
+  font-family: Roboto, Arial, sans-serif;
 }
 
 a {
