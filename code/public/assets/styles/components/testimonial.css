@@ -43,11 +43,11 @@
   content: '';
   bottom: -1.25rem;
   left: 2.25rem;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   border-style: solid;
   border-width: 1.25rem 1.125rem 0 1.125rem;
-  border-color: rgba(23, 121, 186, 0.25) transparent transparent transparent;
+  border-color: rgba(23, 121, 186, 25%) transparent transparent transparent;
   position: absolute;
 }
 

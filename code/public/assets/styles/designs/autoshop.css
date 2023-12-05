@@ -1,7 +1,6 @@
-
 body {
   padding-top: 330px;
-  background-color: #222222;
+  background-color: #222;
   background: linear-gradient(180deg, #000 0%, #222 20%, #222 50%, #222 80%, #111 100%);
   color: #eee;
   font-family: Roboto,Arial,sans-serif;
@@ -22,11 +21,11 @@ a:hover .thumbnail {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  text-shadow: 0px 0px 5px #000;
+  text-shadow: 0 0 5px #000;
 }
 
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
-  text-shadow: 0px 0px 3px #000;
+  text-shadow: 0 0 3px #000;
 }
 
 .sticky-shrinknav-header {
@@ -52,7 +51,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   z-index: 2000;
   text-align: right;
   font-size:1.2em;
-  text-shadow: 0px 0px 3px #000;
+  text-shadow: 0 0 3px #000;
   padding-bottom:60px;
 }
 
@@ -75,10 +74,10 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   height: 3.75rem;
   line-height: 3.75rem;
   width: 100%;
-  background: rgba(179, 179, 179, 1);
+  background: rgba(179, 179, 179, 100%);
   background: linear-gradient(180deg, #bac1cf 0%, #bac1cf 10%, #bac1cf 40%, #707386 70%, #707386 80%, #707386 90%, #0f090a 100%);
   transition: all 0.3s ease;
-  border-top: 3px solid #991111;
+  border-top: 3px solid #911;
   box-shadow: #4c5d71 0 1px 2px;
   margin-bottom:2px;
   font-size: 1.2rem;
@@ -91,7 +90,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 }
 
 .sticky-shrinknav-menu li:hover {
-  box-shadow: 0 0 0 1px rgba(232, 13, 33, 0.5);
+  box-shadow: 0 0 0 1px rgba(232, 13, 33, 50%);
   background-color: #e80d21;
   background: linear-gradient(180deg, #f4b6a7 0%, #e7444a 35%, #c9172a 40%, #900d10 95%, #900d10 100%);
 }
@@ -100,24 +99,24 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   color: #0f090a;
   font-size:1em;
   line-height: 1.7em;
-  text-shadow: 0px 0px 5px #666;
+  text-shadow: 0 0 5px #666;
 }
 
 .sticky-shrinknav-menu li:hover a {
 	color: #fefefe;
-  text-shadow: 0px 0px 5px #066;
+  text-shadow: 0 0 5px #066;
 }
 
 .sticky-shrinknav-menu li.active>a {
-  background: rgba(250, 250, 250, 0.2);
+  background: rgba(250, 250, 250, 20%);
   color: #1f191a;
-  text-shadow: 0px 0px 5px #333;
+  text-shadow: 0 0 5px #333;
 }
 
 .sticky-shrinknav-menu li.active:hover>a {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 20%);
   color: #ccc;
-  text-shadow: 0px 0px 5px #333;
+  text-shadow: 0 0 5px #333;
 }
 
 .sticky-shrinknav-header-title {
@@ -138,7 +137,7 @@ body.sticky-shrinknav-wrapper {
 
 body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
   height: 3.75rem;
-  background-color: rgba(179, 179, 179, 0.9);
+  background-color: rgba(179, 179, 179, 90%);
 }
 
 body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-title {
@@ -164,7 +163,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  text-shadow: 0px 0px 10px #555;
+  text-shadow: 0 0 10px #555;
 }
 
 .social-footer a {
@@ -194,19 +193,19 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
 	background: #d00c1e;
   background: linear-gradient(180deg, #f4b6a7 0%, #e7444a 35%, #c9172a 40%, #900d10 95%, #900d10 100%);
 	border: 1px #eee solid;
-  box-shadow: 0 0 0 1px rgba(232, 13, 33, 0.5);
+  box-shadow: 0 0 0 1px rgba(232, 13, 33, 50%);
   border-radius: 2px;
   transition: all 0.5s ease;
-  text-shadow: 0px 0px 5px #666;
+  text-shadow: 0 0 5px #666;
   color:#eee;
 }
 
 .button:hover {
   background: #bc0000;
   background: linear-gradient(0deg, #e7444a 0%, #e7444a 10%, #c9172a 40%, #900d10 85%, #900d10 100%);
-  box-shadow: 0 0 0 1px rgba(144, 13, 16, 0.5);
+  box-shadow: 0 0 0 1px rgba(144, 13, 16, 50%);
   border: 1px #aaa solid;
-  text-shadow: 0px 0px 5px #300;
+  text-shadow: 0 0 5px #300;
   color:#ccc;
 }
 
