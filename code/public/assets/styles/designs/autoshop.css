@@ -8,16 +8,15 @@ body {
 
 a {
   color:#2789ca;
-}
-
-.thumbnail {
-  border: 2px solid #999;
-  transition: all 0.3s ease;
-  background:#eee;
+  transition: all 0.5s ease;
 }
 
 a:hover .thumbnail {
   border: 2px solid #ccc;
+}
+
+h1 {
+  border-bottom: 1px #454545 solid;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,6 +25,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   text-shadow: 0 0 3px #000;
+}
+
+.thumbnail {
+  border: 2px solid #999;
+  transition: all 0.3s ease;
+  background:#eee;
 }
 
 .sticky-shrinknav-header {
@@ -40,7 +45,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #000;
+  background: #000;
   background: linear-gradient(180deg, #202020 0%, #000 60%, #000 80%, #000 100%);
   text-align: center;
   position: fixed;
@@ -50,13 +55,13 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   transition: all 0.3s ease;
   z-index: 2000;
   text-align: right;
-  font-size:1.2em;
+  font-size: 1.2em;
   text-shadow: 0 0 3px #000;
-  padding-bottom:60px;
+  padding-bottom: 60px;
 }
 
 .sticky-shrinknav-header .logo {
-  text-align:left;
+  text-align: left;
   margin-bottom: 10px;
 }
 
@@ -79,25 +84,25 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   transition: all 0.3s ease;
   border-top: 3px solid #911;
   box-shadow: #4c5d71 0 1px 2px;
-  margin-bottom:2px;
+  margin-bottom: 2px;
   font-size: 1.2rem;
 }
 
 .sticky-shrinknav-menu li {
   border-radius: 2px;
   transition: all 0.3s ease;
-  margin:0 0 2px 0;
+  margin: 0 0 2px 0;
 }
 
 .sticky-shrinknav-menu li:hover {
   box-shadow: 0 0 0 1px rgba(232, 13, 33, 50%);
-  background-color: #e80d21;
+  background: #e80d21;
   background: linear-gradient(180deg, #f4b6a7 0%, #e7444a 35%, #c9172a 40%, #900d10 95%, #900d10 100%);
 }
 
 .sticky-shrinknav-menu a {
   color: #0f090a;
-  font-size:1em;
+  font-size: 1em;
   line-height: 1.7em;
   text-shadow: 0 0 5px #666;
 }
@@ -127,7 +132,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
           transform: translateY(-1.875rem);
   margin-bottom: 0;
   color: #fefefe;
-  font-weight:bold;
+  font-weight: bold;
   font-size: 6em;
 }
 
@@ -153,7 +158,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   padding: 1rem;
   background: #b3b3b3;
   background: linear-gradient(180deg, #bac1cf 0%, #bac1cf 10%, #bac1cf 40%, #707386 70%, #707386 80%, #707386 90%, #0f090a 100%);
-  border-top:1px #6a809b solid;
+  border-top: 1px #6a809b solid;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -197,7 +202,7 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   border-radius: 2px;
   transition: all 0.5s ease;
   text-shadow: 0 0 5px #666;
-  color:#eee;
+  color: #eee;
 }
 
 .button:hover {
@@ -206,18 +211,9 @@ body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-
   box-shadow: 0 0 0 1px rgba(144, 13, 16, 50%);
   border: 1px #aaa solid;
   text-shadow: 0 0 5px #300;
-  color:#ccc;
+  color: #ccc;
 }
 
 .subheader {
-  color:#ccc;
+  color: #ccc;
 }
-
-h1 {
-	border-bottom: 1px #454545 solid;
-}
-
-a {
-  transition: all 0.5s ease;
-}
-
