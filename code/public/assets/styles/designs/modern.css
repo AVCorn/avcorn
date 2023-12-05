@@ -65,13 +65,13 @@
 
 .hero-full-screen .top-bar .menu a:hover {
   color: #eee;
-  background: rgba(200, 200, 200, 30%);
+  background: rgba(200 200 200 30%);
   border-bottom: #2daebf 5px solid;
   margin: 5px 0 0 0;
 }
 
 .menu .active>a {
-  background: rgba(0, 0, 0, 30%);
+  background: rgba(0 0 0 30%);
 }
 
 @charset "UTF-8";
