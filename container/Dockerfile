@@ -15,8 +15,8 @@ RUN composer dump-autoload
 FROM php:8.2-apache
 WORKDIR /var/www/html
 
-RUN apt update
-RUN apt install -y curl git
+RUN apt-get update
+RUN apt-get install -y curl git
 
 COPY --from=vendor app/vendor/ ./vendor/
 COPY ./code/ .
