@@ -14,8 +14,8 @@ _"The nut doesn't fall from from the tree!"_
 
 You will require PHP 7.4 or newer.
 
-  * Point your virtual host document root to your new application's `public/` directory.
-  * Ensure `logs/` is web writable.
+* Point your virtual host document root to your new application's `public/` directory.
+* Ensure `logs/` is web writable.
 
 To run the application in development, you can run this command:
 
@@ -62,6 +62,6 @@ If you want to clean up the docker containers made:
 ```
 
 ## Links
-  * [Development Progress](docs/TODO.md)
-  * [Contributing Guidelines](docs/CONTRIBUTING.md)
-  * [License](docs/LICENSE.md)
+* [Development Progress](docs/TODO.md)
+* [Contributing Guidelines](docs/CONTRIBUTING.md)
+* [License](docs/LICENSE.md)
