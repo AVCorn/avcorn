@@ -6,12 +6,13 @@ volumes:
 
 services:
     web:
-        image: php:8.2-apache
+        build:
+            context: .
+            dockerfile: ./container/Dockerfile
         working_dir: /var/www
-        command: php -S 0.0.0.0:8080 -t public
         environment:
             docker: "true"
         ports:
-            - "8080:8080"
+            - "8080:80"
         volumes:
             - ./code:/var/www
