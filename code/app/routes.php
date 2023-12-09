@@ -10,7 +10,7 @@ use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 return function (App $app) {
-  require_once('../view/templates/_default/config.php');
+  require_once '../view/templates/_default/config.php';
   $config['view_extension'] = '.html';
   $config['view_path'] = '../view/';
   $config['templates_root'] = '/templates/';
@@ -58,7 +58,7 @@ return function (App $app) {
         $config_path = $config['view_path'].$config['template_path'].$config['config_root'];
 
         if (file_exists($config_path)) {
-          require_once($config_path);
+          require_once $config_path;
         }
       }
 

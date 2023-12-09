@@ -16,7 +16,7 @@ FROM php:8.2-apache
 WORKDIR /var/www/
 
 RUN apt-get update
-RUN apt-get install -y curl git
+RUN apt-get install -y curl=8.5.0-1 git=1:2.43.0-1 --no-install-recommends
 
 COPY --from=vendor app/vendor/ ./vendor/
 COPY ./code/ .
