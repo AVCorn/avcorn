@@ -8,56 +8,56 @@ use JsonSerializable;
 
 class ActionPayload implements JsonSerializable
 {
-    private int $statusCode;
+	private int $statusCode;
 
-    /**
-     * @var array|object|null
-     */
-    private $data;
+	/**
+	 * @var array|object|null
+	 */
+	private $data;
 
-    private ?ActionError $error;
+	private ?ActionError $error;
 
-    public function __construct(
-        int $statusCode = 200,
-        $data = null,
-        ?ActionError $error = null
-    ) {
-        $this->statusCode = $statusCode;
-        $this->data = $data;
-        $this->error = $error;
-    }
+	public function __construct(
+		int $statusCode = 200,
+		$data = null,
+		?ActionError $error = null
+	) {
+		$this->statusCode = $statusCode;
+		$this->data = $data;
+		$this->error = $error;
+	}
 
-    public function getStatusCode(): int
-    {
-        return $this->statusCode;
-    }
+	public function getStatusCode(): int
+	{
+		return $this->statusCode;
+	}
 
-    /**
-     * @return array|null|object
-     */
-    public function getData()
-    {
-        return $this->data;
-    }
+	/**
+	 * @return array|null|object
+	 */
+	public function getData()
+	{
+		return $this->data;
+	}
 
-    public function getError(): ?ActionError
-    {
-        return $this->error;
-    }
+	public function getError(): ?ActionError
+	{
+		return $this->error;
+	}
 
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize(): array
-    {
-        $payload = [
-            'statusCode' => $this->statusCode,
-        ];
+	#[\ReturnTypeWillChange]
+	public function jsonSerialize(): array
+	{
+		$payload = [
+			'statusCode' => $this->statusCode,
+		];
 
-        if ($this->data !== null) {
-            $payload['data'] = $this->data;
-        } elseif ($this->error !== null) {
-            $payload['error'] = $this->error;
-        }
+		if ($this->data !== null) {
+			$payload['data'] = $this->data;
+		} elseif ($this->error !== null) {
+			$payload['error'] = $this->error;
+		}
 
-        return $payload;
-    }
+		return $payload;
+	}
 }

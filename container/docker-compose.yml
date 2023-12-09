@@ -1,18 +1,18 @@
 version: '3.7'
 
 volumes:
-    logs:
-        driver: local
+	logs:
+		driver: local
 
 services:
-    web:
-        build:
-            context: .
-            dockerfile: ./container/Dockerfile
-        working_dir: /var/www
-        environment:
-            docker: "true"
-        ports:
-            - "8080:80"
-        volumes:
-            - ./code:/var/www
+	web:
+		build:
+			context: .
+			dockerfile: ./container/Dockerfile
+		working_dir: /var/www
+		environment:
+			docker: "true"
+		ports:
+			- "8080:80"
+		volumes:
+			- ./code:/var/www

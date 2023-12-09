@@ -10,10 +10,10 @@ require_once 'config/themes.php';
 require_once 'config/sitemap.php';
 
 $config = [
-  'map' => $map,
-  'navigation' => $navigation,
-  'navigationFooter' => $navigationFooter,
-  'info' => $information,
-  'themes' => $themes,
-  'sitemap' => $sitemap,
+	'map' => $map,
+	'navigation' => $navigation,
+	'navigationFooter' => $navigationFooter,
+	'info' => $information,
+	'themes' => $themes,
+	'sitemap' => $sitemap,
 ];

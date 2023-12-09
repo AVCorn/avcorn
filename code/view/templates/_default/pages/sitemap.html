@@ -1,19 +1,19 @@
 {% extends layout %}
 
 {% block title %}
-  {{ info.title }} - Sitemap
+	{{ info.title }} - Sitemap
 {% endblock %}
 
 {% block header %}
-    <div class="row padding-1 editable">
-      <h1>Sitemap</h1>
-    </div>
+	<div class="row padding-1 editable">
+		<h1>Sitemap</h1>
+	</div>
 {% endblock %}
 
 {% block content %}
-  <div class="row padding-2 editable">
-    <p>Our website sitemap serves as a roadmap, guiding you through the various sections and pages that make up our digital space. Whether you're seeking information about our company, exploring our range of products and services, or delving into our blog for insights, this sitemap provides an organized overview of the content available to you.</p>
+	<div class="row padding-2 editable">
+		<p>Our website sitemap serves as a roadmap, guiding you through the various sections and pages that make up our digital space. Whether you're seeking information about our company, exploring our range of products and services, or delving into our blog for insights, this sitemap provides an organized overview of the content available to you.</p>
 
-    {% include "components/sitemap.html" %}
-  </div>
+		{% include "components/sitemap.html" %}
+	</div>
 {% endblock %}

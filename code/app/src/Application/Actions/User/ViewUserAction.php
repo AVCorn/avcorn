@@ -8,16 +8,16 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 class ViewUserAction extends UserAction
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected function action(): Response
-    {
-        $userId = (int) $this->resolveArg('id');
-        $user = $this->userRepository->findUserOfId($userId);
+	/**
+	 * {@inheritdoc}
+	 */
+	protected function action(): Response
+	{
+		$userId = (int) $this->resolveArg('id');
+		$user = $this->userRepository->findUserOfId($userId);
 
-        $this->logger->info("User of id `${userId}` was viewed.");
+		$this->logger->info("User of id `${userId}` was viewed.");
 
-        return $this->respondWithData($user);
-    }
+		return $this->respondWithData($user);
+	}
 }

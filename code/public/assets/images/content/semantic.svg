@@ -27,20 +27,20 @@
 </g>
 <g>
 	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="50.9584" y1="135.1361" x2="104.5381" y2="135.1361">
-		<stop  offset="0" style="stop-color:#4F5764"/>
-		<stop  offset="0.6682" style="stop-color:#293942"/>
-		<stop  offset="1" style="stop-color:#111C21"/>
+		<stop offset="0" style="stop-color:#4F5764"/>
+		<stop offset="0.6682" style="stop-color:#293942"/>
+		<stop offset="1" style="stop-color:#111C21"/>
 	</linearGradient>
 	<path class="st3" d="M51,140.7v-11.1l53.6-23.9V117l-42.6,18.3l42.6,18v11.3L51,140.7z"/>
 	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="112.5123" y1="135" x2="156.683" y2="135">
-		<stop  offset="0" style="stop-color:#3D96D2"/>
-		<stop  offset="1" style="stop-color:#069FB0"/>
+		<stop offset="0" style="stop-color:#3D96D2"/>
+		<stop offset="1" style="stop-color:#069FB0"/>
 	</linearGradient>
 	<path class="st4" d="M112.5,185.8l33.1-101.5h11.1l-33.1,101.5H112.5z"/>
 	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="165.4619" y1="135.1361" x2="219.0416" y2="135.1361">
-		<stop  offset="0" style="stop-color:#4F5764"/>
-		<stop  offset="0.6682" style="stop-color:#293942"/>
-		<stop  offset="1" style="stop-color:#111C21"/>
+		<stop offset="0" style="stop-color:#4F5764"/>
+		<stop offset="0.6682" style="stop-color:#293942"/>
+		<stop offset="1" style="stop-color:#111C21"/>
 	</linearGradient>
 	<path class="st5" d="M165.5,164.6v-11.3l42.6-18L165.5,117v-11.3l53.6,23.9v11.1L165.5,164.6z"/>
 </g>

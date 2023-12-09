@@ -1,249 +1,249 @@
 <!DOCTYPE html>
 <html class="whatinput-types-initial whatinput-types-mouse" land="en">
-  <head>
-    <title>{% block title %}{% endblock %}</title>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
 
-    {% include "templates/categories/agency/components/head.html" %}
+		{% include "templates/categories/agency/components/head.html" %}
 
-    <style>
-    	body {
-    		color: rgb(0, 0, 20);
-    	}
+		<style>
+			body {
+				color: rgb(0, 0, 20);
+			}
 
-    	.header {
-    		background: url("https://unsplash.it/2560/800") center center no-repeat;
-    		background-size: cover;
-    		color: #fff;
-    		font-family: Halcom-Bold, Bold-Fallback, Arial, sans-serif;
-    		font-size: 1.5em;
-    		height: 400px;
-    		text-shadow: 0px 0px 2em #000;
-    	}
+			.header {
+				background: url("https://unsplash.it/2560/800") center center no-repeat;
+				background-size: cover;
+				color: #fff;
+				font-family: Halcom-Bold, Bold-Fallback, Arial, sans-serif;
+				font-size: 1.5em;
+				height: 400px;
+				text-shadow: 0px 0px 2em #000;
+			}
 
-    	@media screen and (max-width: 39.9375em) {
-    		.header {
-    			height: 420px;
-    		}
-    	}
+			@media screen and (max-width: 39.9375em) {
+				.header {
+					height: 420px;
+				}
+			}
 
 			.header .logo a {
-    		background: rgba(0, 0, 0, 50%);
-    		color: #fff;
-    		display: block;
-    		font-size: 2em;
-    		font-weight: bold;
-    		margin-bottom: 1em;
-    		padding: 0.5em 1em;
-    		width: 10em;
-    	}
-
-    	.header .logo .indent {
-    		margin-left: 4em;
-    	}
-
-    	.header .navigation {
-    		padding: 1em 0;
-    		font-weight: bold;
-    	}
-
-    	.header .navigation-inside {
-    		background: rgba(256, 256, 256, 50%);
-    		display: inline;
-    		padding: 0.5em 1em;
-    	}
-
-    	.header .navigation .navigation-inside:hover {
-    		background: rgba(200, 200, 200, 50%);
-    	}
-
-    	.header .navigation li li {
-    		font-size: 0.8em;
-    		font-weight: normal;
-    		padding: 0.5em 1em;
-    	}
-
-    	.header .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
-    		content: "";
-    		display: none;
-    	}
-
-    	.header .navigation .fa {
-    		margin-left: 1em;
-    	}
-
-    	.header .navigation a {
-    		color: #fff;
-    	}
-
-    	.header .navigation a:hover, .header .navigation .is-active a {
-    		color: #fff !important;
-    	}
-
-    	.header .navigation .submenu {
-    		background: rgba(256, 256, 256, 60%);
-    		border: 0 none;
-    		color: #000;
-    	}
-
-    	.header .navigation .submenu a, .header .navigation .submenu .is-active a, .header .navigation .submenu a:hover {
-    		color: #000 !important;
-    	}
-
-    	.header .navigation .submenu li:hover {
-    		background: rgba(200, 200, 200, 60%);
-    	}
-
-    	.header .subtitle {
-    		margin: 0.5em 0 0 0;
-    		line-height: 0.8em;
-    	}
-
-    	.header .subtitle h1 {
-    		font-size: 1.5em;
-    		font-weight: bold;
-    	}
-
-    	.footer {
-    		background: rgb(0, 15, 25) url("assets/images/content/agency-bg-bottom-inside.jpg") center center no-repeat;
-    		color: #fff;
-    		font-size: 1em;
-    		font-weight: bold;
-    		margin-top: 1em;
-    		padding-top: 2em;
-    		text-shadow: 0px 0px 2em #000;
-    	}
-
-    	.footer .navigation {
-    		background: rgba(0, 7, 12, 50%);
-    		padding: 0 48px;
-    	}
-
-    	.footer .navigation a {
-    		color: #fff;
-    		transition: all 0.5s ease;
-    	}
-
-    	.footer .navigation li {
-    		font-size: 1.5em;
-    		font-weight: bold;
-    		transition: all 0.5s ease;
-    		vertical-align: top;
-    	}
-
-    	.footer .navigation li:hover {
-    		background: rgba(200, 200, 200, 50%);
-    	}
-
-    	.footer .navigation li li:hover {
-    		background: rgba(200, 200, 200, 50%);
-    	}
-
-    	.footer .navigation li li {
-    		font-size: 0.8em;
-    		font-weight: normal;
-    	}
-
-    	.footer .social {
-    		font-size: 1.5em;
-    		margin: 0;
-    	}
-
-    	.footer .social li {
-    		display: inline-block;
-    		flex: none;
-    	}
-
-    	.footer .social a {
-    		padding: 0.4em;
-    	}
-
-    	.footer .copyright {
-    		background: rgba(0, 7, 12, 50%);
-    		font-size: 1em;
-    		font-weight: normal;
-    	}
-
-    	.descriptor {
-    		margin: 0 4em;
-    	}
-
-    	.underlay {
-    		background: #06170a;
-    		text-shadow: none;
-    	}
-
-    	.spacer {
-    		clear: both;
-    		height: 8em;
-    		width: 100%;
-    	}
-
-    	.shadow {
-    		box-shadow: #000 0 0 5px;
-    	}
-
-    	.button {
-    		box-shadow: #000 0 0 5px;
-    		font-size: 1.2em;
-    	}
-
-    	.button-sm {
-    		background: #06170a;
-    		font-size: 1em;
-    		padding: 1em 4em;
-    	}
-
-    	.grow, .grow img, .button {
-    		transition: all 1s ease;
-    	}
-
-    	.grow:hover, .button:hover {
-    		transform: scale(1.2);
-    	}
-
-    	.grow:hover img {
-    		transform: scale(1.1);
-    	}
-
-    	a {
-    		transition: all 0.5s ease;
-    	}
-
-    	@keyframes bounce {
-		    0%, 100%, 20%, 50%, 80% {
-		        transform:translateX(0)
-		    }
-
-		    40% {
-		        transform:translateX(-30px)
-		    }
-
-		    60% {
-		        transform:translateX(-15px)
-		    }
+				background: rgba(0, 0, 0, 50%);
+				color: #fff;
+				display: block;
+				font-size: 2em;
+				font-weight: bold;
+				margin-bottom: 1em;
+				padding: 0.5em 1em;
+				width: 10em;
 			}
-    </style>
 
-    {% block styles %}{% endblock %}
-    {% block scripts %}{% endblock %}
-  </head>
+			.header .logo .indent {
+				margin-left: 4em;
+			}
 
-  <body>
-    <div class="none page">
+			.header .navigation {
+				padding: 1em 0;
+				font-weight: bold;
+			}
 
-      <header class="header">
-      	<div class="columns show-for-large large-1">
-      		<br />
-      	</div>
+			.header .navigation-inside {
+				background: rgba(256, 256, 256, 50%);
+				display: inline;
+				padding: 0.5em 1em;
+			}
 
-      	<div class="logo columns small-12 medium-8 large-7">
-	        <a href="/{{ linkparams }}">
-	        	{{ info.company }}
-	        </a>
-	      </div>
+			.header .navigation .navigation-inside:hover {
+				background: rgba(200, 200, 200, 50%);
+			}
 
-        <div class="navigation columns show-for-medium medium-4 text-right">
-        	<a class="button" style="font-size:0.8em; margin:0 2em 1em 0; padding:0.8em 1em;" href="/contact{{ linkparams }}">Connect</a>
+			.header .navigation li li {
+				font-size: 0.8em;
+				font-weight: normal;
+				padding: 0.5em 1em;
+			}
+
+			.header .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
+				content: "";
+				display: none;
+			}
+
+			.header .navigation .fa {
+				margin-left: 1em;
+			}
+
+			.header .navigation a {
+				color: #fff;
+			}
+
+			.header .navigation a:hover, .header .navigation .is-active a {
+				color: #fff !important;
+			}
+
+			.header .navigation .submenu {
+				background: rgba(256, 256, 256, 60%);
+				border: 0 none;
+				color: #000;
+			}
+
+			.header .navigation .submenu a, .header .navigation .submenu .is-active a, .header .navigation .submenu a:hover {
+				color: #000 !important;
+			}
+
+			.header .navigation .submenu li:hover {
+				background: rgba(200, 200, 200, 60%);
+			}
+
+			.header .subtitle {
+				margin: 0.5em 0 0 0;
+				line-height: 0.8em;
+			}
+
+			.header .subtitle h1 {
+				font-size: 1.5em;
+				font-weight: bold;
+			}
+
+			.footer {
+				background: rgb(0, 15, 25) url("assets/images/content/agency-bg-bottom-inside.jpg") center center no-repeat;
+				color: #fff;
+				font-size: 1em;
+				font-weight: bold;
+				margin-top: 1em;
+				padding-top: 2em;
+				text-shadow: 0px 0px 2em #000;
+			}
+
+			.footer .navigation {
+				background: rgba(0, 7, 12, 50%);
+				padding: 0 48px;
+			}
+
+			.footer .navigation a {
+				color: #fff;
+				transition: all 0.5s ease;
+			}
+
+			.footer .navigation li {
+				font-size: 1.5em;
+				font-weight: bold;
+				transition: all 0.5s ease;
+				vertical-align: top;
+			}
+
+			.footer .navigation li:hover {
+				background: rgba(200, 200, 200, 50%);
+			}
+
+			.footer .navigation li li:hover {
+				background: rgba(200, 200, 200, 50%);
+			}
+
+			.footer .navigation li li {
+				font-size: 0.8em;
+				font-weight: normal;
+			}
+
+			.footer .social {
+				font-size: 1.5em;
+				margin: 0;
+			}
+
+			.footer .social li {
+				display: inline-block;
+				flex: none;
+			}
+
+			.footer .social a {
+				padding: 0.4em;
+			}
+
+			.footer .copyright {
+				background: rgba(0, 7, 12, 50%);
+				font-size: 1em;
+				font-weight: normal;
+			}
+
+			.descriptor {
+				margin: 0 4em;
+			}
+
+			.underlay {
+				background: #06170a;
+				text-shadow: none;
+			}
+
+			.spacer {
+				clear: both;
+				height: 8em;
+				width: 100%;
+			}
+
+			.shadow {
+				box-shadow: #000 0 0 5px;
+			}
+
+			.button {
+				box-shadow: #000 0 0 5px;
+				font-size: 1.2em;
+			}
+
+			.button-sm {
+				background: #06170a;
+				font-size: 1em;
+				padding: 1em 4em;
+			}
+
+			.grow, .grow img, .button {
+				transition: all 1s ease;
+			}
+
+			.grow:hover, .button:hover {
+				transform: scale(1.2);
+			}
+
+			.grow:hover img {
+				transform: scale(1.1);
+			}
+
+			a {
+				transition: all 0.5s ease;
+			}
+
+			@keyframes bounce {
+				0%, 100%, 20%, 50%, 80% {
+						transform:translateX(0)
+				}
+
+				40% {
+						transform:translateX(-30px)
+				}
+
+				60% {
+						transform:translateX(-15px)
+				}
+			}
+		</style>
+
+		{% block styles %}{% endblock %}
+		{% block scripts %}{% endblock %}
+	</head>
+
+	<body>
+		<div class="none page">
+
+			<header class="header">
+				<div class="columns show-for-large large-1">
+					<br />
+				</div>
+
+				<div class="logo columns small-12 medium-8 large-7">
+					<a href="/{{ linkparams }}">
+						{{ info.company }}
+					</a>
+				</div>
+
+				<div class="navigation columns show-for-medium medium-4 text-right">
+					<a class="button" style="font-size:0.8em; margin:0 2em 1em 0; padding:0.8em 1em;" href="/contact{{ linkparams }}">Connect</a>
 					<ul class="navigation-inside dropdown menu" data-dropdown-menu>
 						<li>
 							<a href="#">
@@ -257,75 +257,75 @@
 							</ul>
 						</li>
 					</ul>
-        </div>
+				</div>
 
-        <div class="navigation row show-for-small-only text-center">
-        	<ul class="navigation-inside menu">
+				<div class="navigation row show-for-small-only text-center">
+					<ul class="navigation-inside menu">
 						<li><a href="/about{{ linkparams }}">About</a></li>
 						<li><a href="/clients{{ linkparams }}">Clients</a></li>
 						<li><a href="/contact{{ linkparams }}">Contact</a></li>
 					</ul>
-        </div>
+				</div>
 
-        <div class="subtitle columns small-12">
-        	{% block header %}{% endblock %}
-        </div>
-      </header>
+				<div class="subtitle columns small-12">
+					{% block header %}{% endblock %}
+				</div>
+			</header>
 
-      <article id="content" class="content row expanded clearfix" data-magellan-target="content">
-	      {% block content %}
-	        <div  class="editable"></div>
-	      {% endblock %}
-      </article>
+			<article id="content" class="content row expanded clearfix" data-magellan-target="content">
+				{% block content %}
+					<div class="editable"></div>
+				{% endblock %}
+			</article>
 
-      <br />
+			<br />
 
-      <footer class="footer wow animate__fadeIn" data-wow-duration="2s">
-      	<div class="row">
-	      	<ul class="navigation menu expanded">
-	      		<li class="show-for-large padding-1 text-left">
-	      			Polices
-	      			<ul class="menu vertical align-left">
-	      				<li>
-	      					<a href="#">Privacy Policy</a>
-	      				</li>
-	      				<li>
-	      					<a href="#">Cookies</a>
-	      				</li>
-	      				<li>
-	      					<a href="#">Our Policies</a>
-	      				</li>
-	      			</ul>
-	      		</li>
+			<footer class="footer wow animate__fadeIn" data-wow-duration="2s">
+				<div class="row">
+					<ul class="navigation menu expanded">
+						<li class="show-for-large padding-1 text-left">
+							Polices
+							<ul class="menu vertical align-left">
+								<li>
+									<a href="#">Privacy Policy</a>
+								</li>
+								<li>
+									<a href="#">Cookies</a>
+								</li>
+								<li>
+									<a href="#">Our Policies</a>
+								</li>
+							</ul>
+						</li>
 
-	      		<li class="show-for-large padding-1 text-center">
-	      			<a href="/contact{{ linkparams }}">Contact</a>
-	      		</li>
-	      		
+						<li class="show-for-large padding-1 text-center">
+							<a href="/contact{{ linkparams }}">Contact</a>
+						</li>
+						
 
-	      		<li class="show-for-medium padding-1 text-center">
-	      			<a href="/sitemap{{ linkparams }}">Sitemap</a>
-	      		</li>
+						<li class="show-for-medium padding-1 text-center">
+							<a href="/sitemap{{ linkparams }}">Sitemap</a>
+						</li>
 
-	      		<li class="padding-1 text-right">
-	      			<span class="show-for-medium padding-1">Connect</span>
+						<li class="padding-1 text-right">
+							<span class="show-for-medium padding-1">Connect</span>
 
-	      			<ul class="social align-right">
-	      				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-	      				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-	      				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-	      				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-	      			</ul>
-	      		</li>
-	      	</ul>
+							<ul class="social align-right">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</li>
+					</ul>
 
-	      	<div class="copyright padding-1 text-center">
-	      		&copy; {{ info.copyright }} - {{ info.legal }}
-	      		<br />
-	      		<a href="http://github.com/blaher/avcorn">Powered by AVCorn</a>
-	      	</div>
-	      </div>
-      </footer>
-    </div>
-  </body>
+					<div class="copyright padding-1 text-center">
+						&copy; {{ info.copyright }} - {{ info.legal }}
+						<br />
+						<a href="http://github.com/blaher/avcorn">Powered by AVCorn</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
 </html>

@@ -1,269 +1,269 @@
 {% extends layout_path %}
 
 {% block title %}
-  {{ info.title }} - Different Designs
+	{{ info.title }} - Different Designs
 {% endblock %}
 
 {% block header %}
-  <div class="row padding-1">
-    <h1 class="editable">Different Designs</h1>
+	<div class="row padding-1">
+		<h1 class="editable">Different Designs</h1>
 
-    <br class="clearfix" />
-    <a href="/designs?design=marketing" class="button large {% if design == "marketing" %}disabled{% endif %}">Marketing</a>
-    <a href="/designs?design=portfolio" class="button large {% if design == "portfolio" %}disabled{% endif %}">Portfolio</a>
-    <a href="/designs?design=modern" class="button large {% if design == "modern" %}disabled{% endif %}">Modern</a>
-    <a href="/designs?design=simple" class="button large {% if design == "simple" %}disabled{% endif %}">Simple</a>
-  </div>
+		<br class="clearfix" />
+		<a href="/designs?design=marketing" class="button large {% if design == "marketing" %}disabled{% endif %}">Marketing</a>
+		<a href="/designs?design=portfolio" class="button large {% if design == "portfolio" %}disabled{% endif %}">Portfolio</a>
+		<a href="/designs?design=modern" class="button large {% if design == "modern" %}disabled{% endif %}">Modern</a>
+		<a href="/designs?design=simple" class="button large {% if design == "simple" %}disabled{% endif %}">Simple</a>
+	</div>
 {% endblock %}
 
 {% block content %}
-  <div class="row padding-2">
-    <p>
-      On this page you can switch over to different designs to see what's possible.
-      You can also invoke this same switcher on any page throughout the site, by adding "<i>?design=marketing</i>" to the URL.
-      All you need to do is change "<i>marketing</i>" to the theme you would like to utilize.
-      We have provided you with several different themes to toy around and expriment with, so you can find what's best for you.
-    <p>
+	<div class="row padding-2">
+		<p>
+			On this page you can switch over to different designs to see what's possible.
+			You can also invoke this same switcher on any page throughout the site, by adding "<i>?design=marketing</i>" to the URL.
+			All you need to do is change "<i>marketing</i>" to the theme you would like to utilize.
+			We have provided you with several different themes to toy around and expriment with, so you can find what's best for you.
+		<p>
 
-    <p>
-      We have a few main foundational designs, along with a list of templates for different small/local businesses.
-      You will find a list of previews for each design below.
-    </p>
+		<p>
+			We have a few main foundational designs, along with a list of templates for different small/local businesses.
+			You will find a list of previews for each design below.
+		</p>
 
-    <br />
+		<br />
 
-    <h2 class="subheader">General Design Previews</h2>
-    <p class="justify">
-      We offer a handful of general designs to show off certain design aspects.
-      No content is changed around, as every change is design oriented.
-    </p>
-    <div class="grid-x grid-margin-x text-center" data-equalizer data-equalize-on="medium">
+		<h2 class="subheader">General Design Previews</h2>
+		<p class="justify">
+			We offer a handful of general designs to show off certain design aspects.
+			No content is changed around, as every change is design oriented.
+		</p>
+		<div class="grid-x grid-margin-x text-center" data-equalizer data-equalize-on="medium">
 
-      <div class="cell large-4 medium-4 small-12">
-        <h3 style="font-weight:bold;">
-          <a href="/designs?design=marketing">Marketing</a>
-        </h3>
+			<div class="cell large-4 medium-4 small-12">
+				<h3 style="font-weight:bold;">
+					<a href="/designs?design=marketing">Marketing</a>
+				</h3>
 
-        <a href="/designs?design=marketing">
-          <img class="thumbnail small-12" src="assets/images/designs/design-marketing.png" alt="Marketing Design" title="Marketing Design" />
-        </a>
+				<a href="/designs?design=marketing">
+					<img class="thumbnail small-12" src="assets/images/designs/design-marketing.png" alt="Marketing Design" title="Marketing Design" />
+				</a>
 
-        <p style="font-size:0.8em; font-style:italic; text-align:justify;">
-          Good enough for a marketing website, that we use it ourselves.
-          We guarentee it!
-        </p>
+				<p style="font-size:0.8em; font-style:italic; text-align:justify;">
+					Good enough for a marketing website, that we use it ourselves.
+					We guarentee it!
+				</p>
 
-        <u><a href="/designs?design=marketing">View Design</a></u>
-      </div>
+				<u><a href="/designs?design=marketing">View Design</a></u>
+			</div>
 
-      <!--<div class="cell large-4 medium-4 small-12">
-        <h3 style="font-weight:bold;">
-          <a href="/designs?design=portfolio">Portfolio</a>
-        </h3>
+			<!--<div class="cell large-4 medium-4 small-12">
+				<h3 style="font-weight:bold;">
+					<a href="/designs?design=portfolio">Portfolio</a>
+				</h3>
 
-        <a href="/designs?design=portfolio">
-          <img class="thumbnail" src="assets/images/designs/design-marketing.png" alt="Portfolio Design" title="Portfolio Design" />
-        </a>
+				<a href="/designs?design=portfolio">
+					<img class="thumbnail" src="assets/images/designs/design-marketing.png" alt="Portfolio Design" title="Portfolio Design" />
+				</a>
 
-        <p style="font-size:0.8em; font-style:italic; text-align:justify;">
-          Are you a photographer, freelancer, or designer?
-          This would be perfect for you!
-        </p>
+				<p style="font-size:0.8em; font-style:italic; text-align:justify;">
+					Are you a photographer, freelancer, or designer?
+					This would be perfect for you!
+				</p>
 
-        <u><a href="/designs?design=portfolio">View Design</a></u>
-      </div>-->
+				<u><a href="/designs?design=portfolio">View Design</a></u>
+			</div>-->
 
-      <div class="cell large-4 medium-4 small-12">
-        <h3 style="font-weight:bold;">
-          <a href="/designs?design=modern">Modern</a>
-        </h3>
+			<div class="cell large-4 medium-4 small-12">
+				<h3 style="font-weight:bold;">
+					<a href="/designs?design=modern">Modern</a>
+				</h3>
 
-        <a href="/designs?design=modern">
-          <img class="thumbnail small-12" src="assets/images/designs/design-modern.png" alt="Modern Design" title="Modern Design" />
-        </a>
+				<a href="/designs?design=modern">
+					<img class="thumbnail small-12" src="assets/images/designs/design-modern.png" alt="Modern Design" title="Modern Design" />
+				</a>
 
-        <p style="font-size:0.8em; font-style:italic; text-align:justify;">
-          Another creative design that's more modern and appeasing to the eye.
-        </p>
+				<p style="font-size:0.8em; font-style:italic; text-align:justify;">
+					Another creative design that's more modern and appeasing to the eye.
+				</p>
 
-        <u><a href="/designs?design=modern">View Design</a></u>
-      </div>
+				<u><a href="/designs?design=modern">View Design</a></u>
+			</div>
 
-      <div class="cell large-4 medium-4 small-12">
-        <h3 style="font-weight:bold;">
-          <a href="/designs?design=simple">Simple</a>
-        </h3>
+			<div class="cell large-4 medium-4 small-12">
+				<h3 style="font-weight:bold;">
+					<a href="/designs?design=simple">Simple</a>
+				</h3>
 
-        <a href="/designs?design=simple">
-          <img class="thumbnail small-12" src="assets/images/designs/design-simple.png" alt="Simple Design" title="Simple Design" />
-        </a>
+				<a href="/designs?design=simple">
+					<img class="thumbnail small-12" src="assets/images/designs/design-simple.png" alt="Simple Design" title="Simple Design" />
+				</a>
 
-        <p style="font-size:0.8em; font-style:italic; text-align:justify;">
-          Simple. Minimal.
-        </p>
+				<p style="font-size:0.8em; font-style:italic; text-align:justify;">
+					Simple. Minimal.
+				</p>
 
-        <u><a href="/designs?design=simple">View Design</a></u>
-      </div>
+				<u><a href="/designs?design=simple">View Design</a></u>
+			</div>
 
-    </div>
+		</div>
 
-    <br />
+		<br />
 
-    <h2 class="subheader">Small Business Design Previews</h2>
-    <p class="text-justify">
-      We offer an extensive list of business category designs.
-      Just to offer a quick selection and list of ideas to start from.
-      Each design might incorporate content differences, based on the business' needs.
-    </p>
-    <div class="grid-x text-center" data-equalizer data-equalize-on="medium">
+		<h2 class="subheader">Small Business Design Previews</h2>
+		<p class="text-justify">
+			We offer an extensive list of business category designs.
+			Just to offer a quick selection and list of ideas to start from.
+			Each design might incorporate content differences, based on the business' needs.
+		</p>
+		<div class="grid-x text-center" data-equalizer data-equalize-on="medium">
 
-      <div class="cell large-3 medium-4 small-6">
-        <h3 style="font-weight:bold;">
-          <a href="/designs?design=agency">Agency</a>
-        </h3>
-        <a href="/designs?design=agency">
-          <img class="thumbnail small-12 hover-shake" src="assets/images/designs/design-agency.png" alt="Agency Design" title="Agency Design" />
-        </a>
-        <p style="font-size:0.8em; font-style:italic;">
-          Our own design.
-        </p>
-        <u><a href="/designs?design=agency">View Design</a></u>
-      </div>
+			<div class="cell large-3 medium-4 small-6">
+				<h3 style="font-weight:bold;">
+					<a href="/designs?design=agency">Agency</a>
+				</h3>
+				<a href="/designs?design=agency">
+					<img class="thumbnail small-12 hover-shake" src="assets/images/designs/design-agency.png" alt="Agency Design" title="Agency Design" />
+				</a>
+				<p style="font-size:0.8em; font-style:italic;">
+					Our own design.
+				</p>
+				<u><a href="/designs?design=agency">View Design</a></u>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6">
-        <h3 style="font-weight:bold;">Artist</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Artist Design" title="Artist Design" />
-        <p style="font-size:0.8em; font-style:italic;">Creative and inspiring.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6">
+				<h3 style="font-weight:bold;">Artist</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Artist Design" title="Artist Design" />
+				<p style="font-size:0.8em; font-style:italic;">Creative and inspiring.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6">
-        <h3 style="font-weight:bold;">
-          <a href="/designs?design=autoshop">Autoshop</a>
-        </h3>
-        <a href="/designs?design=autoshop">
-          <img class="thumbnail small-12" src="assets/images/designs/design-autoshop.png" alt="Autoshop Design" title="Autoshop Design" />
-        </a>
-        <p style="font-size:0.8em; font-style:italic;">
-          For auto body, repair, mechanic, or oil change shops.
-        </p>
-        <u><a href="/designs?design=autoshop">View Design</a></u>
-      </div>
+			<div class="cell large-3 medium-4 small-6">
+				<h3 style="font-weight:bold;">
+					<a href="/designs?design=autoshop">Autoshop</a>
+				</h3>
+				<a href="/designs?design=autoshop">
+					<img class="thumbnail small-12" src="assets/images/designs/design-autoshop.png" alt="Autoshop Design" title="Autoshop Design" />
+				</a>
+				<p style="font-size:0.8em; font-style:italic;">
+					For auto body, repair, mechanic, or oil change shops.
+				</p>
+				<u><a href="/designs?design=autoshop">View Design</a></u>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6">
-        <h3 style="font-weight:bold;">Bakery</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Bakery Design" title="Bakery Design" />
-        <p style="font-size:0.8em; font-style:italic;">Baking up some websites.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6">
+				<h3 style="font-weight:bold;">Bakery</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Bakery Design" title="Bakery Design" />
+				<p style="font-size:0.8em; font-style:italic;">Baking up some websites.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Barbershop</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Barber Design" title="Barber Design" />
-        <p style="font-size:0.8em; font-style:italic;">Stylish, neat, and fitting.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Barbershop</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Barber Design" title="Barber Design" />
+				<p style="font-size:0.8em; font-style:italic;">Stylish, neat, and fitting.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Cleaning</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Maid Design" title="Maid Design" />
-        <p style="font-size:0.8em; font-style:italic;">A clean and tidy design.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Cleaning</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Maid Design" title="Maid Design" />
+				<p style="font-size:0.8em; font-style:italic;">A clean and tidy design.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Coffeeshop</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-coffeebean.png" alt="Coffeeshop Design" title="Coffeeshop Design" />
-        <p style="font-size:0.8em; font-style:italic;">We brewed up a decitate design.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Coffeeshop</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-coffeebean.png" alt="Coffeeshop Design" title="Coffeeshop Design" />
+				<p style="font-size:0.8em; font-style:italic;">We brewed up a decitate design.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Finance</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Accounting Design" title="Accounting Design" />
-        <p style="font-size:0.8em; font-style:italic;">We've crunched the numbers to make this design afforadable.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Finance</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Accounting Design" title="Accounting Design" />
+				<p style="font-size:0.8em; font-style:italic;">We've crunched the numbers to make this design afforadable.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Fitness</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-bodybuilder.png" alt="Fitness Design" title="Fitness Design" />
-        <p style="font-size:0.8em; font-style:italic;">A fit design for health.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Fitness</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-bodybuilder.png" alt="Fitness Design" title="Fitness Design" />
+				<p style="font-size:0.8em; font-style:italic;">A fit design for health.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">General Store</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Store Design" title="Store Design" />
-        <p style="font-size:0.8em; font-style:italic;">Has everything you need.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">General Store</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Store Design" title="Store Design" />
+				<p style="font-size:0.8em; font-style:italic;">Has everything you need.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Laundry</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Laundry Design" title="Laundry Design" />
-        <p style="font-size:0.8em; font-style:italic;">Clean and fresh websites.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Laundry</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Laundry Design" title="Laundry Design" />
+				<p style="font-size:0.8em; font-style:italic;">Clean and fresh websites.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Lawn Service</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Lawn Service" title="Lawn Service" />
-        <p style="font-size:0.8em; font-style:italic;">Mowing down the compeition.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Lawn Service</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Lawn Service" title="Lawn Service" />
+				<p style="font-size:0.8em; font-style:italic;">Mowing down the compeition.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Lawyer</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Lawyer Design" title="Lawyer Design" />
-        <p style="font-size:0.8em; font-style:italic;">We make it right!</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Lawyer</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Lawyer Design" title="Lawyer Design" />
+				<p style="font-size:0.8em; font-style:italic;">We make it right!</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Personal</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Personal Website" title="Personal Website" />
-        <p style="font-size:0.8em; font-style:italic;">Me, me, me, and me!</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Personal</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Personal Website" title="Personal Website" />
+				<p style="font-size:0.8em; font-style:italic;">Me, me, me, and me!</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Pet Shop</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Petshop Design" title="Petshop Design" />
-        <p style="font-size:0.8em; font-style:italic;">So cute and adorable!</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Pet Shop</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Petshop Design" title="Petshop Design" />
+				<p style="font-size:0.8em; font-style:italic;">So cute and adorable!</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Religious</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Religious Design" title="Religious Design" />
-        <p style="font-size:0.8em; font-style:italic;">Praise be this design!</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Religious</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Religious Design" title="Religious Design" />
+				<p style="font-size:0.8em; font-style:italic;">Praise be this design!</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Restaurant</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/logos/logo-kitchen.png" alt="Restaurant Design" title="Restaurant Design" />
-        <p style="font-size:0.8em; font-style:italic;">So tasty.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Restaurant</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/logos/logo-kitchen.png" alt="Restaurant Design" title="Restaurant Design" />
+				<p style="font-size:0.8em; font-style:italic;">So tasty.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Storage</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Storage Design" title="Storage Design" />
-        <p style="font-size:0.8em; font-style:italic;">Find a home to store all your contact information online.</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Storage</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Storage Design" title="Storage Design" />
+				<p style="font-size:0.8em; font-style:italic;">Find a home to store all your contact information online.</p>
+				<del>View Design</del>
+			</div>
 
-      <div class="cell large-3 medium-4 small-6 padding-1">
-        <h3 style="font-weight:bold;">Toy Shop</h3>
-        <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Toyshop Design" title="Toyshop Design" />
-        <p style="font-size:0.8em; font-style:italic;">Checking off all the needs on your list, twice!</p>
-        <del>View Design</del>
-      </div>
+			<div class="cell large-3 medium-4 small-6 padding-1">
+				<h3 style="font-weight:bold;">Toy Shop</h3>
+				<img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Toyshop Design" title="Toyshop Design" />
+				<p style="font-size:0.8em; font-style:italic;">Checking off all the needs on your list, twice!</p>
+				<del>View Design</del>
+			</div>
 
-    </div>
+		</div>
 
-    <br />
-  </div>
+		<br />
+	</div>
 {% endblock %}
