@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html class="whatinput-types-initial whatinput-types-mouse" land="en">
-	<head>
-		<title>{% block title %}{% endblock %}</title>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
 
-		{% include "components/head.html" %}
+        {% include "components/head.html" %}
 
-		<link rel="stylesheet" type="text/css" href="assets/styles/designs/marketing.css" />
-		
-		{% block styles %}{% endblock %}
-		{% block scripts %}{% endblock %}
-	</head>
+        <link rel="stylesheet" type="text/css" href="assets/styles/designs/marketing.css" />
+        
+        {% block styles %}{% endblock %}
+        {% block scripts %}{% endblock %}
+    </head>
 
-	<body>
-		{% include "components/admin.html" %}
+    <body>
+        {% include "components/admin.html" %}
 
-		<div class="none">
+        <div class="none">
 
-			<header>
-				{% set tmppath = template_path~"/components/header.html" %}
-				{% include tmppath %}
+            <header>
+                {% set tmppath = template_path~"/components/header.html" %}
+                {% include tmppath %}
 
-				<div class="row text-center">
-					{% block header %}
-						<div class="editable"></div>
-					{% endblock %}
-				</div>
-			</header>
+                <div class="row text-center">
+                    {% block header %}
+                        <div class="editable"></div>
+                    {% endblock %}
+                </div>
+            </header>
 
-			<article id="content" class="docs-component row expanded clearfix">
-					{% block content %}
-						<div class="editable"></div>
-					{% endblock %}
-			</article>
+            <article id="content" class="docs-component row expanded clearfix">
+                    {% block content %}
+                        <div class="editable"></div>
+                    {% endblock %}
+            </article>
 
-			<br />
+            <br />
 
-			{% set tmppath = template_path~"/components/footer.html" %}
-			{% include tmppath %}
-		</div>
-	</body>
+            {% set tmppath = template_path~"/components/footer.html" %}
+            {% include tmppath %}
+        </div>
+    </body>
 </html>

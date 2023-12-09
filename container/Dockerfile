@@ -6,7 +6,7 @@ COPY ./code/composer.json composer.json
 COPY ./code/composer.lock composer.lock
 
 RUN composer install \
-	--prefer-dist
+    --prefer-dist
 
 COPY ./code/ .
 RUN composer dump-autoload
@@ -26,10 +26,10 @@ RUN a2enmod rewrite
 COPY container/configs/apache.conf /etc/apache2/sites-available/avcorn.conf
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
-	a2dissite 000-default && \
-	a2dissite default-ssl && \
-	a2ensite avcorn && \
-	service apache2 restart
+    a2dissite 000-default && \
+    a2dissite default-ssl && \
+    a2ensite avcorn && \
+    service apache2 restart
 
 #RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ && \
 #    docker-php-ext-install gd

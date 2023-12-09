@@ -10,11 +10,11 @@ use Psr\Log\LoggerInterface;
 
 abstract class UserAction extends Action
 {
-	protected UserRepository $userRepository;
+    protected UserRepository $userRepository;
 
-	public function __construct(LoggerInterface $logger, UserRepository $userRepository)
-	{
-		parent::__construct($logger);
-		$this->userRepository = $userRepository;
-	}
+    public function __construct(LoggerInterface $logger, UserRepository $userRepository)
+    {
+        parent::__construct($logger);
+        $this->userRepository = $userRepository;
+    }
 }

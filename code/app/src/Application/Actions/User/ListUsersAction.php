@@ -8,15 +8,15 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 class ListUsersAction extends UserAction
 {
-	/**
-	 * {@inheritdoc}
-	 */
-	protected function action(): Response
-	{
-		$users = $this->userRepository->findAll();
+    /**
+     * {@inheritdoc}
+     */
+    protected function action(): Response
+    {
+        $users = $this->userRepository->findAll();
 
-		$this->logger->info("Users list was viewed.");
+        $this->logger->info("Users list was viewed.");
 
-		return $this->respondWithData($users);
-	}
+        return $this->respondWithData($users);
+    }
 }
