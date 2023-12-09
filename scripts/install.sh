@@ -1,5 +1,8 @@
 #!/bin/bash
 
-echo "Install AVCorn..."
+echo "Installing..."
 
-echo "Complete!";
+read -p "Enter yourname: " name
+echo "Thanks $name!"
+
+echo "Install complete!";
