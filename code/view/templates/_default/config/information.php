@@ -9,8 +9,8 @@ $information = [
   'motto' => "The Nut Doesn't Fall Far From The Tree",
   'bio' => "You're awesome. We're awesome. Our mascot is awesome. Our website is awesome. Our users are really awesome. Even our clients are awesome. Everyone is awesome!",
 
-  'copyright' => '&copy; 2023',
-  'legal' => '- No rights reserved',
+  'copyright' => '2023',
+  'legal' => 'No rights reserved',
 
   'address' => '100 W Rincon',
   'city' => 'San Francisco, CA',

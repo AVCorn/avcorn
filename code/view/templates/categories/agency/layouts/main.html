@@ -1,24 +1,9 @@
 <!DOCTYPE html>
 <html class="whatinput-types-initial whatinput-types-mouse" land="en">
   <head>
-  	<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-6WBEBBGDPH"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'G-6WBEBBGDPH');
-		</script>
-		
     <title>{% block title %}{% endblock %}</title>
 
-    {% include "components/head.html" %}
-
-    <!--<link rel="stylesheet" type="text/css" href="assets/styles/designs/agency.css" />-->
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    {% include "templates/categories/agency/components/head.html" %}
 
     <style>
     	body {
@@ -239,17 +224,6 @@
 			}
     </style>
 
-    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-    	$(function() {
-    		var wow = new WOW();
-				wow.init();
-
-				var rellax = new Rellax('.rellax');
-			});
-		</script>
-
     {% block styles %}{% endblock %}
     {% block scripts %}{% endblock %}
   </head>
@@ -263,14 +237,13 @@
       	</div>
 
       	<div class="logo columns small-12 medium-8 large-7">
-	        <a href="/">
-	        	Raymond Jay
-	        	<div class="indent">Designs</div>
+	        <a href="/{{ linkparams }}">
+	        	{{ info.company }}
 	        </a>
 	      </div>
 
         <div class="navigation columns show-for-medium medium-4 text-right">
-        	<a class="button" style="font-size:0.8em; margin:0 2em 1em 0; padding:0.8em 1em;" href="/contact">Connect</a>
+        	<a class="button" style="font-size:0.8em; margin:0 2em 1em 0; padding:0.8em 1em;" href="/contact{{ linkparams }}">Connect</a>
 					<ul class="navigation-inside dropdown menu" data-dropdown-menu>
 						<li>
 							<a href="#">
@@ -278,9 +251,9 @@
 								<i class="fa fa-bars"></i>
 							</a>
 							<ul class="menu text-left">
-								<li><a href="/about">About Us</a></li>
-								<li><a href="/clients">Our Work</a></li>
-								<li><a href="/contact">Contact Us</a></li>
+								<li><a href="/about{{ linkparams }}">About Us</a></li>
+								<li><a href="/clients{{ linkparams }}">Our Work</a></li>
+								<li><a href="/contact{{ linkparams }}">Contact Us</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -288,9 +261,9 @@
 
         <div class="navigation row show-for-small-only text-center">
         	<ul class="navigation-inside menu">
-						<li><a href="/about">About</a></li>
-						<li><a href="/clients">Clients</a></li>
-						<li><a href="/contact">Contact</a></li>
+						<li><a href="/about{{ linkparams }}">About</a></li>
+						<li><a href="/clients{{ linkparams }}">Clients</a></li>
+						<li><a href="/contact{{ linkparams }}">Contact</a></li>
 					</ul>
         </div>
 
@@ -326,12 +299,12 @@
 	      		</li>
 
 	      		<li class="show-for-large padding-1 text-center">
-	      			<a href="/contact">Contact</a>
+	      			<a href="/contact{{ linkparams }}">Contact</a>
 	      		</li>
 	      		
 
 	      		<li class="show-for-medium padding-1 text-center">
-	      			<a href="/sitemap">Sitemap</a>
+	      			<a href="/sitemap{{ linkparams }}">Sitemap</a>
 	      		</li>
 
 	      		<li class="padding-1 text-right">
@@ -347,7 +320,7 @@
 	      	</ul>
 
 	      	<div class="copyright padding-1 text-center">
-	      		&copy; 2024 RJ Designs
+	      		&copy; {{ info.copyright }} - {{ info.legal }}
 	      		<br />
 	      		<a href="http://github.com/blaher/avcorn">Powered by AVCorn</a>
 	      	</div>

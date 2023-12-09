@@ -65,14 +65,14 @@ return function (App $app) {
       // For template's {{ linkparams }}
       $config['linkparams'] = '';
       $urlparams = false;
-      if (isset($config['design'])) {
-        $config['linkparams'] .= '&design=' . $config['design'];
+      if (isset($config['template'])) {
+        $config['linkparams'] .= '&design=' . $config['template'];
         $urlparams = true;
       }
       if ($urlparams) {
         $config['linkparams'] = '?a=vc'.$config['linkparams'];
       }
-      if (isset($config['linkparams']) && !$config['linkparams']) {
+      if (isset($config['enable_params']) && $config['enable_params'] === false) {
         $config['linkparams'] = '';
       }
       
