@@ -7,8 +7,8 @@
 /node_modules
 /code/node_modules
 
-/code/logs/*
-!/code/logs/README.md
+/code/app/logs/*
+!/code/app/logs/README.md
 
 .phpunit.result.cache
 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="whatinput-types-initial whatinput-types-mouse" land="en">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+
+    {% include "components/head.html" %}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <script>
+      $(function() {
+        $(window).scroll(function() {
+          var winTop = $(window).scrollTop();
+          if (winTop >= 30) {
+            $("body").addClass("sticky-shrinknav-wrapper");
+          } else{
+            $("body").removeClass("sticky-shrinknav-wrapper");
+          }
+        });
+      });
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="assets/styles/designs/autoshop.css" />
+
+    {% block styles %}{% endblock %}
+    {% block scripts %}{% endblock %}
+  </head>
+
+  <body>
+    {% include "components/admin.html" %}
+
+    <div class="none">
+
+      <header class="sticky-shrinknav-header">
+        <div class="row header-top">
+          <div class="columns small-8 small-centered medium-6 medium-centered large-5 large-uncentered">
+            <img class="logo" src="assets/images/logos/logo-autoshop.png" alt="{{ info.company }}" title="{{ info.title }}" />
+          </div>
+
+          <div class="address columns large-7 hide-for-medium-only hide-for-small-only">
+            <strong style="color:#991111;">Address:</strong>
+            {{ info.address }}
+            <br/>
+            {{ info.city }}
+            {{ info.zip }}
+            <br />
+            <br />
+            <strong style="color:#991111;">Phone:</strong>
+            {{ info.phone }}
+          </div>
+        </div>
+
+        <ul class="menu align-center sticky-shrinknav-menu clearfix">
+          {% include "components/navigation.html" %}
+        </ul>
+      </header>
+
+      <div class="row text-center">
+        {% block header %}
+          <div class="editable"></div>
+        {% endblock %}
+      </div>
+
+      <article id="content" class="docs-component row expanded clearfix">
+          {% block content %}
+            <div  class="editable"></div>
+          {% endblock %}
+      </article>
+
+      <br />
+
+      <footer class="social-footer">
+        <div class="social-footer-left">
+          <span>2023 &copy; {{ info.company }}</span>
+        </div>
+        <div class="social-footer-icons">
+          <ul class="menu simple">
+            <li><a href="/sitemap{{ linkparams }}">Sitemap</a></li>
+            <li></li>
+            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+            <li><a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>

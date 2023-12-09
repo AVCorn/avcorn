@@ -1,0 +1,40 @@
+{% extends layout_path %}
+
+{% block title %}
+  {{ info.title }} - Contact Us
+{% endblock %}
+
+{% block header %}
+    <div class="row padding-1 editable">
+      <h1>Contact Us</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+  <div class="row padding-2 editable">
+    <img style="width:200px;" class="float-right margin-2 hover-shake" src="assets/images/nutty/nutty-customerservice.png" title="How may I assist you today?" alt="" />
+
+    <p>Thank you for considering reaching out to us. We value your feedback, inquiries, and suggestions. At [Company Name], we are committed to ensuring a seamless and responsive communication experience for our visitors, clients, and partners. Below you will find a contact form</p>
+
+    <h3>General Inquiries:</h3>
+    <p>For general queries, partnership opportunities, or any other non-urgent matters, please feel free to send us an email at [contact@companyname.com]. Our team endeavors to respond to all inquiries within 24-48 hours during our operating hours, Monday through Friday, 9:00 AM to 4:00 PM EST.</p>
+
+    <h3>Customer Support:</h3>
+    <p>If you require assistance with any of our products or services, or have encountered an issue that needs immediate attention, our dedicated customer support team is here to help. Please reach out to us via [customersupport@companyname.com], and we'll make every effort to address your concerns promptly.
+
+    <h3>Technical Support:</h3>
+    <p>For technical queries, troubleshooting assistance, or inquiries related to our technical infrastructure, please contact our technical support team at [techsupport@companyname.com]. We understand the importance of resolving technical issues swiftly, and our experts are ready to assist you.</p>
+
+    <p>We strive to ensure that your interactions with [Company Name] are positive and constructive. Your inquiries are important to us, and we look forward to hearing from you soon.</p>
+
+    <p>Thank you for choosing [Company Name]. We appreciate your support and interest in our endeavors.</p>
+
+    <p>Warm regards,<br />
+    The [Company Name] Team</p>
+  </div>
+
+  <br class="clearfix" />
+
+  {% include "components/contact.html" %}
+
+{% endblock %}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="whatinput-types-initial whatinput-types-mouse" land="en">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+
+    {% include "components/head.html" %}
+
+    <script>
+      $(function() {
+        $(window).scroll(function() {
+          var winTop = $(window).scrollTop();
+          if (winTop >= 30) {
+            $("body").addClass("sticky-shrinknav-wrapper");
+          } else{
+            $("body").removeClass("sticky-shrinknav-wrapper");
+          }
+        });
+      });
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="assets/styles/designs/simple.css" />
+  </head>
+
+  <body>
+    {% include "components/admin.html" %}
+
+    <div class="none">
+
+      <header class="sticky-shrinknav-header">
+        <h1 class="sticky-shrinknav-header-title">{{ info.title }}</h1>
+
+        <ul class="menu align-center sticky-shrinknav-menu">
+          {% include "components/navigation.html" %}
+        </ul>
+      </header>
+
+      <br class="clearfix" />
+      <div class="row text-center">
+        {% block header %}
+
+        {% endblock %}
+      </div>
+
+      <article id="content" class="docs-component row expanded clearfix">
+          {% block content %}
+            <div  class="editable"></div>
+          {% endblock %}
+      </article>
+
+      <br />
+
+      <footer class="social-footer">
+        <div class="social-footer-left">
+          <a href="#"><img class="logo" src="/assets/images/logos/logo-md.png" alt="{{ info.company }}"></a>
+        </div>
+        <div class="social-footer-icons">
+          <ul class="menu simple">
+            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+            <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<nav class="top-bar topbar-responsive">
+
+  <div class="top-bar-title">
+    <span class="hide-for-medium responsive-toggle" data-responsive-toggle="nav-menu">
+      <button class="menu-icon" type="button" data-toggle></button>
+    </span>
+    <a class="topbar-responsive-logo" href="#">
+      <img class="show-for-medium hover-shake" src="assets/images/logos/logo-md.png" alt="{{ info.company }}" title="{{ info.motto }}" />
+      <strong class="menu-text editable" style="font-size:28px; vertical-align:middle;">{{ info.company }}</strong>
+    </a>
+  </div>
+
+  <div id="nav-menu" class="topbar-responsive-links">
+    <div class="top-bar-right">
+      <ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu>
+        {% set activeflag = 'true' %}
+        {% include "components/navigation.html" %}
+      </ul>
+    </div>
+  </div>
+</nav>

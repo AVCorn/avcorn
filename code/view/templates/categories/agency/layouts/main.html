@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="whatinput-types-initial whatinput-types-mouse" land="en">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+
+    {% include "components/head.html" %}
+
+    <!--<link rel="stylesheet" type="text/css" href="assets/styles/designs/agency.css" />-->
+    
+    {% block styles %}{% endblock %}
+    {% block scripts %}{% endblock %}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+    	body {
+    		color: rgb(0, 0, 20);
+    	}
+
+    	.header {
+    		background: url("https://unsplash.it/2560/800") center center no-repeat;
+    		background-size: cover;
+    		color: #fff;
+    		font-family: Halcom-Bold, Bold-Fallback, Arial, sans-serif;
+    		font-size: 1.5em;
+    		height: 400px;
+    		text-shadow: 0px 0px 2em #000;
+    	}
+
+    	.header .logo {
+    		background: rgba(0, 0, 0, 50%);
+    		color: #fff;
+    		font-size: 2em;
+    		font-weight: bold;
+    		padding: 0.5em 1em;
+    	}
+
+    	.header .logo .indent {
+    		margin-left: 4em;
+    	}
+
+    	.header .navigation {
+    		padding: 1em 0;
+    		font-weight: bold;
+    	}
+
+    	.header .navigation-inside {
+    		background: rgba(256, 256, 256, 50%);
+    		display: inline;
+    		padding: 0.5em 1em;
+    	}
+
+    	.header .navigation .navigation-inside:hover {
+    		background: rgba(200, 200, 200, 50%);
+    	}
+
+    	.header .navigation li li {
+    		font-size: 0.8em;
+    		font-weight: normal;
+    		padding: 0.5em 1em;
+    	}
+
+    	.header .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
+    		content: "";
+    		display: none;
+    	}
+
+    	.header .navigation .fa {
+    		margin-left: 1em;
+    	}
+
+    	.header .navigation a {
+    		color: #fff;
+    	}
+
+    	.header .navigation a:hover, .header .navigation .is-active a {
+    		color: #fff !important;
+    	}
+
+    	.header .navigation .submenu {
+    		background: rgba(256, 256, 256, 60%);
+    		border: 0 none;
+    		color: #000;
+    	}
+
+    	.header .navigation .submenu a, .header .navigation .submenu .is-active a, .header .navigation .submenu a:hover {
+    		color: #000 !important;
+    	}
+
+    	.header .navigation .submenu li:hover {
+    		background: rgba(200, 200, 200, 60%);
+    	}
+
+    	.header .subtitle {
+    		margin: 0.5em 0 0 0;
+    		font-size: 4em;
+    		line-height: 0.8em;
+    	}
+
+    	.footer {
+    		background: rgb(0, 15, 25) url("assets/images/content/agency-bg-bottom-inside.jpg") center center no-repeat;
+    		color: #fff;
+    		font-size: 1em;
+    		font-weight: bold;
+    		margin-top: 1em;
+    		padding-top: 2em;
+    		text-shadow: 0px 0px 2em #000;
+    	}
+
+    	.footer .navigation {
+    		background: rgba(0, 7, 12, 50%);
+    		padding: 0 48px;
+    	}
+
+    	.footer .navigation a {
+    		color: #fff;
+    		transition: all 0.5s ease;
+    	}
+
+    	.footer .navigation li {
+    		font-size: 1.5em;
+    		font-weight: bold;
+    		transition: all 0.5s ease;
+    		vertical-align: top;
+    	}
+
+    	.footer .navigation li:hover {
+    		background: rgba(200, 200, 200, 50%);
+    	}
+
+    	.footer .navigation li li:hover {
+    		background: rgba(200, 200, 200, 50%);
+    	}
+
+    	.footer .navigation li li {
+    		font-size: 0.8em;
+    		font-weight: normal;
+    	}
+
+    	.footer .social {
+    		font-size: 1.5em;
+    		margin: 0;
+    	}
+
+    	.footer .social li {
+    		display: inline-block;
+    		flex: none;
+    	}
+
+    	.footer .social a {
+    		padding: 0.4em;
+    	}
+
+    	.footer .copyright {
+    		background: rgba(0, 7, 12, 50%);
+    		font-size: 1em;
+    		font-weight: normal;
+    	}
+
+    	.descriptor {
+    		margin: 0 4em;
+    	}
+
+    	.underlay {
+    		background: #06170a;
+    		text-shadow: none;
+    	}
+
+    	.spacer {
+    		clear: both;
+    		height: 8em;
+    		width: 100%;
+    	}
+
+    	.shadow {
+    		box-shadow: #000 0 0 5px;
+    	}
+
+    	.button {
+    		box-shadow: #000 0 0 5px;
+    		font-size: 1.2em;
+    	}
+
+    	.button-sm {
+    		background: #06170a;
+    		font-size: 1em;
+    		padding: 1em 4em;
+    	}
+
+    	.grow, .grow img, .button {
+    		transition: all 1s ease;
+    	}
+
+    	.grow:hover, .button:hover {
+    		transform: scale(1.2);
+    	}
+
+    	.grow:hover img {
+    		transform: scale(1.1);
+    	}
+
+    	a {
+    		transition: all 0.5s ease;
+    	}
+
+    	@keyframes bounce {
+		    0%, 100%, 20%, 50%, 80% {
+		        transform:translateX(0)
+		    }
+
+		    40% {
+		        transform:translateX(-30px)
+		    }
+
+		    60% {
+		        transform:translateX(-15px)
+		    }
+			}
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+    	$(function() {
+    		var wow = new WOW();
+				wow.init();
+
+				var rellax = new Rellax('.rellax');
+			});
+		</script>
+  </head>
+
+  <body>
+    <div class="none page">
+
+      <header class="header">
+      	<div class="columns large-1">
+      		<br />
+      	</div>
+
+        <a href="/{{ linkparams }}" class="logo columns large-4">
+        	Raymond Jay
+        	<div class="indent">Designs</div>
+        </a>
+
+        <div class="navigation columns large-6 text-right rellax" data-rellax-speed="1">
+        	<ul class="navigation-inside dropdown menu" data-dropdown-menu>
+						<li>
+							<a href="#">
+								Menu
+								<i class="fa fa-bars"></i>
+							</a>
+							<ul class="menu text-left">
+								<li><a href="/about{{ linkparams }}">About Us</a></li>
+								<li><a href="/designs{{ linkparams }}">Our Work</a></li>
+								<li><a href="/contact{{ linkparams }}">Contact Us</a></li>
+							</ul>
+						</li>
+	    		</ul>
+        </div>
+
+      	<div class="columns large-1">
+      		<br />
+      	</div>
+
+        <div class="subtitle columns large-12 rellax" data-rellax-speed="2">
+        	{% block header %}{% endblock %}
+        </div>
+      </header>
+
+      <article id="content" class="content row expanded clearfix" data-magellan-target="content">
+	      {% block content %}
+	        <div  class="editable"></div>
+	      {% endblock %}
+      </article>
+
+      <br />
+
+      <footer class="footer wow animate__fadeIn" data-wow-duration="2s">
+      	<div class="row">
+	      	<ul class="navigation menu expanded">
+	      		<li class="padding-1 text-left">
+	      			Polices
+	      			<ul class="menu vertical align-left">
+	      				<li>
+	      					<a href="#">Privacy Policy</a>
+	      				</li>
+	      				<li>
+	      					<a href="#">Cookies</a>
+	      				</li>
+	      				<li>
+	      					<a href="#">Our Policies</a>
+	      				</li>
+	      			</ul>
+	      		</li>
+
+	      		<li class="padding-1 text-center">
+	      			<a href="/contact{{ linkparams }}">Contact</a>
+	      		</li>
+	      		
+
+	      		<li class="padding-1 text-center">
+	      			<a href="/sitemap{{ linkparams }}">Sitemap</a>
+	      		</li>
+
+	      		<li class="padding-1 text-right">
+	      			<span class="padding-1">Connect</span>
+
+	      			<ul class="social align-right">
+	      				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+	      				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+	      				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+	      				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+	      			</ul>
+	      		</li>
+	      	</ul>
+
+	      	<div class="copyright padding-1 text-center">
+	      		&copy; 2024 RJ Designs
+	      		<br />
+	      		<a href="http://github.com/blaher/avcorn">Powered by AVCorn</a>
+	      	</div>
+	      </div>
+      </footer>
+    </div>
+  </body>
+</html>
