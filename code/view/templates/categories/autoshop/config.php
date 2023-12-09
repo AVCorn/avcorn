@@ -3,34 +3,34 @@
 declare(strict_types=1);
 
 $config['navigation'] = [
-  [
-    'href' => '/',
-    'label' => 'Home',
-  ],
-  [
-    'href' => '/designs',
-    'label' => 'Designs',
-  ],
-  [
-    'href' => '/guide',
-    'label' => 'Walkthrough',
-  ],
-  [
-    'href' => '/testimonials',
-    'label' => 'Testimonials',
-  ],
-  [
-    'href' => '/about',
-    'label' => 'About Us',
-  ],
-  [
-    'href' => '/contact',
-    'label' => 'Contact',
-  ],
-  [
-    'href' => '/gallery',
-    'label' => 'Gallery',
-  ]
+    [
+        'href' => '/',
+        'label' => 'Home',
+    ],
+    [
+        'href' => '/designs',
+        'label' => 'Designs',
+    ],
+    [
+        'href' => '/guide',
+        'label' => 'Walkthrough',
+    ],
+    [
+        'href' => '/testimonials',
+        'label' => 'Testimonials',
+    ],
+    [
+        'href' => '/about',
+        'label' => 'About Us',
+    ],
+    [
+        'href' => '/contact',
+        'label' => 'Contact',
+    ],
+    [
+        'href' => '/gallery',
+        'label' => 'Gallery',
+    ]
 ];
 
 $config['info']['company'] = 'Nuthead Auto Shop';

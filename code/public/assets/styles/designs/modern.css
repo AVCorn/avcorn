@@ -1,224 +1,224 @@
 .hero-full-screen {
-  height: 100vh;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background: url("https://images.pexels.com/photos/378273/pexels-photo-378273.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb") center center no-repeat;
-  background-size: cover;
+    height: 100vh;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                    flex-direction: column;
+    -webkit-align-items: center;
+            -ms-flex-align: center;
+                    align-items: center;
+    -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                    justify-content: space-between;
+    background: url("https://images.pexels.com/photos/378273/pexels-photo-378273.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb") center center no-repeat;
+    background-size: cover;
 }
 
 .hero-full-screen .middle-content-section {
-  text-align: center;
-  color: #fefefe;
+    text-align: center;
+    color: #fefefe;
 }
 
 .hero-full-screen .top-content-section {
-  width: 100%;
+    width: 100%;
 }
 
 .hero-full-screen .bottom-content-section {
-  padding: 1rem;
+    padding: 1rem;
 }
 
 .hero-full-screen .bottom-content-section svg {
-  height: 3.75rem;
-  width: 3.75rem;
-  fill: #fefefe;
+    height: 3.75rem;
+    width: 3.75rem;
+    fill: #fefefe;
 }
 
 .hero-full-screen .top-bar {
-  background: transparent;
+    background: transparent;
 }
 
 .hero-full-screen .top-bar .menu {
-  background: transparent;
+    background: transparent;
 }
 
 .hero-full-screen .top-bar .menu-text {
-  color: #fefefe;
+    color: #fefefe;
 }
 
 .hero-full-screen .top-bar .menu li {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+            -ms-flex-align: center;
+                    align-items: center;
 }
 
 .hero-full-screen .top-bar .menu a {
-  color: #fefefe;
-  font-weight: bold;
-  transition: border 0.5s ease, margin 0.5s ease;
-  border: #2daebf 0 solid;
+    color: #fefefe;
+    font-weight: bold;
+    transition: border 0.5s ease, margin 0.5s ease;
+    border: #2daebf 0 solid;
 }
 
 .hero-full-screen .top-bar .menu a:hover {
-  color: #eee;
-  background: rgba(200, 200, 200, 30%);
-  border-bottom: #2daebf 5px solid;
-  margin: 5px 0 0 0;
+    color: #eee;
+    background: rgba(200, 200, 200, 30%);
+    border-bottom: #2daebf 5px solid;
+    margin: 5px 0 0 0;
 }
 
 .menu .active>a {
-  background: rgba(0, 0, 0, 30%);
+    background: rgba(0, 0, 0, 30%);
 }
 
 @charset "UTF-8";
 
 .card-article-hover {
-  box-shadow: 0 0 7px #888;
+    box-shadow: 0 0 7px #888;
 }
 
 .card-article-hover .card-section {
-  width: 90%;
-  background: #fff;
-  margin: 0 auto;
-  padding-top: 25px;
-  margin-top: -3rem;
-  z-index: 2;
+    width: 90%;
+    background: #fff;
+    margin: 0 auto;
+    padding-top: 25px;
+    margin-top: -3rem;
+    z-index: 2;
 }
 
 .card-article-hover .card-section .article-subtext {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
 }
 
 .card-article-hover .card-section .article-title {
-  font-weight: bold;
-  font-family: Georgia, serif;
-  font-size: 1.5rem;
-  color: #000;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    color: #000;
 }
 
 .card-article-hover .card-section .article-desc {
-  font-family: Georgia, serif;
-  font-size: 1rem;
+    font-family: Georgia, serif;
+    font-size: 1rem;
 }
 
 .card-article-hover .card-divider {
-  background: #fff;
+    background: #fff;
 }
 
 .card-article-hover .card-divider .author {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #2daebf;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2daebf;
 }
 
 .card-article-hover .hover-border {
-  height: 10px;
-  width: 0;
-  background: #2daebf;
-  transition: width 1s ease;
+    height: 10px;
+    width: 0;
+    background: #2daebf;
+    transition: width 1s ease;
 }
 
 .card-article-hover:hover .hover-border {
-  height: 10px;
-  width: 450px;
-  transition: width 1s ease;
+    height: 10px;
+    width: 450px;
+    transition: width 1s ease;
 }
 
 .card-article-hover .author {
-  color: navy;
+    color: navy;
 }
 
 .card-article-hover .avatar {
-  border-radius: 50%;
-  margin: 0 1rem;
+    border-radius: 50%;
+    margin: 0 1rem;
 }
 
 .card-article-hover .meta-data {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 
 .responsive-blog-footer {
-  background: #4a4a4a;
-  padding: 3rem;
-  color: white;
+    background: #4a4a4a;
+    padding: 3rem;
+    color: white;
 }
 
 @media screen and (max-width: 39.9375em) {
-  .responsive-blog-footer h4 {
-    font-size: 1.5rem;
-  }
+    .responsive-blog-footer h4 {
+        font-size: 1.5rem;
+    }
 }
 
 .responsive-blog-footer p {
-  color: #8a8a8a;
+    color: #8a8a8a;
 }
 
 .responsive-blog-footer .mailing-list {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .responsive-blog-footer .mailing-container {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .responsive-blog-footer .about-section, .responsive-blog-footer .tag-section {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .responsive-blog-footer .about-section a, .responsive-blog-footer .tag-section a {
-  color: #1779ba;
+    color: #1779ba;
 }
 
 .responsive-blog-footer .subscribe-button {
-  background-color: #1779ba;
+    background-color: #1779ba;
 }
 
 .responsive-blog-footer .subscribe-button:hover {
-  background-color: #146aa3;
-  transition: color 0.3s ease-in;
+    background-color: #146aa3;
+    transition: color 0.3s ease-in;
 }
 
 .responsive-blog-footer .fa-chevron-circle-up {
-  font-size: 3rem;
-  color: #8a8a8a;
+    font-size: 3rem;
+    color: #8a8a8a;
 }
 
 .responsive-blog-footer .fa-chevron-circle-up:hover {
-  color: #b0b0b0;
-  transition: color 0.3s ease-in;
+    color: #b0b0b0;
+    transition: color 0.3s ease-in;
 }
 
 .thumbnail {
-  transition: border 0.5s ease, margin 0.5s ease;
-  border: #eee 5px solid;
-  margin: 0 0 16px 0;
+    transition: border 0.5s ease, margin 0.5s ease;
+    border: #eee 5px solid;
+    margin: 0 0 16px 0;
 }
 
 .thumbnail:hover {
-  border: #2daebf 1px solid;
-  margin: 0 0 19px 0;
+    border: #2daebf 1px solid;
+    margin: 0 0 19px 0;
 }
 
 .button {
-  transition: border 0.5s ease;
-  border-bottom: transparent 5px solid;
+    transition: border 0.5s ease;
+    border-bottom: transparent 5px solid;
 }
 
 .button:hover {
-  border-bottom: #2daebf 5px solid;
+    border-bottom: #2daebf 5px solid;
 }
 
 .columns {
-  animation: width 1s ease;
+    animation: width 1s ease;
 }
 
 a {
-  transition: 0.5s ease;
+    transition: 0.5s ease;
 }

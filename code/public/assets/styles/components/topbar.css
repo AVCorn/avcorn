@@ -1,111 +1,111 @@
 .topbar-responsive {
-  background: #2c3840;
-  padding: 1rem 1.5rem;
+    background: #2c3840;
+    padding: 1rem 1.5rem;
 }
 
 .topbar-responsive .topbar-responsive-logo {
-  color: #fff;
-  vertical-align: middle;
+    color: #fff;
+    vertical-align: middle;
 }
 
 .topbar-responsive .menu {
-  background: #2c3840;
+    background: #2c3840;
 }
 
 .topbar-responsive .menu li:last-of-type {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 .topbar-responsive .menu a {
-  color: #fff;
-  transition: color 0.15s ease-in;
+    color: #fff;
+    transition: color 0.15s ease-in;
 }
 
 .topbar-responsive .menu a:hover {
-  color: #c6d1d8;
+    color: #c6d1d8;
 }
 
 @media screen and (max-width: 39.9375em) {
-  .topbar-responsive .menu a {
-    padding: 0.875rem 0;
-  }
+    .topbar-responsive .menu a {
+        padding: 0.875rem 0;
+    }
 }
 
 .topbar-responsive .menu .topbar-responsive-button {
-  color: #fff;
-  border-color: #fff;
-  border-radius: 5000px;
-  transition: color 0.15s ease-in, border-color 0.15s ease-in;
+    color: #fff;
+    border-color: #fff;
+    border-radius: 5000px;
+    transition: color 0.15s ease-in, border-color 0.15s ease-in;
 }
 
 .topbar-responsive .menu .topbar-responsive-button:hover {
-  color: #c6d1d8;
-  border-color: #c6d1d8;
+    color: #c6d1d8;
+    border-color: #c6d1d8;
 }
 
 @media screen and (max-width: 39.9375em) {
-  .topbar-responsive .menu .topbar-responsive-button {
-    width: 100%;
-    margin: 0.875rem 0;
-  }
+    .topbar-responsive .menu .topbar-responsive-button {
+        width: 100%;
+        margin: 0.875rem 0;
+    }
 }
 
 @media screen and (max-width: 39.9375em) {
-  .topbar-responsive {
-    padding: 0.75rem;
-  }
+    .topbar-responsive {
+        padding: 0.75rem;
+    }
 
-  .topbar-responsive .top-bar-title {
-    position: relative;
-    width: 100%;
-  }
+    .topbar-responsive .top-bar-title {
+        position: relative;
+        width: 100%;
+    }
 
-  .topbar-responsive .top-bar-title span {
-    position: absolute;
-    right: 0;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    padding: 0.25rem 0.45rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .topbar-responsive .top-bar-title span .menu-icon {
-    margin-bottom: 4px;
-  }
+    .topbar-responsive .top-bar-title span {
+        position: absolute;
+        right: 0;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        padding: 0.25rem 0.45rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .topbar-responsive .top-bar-title span .menu-icon {
+        margin-bottom: 4px;
+    }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 @keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
 }
 /*
 @include breakpoint(small only) {
-  .topbar-responsive-links {
-    animation-fill-mode: both;
-    animation-duration: 0.5s;
-    width: 100%;
+    .topbar-responsive-links {
+        animation-fill-mode: both;
+        animation-duration: 0.5s;
+        width: 100%;
 
-    @if $topbar-responsive-animation-type == slide-down {
-      animation: slideDown 1s ease-in;
-    } @else if $topbar-responsive-animation-type == fade-in {
-      animation: fadeIn 1s ease-in;
-    } @else {
-      animation: none;
+        @if $topbar-responsive-animation-type == slide-down {
+            animation: slideDown 1s ease-in;
+        } @else if $topbar-responsive-animation-type == fade-in {
+            animation: fadeIn 1s ease-in;
+        } @else {
+            animation: none;
+        }
     }
-  }
 }
 */
 

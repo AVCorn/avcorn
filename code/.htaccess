@@ -6,14 +6,14 @@ deny from all
 </Files>
 
 <IfModule mod_rewrite.c>
-  # Redirect to the public folder
-  RewriteEngine On
-  #RewriteBase /
-  RewriteRule ^$ public/ [L]
-  RewriteRule (.*) public/$1 [L]
+        # Redirect to the public folder
+        RewriteEngine On
+        #RewriteBase /
+        RewriteRule ^$ public/ [L]
+        RewriteRule (.*) public/$1 [L]
 
-  # Redirect to HTTPS
-  # RewriteEngine On
-  # RewriteCond %{HTTPS} off
-  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+        # Redirect to HTTPS
+        # RewriteEngine On
+        # RewriteCond %{HTTPS} off
+        # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
