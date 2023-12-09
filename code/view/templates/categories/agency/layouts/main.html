@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html class="whatinput-types-initial whatinput-types-mouse" land="en">
   <head>
+  	<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-6WBEBBGDPH"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-6WBEBBGDPH');
+		</script>
+		
     <title>{% block title %}{% endblock %}</title>
 
     {% include "components/head.html" %}
 
     <!--<link rel="stylesheet" type="text/css" href="assets/styles/designs/agency.css" />-->
-    
-    {% block styles %}{% endblock %}
-    {% block scripts %}{% endblock %}
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -28,12 +35,21 @@
     		text-shadow: 0px 0px 2em #000;
     	}
 
-    	.header .logo {
+    	@media screen and (max-width: 39.9375em) {
+    		.header {
+    			height: 420px;
+    		}
+    	}
+
+			.header .logo a {
     		background: rgba(0, 0, 0, 50%);
     		color: #fff;
+    		display: block;
     		font-size: 2em;
     		font-weight: bold;
+    		margin-bottom: 1em;
     		padding: 0.5em 1em;
+    		width: 10em;
     	}
 
     	.header .logo .indent {
@@ -94,8 +110,12 @@
 
     	.header .subtitle {
     		margin: 0.5em 0 0 0;
-    		font-size: 4em;
     		line-height: 0.8em;
+    	}
+
+    	.header .subtitle h1 {
+    		font-size: 1.5em;
+    		font-weight: bold;
     	}
 
     	.footer {
@@ -229,42 +249,52 @@
 				var rellax = new Rellax('.rellax');
 			});
 		</script>
+
+    {% block styles %}{% endblock %}
+    {% block scripts %}{% endblock %}
   </head>
 
   <body>
     <div class="none page">
 
       <header class="header">
-      	<div class="columns large-1">
+      	<div class="columns show-for-large large-1">
       		<br />
       	</div>
 
-        <a href="/{{ linkparams }}" class="logo columns large-4">
-        	Raymond Jay
-        	<div class="indent">Designs</div>
-        </a>
+      	<div class="logo columns small-12 medium-8 large-7">
+	        <a href="/">
+	        	Raymond Jay
+	        	<div class="indent">Designs</div>
+	        </a>
+	      </div>
 
-        <div class="navigation columns large-6 text-right rellax" data-rellax-speed="1">
-        	<ul class="navigation-inside dropdown menu" data-dropdown-menu>
+        <div class="navigation columns show-for-medium medium-4 text-right">
+        	<a class="button" style="font-size:0.8em; margin:0 2em 1em 0; padding:0.8em 1em;" href="/contact">Connect</a>
+					<ul class="navigation-inside dropdown menu" data-dropdown-menu>
 						<li>
 							<a href="#">
 								Menu
 								<i class="fa fa-bars"></i>
 							</a>
 							<ul class="menu text-left">
-								<li><a href="/about{{ linkparams }}">About Us</a></li>
-								<li><a href="/designs{{ linkparams }}">Our Work</a></li>
-								<li><a href="/contact{{ linkparams }}">Contact Us</a></li>
+								<li><a href="/about">About Us</a></li>
+								<li><a href="/clients">Our Work</a></li>
+								<li><a href="/contact">Contact Us</a></li>
 							</ul>
 						</li>
-	    		</ul>
+					</ul>
         </div>
 
-      	<div class="columns large-1">
-      		<br />
-      	</div>
+        <div class="navigation row show-for-small-only text-center">
+        	<ul class="navigation-inside menu">
+						<li><a href="/about">About</a></li>
+						<li><a href="/clients">Clients</a></li>
+						<li><a href="/contact">Contact</a></li>
+					</ul>
+        </div>
 
-        <div class="subtitle columns large-12 rellax" data-rellax-speed="2">
+        <div class="subtitle columns small-12">
         	{% block header %}{% endblock %}
         </div>
       </header>
@@ -280,7 +310,7 @@
       <footer class="footer wow animate__fadeIn" data-wow-duration="2s">
       	<div class="row">
 	      	<ul class="navigation menu expanded">
-	      		<li class="padding-1 text-left">
+	      		<li class="show-for-large padding-1 text-left">
 	      			Polices
 	      			<ul class="menu vertical align-left">
 	      				<li>
@@ -295,17 +325,17 @@
 	      			</ul>
 	      		</li>
 
-	      		<li class="padding-1 text-center">
-	      			<a href="/contact{{ linkparams }}">Contact</a>
+	      		<li class="show-for-large padding-1 text-center">
+	      			<a href="/contact">Contact</a>
 	      		</li>
 	      		
 
-	      		<li class="padding-1 text-center">
-	      			<a href="/sitemap{{ linkparams }}">Sitemap</a>
+	      		<li class="show-for-medium padding-1 text-center">
+	      			<a href="/sitemap">Sitemap</a>
 	      		</li>
 
 	      		<li class="padding-1 text-right">
-	      			<span class="padding-1">Connect</span>
+	      			<span class="show-for-medium padding-1">Connect</span>
 
 	      			<ul class="social align-right">
 	      				<li><a href="#"><i class="fa fa-facebook"></i></a></li>

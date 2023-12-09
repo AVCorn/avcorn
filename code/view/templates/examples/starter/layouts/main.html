@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="whatinput-types-initial whatinput-types-mouse" land="en">
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+
+		{% include "components/head.html" %}
+
+		<!-- Layout Styles/Scripts Here -->
+
+		{% block styles %}{% endblock %}
+		{% block scripts %}{% endblock %}
+	</head>
+
+	<body>
+		{% include "components/admin.html" %}
+
+		<header>
+			{% block header %}
+				<div class="editable"></div>
+			{% endblock %}
+		</header>
+
+		<article>
+			{% block content %}
+				<div  class="editable"></div>
+			{% endblock %}
+		</article>
+
+		<footer>
+			{% block footer %}
+				<div class="editable"></div>
+			{% endblock %}
+		</footer>
+	</body>
+</html>

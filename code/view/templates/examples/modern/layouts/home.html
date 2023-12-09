@@ -6,9 +6,6 @@
     {% include "components/head.html" %}
 
     <link rel="stylesheet" type="text/css" href="assets/styles/designs/modern.css" />
-    
-    {% block styles %}{% endblock %}
-    {% block scripts %}{% endblock %}
 
     <style>
       .hero-full-screen {
@@ -16,6 +13,9 @@
         background-position-y: -130px;
       }
     </style>
+
+    {% block styles %}{% endblock %}
+    {% block scripts %}{% endblock %}
   </head>
 
   <body>
