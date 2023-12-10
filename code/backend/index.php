@@ -17,20 +17,20 @@ require __DIR__ . '/../vendor/autoload.php';
 // Instantiate PHP-DI ContainerBuilder
 $containerBuilder = new ContainerBuilder();
 
-if (false) { // Should be set to true in production
+if (isset($_ENV['production'])) { // Should be set to true in production
     $containerBuilder->enableCompilation(__DIR__ . '/cache');
 }
 
 // Set up settings
-$settings = require __DIR__ . '/includes/settings.php';
+$settings = include __DIR__ . '/includes/settings.php';
 $settings($containerBuilder);
 
 // Set up dependencies
-$dependencies = require __DIR__ . '/includes/dependencies.php';
+$dependencies = include __DIR__ . '/includes/dependencies.php';
 $dependencies($containerBuilder);
 
 // Set up repositories
-$repositories = require __DIR__ . '/includes/repositories.php';
+$repositories = include __DIR__ . '/includes/repositories.php';
 $repositories($containerBuilder);
 
 // Build PHP-DI Container instance
@@ -44,7 +44,7 @@ $callableResolver = $app->getCallableResolver();
 // Cache pages only on production
 $twig_config = [];
 if (isset($app->mode) && $app->mode === 'production') {
-	$twig_config['cache'] = './cache/templates/';
+    $twig_config['cache'] = './cache/templates/';
 }
 
 // Create Twig
@@ -54,14 +54,16 @@ $twig = Twig::create('../frontend/', $twig_config);
 $app->add(TwigMiddleware::create($app, $twig));
 
 // Register middleware
-$middleware = require __DIR__ . '/includes/middleware.php';
+$middleware = include __DIR__ . '/includes/middleware.php';
 $middleware($app);
 
 // Register routes
-$routes = require __DIR__ . '/includes/routes.php';
+$routes = include __DIR__ . '/includes/routes.php';
 $routes($app);
 
-/** @var SettingsInterface $settings */
+/**
+ * @var SettingsInterface $settings
+ */
 $settings = $container->get(SettingsInterface::class);
 
 $displayErrorDetails = $settings->get('displayErrorDetails');

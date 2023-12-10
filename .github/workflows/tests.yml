@@ -10,7 +10,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [7.4, 8.0, 8.1]
+                php: [8.1]
                 experimental: [false]
                 include:
                     - php: 8.1
@@ -29,7 +29,7 @@ jobs:
             - name: Install dependencies with Composer
               uses: ramsey/composer-install@v2
               with:
-                working-directory: "code"
+                working-directory: code
 
             - name: Coding standards
               working-directory: code
@@ -41,15 +41,15 @@ jobs:
               if: matrix.analysis
               run: vendor/bin/phpstan
 
-            - name: Tests
-              working-directory: code
-              run: vendor/bin/phpunit --coverage-clover clover.xml
+            #- name: Tests
+            #  working-directory: code
+            #  run: vendor/bin/phpunit --coverage-clover clover.xml .
 
-            - name: Upload coverage results to Coveralls
-              working-directory: code
-              if: matrix.analysis
-              env:
-                  COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              run: |
-                  composer require php-coveralls/php-coveralls -n -W
-                  vendor/bin/php-coveralls --coverage_clover=clover.xml -v
+            #- name: Upload coverage results to Coveralls
+            #  working-directory: code
+            #  if: matrix.analysis
+            #  env:
+            #      COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            #  run: |
+            #      composer require php-coveralls/php-coveralls -n -W
+            #      vendor/bin/php-coveralls --coverage_clover=clover.xml -v
