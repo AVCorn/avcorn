@@ -10,20 +10,20 @@ use Slim\Exception\HttpInternalServerErrorException;
 
 class ShutdownHandler
 {
-    private Request $_request;
+    private Request $request;
 
-    private HttpErrorHandler $_errorHandler;
+    private HttpErrorHandler $errorHandler;
 
-    private bool $_displayErrorDetails;
+    private bool $displayErrorDetails;
 
     public function __construct(
         Request $request,
         HttpErrorHandler $errorHandler,
         bool $displayErrorDetails
     ) {
-        $this->_request = $request;
-        $this->_errorHandler = $errorHandler;
-        $this->_displayErrorDetails = $displayErrorDetails;
+        $this->request = $request;
+        $this->errorHandler = $errorHandler;
+        $this->displayErrorDetails = $displayErrorDetails;
     }
 
     public function __invoke()
@@ -36,7 +36,7 @@ class ShutdownHandler
             $errorType = $error['type'];
             $message = 'An error while processing your request. Please try again later.';
 
-            if ($this->_displayErrorDetails) {
+            if ($this->displayErrorDetails) {
                 switch ($errorType) {
                     case E_USER_ERROR:
                         $message = "FATAL ERROR: {$errorMessage}. ";
@@ -58,11 +58,11 @@ class ShutdownHandler
                 }
             }
 
-            $exception = new HttpInternalServerErrorException($this->_request, $message);
-            $response = $this->_errorHandler->__invoke(
-                $this->_request,
+            $exception = new HttpInternalServerErrorException($this->request, $message);
+            $response = $this->errorHandler->_invoke(
+                $this->request,
                 $exception,
-                $this->_displayErrorDetails,
+                $this->displayErrorDetails,
                 false,
                 false,
             );

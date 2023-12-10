@@ -6,11 +6,11 @@ namespace App\Application\Settings;
 
 class Settings implements SettingsInterface
 {
-    private array $_settings;
+    private array $settings;
 
     public function __construct(array $settings)
     {
-        $this->_settings = $settings;
+        $this->settings = $settings;
     }
 
     /**
@@ -18,6 +18,6 @@ class Settings implements SettingsInterface
      */
     public function get(string $key = '')
     {
-        return (empty($key)) ? $this->_settings : $this->_settings[$key];
+        return (empty($key)) ? $this->settings : $this->settings[$key];
     }
 }
