@@ -67,13 +67,5 @@ $marketing-site-footer-bg: #2c3840;
         a {
             color: lighten($marketing-site-footer-bg, 40%);
         }
-
-        /*@include breakpoint(medium down) {
-            justify-content: center;
-        }*/
     }
-
-    /*@include breakpoint(medium down) {
-        text-align: center;
-    }*/
 }

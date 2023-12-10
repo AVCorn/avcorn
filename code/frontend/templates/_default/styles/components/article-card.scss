@@ -1,10 +1,10 @@
 $white: #fff;
 $black: #000;
 $highlight: #2daebf;
-$shadow: #888888;
+$shadow: #888;
 
 .card-article-hover {
-    box-shadow: 0px 0px 7px $shadow;
+    box-shadow: 0 0 7px $shadow;
 
     .card-section {
         width: 90%;
@@ -22,13 +22,13 @@ $shadow: #888888;
 
         .article-title {
             font-weight: bold;
-            font-family: ‘Georgia’, serif;
+            font-family: Georgia, serif;
             font-size: 1.5rem;
             color: $black;
         }
 
         .article-desc {
-            font-family: ‘Georgia, serif;
+            font-family: Georgia, serif;
             font-size: 1rem;
         }
     }

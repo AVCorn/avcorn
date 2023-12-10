@@ -12,7 +12,7 @@ branch=${branch:-HEAD}
 branch=${branch//[\/]/-}
 
 SCRIPT_DIRECTORY="$(dirname $(realpath "$0"))"
-bash $SCRIPT_DIRECTORY/build.sh
+bash "$SCRIPT_DIRECTORY/build.sh"
 
 docker tag avcorn "$awsid.dkr.ecr.$awsregion.amazonaws.com/$branch"
 

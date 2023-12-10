@@ -57,14 +57,10 @@
 }
 
 .testimonial-block-vertical-person {
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     margin-left: 1.65rem;
     margin-right: 1.65rem;
-    -webkit-align-items: center;
-            -ms-flex-align: center;
-                    align-items: center;
+    align-items: center;
 }
 
 .testimonial-right .testimonial-block-vertical-person div {
@@ -97,15 +93,8 @@
 
 .rating-block {
     padding: 2px 5px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: center;
-            -ms-flex-align: center;
-                    align-items: center;
-    -webkit-justify-content: space-between;
-            -ms-flex-pack: justify;
-                    justify-content: space-between;
+    justify-content: space-between;
     float:right;
 }
 
@@ -119,18 +108,12 @@
 }
 
 .rating-block .rating-block {
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: center;
-            -ms-flex-align: center;
-                    align-items: center;
+    align-items: center;
     margin-bottom: 2rem;
 }
 
 .rating-block .rating-block-rating {
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
 }
 

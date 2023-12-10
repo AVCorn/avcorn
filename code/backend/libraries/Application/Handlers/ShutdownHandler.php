@@ -10,20 +10,20 @@ use Slim\Exception\HttpInternalServerErrorException;
 
 class ShutdownHandler
 {
-    private Request $request;
+    private Request $_request;
 
-    private HttpErrorHandler $errorHandler;
+    private HttpErrorHandler $_errorHandler;
 
-    private bool $displayErrorDetails;
+    private bool $_displayErrorDetails;
 
     public function __construct(
         Request $request,
         HttpErrorHandler $errorHandler,
         bool $displayErrorDetails
     ) {
-        $this->request = $request;
-        $this->errorHandler = $errorHandler;
-        $this->displayErrorDetails = $displayErrorDetails;
+        $this->_request = $request;
+        $this->_errorHandler = $errorHandler;
+        $this->_displayErrorDetails = $displayErrorDetails;
     }
 
     public function __invoke()
@@ -36,33 +36,33 @@ class ShutdownHandler
             $errorType = $error['type'];
             $message = 'An error while processing your request. Please try again later.';
 
-            if ($this->displayErrorDetails) {
+            if ($this->_displayErrorDetails) {
                 switch ($errorType) {
                     case E_USER_ERROR:
                         $message = "FATAL ERROR: {$errorMessage}. ";
                         $message .= " on line {$errorLine} in file {$errorFile}.";
-                        break;
+                    break;
 
                     case E_USER_WARNING:
                         $message = "WARNING: {$errorMessage}";
-                        break;
+                    break;
 
                     case E_USER_NOTICE:
                         $message = "NOTICE: {$errorMessage}";
-                        break;
+                    break;
 
                     default:
                         $message = "ERROR: {$errorMessage}";
                         $message .= " on line {$errorLine} in file {$errorFile}.";
-                        break;
+                    break;
                 }
             }
 
-            $exception = new HttpInternalServerErrorException($this->request, $message);
-            $response = $this->errorHandler->__invoke(
-                $this->request,
+            $exception = new HttpInternalServerErrorException($this->_request, $message);
+            $response = $this->_errorHandler->__invoke(
+                $this->_request,
                 $exception,
-                $this->displayErrorDetails,
+                $this->_displayErrorDetails,
                 false,
                 false,
             );

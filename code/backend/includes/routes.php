@@ -12,7 +12,7 @@ use Slim\Views\Twig;
 
 return function (App $app) {
     //load config
-    require_once '../frontend/templates/_default/config.php';
+    include_once '../frontend/templates/_default/config.php';
 
     // commonly referred to paths
     $config['template_extension'] = '.html';
@@ -55,7 +55,7 @@ return function (App $app) {
                 // Check to overwrite the config
                 $config_path = $config['frontend_path'] . $config['template_path'] . $config['config_root'];
                 if (file_exists($config_path)) {
-                    require_once $config_path;
+                    include_once $config_path;
                 }
             }
 
