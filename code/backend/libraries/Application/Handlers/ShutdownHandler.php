@@ -59,7 +59,7 @@ class ShutdownHandler
             }
 
             $exception = new HttpInternalServerErrorException($this->request, $message);
-            $response = $this->errorHandler->invoke(
+            $response = $this->errorHandler->__invoke(
                 $this->request,
                 $exception,
                 $this->displayErrorDetails,
