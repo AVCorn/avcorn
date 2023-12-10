@@ -12,6 +12,6 @@
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 
     <!-- Paths to check -->
-    <file>code/src</file>
+    <file>backend/app</file>
     <file>tests/unit</file>
 </ruleset>
