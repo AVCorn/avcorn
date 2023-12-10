@@ -41,20 +41,20 @@ class ShutdownHandler
                     case E_USER_ERROR:
                         $message = "FATAL ERROR: {$errorMessage}. ";
                         $message .= " on line {$errorLine} in file {$errorFile}.";
-                    break;
+                        break;
 
                     case E_USER_WARNING:
                         $message = "WARNING: {$errorMessage}";
-                    break;
+                        break;
 
                     case E_USER_NOTICE:
                         $message = "NOTICE: {$errorMessage}";
-                    break;
+                        break;
 
                     default:
                         $message = "ERROR: {$errorMessage}";
                         $message .= " on line {$errorLine} in file {$errorFile}.";
-                    break;
+                        break;
                 }
             }
 
