@@ -65,4 +65,6 @@ If you want to clean up the docker containers made:
 
 *   [Development Progress](docs/TODO.md)
 *   [Contributing Guidelines](docs/CONTRIBUTING.md)
+*   [Reporting a Security Issue](docs/SECURITY.md)
 *   [License](docs/LICENSE.md)
+*   [GitHub](https://github.com/blaher/avcorn)

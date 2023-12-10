@@ -2,12 +2,20 @@
     "name": "avcorn",
     "version": "0.1.0",
     "private": true,
-    "workspaces": ["./lib/npm/*"],
+    "workspaces": [
+        "./lib/npm/*"
+    ],
     "dependencies": {
         "foundation": "^4.2.1-1",
         "jquery": "^3.7.1"
     },
     "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.13.2",
+        "eslint": "^8.55.0",
+        "eslint-config-standard-with-typescript": "^42.0.0",
+        "eslint-plugin-import": "^2.29.0",
+        "eslint-plugin-n": "^16.3.1",
+        "eslint-plugin-promise": "^6.1.1",
         "grunt": "^1.6.1",
         "grunt-contrib-concat": "^2.1.0",
         "grunt-contrib-cssmin": "^5.0.0",
@@ -15,6 +23,7 @@
         "grunt-contrib-nodeunit": "^5.0.0",
         "grunt-contrib-sass": "^2.0.0",
         "grunt-contrib-uglify": "^5.2.2",
-        "grunt-contrib-watch": "^1.1.0"
+        "grunt-contrib-watch": "^1.1.0",
+        "typescript": "^5.3.3"
     }
 }

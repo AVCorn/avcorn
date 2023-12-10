@@ -25,6 +25,9 @@ jobs:
               with:
                   php-version: ${{ matrix.php }}
                   coverage: xdebug
+                  
+            - name: Change Directories
+              run: cd code
 
             - name: Install dependencies with Composer
               uses: ramsey/composer-install@v2
