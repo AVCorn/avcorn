@@ -28,6 +28,8 @@ jobs:
 
             - name: Install dependencies with Composer
               uses: ramsey/composer-install@v2
+              with:
+                working-directory: "code"
 
             - name: Coding standards
               working-directory: code
