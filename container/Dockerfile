@@ -21,6 +21,8 @@ RUN apt-get install -y curl git --no-install-recommends
 COPY --from=vendor app/vendor/ ./vendor/
 COPY ./code/ .
 
+RUN chmod a+rwx -R backend/cache/
+
 RUN a2enmod rewrite
 
 COPY container/configs/apache.conf /etc/apache2/sites-available/avcorn.conf
