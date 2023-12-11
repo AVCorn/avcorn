@@ -78,4 +78,9 @@ return function (App $app) {
             return $view->render($response, $config['page_path'], $config);
         });
     }
+
+    $app->get('/health', function (Request $request, Response $response, array $args) {
+        $response->getBody()->write("Ok");
+        return $response;
+    });
 };
