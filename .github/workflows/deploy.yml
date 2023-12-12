@@ -18,7 +18,7 @@ env:
   ECR_REPOSITORY: avcorn-image
   ECS_SERVICE: avcorn-service
   ECS_CLUSTER: avcorn-cluster
-  ECS_TASK_DEFINITION: ./.aws/ecs-task-definition.json
+  ECS_TASK_DEFINITION: ./.aws/ecs-taskdefinition.json
   CONTAINER_NAME: avcorn-image
 
 jobs:
