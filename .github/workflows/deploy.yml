@@ -16,7 +16,6 @@ on:
 env:
   AWS_REGION: us-east-2
   PRIVATE_REPOSITORY: avcorn-image
-  PUBLIC_REPOSITORY: public.ecr.aws/f8m8f4z3/avcorn
   ECS_SERVICE: avcorn-service
   ECS_CLUSTER: avcorn-cluster
   ECS_TASK_DEFINITION: ./.aws/ecs-taskdefinition.json
@@ -57,22 +56,6 @@ jobs:
           echo "docker push $ECR_REGISTRY/$PRIVATE_REPOSITORY:$IMAGE_TAG"
           docker push $ECR_REGISTRY/$PRIVATE_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$PRIVATE_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
-
-      - name: Build, tag, and push image to Public ECR
-        id: build-public
-        env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ${{ github.sha }}
-        run: |
-          # Build a docker container and
-          # push it to ECR so that it can
-          # be deployed to ECS.
-          echo "docker build -t $PUBLIC_REPOSITORY:$IMAGE_TAG . -f container/Dockerfile"
-          docker build -t $PUBLIC_REPOSITORY:$IMAGE_TAG . -f container/Dockerfile
-          echo "docker push $PUBLIC_REPOSITORY:$IMAGE_TAG"
-          docker push $PUBLIC_REPOSITORY:$IMAGE_TAG
-          echo "image=$PUBLIC_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
-        continue-on-error: true
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def

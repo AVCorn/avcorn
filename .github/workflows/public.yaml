@@ -1,0 +1,45 @@
+ame: Push to Public Docker Repo
+
+on:
+  push:
+    branches: [ "main", "clients/*" ]
+
+env:
+  AWS_REGION: us-east-2
+  PUBLIC_REPOSITORY: public.ecr.aws/f8m8f4z3/avcorn
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@0e613a0980cbf65ed5b322eb7a1e075d28913a83
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@62f4f872db3836360b72999f4b87f1ff13310f3a
+
+      - name: Build, tag, and push image to Public ECR
+        id: build-public
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          # Build a docker container and
+          # push it to ECR so that it can
+          # be deployed to ECS.
+          echo "docker build -t $PUBLIC_REPOSITORY:$IMAGE_TAG . -f container/Dockerfile"
+          docker build -t $PUBLIC_REPOSITORY:$IMAGE_TAG . -f container/Dockerfile
+          echo "docker push $PUBLIC_REPOSITORY:$IMAGE_TAG"
+          docker push $PUBLIC_REPOSITORY:$IMAGE_TAG
+          echo "image=$PUBLIC_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
