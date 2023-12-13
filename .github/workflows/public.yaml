@@ -1,4 +1,4 @@
-ame: Push to Public Docker Repo
+name: Push to Public Docker Repo
 
 on:
   push:
