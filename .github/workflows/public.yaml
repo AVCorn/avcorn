@@ -5,6 +5,7 @@ on:
     branches: [ "main", "clients/*" ]
 
 env:
+  AWS_REGION: us-east-1
   REGISTRY_ALIAS: f8m8f4z3
   PUBLIC_REPOSITORY: avcorn
 
@@ -23,6 +24,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to Amazon ECR
         id: login-ecr-public
