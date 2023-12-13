@@ -6,7 +6,8 @@ on:
 
 env:
   AWS_REGION: us-east-2
-  PUBLIC_REPOSITORY: public.ecr.aws/f8m8f4z3/avcorn
+  REGISTRY_ALIAS: f8m8f4z3
+  PUBLIC_REPOSITORY: avcorn
 
 jobs:
   deploy:
@@ -28,18 +29,15 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@62f4f872db3836360b72999f4b87f1ff13310f3a
+        with:
+          registry-type: public
 
       - name: Build, tag, and push image to Public ECR
         id: build-public
         env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
+          REPOSITORY: my-ecr-public-repo
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          # Build a docker container and
-          # push it to ECR so that it can
-          # be deployed to ECS.
-          echo "docker build -t $PUBLIC_REPOSITORY:$IMAGE_TAG . -f container/Dockerfile"
-          docker build -t $PUBLIC_REPOSITORY:$IMAGE_TAG . -f container/Dockerfile
-          echo "docker push $PUBLIC_REPOSITORY:$IMAGE_TAG"
-          docker push $PUBLIC_REPOSITORY:$IMAGE_TAG
-          echo "image=$PUBLIC_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+          docker build -t $REGISTRY/$REGISTRY_ALIAS/$PUBLIC_REPOSITORY:$IMAGE_TAG .
+          docker push $REGISTRY/$REGISTRY_ALIAS/$PUBLIC_REPOSITORY:$IMAGE_TAG
