@@ -73,7 +73,7 @@ jobs:
         run: |
           echo $TASKDEF
           echo $CLIENT
-          sed -i "s/default/$CLIENT/g" $TASKDEF > $TASKDEF
+          sed -i "s/default/$CLIENT/g" $TASKDEF
           echo "$(cat $TASKDEF)"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
