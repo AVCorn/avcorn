@@ -48,6 +48,7 @@ jobs:
           PRIVATE_REPOSITORY: ${{ github.ref_name }}
         run: |
           CLIENT=${PRIVATE_REPOSITORY//clients\//}
+          echo $CLIENT
           REPOSITORY="$CLIENT-image"
           echo "client=$CLIENT" >> $GITHUB_OUTPUT
           echo "repo=$REPOSITORY" >> $GITHUB_OUTPUT
@@ -70,10 +71,10 @@ jobs:
         env:
           CLIENT: ${{ steps.guess-client.outputs.client }}
           TASKDEF: ${{ env.ECS_TASK_DEFINITION }}
+          CONTAINER: ${{ steps.guess-client.outputs.repo }}
         run: |
-          echo $TASKDEF
-          echo $CLIENT
           sed -i "s/default/$CLIENT/g" $TASKDEF
+          sed -i "s/avcorn-image/$CONTAINER/g" $TASKDEF
           echo "$(cat $TASKDEF)"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
