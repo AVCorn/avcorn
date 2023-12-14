@@ -50,11 +50,11 @@ jobs:
           IMAGE_TAG: latest
         run: |
           REPOSITORY="${PRIVATE_REPOSITORY//clients\//}-image"
-          echo "docker build -t $ECR_REGISTRY/$REPOSITORY:$TAG . -f container/Dockerfile"
-          docker build -t $ECR_REGISTRY/$REPOSITORY:$TAG . -f container/Dockerfile
-          echo "docker push $ECR_REGISTRY/$REPOSITORY:$TAG"
-          docker push $ECR_REGISTRY/$REPOSITORY:$TAG
-          echo "image=$ECR_REGISTRY/$REPOSITORY:$TAG" >> $GITHUB_OUTPUT
+          echo "docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG . -f container/Dockerfile"
+          docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG . -f container/Dockerfile
+          echo "docker push $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG"
+          docker push $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG
+          echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
