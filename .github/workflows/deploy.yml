@@ -42,20 +42,36 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@62f4f872db3836360b72999f4b87f1ff13310f3a
 
+      - name: Figure out Client
+        id: guess-client
+        env:
+          PRIVATE_REPOSITORY: ${{ github.ref_name }}
+        run: |
+          CLIENT=${PRIVATE_REPOSITORY//clients\//}
+          REPOSITORY="$CLIENT-image"
+          echo "client=$CLIENT" >> $GITHUB_OUTPUT
+          echo "repo=$REPOSITORY" >> $GITHUB_OUTPUT
+
       - name: Build, tag, and push image to Private ECR
         id: build-private
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          PRIVATE_REPOSITORY: ${{ github.ref_name }}
           IMAGE_TAG: latest
+          REPOSITORY: ${{ steps.guess-client.outputs.repo }}
         run: |
-          REPOSITORY="${PRIVATE_REPOSITORY//clients\//}-image"
           echo "docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG . -f container/Dockerfile"
           docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG . -f container/Dockerfile
           echo "docker push $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG"
           docker push $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG
-          echo "repo=$REPOSITORY" >> $GITHUB_OUTPUT
           echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+      - name: Build, tag, and push image to Private ECR
+        id: replace-default
+        env:
+          CLIENT: ${{ steps.guess-client.outputs.client }}
+          TASKDEF: ${{ env.ECS_TASK_DEFINITION }}
+        run: |
+          sed -i 's/default/$CLIENT/g' "$TASKDEF"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
