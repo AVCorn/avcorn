@@ -47,7 +47,7 @@ class ActionTest extends TestCase
         $logger = $container->get(LoggerInterface::class);
 
         $testAction = new class ($logger) extends Action {
-           public function action(): Response
+            public function action(): Response
             {
                 return $this->respondWithData(
                     [

@@ -12,10 +12,7 @@ _"The nut doesn't fall from from the tree!"_
 
 ### Install the Application (Locally)
 
-You will require PHP 7.4 or newer.
-
-*   Point your virtual host document root to your new application's `public/` directory.
-*   Ensure `code/app/logs/` is web writable.
+You will require PHP 8.1 or newer.
 
 To run the application in development, you can run this command:
 
@@ -42,27 +39,29 @@ That's it!
 
 In order to run the environment in a production level environment:
 ```bash
-. ./scripts/start.sh
+. avcorn.sh start
 ```
 
 We offer a convient way to shell in to this container:
 ```bash
-. ./scripts/shell.sh
+. avcorn.sh shell
 ```
 
 If you want to clean up the docker containers made:
 ```bash
-. ./scripts/stop.sh
+. avcorn.sh stop
 ```
 
 ### Install the Application Remotely (AWS)
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/blaher/avcorn/main/scripts/install.sh)"
+. avcorn.sh deploy
 ```
 
 ## Links
 
 *   [Development Progress](docs/TODO.md)
 *   [Contributing Guidelines](docs/CONTRIBUTING.md)
+*   [Reporting a Security Issue](docs/SECURITY.md)
 *   [License](docs/LICENSE.md)
+*   [GitHub](https://github.com/blaher/avcorn)

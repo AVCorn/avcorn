@@ -68,10 +68,12 @@
     .topbar-responsive {
         padding: 0.75rem;
     }
+
     .topbar-responsive .top-bar-title {
         position: relative;
         width: 100%;
     }
+
     .topbar-responsive .top-bar-title span {
         position: absolute;
         right: 0;
@@ -79,21 +81,11 @@
         border-radius: 5px;
         padding: 0.25rem 0.45rem;
         top: 50%;
-        -webkit-transform: translateY(-50%);
-                -ms-transform: translateY(-50%);
-                        transform: translateY(-50%);
+        transform: translateY(-50%);
     }
+    
     .topbar-responsive .top-bar-title span .menu-icon {
         margin-bottom: 4px;
-    }
-}
-
-@-webkit-keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
     }
 }
 
@@ -106,42 +98,23 @@
     }
 }
 
-@-webkit-keyframes slideDown {
-    0% {
-        -webkit-transform: translateY(-100%);
-                        transform: translateY(-100%);
-    }
-    100% {
-        -webkit-transform: translateY(0%);
-                        transform: translateY(0%);
-    }
-}
-
 @keyframes slideDown {
     0% {
-        -webkit-transform: translateY(-100%);
-                        transform: translateY(-100%);
+        transform: translateY(-100%);
     }
     100% {
-        -webkit-transform: translateY(0%);
-                        transform: translateY(0%);
+        transform: translateY(0%);
     }
 }
 
 @media screen and (max-width: 39.9375em) {
     .topbar-responsive-links {
-        -webkit-animation-fill-mode: both;
-                        animation-fill-mode: both;
-        -webkit-animation-duration: 0.5s;
-                        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        animation-duration: 0.5s;
         width: 100%;
-        -webkit-animation: fadeIn 1s ease-in;
-                        animation: fadeIn 1s ease-in;
+        animation: fadeIn 1s ease-in;
     }
 }
-
-
-
 
 .marketing-site-footer {
     background: #2c3840;
@@ -180,8 +153,6 @@
 }
 
 .marketing-site-footer-block {
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     margin-bottom: 1rem;
 }
@@ -207,9 +178,7 @@
 }
 
 .marketing-site-footer-bottom .marketing-site-footer-bottom-links {
-    -webkit-justify-content: flex-end;
-            -ms-flex-pack: end;
-                    justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .marketing-site-footer-bottom .marketing-site-footer-bottom-links a {
@@ -218,9 +187,7 @@
 
 @media screen and (max-width: 63.9375em) {
     .marketing-site-footer-bottom .marketing-site-footer-bottom-links {
-        -webkit-justify-content: center;
-                -ms-flex-pack: center;
-                        justify-content: center;
+        justify-content: center;
     }
 }
 
@@ -305,9 +272,7 @@
     position: absolute;
     right: 12px;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-                    transform: translateY(-50%);
+    transform: translateY(-50%);
     text-indent: -9999px;
     width: 25px;
     height: 25px;
@@ -315,7 +280,6 @@
     border-radius: 50%;
     cursor: pointer;
     border: none;
-    -webkit-appearance: none;
     margin-top: 1.3rem;
 }
 

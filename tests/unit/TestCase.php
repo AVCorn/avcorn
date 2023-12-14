@@ -32,15 +32,15 @@ class TestCase extends PHPUnit_TestCase
         // Container intentionally not compiled for tests.
 
         // Set up settings
-        $settings = require __DIR__ . '/../app/settings.php';
+        $settings = include __DIR__ . '/../../code/backend/includes/settings.php';
         $settings($containerBuilder);
 
         // Set up dependencies
-        $dependencies = require __DIR__ . '/../app/dependencies.php';
+        $dependencies = include __DIR__ . '/../../code/backend/includes/dependencies.php';
         $dependencies($containerBuilder);
 
         // Set up repositories
-        $repositories = require __DIR__ . '/../app/repositories.php';
+        $repositories = include __DIR__ . '/../../code/backend/includes/repositories.php';
         $repositories($containerBuilder);
 
         // Build PHP-DI Container instance
@@ -51,11 +51,11 @@ class TestCase extends PHPUnit_TestCase
         $app = AppFactory::create();
 
         // Register middleware
-        $middleware = require __DIR__ . '/../app/middleware.php';
+        $middleware = include __DIR__ . '/../../code/backend/includes/middleware.php';
         $middleware($app);
 
         // Register routes
-        $routes = require __DIR__ . '/../app/routes.php';
+        $routes = include __DIR__ . '/../../code/backend/includes/routes.php';
         $routes($app);
 
         return $app;
@@ -80,7 +80,7 @@ class TestCase extends PHPUnit_TestCase
         $handle = fopen('php://temp', 'w+');
         $stream = (new StreamFactory())->createStreamFromResource($handle);
 
-        $h = new Headers();
+        $headers = new Headers();
         foreach ($headers as $name => $value) {
             $h->addHeader($name, $value);
         }

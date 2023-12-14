@@ -12,6 +12,9 @@
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 
     <!-- Paths to check -->
-    <file>code/src</file>
-    <file>tests/unit</file>
+    <file>backend/includes</file>
+    <file>backend/libraries</file>
+    <file>backend/index.php</file>
+    <file>public/index.php</file>
+    <file>../tests/unit</file>
 </ruleset>

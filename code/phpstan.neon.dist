@@ -1,4 +1,7 @@
 parameters:
   level: 4
   paths:
-    - src
+    - backend/includes
+    - backend/libraries
+    - backend/index.php
+    - public/index.php
