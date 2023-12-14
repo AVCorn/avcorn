@@ -46,14 +46,16 @@ jobs:
         id: build-private
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ${{ github.ref_name }}
+          PRIVATE_REPOSITORY: ${{ github.ref_name }}
+          IMAGE_TAG: latest
         run: |
-          TAG="${IMAGE_TAG//\//-}"
-          echo "docker build -t $ECR_REGISTRY/$PRIVATE_REPOSITORY:$TAG . -f container/Dockerfile"
-          docker build -t $ECR_REGISTRY/$PRIVATE_REPOSITORY:$TAG . -f container/Dockerfile
-          echo "docker push $ECR_REGISTRY/$PRIVATE_REPOSITORY:$TAG"
-          docker push $ECR_REGISTRY/$PRIVATE_REPOSITORY:$TAG
-          echo "image=$ECR_REGISTRY/$PRIVATE_REPOSITORY:$TAG" >> $GITHUB_OUTPUT
+          REPOSITORY="${PRIVATE_REPOSITORY//\//-}"
+          CONTAINER="${REPOSITORY//clients/client}/${CONTAINER_NAME}"
+          echo "docker build -t $ECR_REGISTRY/$CONTAINER:$TAG . -f container/Dockerfile"
+          docker build -t $ECR_REGISTRY/$CONTAINER:$TAG . -f container/Dockerfile
+          echo "docker push $ECR_REGISTRY/$CONTAINER:$TAG"
+          docker push $ECR_REGISTRY/$CONTAINER:$TAG
+          echo "image=$ECR_REGISTRY/$CONTAINER:$TAG" >> $GITHUB_OUTPUT
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
