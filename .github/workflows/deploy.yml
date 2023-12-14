@@ -65,7 +65,7 @@ jobs:
           docker push $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-      - name: Build, tag, and push image to Private ECR
+      - name: Replace Client ID
         id: replace-default
         env:
           CLIENT: ${{ steps.guess-client.outputs.client }}
@@ -78,7 +78,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
         with:
           task-definition: ${{ env.ECS_TASK_DEFINITION }}
-          container-name: ${{ steps.build-private.outputs.repo }}
+          container-name: ${{ steps.guess-client.outputs.repo }}
           image: ${{ steps.build-private.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
