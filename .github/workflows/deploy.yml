@@ -71,6 +71,7 @@ jobs:
           CLIENT: ${{ steps.guess-client.outputs.client }}
           TASKDEF: ${{ env.ECS_TASK_DEFINITION }}
         run: |
+          echo $TASKDEF
           sed -i 's/default/$CLIENT/g' $TASKDEF > $TASKDEF
           echo "$(cat $TASKDEF)"
 
