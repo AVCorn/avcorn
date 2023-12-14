@@ -70,13 +70,11 @@ jobs:
         id: replace-default
         env:
           CLIENT: ${{ steps.guess-client.outputs.client }}
-          REPOSITORY: ${{ steps.guess-client.outputs.repo }}
           TASKDEF: ${{ env.ECS_TASK_DEFINITION }}
           CONTAINER: ${{ steps.build-private.outputs.image }}
         run: |
           sed -i "s/default/$CLIENT/g" $TASKDEF
           sed -i "s/avcorn-image/${CONTAINER//\//\\\/}/g" $TASKDEF
-          sed -i "s/avcorn-container/${REPOSITORY//\//\\\/}/g" $TASKDEF
           echo "$(cat $TASKDEF)"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
@@ -84,7 +82,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
         with:
           task-definition: ${{ env.ECS_TASK_DEFINITION }}
-          container-name: ${{ steps.guess-client.outputs.repo }}
+          container-name: ${{ env.CONTAINER_NAME }}
           image: ${{ steps.build-private.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
