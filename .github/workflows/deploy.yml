@@ -71,7 +71,7 @@ jobs:
           CLIENT: ${{ steps.guess-client.outputs.client }}
           TASKDEF: ${{ env.ECS_TASK_DEFINITION }}
         run: |
-          sed -i 's/default/$CLIENT/g' "$TASKDEF"
+          sed -i 's/default/$CLIENT/g' "$TASKDEF" > "$TASKDEF"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
