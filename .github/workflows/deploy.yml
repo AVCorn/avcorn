@@ -49,20 +49,19 @@ jobs:
           PRIVATE_REPOSITORY: ${{ github.ref_name }}
           IMAGE_TAG: latest
         run: |
-          REPOSITORY="${PRIVATE_REPOSITORY//\//-}"
-          CONTAINER="${REPOSITORY//clients/client}/${CONTAINER_NAME}"
-          echo "docker build -t $ECR_REGISTRY/$CONTAINER:$TAG . -f container/Dockerfile"
-          docker build -t $ECR_REGISTRY/$CONTAINER:$TAG . -f container/Dockerfile
-          echo "docker push $ECR_REGISTRY/$CONTAINER:$TAG"
-          docker push $ECR_REGISTRY/$CONTAINER:$TAG
-          echo "image=$ECR_REGISTRY/$CONTAINER:$TAG" >> $GITHUB_OUTPUT
+          REPOSITORY="${PRIVATE_REPOSITORY//clients\//}-image"
+          echo "docker build -t $ECR_REGISTRY/$REPOSITORY:$TAG . -f container/Dockerfile"
+          docker build -t $ECR_REGISTRY/$REPOSITORY:$TAG . -f container/Dockerfile
+          echo "docker push $ECR_REGISTRY/$REPOSITORY:$TAG"
+          docker push $ECR_REGISTRY/$REPOSITORY:$TAG
+          echo "image=$ECR_REGISTRY/$REPOSITORY:$TAG" >> $GITHUB_OUTPUT
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
         with:
           task-definition: ${{ env.ECS_TASK_DEFINITION }}
-          container-name: ${{ env.CONTAINER_NAME }}
+          container-name: ${{ env.REPOSITORY }}
           image: ${{ steps.build-private.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
