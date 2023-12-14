@@ -74,7 +74,7 @@ jobs:
           CONTAINER: ${{ steps.build-private.outputs.image }}
         run: |
           sed -i "s/default/$CLIENT/g" $TASKDEF
-          sed -i "s/avcorn-image/$CONTAINER/g" $TASKDEF
+          sed -i "s/avcorn-image/${CONTAINER//\//\\\/}/g" $TASKDEF
           echo "$(cat $TASKDEF)"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
