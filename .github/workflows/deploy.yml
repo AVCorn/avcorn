@@ -71,7 +71,7 @@ jobs:
         env:
           CLIENT: ${{ steps.guess-client.outputs.client }}
           TASKDEF: ${{ env.ECS_TASK_DEFINITION }}
-          CONTAINER: ${{ steps.guess-client.outputs.repo }}
+          CONTAINER: ${{ steps.build-private.outputs.image }}
         run: |
           sed -i "s/default/$CLIENT/g" $TASKDEF
           sed -i "s/avcorn-image/$CONTAINER/g" $TASKDEF
