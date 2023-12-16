@@ -50,8 +50,10 @@ jobs:
           CLIENT=${PRIVATE_REPOSITORY//clients\//}
           echo $CLIENT
           REPOSITORY="$CLIENT-image"
+          CONTAINER=$CLIENT-container"
           echo "client=$CLIENT" >> $GITHUB_OUTPUT
           echo "repo=$REPOSITORY" >> $GITHUB_OUTPUT
+          echo "container=$CONTAINER" >> $GITHUB_OUTPUT
 
       - name: Build, tag, and push image to Private ECR
         id: build-private
@@ -71,9 +73,9 @@ jobs:
         env:
           CLIENT: ${{ steps.guess-client.outputs.client }}
           TASKDEF: ${{ env.ECS_TASK_DEFINITION }}
-          CONTAINER: ${{ steps.build-private.outputs.image }}
+          IMAGE: ${{ steps.build-private.outputs.image }}
         run: |
-          sed -i "s/avcorn-image/${CONTAINER//\//\\\/}/g" $TASKDEF
+          sed -i "s/avcorn-image/${IMAGE//\//\\\/}/g" $TASKDEF
           sed -i "s/avcorn-/${CLIENT}-/g" $TASKDEF
           echo "$(cat $TASKDEF)"
 
@@ -82,7 +84,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
         with:
           task-definition: ${{ env.ECS_TASK_DEFINITION }}
-          container-name: ${{ steps.guess-client.outputs.repo }}
+          container-name: ${{ steps.guess-client.outputs.container }}
           image: ${{ steps.build-private.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
