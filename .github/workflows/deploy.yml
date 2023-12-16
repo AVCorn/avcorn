@@ -50,7 +50,7 @@ jobs:
           CLIENT=${PRIVATE_REPOSITORY//clients\//}
           echo $CLIENT
           REPOSITORY="$CLIENT-image"
-          CONTAINER=$CLIENT-container"
+          CONTAINER="$CLIENT-container"
           echo "client=$CLIENT" >> $GITHUB_OUTPUT
           echo "repo=$REPOSITORY" >> $GITHUB_OUTPUT
           echo "container=$CONTAINER" >> $GITHUB_OUTPUT
