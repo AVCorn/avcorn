@@ -19,7 +19,7 @@ env:
   ECS_SERVICE: avcorn-service
   ECS_CLUSTER: avcorn-cluster
   ECS_TASK_DEFINITION: ./.aws/ecs-taskdefinition.json
-  CONTAINER_NAME: avcorn-image
+  CONTAINER_NAME: avcorn-container
 
 jobs:
   deploy:
@@ -42,27 +42,49 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@62f4f872db3836360b72999f4b87f1ff13310f3a
 
+      - name: Figure out Client
+        id: guess-client
+        env:
+          PRIVATE_REPOSITORY: ${{ github.ref_name }}
+        run: |
+          CLIENT=${PRIVATE_REPOSITORY//clients\//}
+          echo $CLIENT
+          REPOSITORY="$CLIENT-image"
+          CONTAINER="$CLIENT-container"
+          echo "client=$CLIENT" >> $GITHUB_OUTPUT
+          echo "repo=$REPOSITORY" >> $GITHUB_OUTPUT
+          echo "container=$CONTAINER" >> $GITHUB_OUTPUT
+
       - name: Build, tag, and push image to Private ECR
         id: build-private
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ${{ github.sha }}
+          IMAGE_TAG: latest
+          REPOSITORY: ${{ steps.guess-client.outputs.repo }}
         run: |
-          # Build a docker container and
-          # push it to ECR so that it can
-          # be deployed to ECS.
-          echo "docker build -t $ECR_REGISTRY/$PRIVATE_REPOSITORY:$IMAGE_TAG . -f container/Dockerfile"
-          docker build -t $ECR_REGISTRY/$PRIVATE_REPOSITORY:$IMAGE_TAG . -f container/Dockerfile
-          echo "docker push $ECR_REGISTRY/$PRIVATE_REPOSITORY:$IMAGE_TAG"
-          docker push $ECR_REGISTRY/$PRIVATE_REPOSITORY:$IMAGE_TAG
-          echo "image=$ECR_REGISTRY/$PRIVATE_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+          echo "docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG . -f container/Dockerfile"
+          docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG . -f container/Dockerfile
+          echo "docker push $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG"
+          docker push $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG
+          echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+      - name: Replace Client ID
+        id: replace-default
+        env:
+          CLIENT: ${{ steps.guess-client.outputs.client }}
+          TASKDEF: ${{ env.ECS_TASK_DEFINITION }}
+          IMAGE: ${{ steps.build-private.outputs.image }}
+        run: |
+          sed -i "s/avcorn-image/${IMAGE//\//\\\/}/g" $TASKDEF
+          sed -i "s/avcorn-/${CLIENT}-/g" $TASKDEF
+          echo "$(cat $TASKDEF)"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
         with:
           task-definition: ${{ env.ECS_TASK_DEFINITION }}
-          container-name: ${{ env.CONTAINER_NAME }}
+          container-name: ${{ steps.guess-client.outputs.container }}
           image: ${{ steps.build-private.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
