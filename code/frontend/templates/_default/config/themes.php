@@ -14,5 +14,6 @@ $themes = [
     'autoshop' => 'categories/autoshop',
     'church' => 'categories/church',
     'coffeeshop' => 'categories/coffeeshop',
+    'landscape' => 'categories/landscape',
     'restaurant' => 'categories/restaurant',
 ];
