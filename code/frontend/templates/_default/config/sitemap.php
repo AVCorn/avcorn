@@ -71,7 +71,7 @@ $sitemap = [
         'gallery' => [
             'title' => 'Gallery',
             'description' => 'Photo gallery.',
-            'link' => '/galley',
+            'link' => '/gallery',
         ],
         'playground' => [
             'title' => 'Styles Playground',

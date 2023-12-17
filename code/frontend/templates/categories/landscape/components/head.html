@@ -1,5 +1,3 @@
-<title>{% block title %}{% endblock %}</title>
-
 {% include "components/head.html" %}
 
 <script>
@@ -41,11 +39,18 @@
         font-weight: normal;
     }
 
+    .button {
+        background: #686;
+    }
+
+    .button:hover {
+        background: rgba(1, 50, 32, 100%);
+    }
+
     .sticky-shrinknav-header {
-        background: rgba(1, 50, 32, 0.6);
+        background: rgba(1, 50, 32, 60%);
         background: linear-gradient(0deg, rgba(1, 25, 16, 75%) 0%, rgba(1, 50, 32, 75%) 100%);
         box-shadow: 0 0 5px #000;
-        padding: 30px 0 0 0;
         width: 100%;
         height: 250px;
         display: flex;
@@ -55,6 +60,13 @@
         overflow: hidden;
         transition: all 0.5s ease;
         z-index: 2000;
+    }
+
+    .sticky-shrinknav-container {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 10%) 0%, rgba(0, 0, 0, 0%) 30%, rgba(0, 0, 0, 20%) 100%);
+        height: 100%;
+        padding: 30px 0 0 0;
+        width: 100%;
     }
 
     .sticky-shrinknav-header-title {
@@ -67,6 +79,7 @@
 
     .sticky-shrinknav-header img {
         height: 250px;
+        margin-left: 1em;
         transition: all 0.5s ease;
     }
 
@@ -81,12 +94,12 @@
 
     .sticky-shrinknav-menu .menu {
         font-size: 1.2em;
-        margin: 5em 5em 1em 0;
+        margin: 1em 2em 5em 0;
         transition: all 0.5s ease;
     }
 
     body.sticky-shrinknav-wrapper .sticky-shrinknav-menu .menu {
-        margin: 2em 5em 1em 0;
+        margin: 2em 2em 1em 0;
     }
     
     .sticky-shrinknav-menu a {
@@ -95,18 +108,17 @@
     }
     
     .sticky-shrinknav-menu a:hover {
-        background: rgba(1, 50, 32, 0.6);
         color: lightgreen;
+        text-shadow: 0 0 5px #000;
     }
 
-    .sticky-shrinknav-menu .active a {
+    .sticky-shrinknav-menu .active>a {
+        background: none;
         font-weight: bold;
-        background: rgba(50, 50, 50, 0.6);
     }
 
-    .sticky-shrinknav-menu .active a:hover {
+    .sticky-shrinknav-menu .active>a:hover {
         font-weight: bold;
-        background: rgba(50, 50, 50, 0.8);
     }
 
     body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
@@ -125,11 +137,43 @@
 
     .call-now, .free-quote {
         color: #fff;
+        line-height: 1.2em;
+        margin: 0 2em 1em 0;
+        transition: all 0.5s ease;
+    }
+
+    body.sticky-shrinknav-wrapper .call-now, body.sticky-shrinknav-wrapper .free-quote {
+        margin: 0 2em 3em 0;
+    }
+
+    .call-now {
+        font-size: 1.6em;
+        text-shadow: 0 0 10px #000;
+    }
+
+    body.sticky-shrinknav-wrapper .call-now {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 50%);
+    }
+
+    .free-quote {
         font-size: 1.2em;
         font-weight: bold;
-        line-height: 1.2em;
-        margin: 0 2em 5em 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 50%);
+    }
+
+    .free-quote:hover {
+        box-shadow: 0 0 5px #000;
+    }
+
+    .responsive-toggle, .responsive-phone {
+        color: #fff;
+        font-size: 1.5em;
+        margin: 0 2.8em;
         transition: all 0.5s ease;
+    }
+
+    .responsive-toggle a, .responsive-phone a {
+        color: #fff;
     }
 
     body.sticky-shrinknav-wrapper .call-now, body.sticky-shrinknav-wrapper .free-quote {
@@ -146,6 +190,11 @@
         color: #fff;
         font-size: 6em;
         font-weight: bold;
+    }
+
+    .hero .button {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 75%);
+        margin: 0.5em 1em;
     }
 
     .content {
@@ -241,6 +290,3 @@
         margin: 0.5em 1em;
     }
 </style>
-
-{% block styles %}{% endblock %}
-{% block scripts %}{% endblock %}

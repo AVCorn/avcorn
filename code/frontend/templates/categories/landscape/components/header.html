@@ -1,24 +1,34 @@
 <header class="sticky-shrinknav-header">
-    <div class="sticky-shrinknav-header-title">
-        <a class="logo" href="/">
-            <img src="/assets/images/logos/logo-lawncare.png" alt="{{ info.company }}" />
-        </a>
-        <span class="hide-for-medium responsive-toggle" data-responsive-toggle="nav-menu">
-            <button class="menu-icon" type="button" data-toggle></button>
-        </span>
-    </div>
-    
-    <nav id="nav-menu" class="sticky-shrinknav-menu">
-        <div class="top-bar-right">
-            <ul class="dropdown menu vertical medium-horizontal float-left" data-dropdown-menu>
-                {% set activeflag = 'true' %}
-                {% include "components/navigation.html" %}
-            </ul>
-            <a class="free-quote button float-left" href="/contact{{ linkparams }}">Free Quote</a>
-            <div class="call-now float-left text-center">
-                Call Now:<br />
-                330.484.1234
-            </div>
+    <div class="sticky-shrinknav-container">
+        <div class="sticky-shrinknav-header-title">
+            <span class="responsive-toggle hide-for-medium" data-responsive-toggle="nav-menu">
+                <button class="menu-icon" type="button" data-toggle></button>
+            </span>
+            <a class="logo" href="/{{ linkparams }}">
+                <img src="/assets/images/logos/logo-lawncare.png" alt="{{ info.company }}" />
+            </a>
+            <span class="responsive-phone hide-for-medium">
+                <a href="tel:{{ info.phone }}"><i class="fa fa-phone"></i></a>
+            </span>
         </div>
-    </nav>
+        
+        <nav id="nav-menu" class="sticky-shrinknav-menu">
+            <div class="top-bar-right">
+                <ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu>
+                    {% set activeflag = 'true' %}
+                    {% include "components/navigation.html" %}
+                </ul>
+                
+                <div class="call-now show-for-medium float-left text-center">
+                    <a href="tel:{{ info.phone }}">
+                        Call Now:
+                        <br />
+                        {{ info.phone }}
+                    </a>
+                </div>
+                
+                <a class="free-quote button show-for-medium float-left" href="/contact{{ linkparams }}">Free Quote</a>
+            </div>
+        </nav>
+    </div>
 </header>
