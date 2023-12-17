@@ -55,11 +55,11 @@ body {
 body.sticky-shrinknav-wrapper {
     padding-top: 130px;
 
-    .sticky-shrinknav-header{
+    .sticky-shrinknav-header {
         height: $sticky-shrinknav-menu-height;
         background-color: rgba($primary-color, 90%);
 
-        .sticky-shrinknav-header-title{
+        .sticky-shrinknav-header-title {
             transform: scale(0);
             transition: all 0.3s ease;
         }
