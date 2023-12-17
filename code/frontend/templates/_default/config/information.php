@@ -17,11 +17,4 @@ $information = [
     'zip' => '94015',
     'phone' => '1 (800) 555-5555',
     'email' => 'notreal@fakeemail.com',
-
-    'facebook' => 'https://facebook.com',
-    'instagram' => 'https://instagram.com',
-    'twitter' => 'https://twitter.com',
-    'linkedin' => 'https://linkedin.com',
-    'youtube' => 'https://youtube.com',
-    'github' => 'https://github.com/blaher/avcorn',
 ];

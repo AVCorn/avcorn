@@ -16,10 +16,4 @@ $information = [
     'zip' => '44626',
     'phone' => '1 (800) 555-5555',
     'email' => '',
-
-    'facebook' => 'https://facebook.com',
-    'instagram' => 'https://instagram.com',
-    'twitter' => 'https://twitter.com',
-    'linkedin' => 'https://linkedin.com',
-    'youtube' => 'https://youtube.com',
 ];
