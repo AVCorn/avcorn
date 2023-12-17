@@ -11,8 +11,18 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 use Slim\Views\Twig;
 
 return function (App $app) {
+    // default sets
+    $default = 'default';
+    $default_path = '/_' . $default . '/';
+
+    // override defaults if client is set in environment
+    if (isset($_ENV['client']) && $_ENV['client'] !== 'default') {
+        $default = $_ENV['client'];
+        $default_path = '/clients/' . $default . '/';
+    }
+
     //load config
-    include_once '../frontend/templates/_default/config.php';
+    include_once '../frontend/templates/' . $default_path . '/config.php';
 
     // commonly referred to paths
     $config['template_extension'] = '.html';
@@ -26,8 +36,8 @@ return function (App $app) {
     foreach ($config['map'] as $route => $page) {
         // build out config for each route
         $config['uri'] = $route;
-        $config['template'] = 'default';
-        $config['template_path'] = $config['templates_root'] . '/_default/';
+        $config['template'] = $default;
+        $config['template_path'] = $config['templates_root'] . $default_path;
         $config['layout'] = 'main';
         $config['layout_file'] = $config['layout'] . $config['template_extension'];
         $config['layout_path'] = $config['template_path'] . $config['layouts_root'] . $config['layout_file'];
@@ -79,6 +89,7 @@ return function (App $app) {
         });
     }
 
+    // health check
     $app->get('/health', function (Request $request, Response $response, array $args) {
         $response->getBody()->write("Ok");
         return $response;
