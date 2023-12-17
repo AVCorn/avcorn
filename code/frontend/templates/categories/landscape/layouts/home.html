@@ -2,7 +2,7 @@
 <html class="whatinput-types-initial whatinput-types-mouse" land="en">
     <head>
         <title>{% block title %}{% endblock %}</title>
-        
+
         {% include template_path~"/components/head.html" %}
     </head>
 
@@ -14,6 +14,39 @@
         <article class="content row padding-2">
             
         </article>
+
+        <div class="bottom-hero">
+            {% block footer %}
+                <div class="bottom-info row expanded text-center">
+                    <div class="columns small-12 medium-4 editable">
+                        <h3>Contact Us</h3>
+                        <p class="h5">
+                            <strong>Phone:</strong>
+                            <a href="tel:{{ info.phone }}">{{ info.phone }}</a>
+                            <br />
+                            <strong>Email:</strong>
+                            <a href="mailto:{{ info.email }}">{{ info.email }}</a>
+                        </p>
+                    </div>
+                    <div class="columns show-for-medium medium-4 editable">
+                        <h3>Get Quote</h3>
+                        <a class="button" href="/contact{{ linkparams }}">Get Estimate</a>
+                        <br />
+                        <a class="button" href="/services{{ linkparams }}">Our Services</a>
+                    </div>
+                    <div class="columns small-12 medium-4 editable">
+                        <h3>Areas Served</h3>
+                        <ul class="no-bullet">
+                            <li>Akron, OH</li>
+                            <li>Canton, OH</li>
+                            <li>Cleveland, OH</li>
+                            <li>Massillon, OH</li>
+                            <li>North Canton, OH</li>
+                        </ul>
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
 
         {% include template_path~"/components/footer.html" %}
     </body>

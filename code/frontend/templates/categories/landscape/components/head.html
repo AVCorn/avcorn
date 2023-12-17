@@ -128,6 +128,7 @@
 
     body.sticky-shrinknav-wrapper .sticky-shrinknav-header img {
         height: 150px;
+        margin-left: 2em;
     }
 
     .top-bar-title {
@@ -182,7 +183,7 @@
 
     .hero {
         color: #fff;
-        height: 40vh;
+        height: 350px;
         text-shadow: 0 0 10px #000;
     }
 
@@ -197,15 +198,49 @@
         margin: 0.5em 1em;
     }
 
+    .content-wrapper {
+        background: rgb(111, 135, 111);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 100%);
+        overflow: show;
+        margin-bottom: -160px;
+    }
+
     .content {
         background: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 60%);
+        margin-bottom: 10px;
+        position: relative;
+        top: -60px;
+    }
+
+    .bottom-hero {
+        background-image: url('/assets/images/content/lawncare-bottom-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 50%);
+        color: #fff;
+        height: 400px;
+        padding-top: 80px;
+    }
+
+    .bottom-hero h3, .bottom-hero a {
+        color: #fff;
+    }
+
+    .bottom-hero a:hover {
+        color: rgb(111, 135, 111);
+    }
+
+    .bottom-hero .overlay {
+        background: rgba(0, 0, 0, 80%);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 50%);
     }
 
     .footer {
         background: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 100%);
         color: #000;
-        margin: 2em 0 0 0;
+        margin: 0;
     }
 
     .reviews {
@@ -268,18 +303,22 @@
         background: #000500;
         background: linear-gradient(120deg, #000500 0%, #111511 70%, #222822 100%);
         box-shadow: 0 0 5px #000;
-        color: #fff;
+        color: #ddd;
         font-weight: 400;
         padding: 1.5em 4em 1em 4em;
     }
 
     .bottom a {
-        color: #fff;
+        color: #ddd;
         transition: all 0.3s ease;
     }
 
     .bottom a:hover {
-        color: #ccc;
+        color: #aaa;
+    }
+
+    .bottom .legal {
+        text-shadow: 0 0 10px #000;
     }
 
     .designed-by {

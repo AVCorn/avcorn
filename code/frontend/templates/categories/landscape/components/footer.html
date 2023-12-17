@@ -1,27 +1,7 @@
 <footer class="footer">
-    <div class="bottom-hero">
-        {% block footer %}
-            <div class="editable">
-                Some content here.
-            </div>
-        {% endblock %}
-    </div>
-
     <div class="reviews padding-2">
         <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
         <div class="elfsight-app-8211aeb1-d7ee-4431-9ffc-d2cefca6a50f" data-elfsight-app-lazy></div>
-    </div>
-
-    <div class="bottom-info row expanded text-center">
-        <div class="columns small-12 medium-4">
-            <h3>Contact Us</h3>
-        </div>
-        <div class="columns show-for-medium medium-4">
-            <h3>Get Quote</h3>
-        </div>
-        <div class="columns small-12 medium-4">
-            <h3>Areas Served</h3>
-        </div>
     </div>
     
     <div class="bottom-nav row expanded grid-x align-bottom">
@@ -46,11 +26,11 @@
     <div class="bottom row expanded">
         <div class="legal column small-12 medium-10">
             <br />
-            <a href="/privacy-policy{{ linkparams }}">Privacy Policy</a>
-            | <a href="/terms-of-use{{ linkparams }}">Terms of Use</a>
-            <br />
             &copy; {{ "now"|date("Y") }} {{ info.company }}
             <span class="show-for-medium">- All Rights Reserved.</span>
+            <br />
+            <a href="/privacy-policy{{ linkparams }}">Privacy Policy</a>
+            | <a href="/terms-of-use{{ linkparams }}">Terms of Use</a>
         </div>
         <div class="designed-by column show-for-medium medium-2">
             <div>Designed By:</div>
