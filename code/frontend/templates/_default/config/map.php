@@ -10,7 +10,10 @@ $map = [
     '/designs' => 'designs',
     '/gallery' => 'gallery',
     '/guide' => 'guide',
+    '/playground' => 'playground',
+    '/privacy-policy' => 'privacy',
     '/services' => 'services',
     '/sitemap' => 'sitemap',
+    '/terms-of-use' => 'terms',
     '/testimonials' => 'testimonials',
 ];
