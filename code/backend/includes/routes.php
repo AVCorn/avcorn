@@ -12,27 +12,31 @@ use Slim\Views\Twig;
 
 function find_last_modified_file(string $dir): ?string
 {
-    if (!is_dir($dir)) throw new \ValueError('Expecting a valid directory!');
+    if (!is_dir($dir)) {
+        throw new \ValueError('Expecting a valid directory!');
+    }
 
     $latest = null;
     $latestTime = 0;
-    foreach (scandir($dir) as $path) if (!in_array($path, ['.', '..', 'cache', 'tests'], true)) {
-        $filename = $dir . DIRECTORY_SEPARATOR . $path;
+    foreach (scandir($dir) as $path) {
+        if (!in_array($path, ['.', '..', 'cache', 'tests'], true)) {
+            $filename = $dir . DIRECTORY_SEPARATOR . $path;
 
-        if (is_dir($filename)) {
-            $directoryLastModifiedFile = find_last_modified_file($filename);
+            if (is_dir($filename)) {
+                $directoryLastModifiedFile = find_last_modified_file($filename);
 
-            if (null === $directoryLastModifiedFile) {
-                continue;
-            } else {
-                $filename = $directoryLastModifiedFile;
+                if (null === $directoryLastModifiedFile) {
+                    continue;
+                } else {
+                    $filename = $directoryLastModifiedFile;
+                }
             }
-        }
 
-        $lastModified = filemtime($filename);
-        if ($lastModified > $latestTime) {
-            $latestTime = $lastModified;
-            $latest = $filename;
+            $lastModified = filemtime($filename);
+            if ($lastModified > $latestTime) {
+                $latestTime = $lastModified;
+                $latest = $filename;
+            }
         }
     }
 
