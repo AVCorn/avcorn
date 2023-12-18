@@ -1,0 +1,23 @@
+<script>
+    function watcher_check(time = 0) {
+        const request = new Request("/watch");
+
+        fetch(request)
+            .then((response) => response.json())
+            .then((data) => {
+                if (time > 0 && data.time > time) {
+                    console.log("Watcher found file(s) updated!");
+                    location.reload();
+                } else {
+                    setTimeout(function() {
+                        watcher_check(data.time);
+                    }, 5000);
+                }
+            })
+            .catch(console.error);
+    }
+
+    $(document).ready(function(){
+        watcher_check();
+    });
+</script>

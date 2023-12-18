@@ -10,6 +10,35 @@ use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 use Slim\Views\Twig;
 
+function find_last_modified_file(string $dir): ?string
+{
+    if (!is_dir($dir)) throw new \ValueError('Expecting a valid directory!');
+
+    $latest = null;
+    $latestTime = 0;
+    foreach (scandir($dir) as $path) if (!in_array($path, ['.', '..', 'cache', 'tests'], true)) {
+        $filename = $dir . DIRECTORY_SEPARATOR . $path;
+
+        if (is_dir($filename)) {
+            $directoryLastModifiedFile = find_last_modified_file($filename);
+
+            if (null === $directoryLastModifiedFile) {
+                continue;
+            } else {
+                $filename = $directoryLastModifiedFile;
+            }
+        }
+
+        $lastModified = filemtime($filename);
+        if ($lastModified > $latestTime) {
+            $latestTime = $lastModified;
+            $latest = $filename;
+        }
+    }
+
+    return $latest;
+}
+
 return function (App $app) {
     // default sets
     $default = 'default';
@@ -92,6 +121,17 @@ return function (App $app) {
     // health check
     $app->get('/health', function (Request $request, Response $response, array $args) {
         $response->getBody()->write("Ok");
+        return $response;
+    });
+
+    // watcher
+    $app->get('/watch', function (Request $request, Response $response, array $args) {
+        $latest_file = find_last_modified_file(__DIR__ . '/../../');
+        $latest_time = filemtime($latest_file);
+
+        $json = '{"time": ' . (string)$latest_time . '}';
+
+        $response->getBody()->write($json);
         return $response;
     });
 };
