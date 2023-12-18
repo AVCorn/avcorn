@@ -53,9 +53,9 @@ return function (App $app) {
         $config['page_path'] = $config['template_path'] . $config['pages_root'] . $config['page_file'];
 
         // create route
-        $app->get($route, function (Request $request, Response $response, array $args) use ($config) {
+        $app->get($route, function (Request $req, Response $res, array $args) use ($config) {
             // pass parameters to use
-            $config['get'] = $request->getQueryParams();
+            $config['get'] = $req->getQueryParams();
 
             // Override main config with template's
             if (isset($config['get']['design']) && isset($config['themes'][$config['get']['design']])) {
@@ -91,18 +91,19 @@ return function (App $app) {
             }
 
             // Render the template with Twig
-            $view = Twig::fromRequest($request);
-            return $view->render($response, $config['page_path'], $config);
+            $view = Twig::fromRequest($req);
+            return $view->render($res, $config['page_path'], $config);
         });
     }
 
     // health check
-    $app->get('/health', function (Request $request, Response $response, array $args) {
-        $response->getBody()->write("Ok");
-        return $response;
+    $app->get('/health', function (Request $req, Response $res, array $args) {
+        $res->getBody()->write("Ok");
+        return $res;
     });
 
-    function find_last_modified_file(string $dir): ?string {
+    function findNewestFile(string $dir): ?string
+    {
         if (!is_dir($dir)) {
             throw new \ValueError('Expecting a valid directory!');
         }
@@ -114,13 +115,13 @@ return function (App $app) {
                 $filename = $dir . DIRECTORY_SEPARATOR . $path;
 
                 if (is_dir($filename)) {
-                    $directoryLastModifiedFile = find_last_modified_file($filename);
+                    $directoryLastModifiedFile = findNewestFile($filename);
 
                     if (null === $directoryLastModifiedFile) {
                         continue;
-                    } else {
-                        $filename = $directoryLastModifiedFile;
                     }
+                    
+                    $filename = $directoryLastModifiedFile;
                 }
 
                 $lastModified = filemtime($filename);
@@ -135,13 +136,13 @@ return function (App $app) {
     }
 
     // watcher
-    $app->get('/watch', function (Request $request, Response $response, array $args) {
-        $latest_file = find_last_modified_file(__DIR__ . '/../../');
+    $app->get('/watch', function (Request $req, Response $res, array $args) {
+        $latest_file = findNewestFile(__DIR__ . '/../../');
         $latest_time = filemtime($latest_file);
 
         $json = '{"time": ' . (string)$latest_time . '}';
 
-        $response->getBody()->write($json);
+        $res->getBody()->write($json);
         return $response;
     });
 };
