@@ -53,6 +53,13 @@ return function (App $app) {
     //load config
     include_once '../frontend/templates/' . $default_path . '/config.php';
 
+    $config['development'] = true;
+    $config['production'] = false;
+    if (isset($_ENV['environment']) && $_ENV['environment'] === 'production') {
+        $config['development'] = false;
+        $config['production'] = true;
+    }
+
     // commonly referred to paths
     $config['template_extension'] = '.html';
     $config['frontend_path'] = '../frontend/';
