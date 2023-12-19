@@ -98,7 +98,7 @@ return function (App $app) {
 
     // health check
     $app->get('/health', function (Request $req, Response $res, array $args) {
-        $res->getBody()->write("Ok");
+        $res->getBody()->write('Ok');
         return $res;
     });
 
@@ -120,7 +120,7 @@ return function (App $app) {
                     if (null === $directoryLastModifiedFile) {
                         continue;
                     }
-                    
+
                     $filename = $directoryLastModifiedFile;
                 }
 
