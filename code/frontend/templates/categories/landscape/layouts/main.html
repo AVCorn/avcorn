@@ -9,19 +9,21 @@
         {% block scripts %}{% endblock %}
     </head>
 
-    <div class="hero">
-        {% block header %}
-            <div class="editable"></div>
-        {% endblock %}
-    </div>
-
     <body>
         {% include "components/admin.html" %}
 
         {% include template_path~"/components/header.html" %}
 
+        <div class="hero">
+            <div class="wow animate__fadeInUp" data-wow-duration="1s">
+                {% block header %}
+                    <div class="editable"></div>
+                {% endblock %}
+            </div>
+        </div>
+
         <div class="content-wrapper">
-            <article class="content row padding-2">
+            <article class="content row padding-2 wow animate__fadeInUp" data-wow-duration="2s">
                 {% block content %}
                     <div class="editable"></div>
                 {% endblock %}
@@ -32,7 +34,7 @@
             {% block footer %}
                 <div class="bottom-info row expanded text-center">
                     <div class="columns small-12 medium-4 padding-3">
-                        <div class="overlay padding-1 editable">
+                        <div class="overlay padding-1 editable wow animate__fadeInUp" data-wow-duration="1s">
                             <h3>Contact Us</h3>
                             <br />
                             <p class="h5">
@@ -48,7 +50,7 @@
                         </div>
                     </div>
                     <div class="columns show-for-medium medium-4 padding-3">
-                        <div class="overlay padding-1 editable">
+                        <div class="overlay padding-1 editable wow animate__fadeInUp" data-wow-duration="1s">
                             <h3>Get Quote</h3>
                             <br />
                             <a class="button" href="/contact{{ linkparams }}">Get Estimate</a>
@@ -57,7 +59,7 @@
                         </div>
                     </div>
                     <div class="columns small-12 medium-4 padding-3">
-                        <div class="overlay padding-1 editable">
+                        <div class="overlay padding-1 editable wow animate__fadeInUp" data-wow-duration="1s">
                             <h3>Areas Served</h3>
                             <ul class="no-bullet">
                                 <li>Akron, OH</li>
