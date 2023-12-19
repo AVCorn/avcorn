@@ -1,0 +1,62 @@
+{% extends layout_path %}
+
+{% block title %}
+    {{ info.title }} - Privacy Policy
+{% endblock %}
+
+{% block header %}
+        <div class="row padding-1 editable">
+            <h1>Privacy Policy</h1>
+        </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row padding-3 text-justify editable">
+        <div class="callout secondary columns small-12 medium-6 large-4 float-right margin-3 padding-2">
+            <h2>Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+            <div class="padding-1">
+                <strong>{{ info.company }}</strong><br />
+                {{ info.address }}<br />
+                {{ info.city }}, {{ info.state }} {{ info.zip }}<br />
+                {{ info.phone }}<br />
+            </div>
+            <br />
+
+            <a class="button float-right" href="/contact{{ linkparams }}">Contact Us</a>
+        </div>
+
+        <h2>Privacy Policy for {{ info.company }}</h2>
+        <p><strong>Last Updated:</strong> <em>December 17th, 2023</em></p>
+
+        <p>This Privacy Policy informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. By using the Service, you agree to the collection and use of information in accordance with this policy.</p>
+        
+        <h2 class="subheader">Information Collection And Use</h2>
+        <p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
+        
+        <h2 class="subheader">Types of Data Collected</h2>
+        <p><strong>Personal Data:</strong> While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. This may include, but is not limited to, your email address, name, phone number, and postal address.</p>
+        <p><strong>Usage Data:</strong> We may also collect information on how the Service is accessed and used. This Usage Data may include information such as your computer's Internet Protocol address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, and other diagnostic data.</p>
+        
+        <h2 class="subheader">Use of Data</h2>
+        <p>{{ info.company }} uses the collected data for various purposes, such as to provide and maintain the Service, notify you about changes to our Service, allow you to participate in interactive features of our Service, provide customer support, gather analysis or valuable information so that we can improve the Service, monitor the usage of the Service, and detect, prevent, and address technical issues.</p>
+        
+        <h2 class="subheader">Transfer Of Data</h2>
+        <p>Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.</p>
+        
+        <h2 class="subheader">Disclosure Of Data</h2>
+        <p></p>{{ info.company }} may disclose your Personal Data in good faith belief that such action is necessary to comply with a legal obligation, protect and defend the rights or property of {{ info.company }}, prevent or investigate possible wrongdoing in connection with the Service, protect the personal safety of users of the Service or the public, and protect against legal liability.</p>
+        
+        <h2 class="subheader">Security Of Data</h2>
+        <p>The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure.</p>
+        
+        <h2 class="subheader">Service Providers</h2>
+        <p>We may employ third-party companies and individuals to facilitate our Service, provide the Service on our behalf, perform Service-related services, or assist us in analyzing how our Service is used.</p>
+        
+        <h2 class="subheader">Links To Other Sites</h2>
+        <p>Our Service may contain links to other sites that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+        
+        <h2 class="subheader">Changes To This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+    </div>
+{% endblock %}
