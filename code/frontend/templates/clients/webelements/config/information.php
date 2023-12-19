@@ -8,8 +8,8 @@ $information = [
     'slogan' => 'We Are WEB Elements',
     'motto' => 'We Are WEB Elements',
 
-    'copyright' => '&copy; 2023',
-    'legal' => '- All rights reserved',
+    'copyright' => '2023',
+    'legal' => 'All rights reserved',
 
     'address' => '',
     'city' => 'East Sparta, OH',
