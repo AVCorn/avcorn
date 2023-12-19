@@ -16,7 +16,7 @@ return function (App $app) {
     $default_path = '/_' . $default . '/';
 
     // override defaults if client is set in environment
-    if (isset($_ENV['client']) && $_ENV['client'] !== 'default') {
+    if (isset($_ENV['client']) && $_ENV['client'] !== 'default' && $_ENV['client'] !== 'avcorn') {
         $default = $_ENV['client'];
         $default_path = '/clients/' . $default . '/';
     }
