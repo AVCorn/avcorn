@@ -1,5 +1,5 @@
-{% set layout = "home" %}
-{% extends "template/switcher.html" %}
+{% set tmppath = template_path~layouts_root~"/home.html" %}
+{% extends tmppath %}
 
 {% block title %}
     {{ info.title }}

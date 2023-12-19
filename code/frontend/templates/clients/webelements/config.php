@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-require_once 'map.php';
-require_once 'information.php';
-require_once 'social.php';
-require_once 'sitemap.php';
-require_once 'trackers.php';
+require_once 'config/map.php';
+require_once 'config/information.php';
+require_once 'config/social.php';
+require_once 'config/sitemap.php';
+require_once 'config/trackers.php';
 
 $config['map'] = $map;
 $config['info'] = $information;

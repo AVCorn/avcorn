@@ -11,38 +11,203 @@
 
         {% include template_path~"/components/header.html" %}
 
-        <article class="content row padding-2">
-            
-        </article>
+        <div class="hero">
+            <div class="wow animate__fadeInUp" data-wow-duration="1s">
+                {% block header %}
+                    <div class="editable"></div>
+                {% endblock %}
+            </div>
+        </div>
+
+        <div class="estimate-wrapper">
+            <div class="estimate row wow animate__fadeInUp" data-wow-duration="1s">
+                <div class="estimate-form grid-x align-bottom">
+                    <div class="show-for-medium cell medium-4 align-bottom">
+                        <img class="estimate-img" src="/assets/images/nutty/nutty-lawnmower.png" alt="" />
+                    </div>
+                    <div class="cell medium-8 padding-3">
+                        <h2 class="h1 editable">Get a Free Estimate</h2>
+                        <p class="editable">Complete the form below &amp; one of our team members will get in touch with you soon!</p>
+                        <br />
+
+                        <form class="row grid-x grid-margin-x">
+                            <div class="cell small-12">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Name" />
+                            </div>
+
+                            <div class="cell small-12 large-6">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Email" />
+                            </div>
+
+                            <div class="cell small-12 large-6">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Phone" />
+                            </div>
+
+                            <div class="cell small-12 large-6">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" name="address" placeholder="Address" />
+                            </div>
+
+                            <div class="cell small-12 large-6">
+                                <label for="services">Service(s) Needed</label>
+                                <textarea id="services" name="services" placeholder="Service(s) You Would Like" rows="3"></textarea>
+                            </div>
+
+                            <div class="cell small-12"><br /></div>
+
+                            <div class="cell small-12 text-center">
+                                <button type="submit" class="large button">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle-hero">
+            <br />
+        </div>
+
+        <div class="content-wrapper">
+            <article class="content row padding-2 wow animate__fadeInUp" data-wow-duration="2s">
+                {% block content %}
+                    <div class="editable"></div>
+                {% endblock %}
+            </article>
+        </div>
+
+        <div class="services row expanded text-center">
+            <h2 class="floating h1 editable">Our Lawn Care Services</h2>
+            <p class="floating h5 editable">We offer lawn care & landscape services here in Canton & surrounding areas.</p>
+            <br />
+            <br />
+            <div class="row expanded grid-x grid-margin-x">
+                <div class="service cell small-12 medium-6 large-4 grid-x wow animate__fadeInUp" data-wow-duration="1s" style="background-image: url('/assets/images/content/lawncare-middle-bg.jpg');">
+                    <div class="service-overlay row expanded cell padding-3 editable">
+                        <img class="small-6" src="/assets/images/nutty/nutty-lawnmower.png" alt="" />
+                        <h3>
+                            Commercial Lawn Care
+                            <br />
+                            Maintence
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <br />
+                        <a class="large button" href="/services">Commercial Lawn Care</a>
+                    </div>
+                </div>
+
+                <div class="service cell small-12 medium-6 large-4 grid-x wow animate__fadeInUp" data-wow-duration="1s" style="background-image: url('/assets/images/content/lawncare-bottom-bg.jpg');">
+                    <div class="service-overlay row expanded cell padding-3 editable">
+                        <img class="small-6" src="/assets/images/nutty/nutty-lawnmower.png" alt="" />
+                        <h3>
+                            Industrial Lawn Care
+                            <br />
+                            Maintence
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <br />
+                        <a class="large button" href="/services">Industrial Lawn Care</a>
+                    </div>
+                </div>
+
+                <div class="service cell small-12 medium-6 large-4 grid-x wow animate__fadeInUp" data-wow-duration="1s" style="background-image: url('/assets/images/content/lawncare-middle-bg.jpg');">
+                    <div class="service-overlay row expanded cell padding-3 editable">
+                        <img class="small-6" src="/assets/images/nutty/nutty-lawnmower.png" alt="" />
+                        <h3>
+                            Residental Lawn Care
+                            <br />
+                            Maintence
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <br />
+                        <a class="large button" href="/services">Residental Lawn Care</a>
+                    </div>
+                </div>
+
+                <div class="service cell small-12 medium-6 large-4 grid-x wow animate__fadeInUp" data-wow-duration="1s" style="background-image: url('/assets/images/content/lawncare-bg.gif');">
+                    <div class="service-overlay row expanded cell padding-3 editable">
+                        <img class="small-6" src="/assets/images/nutty/nutty-lawnmower.png" alt="" />
+                        <h3>
+                            Landscape
+                            <br />
+                            Maintence
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <br />
+                        <a class="large button" href="/services">Landscaping</a>
+                    </div>
+                </div>
+
+                <div class="service cell small-12 medium-6 large-4 grid-x wow animate__fadeInUp" data-wow-duration="1s" style="background-image: url('/assets/images/content/lawncare-middle-bg.jpg');">
+                    <div class="service-overlay row expanded cell padding-3 editable">
+                        <img class="small-6" src="/assets/images/nutty/nutty-lawnmower.png" alt="" />
+                        <h3>
+                            Spring &amp; Fall
+                            <br />
+                            Property Cleanups
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <br />
+                        <a class="large button" href="/services">Property Cleanups</a>
+                    </div>
+                </div>
+
+                <div class="service cell small-12 medium-6 large-4 grid-x wow animate__fadeInUp" data-wow-duration="1s" style="background-image: url('/assets/images/content/lawncare-bottom-bg.jpg');">
+                    <div class="service-overlay row expanded cell padding-3 editable">
+                        <img class="small-6" src="/assets/images/nutty/nutty-lawnmower.png" alt="" />
+                        <h3>
+                            Snow Removal
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <br />
+                        <a class="large button" href="/services">Snow Removal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="bottom-hero">
             {% block footer %}
                 <div class="bottom-info row expanded text-center">
-                    <div class="columns small-12 medium-4 editable">
-                        <h3>Contact Us</h3>
-                        <p class="h5">
-                            <strong>Phone:</strong>
-                            <a href="tel:{{ info.phone }}">{{ info.phone }}</a>
+                    <div class="columns small-12 medium-4 padding-3">
+                        <div class="overlay padding-1 editable wow animate__fadeInUp" data-wow-duration="1s">
+                            <h3>Contact Us</h3>
                             <br />
-                            <strong>Email:</strong>
-                            <a href="mailto:{{ info.email }}">{{ info.email }}</a>
-                        </p>
+                            <p class="h5">
+                                <strong>Phone:</strong>
+                                <a href="tel:{{ info.phone }}">{{ info.phone }}</a>
+                            </p>
+                            <br />
+                            <p class="h5">
+                                <strong>Email:</strong>
+                                <a href="mailto:{{ info.email }}">{{ info.email }}</a>
+                            </p>
+                            <br />
+                        </div>
                     </div>
-                    <div class="columns show-for-medium medium-4 editable">
-                        <h3>Get Quote</h3>
-                        <a class="button" href="/contact{{ linkparams }}">Get Estimate</a>
-                        <br />
-                        <a class="button" href="/services{{ linkparams }}">Our Services</a>
+                    <div class="columns show-for-medium medium-4 padding-3">
+                        <div class="overlay padding-1 editable wow animate__fadeInUp" data-wow-duration="1s">
+                            <h3>Get Quote</h3>
+                            <br />
+                            <a class="button" href="/contact{{ linkparams }}">Get Estimate</a>
+                            <br />
+                            <a class="button" href="/services{{ linkparams }}">Our Services</a>
+                        </div>
                     </div>
-                    <div class="columns small-12 medium-4 editable">
-                        <h3>Areas Served</h3>
-                        <ul class="no-bullet">
-                            <li>Akron, OH</li>
-                            <li>Canton, OH</li>
-                            <li>Cleveland, OH</li>
-                            <li>Massillon, OH</li>
-                            <li>North Canton, OH</li>
-                        </ul>
+                    <div class="columns small-12 medium-4 padding-3">
+                        <div class="overlay padding-1 editable wow animate__fadeInUp" data-wow-duration="1s">
+                            <h3>Areas Served</h3>
+                            <ul class="no-bullet">
+                                <li>Akron, OH</li>
+                                <li>Canton, OH</li>
+                                <li>Cleveland, OH</li>
+                                <li>Massillon, OH</li>
+                                <li>North Canton, OH</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             {% endblock %}

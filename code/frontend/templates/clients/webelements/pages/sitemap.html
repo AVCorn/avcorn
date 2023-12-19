@@ -1,4 +1,4 @@
-{% extends "template/switcher.html" %}
+{% extends layout_path %}
 
 {% block title %}
     {{ info.title }} - Sitemap
@@ -14,6 +14,6 @@
     <div class="row padding-2 editable">
         <p>Our website sitemap serves as a roadmap, guiding you through the various sections and pages that make up our digital space. Whether you're seeking information about our company, exploring our range of products and services, or delving into our blog for insights, this sitemap provides an organized overview of the content available to you.</p>
 
-        {% include "template/components/sitemap.html" %}
+        {% include "components/sitemap.html" %}
     </div>
 {% endblock %}
