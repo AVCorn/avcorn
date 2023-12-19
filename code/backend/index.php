@@ -17,7 +17,13 @@ require __DIR__ . '/../vendor/autoload.php';
 // Instantiate PHP-DI ContainerBuilder
 $containerBuilder = new ContainerBuilder();
 
-if (isset($_ENV['production'])) { // Should be set to true in production
+// Set _GET client to _ENV client
+if (isset($_GET['client'])) {
+    $_ENV['client'] = $_GET['client'];
+}
+
+// Enable cache on Production
+if (isset($_ENV['production'])) {
     $containerBuilder->enableCompilation(__DIR__ . '/cache');
 }
 
