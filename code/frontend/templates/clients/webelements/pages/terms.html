@@ -1,0 +1,59 @@
+{% extends layout_path %}
+
+{% block title %}
+    {{ info.title }} <p>Terms of Use
+{% endblock %}
+
+{% block header %}
+    <div class="row padding-1 editable">
+        <h1>Terms of Usage</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row padding-3 text-justify editable">
+        <div class="callout secondary columns small-12 medium-6 large-4 float-right margin-3 padding-2">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or concerns about our Terms of Use, please contact us at:</p>
+            <div class="padding-1">
+                <strong>{{ info.company }}</strong><br />
+                {{ info.address }}<br />
+                {{ info.city }}, {{ info.state }} {{ info.zip }}<br />
+                {{ info.phone }}<br />
+            </div>
+            <br />
+
+            <a class="button float-right" href="/contact{{ linkparams }}">Contact Us</a>
+        </div>
+
+        <h2>Terms of Use for {{ info.company }}</h2>
+        <p><strong>Last Updated:</strong> <em>December 17th, 2023</em></p>
+
+        <p>These Terms of Use govern your use of our websit and any related services provided by {{ info.company }}.</p>
+        <p>By accessing our website, you agree to abide by these Terms of Use and any amendments to them.</p>
+        
+        <h2 class="subheader">Intellectual Property</h2>
+        <p>The content on our website, including all written content, graphics, designs, images, photographs, and other material is the property of {{ info.company }} and is protected by copyright and intellectual property laws.</p>
+        <p>You may not use, reproduce, or distribute any content from our website without our express written permission.
+        
+        <h2 class="subheader">User Obligations</h2>
+        <p>You agree to use our website only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the website.</p>
+        <p>Prohibited behavior includes harassing or causing distress or inconvenience to any other user, transmitting obscene or offensive content, or disrupting the normal flow of dialogue within our website.</p>
+        
+        <h2 class="subheader">Disclaimers</h2>
+        <p>Our website and its content are provided on an '<em>as is</em>' basis. {{ info.company }} makes no representations or warranties, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose.</p>
+        <p>Any reliance you place on such information is strictly at your own risk.</p>
+        
+        <h2 class="subheader">Limitation of Liability</h2>
+        <p>{{ info.company }} will not be liable for any consequential, incidental, indirect, exemplary, punitive, or special damages of any kind, however caused, including loss of profits, revenue, data, or use, incurred by you, whether under theory of contract, tort (including negligence), warranty, or otherwise, even if the other party has been advised of the possibility of such damages.</p>
+        
+        <h2 class="subheader">Indemnity</h2>
+        <p>You agree to indemnify, defend, and hold harmless {{ info.company }} and its officers, directors, employees, agents, affiliates, and licensors from and against any and all claims, liabilities, damages, penalties, fines, legal fees, and expenses arising out of your use of our website or breach of these Terms of Use.</p>
+        
+        <h2 class="subheader">Modifications</h2>
+        <p>{{ info.company }} reserves the right to modify or replace these Terms of Use at any time. Any changes will be posted on this page with an updated revision date.</p>
+        
+        <h2 class="subheader">Governing Law</h2>
+        <p>These Terms of Use are governed by the laws of the United States without regard to its conflict of law principles.</p>
+    </div>
+{% endblock %}

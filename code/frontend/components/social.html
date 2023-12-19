@@ -1,0 +1,21 @@
+{% set socialicons = {
+    'github': 'fa fa-github',
+    'facebook': 'fa fa-facebook',
+    'twitter': 'fa fa-twitter',
+    'instagram': 'fa fa-instagram',
+    'pintrest': 'fa fa-pinterest-p',
+    'youtube': 'fa fa-youtube-square',
+    'vimeo': 'fa fa-vimeo',
+    'flickr': 'fa fa-flickr',
+    'linkedin': 'fa fa-linkedin'
+} %}
+
+{% for key, icon in socialicons %}
+    {% if social[key] %}
+        <li>
+            <a href="{{ social[key] }}" target="_blank" rel="noopener noreferrer">
+                <i class="{{ icon }}" aria-hidden="true"></i>
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}

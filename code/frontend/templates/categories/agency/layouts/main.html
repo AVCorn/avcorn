@@ -3,7 +3,7 @@
     <head>
         <title>{% block title %}{% endblock %}</title>
 
-        {% include "templates/categories/agency/components/head.html" %}
+        {% include template_path~"/components/head.html" %}
 
         <style>
             body {
@@ -236,9 +236,9 @@
                     <br />
                 </div>
 
-                <div class="logo columns small-12 medium-8 large-7">
+                <div class="logo columns small-12 medium-8 large-7 text-center">
                     <a href="/{{ linkparams }}">
-                        {{ info.company }}
+                        <img src="/assets/images/logos/webelements.png" title="{{ info.company }}" alt="{{ info.company }}" />
                     </a>
                 </div>
 
@@ -311,10 +311,7 @@
                             <span class="show-for-medium padding-1">Connect</span>
 
                             <ul class="social align-right">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                {% include "components/social.html" %}
                             </ul>
                         </li>
                     </ul>

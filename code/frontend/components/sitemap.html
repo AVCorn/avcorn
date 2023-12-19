@@ -1,11 +1,26 @@
-<div class="row padding-3">
-    <ul>
-        {% for url, page in sitemap %}
-            <li>
-                <a href="{{ url }}">
-                    {{ page }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
+<div class="row">
+    {% for section in sitemap.sections %}
+        <div class="columns small-12 medium-4 padding-2">
+            {% if section.title %}
+                <h3>{{ section.title }}</h3>
+            {% endif %}
+            {% if section.description %}
+                <p>{{ section.description }}</p>
+            {% endif %}
+            <ul>
+                {% for page in section.pages %}
+                    <li>
+                        <strong>
+                            <a href="{{ sitemap.pages[page].link }}{{ linkparams }}">
+                                {{ sitemap.pages[page].title }}
+                            </a>
+                        </strong>
+                        {% if sitemap.pages[page].description %}
+                            - {{ sitemap.pages[page].description }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
 </div>

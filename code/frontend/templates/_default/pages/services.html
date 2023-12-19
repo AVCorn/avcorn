@@ -12,6 +12,20 @@
 
 {% block content %}
     <div class="row padding-2 editable">
+        <div class="callout secondary columns small-12 medium-6 large-4 float-right margin-3 padding-2">
+            <h2>Contact Us</h2>
+            <p>To get started today or find out more infromation, please contact us at:</p>
+            <div class="padding-1">
+                <strong>{{ info.company }}</strong><br />
+                {{ info.address }}<br />
+                {{ info.city }}, {{ info.state }} {{ info.zip }}<br />
+                {{ info.phone }}<br />
+            </div>
+            <br />
+
+            <a class="button float-right" href="/contact{{ linkparams }}">Contact Us</a>
+        </div>
+
         <p>The Web Design Team is a collective of visionary creatives and technical experts dedicated to crafting captivating, functional, and user-centric digital experiences. Our team synergizes artistic flair with cutting-edge technology to bring your digital vision to life, ensuring that every pixel and interaction resonates with your audience.</p>
 
         <h2>Discovery and Strategy:</h2>
@@ -35,5 +49,11 @@
         <br />
 
         <p>Partnering with our Web Design Team means embarking on a journey where innovation meets functionality. We craft digital experiences that not only elevate your online presence but also leave a lasting impression, driving engagement, conversion, and success in the ever-evolving digital landscape.</p>
+
+        <hr />
+        
+        <div class="text-center">
+            <a class="large button" href="/contact{{ linkparams }}">Contact Us</a>
+        </div>
     </div>
 {% endblock %}

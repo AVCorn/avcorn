@@ -1,0 +1,422 @@
+{% include "components/head.html" %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+    $(function() {
+        $(window).scroll(function() {
+            var winTop = $(window).scrollTop();
+            if (winTop >= 30) {
+                $("body").addClass("sticky-shrinknav-wrapper");
+            } else{
+                $("body").removeClass("sticky-shrinknav-wrapper");
+            }
+        });
+        
+        var wow = new WOW();
+        wow.init();
+    });
+</script>
+
+<style>
+    body {
+        background-image: url('/assets/images/content/lawncare-bg.gif');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding-top: 280px;
+    }
+
+    h1, h2, h3, h4, h5 {
+        color: #343;
+        font-weight: bold;
+    }
+
+    a {
+        color: #686;
+    }
+
+    a:hover {
+        color: #464;
+    }
+
+    .subheader {
+        color: #686;
+        font-weight: normal;
+    }
+
+    .button {
+        background: #686;
+    }
+
+    .button:hover {
+        background: rgba(1, 50, 32, 100%);
+    }
+
+    .sticky-shrinknav-header {
+        background: rgba(1, 50, 32, 60%);
+        background: linear-gradient(0deg, rgba(1, 25, 16, 75%) 0%, rgba(1, 50, 32, 75%) 100%);
+        box-shadow: 0 0 5px #000;
+        width: 100%;
+        height: 250px;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        z-index: 2000;
+    }
+
+    .sticky-shrinknav-container {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 10%) 0%, rgba(0, 0, 0, 0%) 30%, rgba(0, 0, 0, 20%) 100%);
+        height: 100%;
+        padding: 30px 0 0 0;
+        width: 100%;
+    }
+
+    .sticky-shrinknav-header-title {
+        transition: all 0.3s ease;
+        position: relative;
+        transform: translateY(-1.875rem);
+        margin-bottom: 0;
+        color: #fefefe;
+    }
+
+    .sticky-shrinknav-header img {
+        height: 250px;
+        margin-left: 1em;
+        transition: all 0.5s ease;
+    }
+
+    .sticky-shrinknav-menu {
+        position: absolute;
+        right: 0px;
+        bottom: 0;
+        line-height: 1em;
+        width: 100%;
+        transition: all 0.5s ease;
+    }
+
+    .sticky-shrinknav-menu .menu {
+        font-size: 1.2em;
+        margin: 1em 2em 5em 0;
+        transition: all 0.5s ease;
+    }
+
+    body.sticky-shrinknav-wrapper .sticky-shrinknav-menu .menu {
+        margin: 2em 2em 1em 0;
+    }
+    
+    .sticky-shrinknav-menu a {
+        transition: all 0.3s ease;
+        color: #fefefe;
+    }
+    
+    .sticky-shrinknav-menu a:hover {
+        color: lightgreen;
+        text-shadow: 0 0 5px #000;
+    }
+
+    .sticky-shrinknav-menu .active>a {
+        background: none;
+        font-weight: bold;
+    }
+
+    .sticky-shrinknav-menu .active>a:hover {
+        font-weight: bold;
+    }
+
+    body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
+        height: 150px;
+        background: linear-gradient(0deg, rgba(16, 36, 31, 95%) 0%, rgba(34, 68, 53, 95%) 100%);
+    }
+
+    body.sticky-shrinknav-wrapper .sticky-shrinknav-header img {
+        height: 150px;
+        margin-left: 2em;
+    }
+
+    .top-bar-title {
+        margin: 0;
+        padding: 0;
+    }
+
+    .call-now, .free-quote {
+        color: #fff;
+        line-height: 1.2em;
+        margin: 0 2em 1em 0;
+        transition: all 0.5s ease;
+    }
+
+    body.sticky-shrinknav-wrapper .call-now, body.sticky-shrinknav-wrapper .free-quote {
+        margin: 0 2em 3em 0;
+    }
+
+    .call-now {
+        font-size: 1.6em;
+        text-shadow: 0 0 10px #000;
+    }
+
+    body.sticky-shrinknav-wrapper .call-now {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 50%);
+    }
+
+    .free-quote {
+        font-size: 1.2em;
+        font-weight: bold;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 50%);
+    }
+
+    .free-quote:hover {
+        box-shadow: 0 0 5px #000;
+    }
+
+    .responsive-toggle, .responsive-phone {
+        color: #fff;
+        font-size: 1.5em;
+        margin: 0 2.8em;
+        transition: all 0.5s ease;
+    }
+
+    .responsive-toggle a, .responsive-phone a {
+        color: #fff;
+    }
+
+    body.sticky-shrinknav-wrapper .call-now, body.sticky-shrinknav-wrapper .free-quote {
+        margin: 0 2em 1em 0;
+    }
+
+    .hero {
+        color: #fff;
+        height: 350px;
+        text-shadow: 0 0 10px #000;
+    }
+
+    .hero h1 {
+        color: #fff;
+        font-size: 6em;
+        font-weight: bold;
+    }
+
+    .hero .button {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 75%);
+        margin: 0.5em 1em;
+    }
+
+    .content-wrapper, .estimate-wrapper {
+        background: linear-gradient(180deg, #eee 0%, #eee 20%, rgb(111, 135, 111) 100%);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 100%);
+        overflow: show;
+        margin-bottom: -120px;
+    }
+
+    .estimate-wrapper {
+        background: #eee;
+        margin-bottom: -180px;
+    }
+
+    .content, .estimate {
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 60%);
+        margin-bottom: 10px;
+        position: relative;
+        top: -60px;
+    }
+
+    .estimate {
+        background: url('/assets/images/content/lawncare-bottom-bg.jpg');
+        margin-bottom: 160px;
+        overflow: hidden;
+    }
+
+    .estimate-form {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 80%) 0%, rgba(255, 255, 255, 80%) 20%, rgba(111, 135, 111, 100%) 100%);
+        height: 100%;
+        width: 100%;
+    }
+
+    .estimate-form h2 {
+        color: #343;
+        font-weight: bold;
+    }
+
+    .estimate-form label {
+        color: #343;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .estimate-form .button {
+        box-shadow: 0 0 5px #000;
+        font-weight: bold;
+    }
+
+    .estimate-img {
+        bottom: -40px;
+        position: relative;
+        left: -50px;
+    }
+
+    .services {
+        background: rgba(111, 135, 111);
+        margin-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    .services h2 {
+        font-weight: bold;
+    }
+
+    .services .floating {
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 80%);
+    }
+
+    .services .service {
+        background: #fff;
+        background-color: #fff;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 60%);
+        margin-bottom: 30px;
+    }
+
+    .services .service-overlay {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 90%) 0%, rgba(255, 255, 255, 90%) 70%, rgba(160, 160, 160, 90%) 100%);
+    }
+
+    .services .button {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 40%);
+        font-weight: bold;
+    }
+
+    .middle-hero, .bottom-hero {
+        background-attachment: fixed;
+        background-color: rgb(111, 135, 111);
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 50%);
+        color: #fff;
+        min-height: 400px;
+        padding-top: 80px;
+    }
+
+    .middle-hero {
+        background-image: url('/assets/images/content/lawncare-middle-bg.jpg');
+    }
+
+    .bottom-hero {
+        background-image: url('/assets/images/content/lawncare-bottom-bg.jpg');
+        padding-top: 40px;
+    }
+
+    .bottom-hero h3, .bottom-hero a {
+        color: #fff;
+    }
+
+    .bottom-hero a:hover {
+        color: rgb(111, 135, 111);
+    }
+
+    .bottom-hero .overlay {
+        background: rgba(0, 0, 0, 80%);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 50%);
+    }
+
+    .footer {
+        background: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 100%);
+        color: #000;
+        margin: 0;
+    }
+
+    .reviews {
+        background: #fff;
+        background: linear-gradient(0deg, #fff 0%, rgb(111, 135, 111) 100%);
+    }
+
+    .reviews .swiper-slide-visible div div div {
+        background: #fff;
+        background: linear-gradient(180deg, #fff 0%, #fff 70%, #ccc 100%);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 40%);
+        margin: 5px;
+    }
+
+    .reviews .swiper-slide-visible div div div div {
+        background: none;
+        box-shadow: none;
+        margin: 2px;
+    }
+
+    .reviews .es-widget-title div div {
+        color: #fff !important;
+        font-size: 2em;
+        text-shadow: 0 0 5px #000;
+    }
+
+    .bottom-nav {
+        color: #333;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .bottom-nav a {
+        color: #333833;
+        transition: all 0.3s ease;
+    }
+
+    .bottom-nav a:hover {
+        color:#686;
+    }
+
+    .bottom-nav .active>a {
+        background: none;
+        color:#686;
+    }
+
+    .bottom-nav .logo {
+        text-align: center;
+    }
+
+    .bottom-nav .logo img {
+        height: 120px;
+    }
+
+    .bottom-nav .social {
+        font-size: 1.6em;
+    }
+
+    .bottom {
+        background: #000500;
+        background: linear-gradient(120deg, #000500 0%, #111511 70%, #222822 100%);
+        box-shadow: 0 0 5px #000;
+        color: #ddd;
+        font-weight: 400;
+        padding: 1.5em 4em 1em 4em;
+    }
+
+    .bottom a {
+        color: #ddd;
+        transition: all 0.3s ease;
+    }
+
+    .bottom a:hover {
+        color: #aaa;
+    }
+
+    .bottom .legal {
+        text-shadow: 0 0 10px #000;
+    }
+
+    .designed-by {
+        font-size: 0.9em;
+        font-weight: 500;
+    }
+    .designed-by img {
+        margin: 0.5em 1em;
+    }
+</style>

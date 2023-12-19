@@ -11,8 +11,25 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 use Slim\Views\Twig;
 
 return function (App $app) {
+    // default sets
+    $default = 'default';
+    $default_path = '/_' . $default . '/';
+
+    // override defaults if client is set in environment
+    if (isset($_ENV['client']) && $_ENV['client'] !== 'default') {
+        $default = $_ENV['client'];
+        $default_path = '/clients/' . $default . '/';
+    }
+
     //load config
-    include_once '../frontend/templates/_default/config.php';
+    include_once '../frontend/templates/' . $default_path . '/config.php';
+
+    $config['development'] = true;
+    $config['production'] = false;
+    if (isset($_ENV['environment']) && $_ENV['environment'] === 'production') {
+        $config['development'] = false;
+        $config['production'] = true;
+    }
 
     // commonly referred to paths
     $config['template_extension'] = '.html';
@@ -26,8 +43,8 @@ return function (App $app) {
     foreach ($config['map'] as $route => $page) {
         // build out config for each route
         $config['uri'] = $route;
-        $config['template'] = 'default';
-        $config['template_path'] = $config['templates_root'] . '/_default/';
+        $config['template'] = $default;
+        $config['template_path'] = $config['templates_root'] . $default_path;
         $config['layout'] = 'main';
         $config['layout_file'] = $config['layout'] . $config['template_extension'];
         $config['layout_path'] = $config['template_path'] . $config['layouts_root'] . $config['layout_file'];
@@ -36,9 +53,9 @@ return function (App $app) {
         $config['page_path'] = $config['template_path'] . $config['pages_root'] . $config['page_file'];
 
         // create route
-        $app->get($route, function (Request $request, Response $response, array $args) use ($config) {
+        $app->get($route, function (Request $req, Response $res, array $args) use ($config) {
             // pass parameters to use
-            $config['get'] = $request->getQueryParams();
+            $config['get'] = $req->getQueryParams();
 
             // Override main config with template's
             if (isset($config['get']['design']) && isset($config['themes'][$config['get']['design']])) {
@@ -74,13 +91,58 @@ return function (App $app) {
             }
 
             // Render the template with Twig
-            $view = Twig::fromRequest($request);
-            return $view->render($response, $config['page_path'], $config);
+            $view = Twig::fromRequest($req);
+            return $view->render($res, $config['page_path'], $config);
         });
     }
 
-    $app->get('/health', function (Request $request, Response $response, array $args) {
-        $response->getBody()->write("Ok");
+    // health check
+    $app->get('/health', function (Request $req, Response $res, array $args) {
+        $res->getBody()->write('Ok');
+        return $res;
+    });
+
+    function findNewestFile(string $dir): ?string
+    {
+        if (!is_dir($dir)) {
+            throw new \ValueError('Expecting a valid directory!');
+        }
+
+        $latest = null;
+        $latestTime = 0;
+        foreach (scandir($dir) as $path) {
+            if (!in_array($path, ['.', '..', 'cache', 'tests'], true)) {
+                $filename = $dir . DIRECTORY_SEPARATOR . $path;
+
+                if (is_dir($filename)) {
+                    $directoryLastModifiedFile = findNewestFile($filename);
+
+                    if (null === $directoryLastModifiedFile) {
+                        continue;
+                    }
+
+                    $filename = $directoryLastModifiedFile;
+                }
+
+                $lastModified = filemtime($filename);
+                if ($lastModified > $latestTime) {
+                    $latestTime = $lastModified;
+                    $latest = $filename;
+                }
+            }
+        }
+
+        return $latest;
+    }
+
+    // watcher
+    $app->get('/watch', function (Request $req, Response $res, array $args) {
+        $latest_file = findNewestFile(__DIR__ . '/../../');
+        $latest_time = filemtime($latest_file);
+
+        $json = '{"time": ' . (string)$latest_time . '}';
+
+        $res->getBody()->write($json);
         return $response;
     });
 };

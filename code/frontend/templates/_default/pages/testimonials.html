@@ -1,4 +1,4 @@
-{% extends layout %}
+{% extends layout_path %}
 
 {% block title %}
     {{ info.title }} - Testimonials
@@ -9,9 +9,9 @@
 {% endblock %}
 
 {% block header %}
-        <div class="row padding-1 editable">
-            <h1>Testimonials</h1>
-        </div>
+    <div class="row padding-1 editable">
+        <h1>Testimonials</h1>
+    </div>
 {% endblock %}
 
 {% block content %}
@@ -63,12 +63,14 @@
             Even if they want to or not!
         </p>
 
+        <br />
+
         <p>
             So, without further ado. Here are some fabulous reviews from our amazing and happy customers:
         </p>
     </div>
 
-<div class="row padding-1">
+    <div class="row padding-1">
         <div class="row margin-1">
             <div class="testimonial-block-vertical columns small-12 medium-10 large-8">
                 <div class="testimonial-block-vertical-quote">
@@ -461,5 +463,10 @@
             <div class="columns small-0 medium-2 large-4"></div>
         </div>
 
+        <hr />
+        
+        <div class="text-center">
+            <a class="large button" href="/contact{{ linkparams }}">Contact Us</a>
+        </div>
     </div>
 {% endblock %}

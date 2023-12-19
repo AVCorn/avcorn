@@ -79,6 +79,13 @@ jobs:
           sed -i "s/avcorn-/${CLIENT}-/g" $TASKDEF
           echo "$(cat $TASKDEF)"
 
+      - name: Post Check Replacements
+        id: check-replacements
+        env:
+          TASKDEF: ${{ env.ECS_TASK_DEFINITION }}
+        run: |
+          echo "$(cat $TASKDEF)"
+
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
