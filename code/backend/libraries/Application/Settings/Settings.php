@@ -6,7 +6,7 @@ namespace App\Application\Settings;
 
 /**
  * Class Settings
- * 
+ *
  * @phpversion  >= 8.1
  * @package App\Application\Settings
  */
