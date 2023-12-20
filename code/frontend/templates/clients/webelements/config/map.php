@@ -7,6 +7,7 @@ $map = [
     '/about' => 'about',
     '/clients' => 'clients',
     '/contact' => 'contact',
+    '/designs' => 'clients',
     '/services' => 'services',
     '/sitemap' => 'sitemap',
 ];
