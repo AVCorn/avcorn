@@ -55,7 +55,7 @@
     color: #eee;
     background: rgba(200, 200, 200, 30%);
     border-bottom: #2daebf 5px solid;
-    margin: 5px 0 0 0;
+    margin: 5px 0 0;
 }
 
 .menu .active>a {
@@ -186,12 +186,12 @@
 .thumbnail {
     transition: border 0.5s ease, margin 0.5s ease;
     border: #eee 5px solid;
-    margin: 0 0 16px 0;
+    margin: 0 0 16px;
 }
 
 .thumbnail:hover {
     border: #2daebf 1px solid;
-    margin: 0 0 19px 0;
+    margin: 0 0 19px;
 }
 
 .button {
