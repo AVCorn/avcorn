@@ -1,4 +1,8 @@
 <?php
+/**
+ * @param ContainerBuilder $containerBuilder
+ * @return void
+ */
 
 declare(strict_types=1);
 
@@ -10,10 +14,6 @@ use Monolog\Processor\UidProcessor;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 
-/**
- * @param ContainerBuilder $containerBuilder
- * @return void
- */
 return function (ContainerBuilder $containerBuilder) {
     $containerBuilder->addDefinitions([
         LoggerInterface::class => function (ContainerInterface $c) {

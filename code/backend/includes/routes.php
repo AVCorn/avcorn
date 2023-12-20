@@ -1,4 +1,8 @@
 <?php
+/**
+ * @param App $app
+ * @return void
+ */
 
 declare(strict_types=1);
 
@@ -10,10 +14,6 @@ use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 use Slim\Views\Twig;
 
-/**
- * @param App $app
- * @return void
- */
 return function (App $app) {
     // default sets
     $default = 'default';
@@ -61,7 +61,7 @@ return function (App $app) {
          * @var Response $res
          * @var array $args
          * @return Response
-         * 
+         *
          * Create Route
          */
         $app->get($route, function (Request $req, Response $res, array $args) use ($config) {
@@ -112,7 +112,7 @@ return function (App $app) {
      * @var Response $res
      * @var array $args
      * @return Response
-     * 
+     *
      * Health Check
      */
     $app->get('/health', function (Request $req, Response $res, array $args) {
@@ -126,7 +126,7 @@ return function (App $app) {
      * @var Response $res
      * @var array $args
      * @return Response
-     * 
+     *
      * Watcher
      */
     $app->get('/watch', function (Request $req, Response $res, array $args) {
