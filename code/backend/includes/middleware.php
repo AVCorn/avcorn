@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Middleware configuration
+ *
+ * @phpversion >= 8.1
+ *
+ * @param   App $app
+ *
+ * @return  void
+ */
+
 declare(strict_types=1);
 
 use App\Application\Middleware\SessionMiddleware;

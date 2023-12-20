@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Settings configuration
+ *
+ * @phpversion >= 8.1
+ *
+ * @param   ContainerBuilder $containerBuilder
+ *
+ * @return  void
+ */
+
 declare(strict_types=1);
 
 use App\Application\Settings\Settings;
@@ -8,12 +18,16 @@ use DI\ContainerBuilder;
 use Monolog\Logger;
 
 return function (ContainerBuilder $containerBuilder) {
-
     // Global Settings Object
     $containerBuilder->addDefinitions([
         SettingsInterface::class => function () {
+            $dev = true;
+            if (isset($_ENV['production'])) {
+                $dev = false;
+            }
+
             return new Settings([
-                'displayErrorDetails' => true, // Should be set to false in production
+                'displayErrorDetails' => $dev,
                 'logError'            => false,
                 'logErrorDetails'     => false,
                 'logger' => [

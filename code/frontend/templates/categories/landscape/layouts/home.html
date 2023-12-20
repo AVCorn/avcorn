@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="whatinput-types-initial whatinput-types-mouse" land="en">
+<html class="whatinput-types-initial whatinput-types-mouse" lang="en">
     <head>
         <title>{% block title %}{% endblock %}</title>
 
@@ -14,7 +14,9 @@
         <div class="hero">
             <div class="wow animate__fadeInUp" data-wow-duration="1s">
                 {% block header %}
-                    <div class="editable"></div>
+                    <div class="editable">
+                        <h1>{{ info.slogan }}</h1>
+                    </div>
                 {% endblock %}
             </div>
         </div>

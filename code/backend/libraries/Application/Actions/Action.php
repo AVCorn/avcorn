@@ -11,29 +11,44 @@ use Psr\Log\LoggerInterface;
 use Slim\Exception\HttpBadRequestException;
 use Slim\Exception\HttpNotFoundException;
 
+/**
+ * Abstract action.
+ *
+ * @phpversion >= 8.1
+ * @package App\Application\Actions
+ */
 abstract class Action
 {
     protected LoggerInterface $logger;
-
     protected Request $request;
-
     protected Response $response;
-
     protected array $args;
 
+    /**
+     * @codeCoverageIgnore
+     *
+     * @param   LoggerInterface $logger
+     *
+     * @return  void
+     */
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
 
     /**
-     * @throws HttpNotFoundException
-     * @throws HttpBadRequestException
+     * @param   Request $req
+     * @param   Response $res
+     * @param   array $args
+     *
+     * @return  Response
+     * @throws  HttpNotFoundException
+     * @throws  HttpBadRequestException
      */
-    public function __invoke(Request $request, Response $response, array $args): Response
+    public function __invoke(Request $req, Response $res, array $args): Response
     {
-        $this->request = $request;
-        $this->response = $response;
+        $this->request = $req;
+        $this->response = $res;
         $this->args = $args;
 
         try {
@@ -44,8 +59,8 @@ abstract class Action
     }
 
     /**
-     * @throws DomainRecordNotFoundException
-     * @throws HttpBadRequestException
+     * @throws  DomainRecordNotFoundException
+     * @throws  HttpBadRequestException
      */
     abstract protected function action(): Response;
 
@@ -58,8 +73,10 @@ abstract class Action
     }
 
     /**
-     * @return mixed
-     * @throws HttpBadRequestException
+     * @param   string $name
+     *
+     * @return  mixed
+     * @throws  HttpBadRequestException
      */
     protected function resolveArg(string $name)
     {
@@ -71,7 +88,10 @@ abstract class Action
     }
 
     /**
-     * @param array|object|null $data
+     * @param   array|object|null $data
+     * @param   int $statusCode
+     *
+     * @return  Response
      */
     protected function respondWithData($data = null, int $statusCode = 200): Response
     {
@@ -80,6 +100,11 @@ abstract class Action
         return $this->respond($payload);
     }
 
+    /**
+     * @param   ActionPayload $payload
+     *
+     * @return  Response
+     */
     protected function respond(ActionPayload $payload): Response
     {
         $json = json_encode($payload, JSON_PRETTY_PRINT);

@@ -83,7 +83,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 .sticky-shrinknav-menu li {
     border-radius: 2px;
     transition: all 0.3s ease;
-    margin: 0 0 2px 0;
+    margin: 0 0 2px;
 }
 
 .sticky-shrinknav-menu li:hover {

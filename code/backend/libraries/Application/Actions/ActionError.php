@@ -6,6 +6,12 @@ namespace App\Application\Actions;
 
 use JsonSerializable;
 
+/**
+ * Class ActionError
+ *
+ * @phpversion >= 8.1
+ * @package App\Application\Actions
+ */
 class ActionError implements JsonSerializable
 {
     public const BAD_REQUEST = 'BAD_REQUEST';
@@ -19,37 +25,61 @@ class ActionError implements JsonSerializable
     public const VERIFICATION_ERROR = 'VERIFICATION_ERROR';
 
     private string $type;
-
     private ?string $description;
 
+    /**
+     * ActionError constructor.
+     *
+     * @param   string $type
+     * @param   string|null $description
+     *
+     * @return  void
+     */
     public function __construct(string $type, ?string $description = null)
     {
         $this->type = $type;
         $this->description = $description;
     }
 
+    /**
+     * @return  string
+     */
     public function getType(): string
     {
         return $this->type;
     }
 
+    /**
+     * @param   string $type
+     *
+     * @return  self
+    */
     public function setType(string $type): self
     {
         $this->type = $type;
         return $this;
     }
 
+    /**
+     * @return  string|null
+    */
     public function getDescription(): ?string
     {
         return $this->description;
     }
 
+    /**
+     * @param  string|null $description
+    */
     public function setDescription(?string $description = null): self
     {
         $this->description = $description;
         return $this;
     }
 
+    /**
+     * @return array
+     */
     #[\ReturnTypeWillChange]
     public function jsonSerialize(): array
     {

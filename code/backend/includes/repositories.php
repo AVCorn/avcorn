@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Repositories configuration
+ *
+ * @phpversion >= 8.1
+ *
+ * @param   ContainerBuilder $containerBuilder
+ *
+ * @return  void
+ */
+
 declare(strict_types=1);
 
 use DI\ContainerBuilder;
