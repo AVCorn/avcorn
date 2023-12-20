@@ -1,5 +1,30 @@
 {% extends layout_path %}
 
+{% block scripts %}
+    <script>
+        function hover(element) {
+            var src = element.getAttribute('src')
+                .replace('-sm', '-sm-hover')
+                .replace('-md', '-md-hover')
+                .replace('-lg', '-lg-hover');
+
+            element.setAttribute('src', src);
+        }
+
+        function unhover(element) {
+            element.setAttribute('src', element.getAttribute('src').replace('-hover', ''));
+        }
+
+        $(document).ready(function(){
+            $('.thumbnail').hover(function(){
+                hover(this);
+            }, function(){
+                unhover(this);
+            });
+        });
+    </script>
+{% endblock %}
+
 {% block title %}
     {{ info.title }} - Different Designs
 {% endblock %}
@@ -39,13 +64,13 @@
         </p>
         <div class="grid-x grid-margin-x text-center" data-equalizer data-equalize-on="medium">
 
-            <div class="cell large-4 medium-4 small-12">
+            <div class="cell large-4 medium-4 small-6">
                 <h3 style="font-weight:bold;">
                     <a href="/designs?design=marketing">Marketing</a>
                 </h3>
 
                 <a href="/designs?design=marketing">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-marketing.png" alt="Marketing Design" title="Marketing Design" />
+                    <img class="thumbnail small-12" src="assets/images/designs/design-marketing-lg.png" data-interchange="[assets/images/designs/design-marketing-sm.png, small], [assets/images/designs/design-marketing-md.png, medium], [assets/images/designs/design-marketing-lg.png, large]" alt="Marketing Design" title="Marketing Design" />
                 </a>
 
                 <p style="font-size:0.8em; font-style:italic; text-align:justify;">
@@ -62,7 +87,7 @@
                 </h3>
 
                 <a href="/designs?design=portfolio">
-                    <img class="thumbnail" src="assets/images/designs/design-marketing.png" alt="Portfolio Design" title="Portfolio Design" />
+                    <img class="thumbnail" src="assets/images/designs/design-marketing-lg.png" data-interchange="[assets/images/designs/design-marketing-sm.png, small], [assets/images/designs/design-marketing-md.png, medium], [assets/images/designs/design-marketing-lg.png, large]" alt="Portfolio Design" title="Portfolio Design" />
                 </a>
 
                 <p style="font-size:0.8em; font-style:italic; text-align:justify;">
@@ -73,13 +98,13 @@
                 <u><a href="/designs?design=portfolio">View Design</a></u>
             </div>-->
 
-            <div class="cell large-4 medium-4 small-12">
+            <div class="cell large-4 medium-4 small-6">
                 <h3 style="font-weight:bold;">
                     <a href="/designs?design=modern">Modern</a>
                 </h3>
 
                 <a href="/designs?design=modern">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-modern.png" alt="Modern Design" title="Modern Design" />
+                    <img class="thumbnail small-12" src="assets/images/designs/design-modern-lg.png" data-interchange="[assets/images/designs/design-modern-sm.png, small], [assets/images/designs/design-modern-md.png, medium], [assets/images/designs/design-modern-lg.png, large]" alt="Modern Design" title="Modern Design" />
                 </a>
 
                 <p style="font-size:0.8em; font-style:italic; text-align:justify;">
@@ -89,13 +114,13 @@
                 <u><a href="/designs?design=modern">View Design</a></u>
             </div>
 
-            <div class="cell large-4 medium-4 small-12">
+            <div class="cell large-4 medium-4 small-6">
                 <h3 style="font-weight:bold;">
                     <a href="/designs?design=simple">Simple</a>
                 </h3>
 
                 <a href="/designs?design=simple">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-simple.png" alt="Simple Design" title="Simple Design" />
+                    <img class="thumbnail small-12" src="assets/images/designs/design-simple-lg.png" data-interchange="[assets/images/designs/design-simple-sm.png, small], [assets/images/designs/design-simple-md.png, medium], [assets/images/designs/design-simple-lg.png, large]" alt="Simple Design" title="Simple Design" />
                 </a>
 
                 <p style="font-size:0.8em; font-style:italic; text-align:justify;">
@@ -122,7 +147,7 @@
                     <a href="/designs?design=agency">Agency</a>
                 </h3>
                 <a href="/designs?design=agency">
-                    <img class="thumbnail small-12 hover-shake" src="assets/images/designs/design-agency.png" alt="Agency Design" title="Agency Design" />
+                    <img class="thumbnail small-12" src="assets/images/designs/design-agency-lg.png" data-interchange="[assets/images/designs/design-agency-sm.png, small], [assets/images/designs/design-agency-md.png, medium], [assets/images/designs/design-agency-lg.png, large]" alt="Agency Design" title="Agency Design" />
                 </a>
                 <p style="font-size:0.8em; font-style:italic;">
                     Our own design.
@@ -142,7 +167,7 @@
                     <a href="/designs?design=autoshop">Autoshop</a>
                 </h3>
                 <a href="/designs?design=autoshop">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-autoshop.png" alt="Autoshop Design" title="Autoshop Design" />
+                    <img class="thumbnail small-12" src="assets/images/designs/design-autoshop-lg.png" data-interchange="[assets/images/designs/design-autoshop-sm.png, small], [assets/images/designs/design-autoshop-md.png, medium], [assets/images/designs/design-autoshop-lg.png, large]" alt="Autoshop Design" title="Autoshop Design" />
                 </a>
                 <p style="font-size:0.8em; font-style:italic;">
                     For auto body, repair, mechanic, or oil change shops.
@@ -218,7 +243,7 @@
                     <a href="/designs?design=landscape">Lawn Service</a>
                 </h3>
                 <a href="/designs?design=landscape">
-                    <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/designs/design-lawncare.png" alt="Lawn Service" title="Lawn Service" />
+                    <img class="thumbnail small-12" src="assets/images/designs/design-lawncare-lg.png" data-interchange="[assets/images/designs/design-lawncare-sm.png, small], [assets/images/designs/design-lawncare-md.png, medium], [assets/images/designs/design-lawncare-lg.png, large]" alt="Lawn Service" title="Lawn Service" />
                 </a>
                 <p style="font-size:0.8em; font-style:italic;">Mowing down the compeition.</p>
                 <u><a href="/designs?design=landscape">View Design</a></u>
