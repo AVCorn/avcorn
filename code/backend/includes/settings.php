@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @param ContainerBuilder $containerBuilder
  * @return void
