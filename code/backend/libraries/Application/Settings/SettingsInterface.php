@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace App\Application\Settings;
 
+/**
+ * Interface SettingsInterface
+ * @package App\Application\Settings
+ */
 interface SettingsInterface
 {
     /**

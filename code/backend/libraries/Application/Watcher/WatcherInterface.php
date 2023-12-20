@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace App\Application\Watcher;
 
+/**
+ * Interface WatcherInterface
+ * @package App\Application\Watcher
+ */
 interface WatcherInterface
 {
     /**

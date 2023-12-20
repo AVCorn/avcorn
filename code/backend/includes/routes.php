@@ -10,6 +10,10 @@ use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 use Slim\Views\Twig;
 
+/**
+ * @param App $app
+ * @return void
+ */
 return function (App $app) {
     // default sets
     $default = 'default';
@@ -52,7 +56,14 @@ return function (App $app) {
         $config['page_file'] = $config['page'] . $config['template_extension'];
         $config['page_path'] = $config['template_path'] . $config['pages_root'] . $config['page_file'];
 
-        // create route
+        /**
+         * @var App $app
+         * @var Response $res
+         * @var array $args
+         * @return Response
+         * 
+         * Create Route
+         */
         $app->get($route, function (Request $req, Response $res, array $args) use ($config) {
             // pass parameters to use
             $config['get'] = $req->getQueryParams();
@@ -96,13 +107,28 @@ return function (App $app) {
         });
     }
 
-    // health check
+    /**
+     * @var App $this
+     * @var Response $res
+     * @var array $args
+     * @return Response
+     * 
+     * Health Check
+     */
     $app->get('/health', function (Request $req, Response $res, array $args) {
         $res->getBody()->write('Ok');
         return $res;
     });
 
-    // watcher
+    /**
+     * @var App $this
+     * @var WatcherInterface $watcher
+     * @var Response $res
+     * @var array $args
+     * @return Response
+     * 
+     * Watcher
+     */
     $app->get('/watch', function (Request $req, Response $res, array $args) {
         $watcher = $this->get('watcher');
         $latest_file = $watcher->check(__DIR__ . '/../../');
