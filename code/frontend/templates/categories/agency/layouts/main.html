@@ -34,7 +34,6 @@
                 font-weight: bold;
                 margin-bottom: 1em;
                 padding: 0.5em 1em;
-                width: 10em;
             }
 
             .header .logo .indent {
@@ -252,9 +251,7 @@
                                 <i class="fa fa-bars"></i>
                             </a>
                             <ul class="menu text-left">
-                                <li><a href="/about{{ linkparams }}">About Us</a></li>
-                                <li><a href="/clients{{ linkparams }}">Our Work</a></li>
-                                <li><a href="/contact{{ linkparams }}">Contact Us</a></li>
+                                {% include "/components/navigation.html" %}
                             </ul>
                         </li>
                     </ul>
@@ -262,9 +259,7 @@
 
                 <div class="navigation row show-for-small-only text-center">
                     <ul class="navigation-inside menu">
-                        <li><a href="/about{{ linkparams }}">About</a></li>
-                        <li><a href="/clients{{ linkparams }}">Clients</a></li>
-                        <li><a href="/contact{{ linkparams }}">Contact</a></li>
+                        {% include "/components/navigation.html" %}
                     </ul>
                 </div>
 

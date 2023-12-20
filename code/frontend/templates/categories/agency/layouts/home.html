@@ -39,7 +39,6 @@
                 font-size: 2em;
                 font-weight: bold;
                 padding: 0.5em 1em;
-                width: 10em;
             }
 
             .header .logo .indent {
@@ -256,7 +255,7 @@
             .intro img {
                 width: 300px;
                 border-radius: 20px;
-                margin: 1em 0 2em 2em;
+                margin: 1em 2em 2em 2em;
             }
 
             .intro p {
@@ -417,21 +416,21 @@
         <div class="page none">
 
             <header class="header">
-                <div class="columns small-1 hide-for-medium-only large-1">
+                <div class="columns show-for-large large-1">
                     <br />
                 </div>
 
-                <div class="logo columns small-10 medium-8 large-7 text-center">
+                <div class="logo columns small-12 medium-8 large-5 text-center">
                     <a href="/{{ linkparams }}">
                         <img src="/assets/images/logos/webelements-horizontal.png" title="{{ info.company }}" alt="{{ info.company }}" />
                     </a>
                 </div>
 
-                <div class="columns small-1 hide-for-medium">
+                <div class="columns show-for-large large-1">
                     <br />
                 </div>
 
-                <div class="navigation columns show-for-medium medium-4 large-4 text-right rellax" data-rellax-speed="1">
+                <div class="navigation columns show-for-medium medium-4 large-5 text-right rellax" data-rellax-speed="1">
                     <ul class="navigation-inside dropdown menu" data-dropdown-menu>
                         <li>
                             <a href="#">
@@ -439,9 +438,7 @@
                                 <i class="fa fa-bars"></i>
                             </a>
                             <ul class="menu text-left">
-                                <li><a href="/about{{ linkparams }}">About Us</a></li>
-                                <li><a href="/clients{{ linkparams }}">Our Work</a></li>
-                                <li><a href="/contact{{ linkparams }}">Contact Us</a></li>
+                                {% include "/components/navigation.html" %}
                             </ul>
                         </li>
                     </ul>
@@ -449,9 +446,7 @@
 
                 <div class="navigation row show-for-small-only text-center">
                     <ul class="navigation-inside menu">
-                        <li><a href="/about{{ linkparams }}">About</a></li>
-                        <li><a href="/clients{{ linkparams }}">Clients</a></li>
-                        <li><a href="/contact{{ linkparams }}">Contact</a></li>
+                        {% include "/components/navigation.html" %}
                     </ul>
                 </div>
 
