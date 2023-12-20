@@ -16,9 +16,9 @@ class Settings implements SettingsInterface
 
     /**
      * Settings constructor.
-     * 
+     *
      * @param   array $settings
-     * 
+     *
      * @return  void
      */
     public function __construct(array $settings)
@@ -28,7 +28,7 @@ class Settings implements SettingsInterface
 
     /**
      * @param   string $key
-     * 
+     *
      * @return  mixed
      */
     public function get(string $key = '')

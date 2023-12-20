@@ -13,7 +13,7 @@ use Slim\Exception\HttpNotFoundException;
 
 /**
  * Abstract action.
- * 
+ *
  * @phpversion  >= 8.1
  * @package     App\Application\Actions
  */
@@ -26,9 +26,9 @@ abstract class Action
 
     /**
      * @codeCoverageIgnore
-     * 
+     *
      * @param   LoggerInterface $logger
-     * 
+     *
      * @return  void
      */
     public function __construct(LoggerInterface $logger)
@@ -40,7 +40,7 @@ abstract class Action
      * @param   Request $req
      * @param   Response $res
      * @param   array $args
-     * 
+     *
      * @return  Response
      * @throws  HttpNotFoundException
      * @throws  HttpBadRequestException
@@ -74,7 +74,7 @@ abstract class Action
 
     /**
      * @param   string $name
-     * 
+     *
      * @return  mixed
      * @throws  HttpBadRequestException
      */
@@ -90,7 +90,7 @@ abstract class Action
     /**
      * @param   array|object|null $data
      * @param   int $statusCode
-     * 
+     *
      * @return  Response
      */
     protected function respondWithData($data = null, int $statusCode = 200): Response
@@ -102,7 +102,7 @@ abstract class Action
 
     /**
      * @param   ActionPayload $payload
-     * 
+     *
      * @return  Response
      */
     protected function respond(ActionPayload $payload): Response

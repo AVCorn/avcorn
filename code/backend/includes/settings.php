@@ -2,9 +2,9 @@
 
 /**
  * Settings configuration
- * 
+ *
  * @phpversion  >= 8.1
- * 
+ *
  * @param       ContainerBuilder $containerBuilder
  *
  * @return      void

@@ -10,7 +10,7 @@ use Slim\Exception\HttpInternalServerErrorException;
 
 /**
  * Shutdown handler.
- * 
+ *
  * @phpversion  >= 8.1
  * @package     App\Application\Handlers
  */
@@ -24,7 +24,7 @@ class ShutdownHandler
      * @param   Request $request
      * @param   HttpErrorHandler $errorHandler
      * @param   bool $displayErrorDetails
-     * 
+     *
      * @return  void
      */
     public function __construct(

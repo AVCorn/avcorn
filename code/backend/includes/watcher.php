@@ -16,9 +16,7 @@ use DI\Container;
 use App\Application\Watcher\Watcher;
 
 return function (Container $container) {
-    $container->set('watcher',
-        function () {
-            return new Watcher();
-        }
-    );
+    $container->set('watcher', function () {
+        return new Watcher();
+    });
 };

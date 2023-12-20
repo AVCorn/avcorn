@@ -8,7 +8,7 @@ use Exception;
 
 /**
  * Class DomainException
- * 
+ *
  * @phpversion  >= 8.1
  * @package App\Domain\DomainException
  */

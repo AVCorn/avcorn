@@ -32,7 +32,7 @@ class ActionError implements JsonSerializable
      *
      * @param   string $type
      * @param   string|null $description
-     * 
+     *
      * @return  void
      */
     public function __construct(string $type, ?string $description = null)
@@ -51,7 +51,7 @@ class ActionError implements JsonSerializable
 
     /**
      * @param   string $type
-     * 
+     *
      * @return  self
     */
     public function setType(string $type): self
