@@ -5,8 +5,9 @@ declare(strict_types=1);
 /**
  * Configuration
  *
- * @phpversion  >= 8.1
- * @package     Config
+ * @phpversion >= 8.1
+ * @package     Application
+ * @subpackage  Configuration
  */
 require_once 'config/map.php';
 require_once 'config/information.php';

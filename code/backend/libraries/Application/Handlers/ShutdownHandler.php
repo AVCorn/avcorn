@@ -11,8 +11,8 @@ use Slim\Exception\HttpInternalServerErrorException;
 /**
  * Shutdown handler.
  *
- * @phpversion  >= 8.1
- * @package     App\Application\Handlers
+ * @phpversion >= 8.1
+ * @package App\Application\Handlers
  */
 class ShutdownHandler
 {

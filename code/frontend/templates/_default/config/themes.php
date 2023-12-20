@@ -5,9 +5,9 @@ declare(strict_types=1);
 /**
  * Theme switcher configuration
  *
- * @phpversion  >= 8.1
+ * @phpversion >= 8.1
  *
- * @return      array
+ * @return  array
  */
 $themes = [
     'default' => '_default',

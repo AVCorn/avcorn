@@ -9,8 +9,8 @@ use JsonSerializable;
 /**
  * Class ActionPayload
  *
- * @phpversion  >= 8.1
- * @package     App\Application\Actions
+ * @phpversion >= 8.1
+ * @package App\Application\Actions
  */
 class ActionPayload implements JsonSerializable
 {

@@ -3,7 +3,7 @@
 /**
  * Routes configuration
  *
- * @phpversion  >= 8.1
+ * @phpversion >= 8.1
  *
  * @param       App $app
  *

@@ -5,9 +5,10 @@ declare(strict_types=1);
 /**
  * Sitemap configuration
  *
- * @phpversion  >= 8.1
+ * @phpversion >= 8.1
  *
- * @return      array
+ * @package     Application
+ * @subpackage  Configuration
  */
 $sitemap = [
     'sections' => [

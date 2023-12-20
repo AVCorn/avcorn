@@ -13,7 +13,7 @@ require_once 'config/sitemap.php';
 /**
  * Configuration
  *
- * @phpversion  >= 8.1
+ * @phpversion >= 8.1
  * @package     Application
  * @subpackage  Configuration
  */

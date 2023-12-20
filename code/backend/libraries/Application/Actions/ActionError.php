@@ -9,7 +9,7 @@ use JsonSerializable;
 /**
  * Class ActionError
  *
- * @phpversion  >= 8.1
+ * @phpversion >= 8.1
  * @package App\Application\Actions
  */
 class ActionError implements JsonSerializable

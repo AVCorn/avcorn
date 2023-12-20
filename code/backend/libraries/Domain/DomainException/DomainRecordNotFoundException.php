@@ -7,7 +7,7 @@ namespace App\Domain\DomainException;
 /**
  * Class DomainRecordNotFoundException
  *
- * @phpversion  >= 8.1
+ * @phpversion >= 8.1
  * @package App\Domain\DomainException
  */
 class DomainRecordNotFoundException extends DomainException

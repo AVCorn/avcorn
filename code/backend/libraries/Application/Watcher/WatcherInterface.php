@@ -7,7 +7,7 @@ namespace App\Application\Watcher;
 /**
  * Interface WatcherInterface
  *
- * @phpversion  >= 8.1
+ * @phpversion >= 8.1
  * @package App\Application\Watcher
  */
 interface WatcherInterface

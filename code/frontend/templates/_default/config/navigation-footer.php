@@ -5,9 +5,9 @@ declare(strict_types=1);
 /**
  * Navigation footer configuration
  *
- * @phpversion  >= 8.1
+ * @phpversion >= 8.1
  *
- * @return      array
+ * @return  array
  */
 $navigationFooter = [
     [
