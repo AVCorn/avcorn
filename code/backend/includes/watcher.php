@@ -10,5 +10,4 @@ return function (Container $container) {
     $container->set('watcher', function () {
         return new Watcher();
     });
-    
 };

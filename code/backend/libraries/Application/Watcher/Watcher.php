@@ -15,23 +15,23 @@ class Watcher implements WatcherInterface
         if (!is_dir($dir)) {
             throw new \ValueError('Expecting a valid directory!');
         }
-    
+
         $latest = null;
         $latestTime = 0;
         foreach (scandir($dir) as $path) {
             if (!in_array($path, ['.', '..', 'cache', 'tests'], true)) {
                 $filename = $dir . DIRECTORY_SEPARATOR . $path;
-    
+
                 if (is_dir($filename)) {
                     $directoryLastModifiedFile = $this->check($filename);
-    
+
                     if (null === $directoryLastModifiedFile) {
                         continue;
                     }
-    
+
                     $filename = $directoryLastModifiedFile;
                 }
-    
+
                 $lastModified = filemtime($filename);
                 if ($lastModified > $latestTime) {
                     $latestTime = $lastModified;
@@ -39,7 +39,7 @@ class Watcher implements WatcherInterface
                 }
             }
         }
-    
+
         return $latest;
     }
 }
