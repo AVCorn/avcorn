@@ -102,47 +102,15 @@ return function (App $app) {
         return $res;
     });
 
-    function findNewestFile(string $dir): ?string
-    {
-        if (!is_dir($dir)) {
-            throw new \ValueError('Expecting a valid directory!');
-        }
-
-        $latest = null;
-        $latestTime = 0;
-        foreach (scandir($dir) as $path) {
-            if (!in_array($path, ['.', '..', 'cache', 'tests'], true)) {
-                $filename = $dir . DIRECTORY_SEPARATOR . $path;
-
-                if (is_dir($filename)) {
-                    $directoryLastModifiedFile = findNewestFile($filename);
-
-                    if (null === $directoryLastModifiedFile) {
-                        continue;
-                    }
-
-                    $filename = $directoryLastModifiedFile;
-                }
-
-                $lastModified = filemtime($filename);
-                if ($lastModified > $latestTime) {
-                    $latestTime = $lastModified;
-                    $latest = $filename;
-                }
-            }
-        }
-
-        return $latest;
-    }
-
     // watcher
     $app->get('/watch', function (Request $req, Response $res, array $args) {
-        $latest_file = findNewestFile(__DIR__ . '/../../');
+        $watcher = $this->get('watcher');
+        $latest_file = $watcher->check(__DIR__ . '/../../');
         $latest_time = filemtime($latest_file);
 
         $json = '{"time": ' . (string)$latest_time . '}';
 
         $res->getBody()->write($json);
-        return $response;
+        return $res;
     });
 };

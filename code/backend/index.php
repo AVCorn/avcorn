@@ -47,6 +47,10 @@ AppFactory::setContainer($container);
 $app = AppFactory::create();
 $callableResolver = $app->getCallableResolver();
 
+// Set up watcher
+$watcher = include __DIR__ . '/includes/watcher.php';
+$watcher($container);
+
 // Cache pages only on production
 $twig_config = [];
 if (isset($app->mode) && $app->mode === 'production') {
