@@ -11,6 +11,9 @@ use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 
 /**
  * Session middleware.
+ * 
+ * @phpversion  >= 8.1
+ * @package     App\Application\Middleware
  */
 class SessionMiddleware implements Middleware
 {

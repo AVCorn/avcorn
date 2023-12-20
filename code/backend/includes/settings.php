@@ -1,8 +1,13 @@
 <?php
 
 /**
- * @param ContainerBuilder $containerBuilder
- * @return void
+ * Settings configuration
+ * 
+ * @phpversion  >= 8.1
+ * 
+ * @param       ContainerBuilder $containerBuilder
+ *
+ * @return      void
  */
 
 declare(strict_types=1);
@@ -16,8 +21,13 @@ return function (ContainerBuilder $containerBuilder) {
     // Global Settings Object
     $containerBuilder->addDefinitions([
         SettingsInterface::class => function () {
+            $dev = true;
+            if (isset($_ENV['production'])) {
+                $dev = false;
+            }
+
             return new Settings([
-                'displayErrorDetails' => true, // Should be set to false in production
+                'displayErrorDetails' => $dev,
                 'logError'            => false,
                 'logErrorDetails'     => false,
                 'logger' => [

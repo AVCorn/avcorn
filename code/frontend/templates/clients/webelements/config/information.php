@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+/**
+ * Information configuration
+ *
+ * @phpversion  >= 8.1
+ *
+ * @return      array
+ */
 $information = [
     'company' => 'Web Elements',
     'title' => 'Elements Web Design',

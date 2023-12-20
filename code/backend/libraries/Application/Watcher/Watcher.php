@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 namespace App\Application\Watcher;
 
+/**
+ * Class Watcher
+ * 
+ * @phpversion  >= 8.1
+ * @package App\Application\Watcher
+ */
 class Watcher implements WatcherInterface
 {
     /**
-     * @param string $dir
-     * @return string
+     * @param   string $dir
+     * 
+     * @return  string
      */
     public function check(string $dir = '.'): ?string
     {
@@ -23,13 +30,13 @@ class Watcher implements WatcherInterface
                 $filename = $dir . DIRECTORY_SEPARATOR . $path;
 
                 if (is_dir($filename)) {
-                    $directoryLastModifiedFile = $this->check($filename);
+                    $fileCheck = $this->check($filename);
 
-                    if (null === $directoryLastModifiedFile) {
+                    if (null === $fileCheck) {
                         continue;
                     }
 
-                    $filename = $directoryLastModifiedFile;
+                    $filename = $fileCheck;
                 }
 
                 $lastModified = filemtime($filename);

@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+/**
+ * Sitemap configuration
+ *
+ * @phpversion  >= 8.1
+ *
+ * @return      array
+ */
 $sitemap = [
     'sections' => [
         'main' => [

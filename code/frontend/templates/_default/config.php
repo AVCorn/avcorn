@@ -10,6 +10,13 @@ require_once 'config/social.php';
 require_once 'config/themes.php';
 require_once 'config/sitemap.php';
 
+/**
+ * Configuration
+ *
+ * @phpversion  >= 8.1
+ * @package     Application
+ * @subpackage  Configuration
+ */
 $config = [
     'map' => $map,
     'navigation' => $navigation,

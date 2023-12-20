@@ -1,8 +1,13 @@
 <?php
 
 /**
- * @param ContainerBuilder $containerBuilder
- * @return void
+ * Dependencies configuation
+ *
+ * @phpversion  >= 8.1
+ *
+ * @param       ContainerBuilder $containerBuilder
+ *
+ * @return      void
  */
 
 declare(strict_types=1);

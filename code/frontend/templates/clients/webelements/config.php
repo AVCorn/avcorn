@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+/**
+ * Configuration
+ *
+ * @phpversion  >= 8.1
+ * @package     Config
+ */
 require_once 'config/map.php';
 require_once 'config/information.php';
 require_once 'config/navigation.php';

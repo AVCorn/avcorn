@@ -6,6 +6,8 @@ namespace App\Application\Settings;
 
 /**
  * Class Settings
+ * 
+ * @phpversion  >= 8.1
  * @package App\Application\Settings
  */
 class Settings implements SettingsInterface
@@ -14,8 +16,10 @@ class Settings implements SettingsInterface
 
     /**
      * Settings constructor.
-     * @param array $settings
-     * @return void
+     * 
+     * @param   array $settings
+     * 
+     * @return  void
      */
     public function __construct(array $settings)
     {
@@ -23,8 +27,9 @@ class Settings implements SettingsInterface
     }
 
     /**
-     * @param string $key
-     * @return mixed
+     * @param   string $key
+     * 
+     * @return  mixed
      */
     public function get(string $key = '')
     {

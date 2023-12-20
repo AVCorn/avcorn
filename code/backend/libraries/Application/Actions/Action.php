@@ -13,6 +13,9 @@ use Slim\Exception\HttpNotFoundException;
 
 /**
  * Abstract action.
+ * 
+ * @phpversion  >= 8.1
+ * @package     App\Application\Actions
  */
 abstract class Action
 {
@@ -22,9 +25,11 @@ abstract class Action
     protected array $args;
 
     /**
-     * @param LoggerInterface $logger
-     * @return void
      * @codeCoverageIgnore
+     * 
+     * @param   LoggerInterface $logger
+     * 
+     * @return  void
      */
     public function __construct(LoggerInterface $logger)
     {
@@ -32,12 +37,13 @@ abstract class Action
     }
 
     /**
-     * @param Request $req
-     * @param Response $res
-     * @param array $args
-     * @return Response
-     * @throws HttpNotFoundException
-     * @throws HttpBadRequestException
+     * @param   Request $req
+     * @param   Response $res
+     * @param   array $args
+     * 
+     * @return  Response
+     * @throws  HttpNotFoundException
+     * @throws  HttpBadRequestException
      */
     public function __invoke(Request $req, Response $res, array $args): Response
     {
@@ -53,8 +59,8 @@ abstract class Action
     }
 
     /**
-     * @throws DomainRecordNotFoundException
-     * @throws HttpBadRequestException
+     * @throws  DomainRecordNotFoundException
+     * @throws  HttpBadRequestException
      */
     abstract protected function action(): Response;
 
@@ -67,9 +73,10 @@ abstract class Action
     }
 
     /**
-     * @param string $name
-     * @return mixed
-     * @throws HttpBadRequestException
+     * @param   string $name
+     * 
+     * @return  mixed
+     * @throws  HttpBadRequestException
      */
     protected function resolveArg(string $name)
     {
@@ -81,9 +88,10 @@ abstract class Action
     }
 
     /**
-     * @param array|object|null $data
-     * @param int $statusCode
-     * @return Response
+     * @param   array|object|null $data
+     * @param   int $statusCode
+     * 
+     * @return  Response
      */
     protected function respondWithData($data = null, int $statusCode = 200): Response
     {
@@ -93,8 +101,9 @@ abstract class Action
     }
 
     /**
-     * @param ActionPayload $payload
-     * @return Response
+     * @param   ActionPayload $payload
+     * 
+     * @return  Response
      */
     protected function respond(ActionPayload $payload): Response
     {

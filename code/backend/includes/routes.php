@@ -1,8 +1,13 @@
 <?php
 
 /**
- * @param App $app
- * @return void
+ * Routes configuration
+ *
+ * @phpversion  >= 8.1
+ *
+ * @param       App $app
+ *
+ * @return      void
  */
 
 declare(strict_types=1);
@@ -21,7 +26,10 @@ return function (App $app) {
     $default_path = '/_' . $default . '/';
 
     // override defaults if client is set in environment
-    if (isset($_ENV['client']) && $_ENV['client'] !== 'default' && $_ENV['client'] !== 'avcorn') {
+    if (isset($_ENV['client'])
+        && $_ENV['client'] !== 'default'
+        && $_ENV['client'] !== 'avcorn'
+    ) {
         $default = $_ENV['client'];
         $default_path = '/clients/' . $default . '/';
     }
@@ -49,94 +57,114 @@ return function (App $app) {
         // build out config for each route
         $config['uri'] = $route;
         $config['template'] = $default;
-        $config['template_path'] = $config['templates_root'] . $default_path;
+        $config['template_path'] = $config['templates_root']
+            . $default_path;
         $config['layout'] = 'main';
-        $config['layout_file'] = $config['layout'] . $config['template_extension'];
-        $config['layout_path'] = $config['template_path'] . $config['layouts_root'] . $config['layout_file'];
+        $config['layout_file'] = $config['layout']
+            . $config['template_extension'];
+        $config['layout_path'] = $config['template_path']
+            . $config['layouts_root']
+            . $config['layout_file'];
         $config['page'] = $page;
-        $config['page_file'] = $config['page'] . $config['template_extension'];
-        $config['page_path'] = $config['template_path'] . $config['pages_root'] . $config['page_file'];
+        $config['page_file'] = $config['page']
+            . $config['template_extension'];
+        $config['page_path'] = $config['template_path']
+            . $config['pages_root']
+            . $config['page_file'];
 
         /**
-         * @var App $app
-         * @var Response $res
-         * @var array $args
-         * @return Response
+         * @var     App $app
+         * @var     Response $res
+         * @var     array $args
+         * @return  Response
          *
          * Create Route
          */
-        $app->get($route, function (Request $req, Response $res, array $args) use ($config) {
-            // pass parameters to use
-            $config['get'] = $req->getQueryParams();
+        $app->get($route,
+            function (Request $req, Response $res, array $args) use ($config) {
+                // pass parameters to use
+                $config['get'] = $req->getQueryParams();
 
-            // Override main config with template's
-            if (isset($config['get']['design']) && isset($config['themes'][$config['get']['design']])) {
-                $config['template'] = $config['get']['design'];
-                $config['template_path'] = $config['templates_root'] . $config['themes'][$config['get']['design']];
-                $config['layout_path'] = $config['template_path'] . $config['layouts_root'] . $config['layout_file'];
+                // Override main config with template's
+                if (isset($config['get']['design']) && isset($config['themes'][$config['get']['design']])) {
+                    $config['template'] = $config['get']['design'];
+                    $config['template_path'] = $config['templates_root']
+                        . $config['themes'][$config['get']['design']];
+                    $config['layout_path'] = $config['template_path']
+                        . $config['layouts_root']
+                        . $config['layout_file'];
 
-                // Check to overwritte the page
-                $overwrite_page_path = $config['template_path'] . $config['pages_root'] . $config['page_file'];
-                if (file_exists($config['frontend_path'] . $overwrite_page_path)) {
-                    $config['page_path'] = $overwrite_page_path;
+                    // Check to overwritte the page
+                    $overwrite_page_path = $config['template_path']
+                        . $config['pages_root']
+                        . $config['page_file'];
+                    if (file_exists($config['frontend_path'] . $overwrite_page_path)) {
+                        $config['page_path'] = $overwrite_page_path;
+                    }
+
+                    // Check to overwrite the config
+                    $config_path = $config['frontend_path']
+                        . $config['template_path']
+                        . $config['config_root'];
+                    if (file_exists($config_path)) {
+                        include_once $config_path;
+                    }
                 }
 
-                // Check to overwrite the config
-                $config_path = $config['frontend_path'] . $config['template_path'] . $config['config_root'];
-                if (file_exists($config_path)) {
-                    include_once $config_path;
-                }
-            }
-
-            // For template's {{ linkparams }}
-            $config['linkparams'] = '';
-            $urlparams = false;
-            if (isset($config['template'])) {
-                $config['linkparams'] .= '&design=' . $config['template'];
-                $urlparams = true;
-            }
-            if ($urlparams) {
-                $config['linkparams'] = '?a=vc' . $config['linkparams'];
-            }
-            if (isset($config['enable_params']) && $config['enable_params'] === false) {
+                // For template's {{ linkparams }}
                 $config['linkparams'] = '';
-            }
+                $urlparams = false;
+                if (isset($config['template'])) {
+                    $config['linkparams'] .= '&design=' . $config['template'];
+                    $urlparams = true;
+                }
+                if ($urlparams) {
+                    $config['linkparams'] = '?a=vc' . $config['linkparams'];
+                }
+                if (isset($config['enable_params']) && $config['enable_params'] === false) {
+                    $config['linkparams'] = '';
+                }
 
-            // Render the template with Twig
-            $view = Twig::fromRequest($req);
-            return $view->render($res, $config['page_path'], $config);
-        });
+                // Render the template with Twig
+                $view = Twig::fromRequest($req);
+                return $view->render($res, $config['page_path'], $config);
+            }
+        );
     }
 
     /**
-     * @var App $this
-     * @var Response $res
-     * @var array $args
-     * @return Response
+     * @var     App $this
+     * @var     Response $res
+     * @var     array $args
+     * @return  Response
      *
      * Health Check
      */
-    $app->get('/health', function (Request $req, Response $res, array $args) {
-        $res->getBody()->write('Ok');
-        return $res;
-    });
+    $app->get('/health',
+        function (Request $req, Response $res, array $args) {
+            $res->getBody()->write('Ok');
+            return $res;
+        }
+    );
 
     /**
-     * @var mixed $this
-     * @var Response $res
-     * @var array $args
-     * @return Response
+     * @var     mixed $this
+     * @var     Response $res
+     * @var     array $args
+     * @return  Response
      *
      * Watcher
      */
-    $app->get('/watch', function (Request $req, Response $res, array $args) {
-        $watcher = $this->get('watcher');
-        $latest_file = $watcher->check(__DIR__ . '/../../');
-        $latest_time = filemtime($latest_file);
+    $app->get('/watch',
+        function (Request $req, Response $res, array $args) {
+            $watcher = $this->get('watcher');
+            $latest_file = $watcher->check(__DIR__ . '/../../');
+            $latest_time = filemtime($latest_file);
 
-        $json = '{"time": ' . (string)$latest_time . '}';
+            $json = '{"time": ' . (string)$latest_time . '}';
 
-        $res->getBody()->write($json);
-        return $res;
-    });
+            $res->getBody()->write($json);
+            return $res;
+        }
+    );
 };

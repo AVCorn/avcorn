@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+/**
+ * Theme switcher configuration
+ *
+ * @phpversion  >= 8.1
+ *
+ * @return      array
+ */
 $themes = [
     'default' => '_default',
 
