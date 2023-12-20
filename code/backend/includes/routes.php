@@ -122,8 +122,7 @@ return function (App $app) {
     });
 
     /**
-     * @var App $this
-     * @var WatcherInterface $watcher
+     * @var mixed $this
      * @var Response $res
      * @var array $args
      * @return Response
