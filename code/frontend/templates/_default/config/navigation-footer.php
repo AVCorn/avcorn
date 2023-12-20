@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+/**
+ * Navigation footer configuration
+ *
+ * @phpversion >= 8.1
+ *
+ * @return  array
+ */
 $navigationFooter = [
     [
         'href' => '/',

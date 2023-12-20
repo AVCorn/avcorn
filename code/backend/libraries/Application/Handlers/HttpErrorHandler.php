@@ -17,6 +17,12 @@ use Slim\Exception\HttpUnauthorizedException;
 use Slim\Handlers\ErrorHandler as SlimErrorHandler;
 use Throwable;
 
+/**
+ * Custom error handler that returns JSON.
+ *
+ * @phpversion >= 8.1
+ * @package App\Application\Handlers
+ */
 class HttpErrorHandler extends SlimErrorHandler
 {
     /**

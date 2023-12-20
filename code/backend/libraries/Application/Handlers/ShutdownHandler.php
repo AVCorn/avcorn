@@ -8,14 +8,25 @@ use App\Application\ResponseEmitter\ResponseEmitter;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpInternalServerErrorException;
 
+/**
+ * Shutdown handler.
+ *
+ * @phpversion >= 8.1
+ * @package App\Application\Handlers
+ */
 class ShutdownHandler
 {
     private Request $request;
-
     private HttpErrorHandler $errorHandler;
-
     private bool $displayErrorDetails;
 
+    /**
+     * @param   Request $request
+     * @param   HttpErrorHandler $errorHandler
+     * @param   bool $displayErrorDetails
+     *
+     * @return  void
+     */
     public function __construct(
         Request $request,
         HttpErrorHandler $errorHandler,
@@ -26,6 +37,9 @@ class ShutdownHandler
         $this->displayErrorDetails = $displayErrorDetails;
     }
 
+    /**
+     * @return  void
+     */
     public function __invoke()
     {
         $error = error_get_last();
