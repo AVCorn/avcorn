@@ -13,6 +13,7 @@ declare(strict_types=1);
 $map = [
     '/' => 'home',
     '/about' => 'about',
+    '/admin' => 'admin',
     '/clients' => 'clients',
     '/contact' => 'contact',
     '/designs' => 'clients',
