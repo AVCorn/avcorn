@@ -21,9 +21,6 @@ grumphp:
         paths: []
     tasks:
         composer: ~
-        composer_normalize: ~
-        composer_require_checker: ~
-        ecs: ~
         eslint: ~
         grunt: ~
         infection: ~
