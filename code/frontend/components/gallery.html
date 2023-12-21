@@ -1,0 +1,57 @@
+<script>
+    $(document).ready(function() {
+        $('.sim-thumb').on('click', function() {
+            $('#main-product-image').attr('src', $(this).data('image'));
+            $('#main-product-caption').html($(this).data('caption'));
+        })
+    });
+</script>
+
+<style>
+    .product-image-gallery {
+        background-color: #fefefe;
+        padding: 1.5rem;
+    }
+
+    .pdp-product-image {
+        margin-bottom: 20px;
+    }
+
+    .product-thumbs a {
+        margin-left: 8px;
+        margin-right: 8px;
+        padding: 0 !important;
+    }
+
+    .product-thumbs a img {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        border: solid 4px #fefefe;
+        box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
+        line-height: 0;
+        border-radius: 3px;
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<div class="row align-center">
+    <div class="product-image-gallery text-center">
+        <img class="pdp-product-image" id="main-product-image" src="{{ gallery|keys|first }}" alt="" />
+        <br />
+        <p id="main-product-caption">{{ gallery|first }}</p>
+        <br />
+
+        <ul class="menu product-thumbs align-center">
+            {% for image, caption in gallery %}
+                <li>
+                    <a class="sim-thumb" data-image="{{ image }}" data-caption="{{ caption }}">
+                        <img src="{{ image }}" alt="{{ caption }}">
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+  

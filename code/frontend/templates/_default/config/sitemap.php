@@ -7,7 +7,8 @@ declare(strict_types=1);
  *
  * @phpversion >= 8.1
  *
- * @return  array
+ * @package    Application
+ * @subpackage Configuration
  */
 $sitemap = [
     'sections' => [
@@ -58,7 +59,7 @@ $sitemap = [
         'contact' => [
             'title' => 'Contact Us',
             'description' => 'How to contact us.',
-            'link' => '/Contact',
+            'link' => '/contact',
         ],
         'contribute' => [
             'title' => 'Contribute',
@@ -109,14 +110,6 @@ $sitemap = [
             'title' => 'Sitemap',
             'description' => 'Navigation map of the website.',
             'link' => '/sitemap',
-        ],
-        '404' => [
-            'title' => 'Page Not Found',
-            'link' => '/404',
-        ],
-        '500' => [
-            'title' => 'Internal Server Error',
-            'link' => '/500',
         ],
     ],
 ];

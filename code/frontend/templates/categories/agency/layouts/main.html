@@ -33,7 +33,9 @@
                 font-size: 2em;
                 font-weight: bold;
                 margin-bottom: 1em;
-                padding: 0.5em 1em;
+                padding: 0 1em 0.2em;
+                position: relative;
+                z-index: 60;
             }
 
             .header .logo .indent {
@@ -43,12 +45,14 @@
             .header .navigation {
                 padding: 1em 0;
                 font-weight: bold;
+                position: relative;
+                z-index: 70;
             }
 
             .header .navigation-inside {
                 background: rgba(256, 256, 256, 50%);
                 display: inline;
-                padding: 0.5em 1em;
+                padding: 0.5em 0;
             }
 
             .header .navigation .navigation-inside:hover {
@@ -59,6 +63,19 @@
                 font-size: 0.8em;
                 font-weight: normal;
                 padding: 0.5em 1em;
+            }
+
+            .header .dropdown.menu>li.is-dropdown-submenu-parent>a {
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+
+            .header .dropdown .is-dropdown-submenu a {
+                padding: 0.5rem 0;
+            }
+
+            .header .dropdown .is-dropdown-submenu a i {
+                padding-left: 0;
             }
 
             .header .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
@@ -236,14 +253,13 @@
                     <br />
                 </div>
 
-                <div class="logo columns small-12 medium-8 large-7 text-center">
+                <div class="logo columns small-12 medium-5 text-center">
                     <a href="/{{ linkparams }}">
                         <img style="height:210px;" src="/assets/images/logos/webelements.png" title="{{ info.company }}" alt="{{ info.company }}" />
                     </a>
                 </div>
 
-                <div class="navigation columns show-for-medium medium-4 text-right">
-                    <a class="button" style="font-size:0.8em; margin:0 2em 1em 0; padding:0.8em 1em;" href="/contact{{ linkparams }}">Connect</a>
+                <div class="navigation columns show-for-medium medium-6 text-right">
                     <ul class="navigation-inside dropdown menu" data-dropdown-menu>
                         <li>
                             <a href="#">
@@ -263,8 +279,12 @@
                     </ul>
                 </div>
 
-                <div class="subtitle columns small-12">
+                <div class="subtitle columns small-12 medium-8">
                     {% block header %}{% endblock %}
+                </div>
+
+                <div class="connect columns show-for-medium medium-4 text-center padding-1">
+                    <a class="button" href="/contact{{ linkparams }}">Connect</a>
                 </div>
             </header>
 

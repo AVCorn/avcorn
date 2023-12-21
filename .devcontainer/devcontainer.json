@@ -2,7 +2,7 @@
 	"name": "AVCorn",
 	"build": {
 		"dockerfile": "container/Dockerfile",
-		"context": "..",
+		"context": ".."
 	},
 
 	// Set *default* container specific settings.json values on container create.

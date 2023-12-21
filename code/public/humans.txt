@@ -1,0 +1,14 @@
+/* TEAM */
+Developer: Benjamin Young
+contact: http://webelements.agency/contact
+Github: blaher
+Location: Ohio, USA
+
+/* THANKS */
+Name: Ryan Jialanella
+
+/* SITE */
+Last update: 2024/01/01
+Standards: HTML5, CSS3, javascript
+Components: AVCorn
+Software: PHP Stack with Docker

@@ -14,6 +14,23 @@
     <div class="row padding-2 editable">
         <p>Step into our visual journey and explore the captivating moments we've captured along the way. Here, within our photo gallery, we invite you to immerse yourself in a collection of images that reflect the essence of {{ info.company }}'s story, adventures, and the vibrant tapestry of our experiences.</p>
 
+        {% set gallery = {
+            'https://unsplash.it/400/400?1': 'Example #1',
+            'https://unsplash.it/400/400?2': 'Example #2',
+            'https://unsplash.it/400/400?3': 'Example #3',
+            'https://unsplash.it/400/400?4': 'Example #4',
+            'https://unsplash.it/400/400?5': 'Example #5',
+            'https://unsplash.it/400/400?6': 'Example #6',
+            'https://unsplash.it/400/400?7': 'Example #7',
+            'https://unsplash.it/400/400?8': 'Example #8',
+            'https://unsplash.it/400/400?9': 'Example #9',
+            'https://unsplash.it/400/400?10': 'Example #10',
+            'https://unsplash.it/400/400?11': 'Example #11',
+            'https://unsplash.it/400/400?12': 'Example #12',
+        } %}
+
+        {% include 'components/gallery.html' %}
+
         <hr />
         
         <div class="text-center">

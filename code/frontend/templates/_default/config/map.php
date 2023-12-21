@@ -7,11 +7,13 @@ declare(strict_types=1);
  *
  * @phpversion >= 8.1
  *
- * @return  array
+ * @package    Application
+ * @subpackage Configuration
  */
 $map = [
     '/' => 'home',
     '/about' => 'about',
+    '/admin' => 'admin',
     '/contact' => 'contact',
     '/contribute' => 'contribute',
     '/designs' => 'designs',
@@ -21,6 +23,7 @@ $map = [
     '/privacy-policy' => 'privacy',
     '/services' => 'services',
     '/sitemap' => 'sitemap',
+    '/sitemap.xml' => 'sitemap.xml',
     '/terms-of-use' => 'terms',
     '/testimonials' => 'testimonials',
 ];

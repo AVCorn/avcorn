@@ -114,7 +114,7 @@
 
     <div class="spacer"><br /></div>
 
-    <div class="content-prompt row show-for-medium h3 padding-3 text-justify rellax clearfix wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.5">
+    <div class="content-prompt row show-for-medium h3 padding-3 text-justify rellax clearfix wow animate__fadeIn" data-rellax-speed="1" data-wow-duration="2s">
         <p>Technology, design, and marketing that's first-in-class service for our clientele.</p>
     </div>
 
@@ -173,104 +173,91 @@
     </div>
 
     <div class="spacer"><br /></div>
+    <div class="spacer"><br /></div>
 
-    <div class="content-prompt row show-for-medium h3 padding-3 text-justify clearfix rellax wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.5">
+    <div class="content-prompt row show-for-medium h3 text-justify clearfix rellax wow animate__fadeIn" data-rellax-speed="1" data-wow-duration="2s">
         <p>In a world of complexity, we offer ease and expertise by managing and maintaining your web presence.</p>
     </div>
 
-    <ul class="banner grid-x wow animate__fadeIn" data-wow-duration="2s">
-        <li class="grid-x cell small-12 medium-6 large-4" style="background:url('https://unsplash.it/600?1') center center no-repeat; background-size:100%;">
-            <div class="overlay grid-x cell">
-                <a class="grid-x cell align-bottom" href="#">
-                    <div class="banner-text cell medium-8 padding-1">
-                        Coming Soon
-                    </div>
-                    <div class="cell medium-4 text-right padding-1">
-                        <svg viewBox="0 0 20 25" width="1em">
-                            <path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-                        </svg>
-                    </div>
-                </a>
-        </li>
+    <h2 class="text-center padding-2 wow animate__fadeIn" data-wow-duration="2s">Creativites</h2>
 
-        <li class="grid-x cell small-12 medium-6 large-4" style="background:url('https://unsplash.it/600?2') center center no-repeat; background-size:100%;">
-            <div class="overlay cell grid-x">
-                <a class="grid-x cell align-bottom" href="/clients">
-                    <div class="banner-text cell medium-8 padding-1">
-                        Coming Soon
-                    </div>
-                    <div class="cell medium-4 text-right padding-1">
-                        <svg viewBox="0 0 20 25" width="1em">
-                            <path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-                        </svg>
-                    </div>
-                </a>
-        </li>
+    {% set creatives = {
+            0: {
+                'Small Businesses': "background:url('/assets/images/creatives/creative-smallbusiness.jpg') center center no-repeat; background-size:100%;",
+                'Landscapers': "background:url('/assets/images/creatives/creative-lawncare.jpg') center center no-repeat; background-size:100%;",
+                'Lawyers': "background:url('/assets/images/creatives/creative-lawyer.jpg') center center no-repeat; background-size:100%;",
+                'Autoshops': "background:url('/assets/images/creatives/creative-mechanic.jpg') center center no-repeat; background-size:100%;",
+                'Chefs': "background:url('/assets/images/creatives/creative-chef.jpg') center center no-repeat; background-size:100%;",
+                'Our Work': '',
+            },
+            1: {
+                'Gym': "background:url('/assets/images/creatives/creative-gym.jpg') center center no-repeat; background-size:100%;",
+                'Spas': "background:url('/assets/images/creatives/creative-massage.jpg') center center no-repeat; background-size:100%;",
+                'Our Designs': '',
+                'Chiropractor': "background:url('/assets/images/creatives/creative-chiropractor.jpg') center center no-repeat; background-size:100%;",
+                'Bakery': "background:url('/assets/images/creatives/creative-bakery.jpg') center center no-repeat; background-size:100%;",
+                'Accountant': "background:url('/assets/images/creatives/creative-accountant.jpg') center center no-repeat; background-size:100%;",
+            },
+            2: {
+                'Storage': "background:url('/assets/images/creatives/creative-storage.jpg') center center no-repeat; background-size:100%;",
+                'Church': "background:url('/assets/images/creatives/creative-church.jpg') center center no-repeat; background-size:100%;",
+                'Laundry': "background:url('/assets/images/creatives/creative-laundry.jpg') center center no-repeat; background-size:100%;",
+                'Coffeeshop': "background:url('/assets/images/creatives/creative-coffee.jpg') center center no-repeat; background-size:100%;",
+                'Insurance': "background:url('/assets/images/creatives/creative-insurance.jpg') center center no-repeat; background-size:100%;",
+                'Our Creativity': '',
+            },
+        }
+    %}
 
-        <li class="grid-x cell small-12 medium-6 large-4" style="background:url('https://unsplash.it/600?3') center center no-repeat; background-size:100%;">
-            <div class="grid-x cell align-bottom">
-                <a class="cell grid-x align-bottom" href="/clients">
-                    <div class="banner-text cell medium-8 padding-1">
-                        Coming Soon
-                    </div>
-                    <div class="cell medium-4 text-right padding-1">
-                        <svg viewBox="0 0 20 25" width="1em">
-                            <path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-                        </svg>
-                    </div>
-                </a>
-        </li>
+    <script>
+        $(document).ready(function() {
+            var scrollDistancePerSecond = 50;
+            var scrollDistancePerAnimationFrame = Math.ceil(scrollDistancePerSecond  / 60);
+            var wrapper = document.getElementById('bannerWrapper');
 
-        <li class="grid-x cell small-12 medium-6 large-4" style="background:url('https://unsplash.it/600?4') center center no-repeat; background-size:100%;">
-            <div class="overlay cell grid-x">
-                <a class="grid-x cell align-bottom" href="/clients">
-                    <div class="banner-text cell medium-8 padding-1">
-                        Coming Soon
-                    </div>
-                    <div class="cell medium-4 text-right padding-1">
-                        <svg viewBox="0 0 20 25" width="1em">
-                            <path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-                        </svg>
-                    </div>
-                </a>
-        </li>
-
-        <li class="grid-x cell small-12 medium-6 large-4" style="background:url('https://unsplash.it/600?5') center center no-repeat; background-size:100%;">
-            <div class="overlay cell grid-x">
-                <a class="grid-x cell align-bottom" href="/clients">
-                    <div class="banner-text cell medium-8 padding-1">
-                        Coming Soon
-                    </div>
-                    <div class="cell medium-4 text-right padding-1">
-                        <svg viewBox="0 0 20 25" width="1em">
-                            <path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-                        </svg>
-                    </div>
-                </a>
-        </li>
-
-        <li class="grid-x cell small-12 medium-6 large-4">
-            <div class="overlay cell grid-x">
-                <a class="grid-x cell align-bottom" href="/clients">
-                    <div class="banner-text cell medium-8 padding-1">
-                        Our Work
-                    </div>
-                    <div class="cell medium-4 text-right padding-1">
-                        <svg viewBox="0 0 20 25" width="1em">
-                            <path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
-                        </svg>
-                    </div>
-                </a>
-        </li>
-    </ul>
-
-    <div class="spacer"><br /></div>
-
-    <div class="content-prompt row show-for-medium h3 padding-3 text-justify rellax wow animate__fadeIn" data-wow-duration="2s" data-rellax-speed="0.3">
-        <p>Instinctive experience is what guides us. That's why we develop and research what leads revanue in the industry.</p>
+            autoScroll(wrapper);
+            function autoScroll(element) {
+                if (element.scrollLeft <= element.scrollWidth) {
+                    window.requestAnimationFrame(autoScroll.bind(null, element));
+                }
+                element.scrollLeft += scrollDistancePerAnimationFrame;
+            }
+        });
+    </script>
+    
+    <div id="bannerWrapper" style="overflow:scroll;">
+        <div id="banner" style="width:300% !important;" class="row expanded grid-x">
+            {% for row in creatives %}
+                <div class="cell small-4">
+                    <ul class="banner grid-x">
+                        {% for creative, style in row %}
+                            <li class="cell small-12 medium-6 large-4 grid-x wow animate__fadeIn" style="{{ style | raw }}" data-wow-duration="2s">
+                                <div class="overlay cell grid-x">
+                                    <a class="cell grid-x align-bottom" href="#">
+                                        <div class="banner-text cell medium-8 padding-1">
+                                            {{ creative }}
+                                        </div>
+                                        <div class="cell medium-4 text-right padding-1">
+                                            <svg viewBox="0 0 20 25" width="1em">
+                                                <path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 
-    <div class="spacer show-for-medium"><br /></div>
+    <div class="spacer"><br /></div>
+    <div class="spacer"><br /></div>
+    <div class="spacer"><br /></div>
+
+    <div class="content-prompt row show-for-medium h3 text-justify rellax wow animate__fadeIn" data-rellax-speed="1" data-wow-duration="2s">
+        <p>Instinctive experience is what guides us. That's why we develop and research what leads revanue in the industry.</p>
+    </div>
 
     <div class="customers row expanded">
         <div class="customers-right columns small-12 float-right rellax" data-rellax-speed="1">

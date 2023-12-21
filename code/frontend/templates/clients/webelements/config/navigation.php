@@ -7,20 +7,29 @@ declare(strict_types=1);
  *
  * @phpversion >= 8.1
  *
- * @package     Application
- * @subpackage  Configuration
+ * @package    Application
+ * @subpackage Configuration
  */
 $navigation = [
     [
         'href' => '/about',
-        'label' => 'About Us',
+        'label' => '<i class="show-for-medium fa fa-users"></i> Who We Are',
     ],
     [
         'href' => '/clients',
-        'label' => 'Our Work',
+        'label' => '<i class="show-for-medium fa fa-briefcase"></i> Our Work',
+    ],
+    [
+        'href' => '/services',
+        'label' => '<i class="show-for-medium fa fa-globe"></i> What We Offer',
     ],
     [
         'href' => '/contact',
-        'label' => 'Contact Us',
+        'label' => '
+            <span class="show-for-medium">
+                <i class="fa fa-phone"></i> Contact Us
+            </span>
+            <span class="button show-for-small-only">Connect</span>
+        ',
     ],
 ];

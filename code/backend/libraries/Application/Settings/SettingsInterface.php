@@ -13,6 +13,8 @@ namespace App\Application\Settings;
 interface SettingsInterface
 {
     /**
+     * Get settings by key.
+     *
      * @param   string $key
      *
      * @return  mixed

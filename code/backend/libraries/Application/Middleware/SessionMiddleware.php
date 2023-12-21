@@ -18,6 +18,8 @@ use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 class SessionMiddleware implements Middleware
 {
     /**
+     * Process middleware.
+     *
      * {@inheritdoc}
      */
     public function process(Request $request, RequestHandler $handler): Response

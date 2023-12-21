@@ -80,11 +80,18 @@ class TestCase extends PHPUnit_TestCase
         $handle = fopen('php://temp', 'w+');
         $stream = (new StreamFactory())->createStreamFromResource($handle);
 
-        $headers = new Headers();
+        $heads = new Headers();
         foreach ($headers as $name => $value) {
-            $h->addHeader($name, $value);
+            $heads->addHeader($name, $value);
         }
 
-        return new SlimRequest($method, $uri, $h, $cookies, $serverParams, $stream);
+        return new SlimRequest(
+            $method,
+            $uri,
+            $heads,
+            $cookies,
+            $serverParams,
+            $stream
+        );
     }
 }
