@@ -39,6 +39,8 @@
                 font-size: 2em;
                 font-weight: bold;
                 padding: 0.5em 1em;
+                position: relative;
+                z-index: 60;
             }
 
             .header .logo .indent {
@@ -108,19 +110,21 @@
 
             .header .subtitle {
                 margin: 0.5em 0 0;
-                font-size: 7em;
-                line-height: 0.8em;
+                font-size: 6em;
+                font-weight: 100;
+                line-height: 1em;
             }
 
             .header .subtitle .brand {
-                font-size: 0.8em;
+                font-size: 1.2em;
+                font-style: normal;
+                font-weight: bold;
             }
 
             .header .connect a {
                 background: rgb(0, 30, 50);
                 font-size: 1em;
                 font-weight: bold;
-                margin:0 2em;
             }
 
             .header .connect a:hover {
@@ -470,8 +474,11 @@
                 </div>
 
                 <div class="subtitle columns show-for-large large-12 rellax wow animate__slideInLeft" data-rellax-speed="2" data-wow-duration="2s">
-                    We are<br />
-                    <span class="brand">{{ info.company }}</span>
+                    We are
+                    <div class="brand row expanded">
+                        <div class="columns small-1"></div>
+                        <div class="columns small-11">{{ info.company }}</div>
+                    </div>
                 </div>
 
                 <div class="connect columns show-for-medium medium-4 large-12 text-right padding-3">
@@ -494,8 +501,6 @@
 
                 {% endblock %}
             </article>
-
-            <div class="spacer show-for-medium"><br /></div>
 
             <footer class="footer row padding-3 wow animate__fadeIn" data-wow-duration="2s">
                 <ul class="navigation menu expanded padding-3">

@@ -18,10 +18,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
         $(document).foundation();
 
-        $('.unmask').on('click', function(){
+        $('.unmask').on('click', function() {
             if($(this).prev('input').attr('type') == 'password') {
                 changeType($(this).prev('input'), 'text');
             } else {
