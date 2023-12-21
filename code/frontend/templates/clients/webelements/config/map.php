@@ -17,6 +17,9 @@ $map = [
     '/clients' => 'clients',
     '/contact' => 'contact',
     '/designs' => 'clients',
+    '/privacy-policy' => 'privacy',
     '/services' => 'services',
     '/sitemap' => 'sitemap',
+    '/sitemap.xml' => 'sitemap.xml',
+    '/terms-of-use' => 'terms',
 ];

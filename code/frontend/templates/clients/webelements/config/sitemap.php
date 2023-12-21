@@ -64,7 +64,7 @@ $sitemap = [
         'contact' => [
             'title' => 'Contact Us',
             'description' => 'How to contact us.',
-            'link' => '/Contact',
+            'link' => '/contact',
         ],
         'terms' => [
             'title' => 'Terms of Use',
@@ -80,14 +80,6 @@ $sitemap = [
             'title' => 'Sitemap',
             'description' => 'Navigation map of the website.',
             'link' => '/sitemap',
-        ],
-        '404' => [
-            'title' => 'Page Not Found',
-            'link' => '/404',
-        ],
-        '500' => [
-            'title' => 'Internal Server Error',
-            'link' => '/500',
         ],
     ],
 ];
