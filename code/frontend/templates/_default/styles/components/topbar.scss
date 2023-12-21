@@ -76,7 +76,9 @@ $topbar-responsive-animation-type: fade-in; // or use slide-down or none
 @keyframes fadeIn {
     from {
         opacity:0;
-    } to {
+    }
+    
+    to {
         opacity:1;
     }
 }
@@ -85,6 +87,7 @@ $topbar-responsive-animation-type: fade-in; // or use slide-down or none
     0% {
         transform: translateY(-100%);
     }
+    
     100% {
         transform: translateY(0%);
     }

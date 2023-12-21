@@ -13,6 +13,8 @@ namespace App\Application\Watcher;
 class Watcher implements WatcherInterface
 {
     /**
+     * Check for the latest modified file.
+     *
      * @param   string $dir
      *
      * @return  string

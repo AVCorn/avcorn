@@ -42,6 +42,8 @@ class ActionError implements JsonSerializable
     }
 
     /**
+     * Get type.
+     *
      * @return  string
      */
     public function getType(): string
@@ -50,6 +52,8 @@ class ActionError implements JsonSerializable
     }
 
     /**
+     * Set type.
+     *
      * @param   string $type
      *
      * @return  self
@@ -61,6 +65,8 @@ class ActionError implements JsonSerializable
     }
 
     /**
+     * Get description.
+     *
      * @return  string|null
     */
     public function getDescription(): ?string
@@ -69,6 +75,8 @@ class ActionError implements JsonSerializable
     }
 
     /**
+     * Set description.
+     *
      * @param  string|null $description
     */
     public function setDescription(?string $description = null): self
@@ -78,6 +86,8 @@ class ActionError implements JsonSerializable
     }
 
     /**
+     * Convert to array to be consumed by json.
+     *
      * @return array
      */
     #[\ReturnTypeWillChange]

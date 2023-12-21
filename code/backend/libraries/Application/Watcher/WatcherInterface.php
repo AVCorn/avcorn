@@ -13,6 +13,8 @@ namespace App\Application\Watcher;
 interface WatcherInterface
 {
     /**
+     * Check for changes.
+     *
      * @param string $dir
      *
      * @return string

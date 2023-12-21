@@ -27,6 +27,8 @@ class Settings implements SettingsInterface
     }
 
     /**
+     * Get settings by key.
+     *
      * @param   string $key
      *
      * @return  mixed

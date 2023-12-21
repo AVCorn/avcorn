@@ -40,6 +40,8 @@ class ActionPayload implements JsonSerializable
     }
 
     /**
+     * Get status code.
+     *
      * @return  int
      */
     public function getStatusCode(): int
@@ -48,6 +50,8 @@ class ActionPayload implements JsonSerializable
     }
 
     /**
+     * Get data.
+     *
      * @return  array|null|object
      */
     public function getData()
@@ -56,6 +60,8 @@ class ActionPayload implements JsonSerializable
     }
 
     /**
+     * Get error.
+     *
      * @return  ActionError|null
      */
     public function getError(): ?ActionError
@@ -64,6 +70,8 @@ class ActionPayload implements JsonSerializable
     }
 
     /**
+     * Convert to array to be consumed by json.
+     *
      * @return  array
      */
     #[\ReturnTypeWillChange]

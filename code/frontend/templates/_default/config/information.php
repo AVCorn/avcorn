@@ -7,8 +7,8 @@ declare(strict_types=1);
  *
  * @phpversion >= 8.1
  *
- * @package     Application
- * @subpackage  Configuration
+ * @package    Application
+ * @subpackage Configuration
  */
 $information = [
     'company' => 'AVCorn',

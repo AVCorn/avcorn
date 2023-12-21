@@ -21,6 +21,8 @@ class ShutdownHandler
     private bool $displayErrorDetails;
 
     /**
+     * Constructor.
+     *
      * @param   Request $request
      * @param   HttpErrorHandler $errorHandler
      * @param   bool $displayErrorDetails
@@ -38,6 +40,8 @@ class ShutdownHandler
     }
 
     /**
+     * Invoke shutdown handler.
+     *
      * @return  void
      */
     public function __invoke()

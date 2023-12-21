@@ -26,6 +26,8 @@ use Throwable;
 class HttpErrorHandler extends SlimErrorHandler
 {
     /**
+     * Respond.
+     *
      * @inheritdoc
      */
     protected function respond(): Response

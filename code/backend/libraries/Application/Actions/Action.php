@@ -25,6 +25,8 @@ abstract class Action
     protected array $args;
 
     /**
+     * Constructor.
+     *
      * @codeCoverageIgnore
      *
      * @param   LoggerInterface $logger
@@ -37,6 +39,8 @@ abstract class Action
     }
 
     /**
+     * Invoke action.
+     *
      * @param   Request $req
      * @param   Response $res
      * @param   array $args
@@ -59,12 +63,16 @@ abstract class Action
     }
 
     /**
+     * Action.
+     *
      * @throws  DomainRecordNotFoundException
      * @throws  HttpBadRequestException
      */
     abstract protected function action(): Response;
 
     /**
+     * Gets the form data.
+     *
      * @return array|object
      */
     protected function getFormData()
@@ -73,6 +81,8 @@ abstract class Action
     }
 
     /**
+     * Resolves argument.
+     *
      * @param   string $name
      *
      * @return  mixed
@@ -88,6 +98,8 @@ abstract class Action
     }
 
     /**
+     * Respond with JSON data.
+     *
      * @param   array|object|null $data
      * @param   int $statusCode
      *
@@ -101,6 +113,8 @@ abstract class Action
     }
 
     /**
+     * Respond with JSON payload.
+     *
      * @param   ActionPayload $payload
      *
      * @return  Response

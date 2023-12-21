@@ -8,6 +8,7 @@ body {
 
 .sticky-shrinknav-menu {
     @include horizontal-center;
+    
     bottom: 0;
     height: $sticky-shrinknav-menu-height;
     line-height: $sticky-shrinknav-menu-height;

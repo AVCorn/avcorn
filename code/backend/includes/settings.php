@@ -19,23 +19,25 @@ use Monolog\Logger;
 
 return function (ContainerBuilder $containerBuilder) {
     // Global Settings Object
-    $containerBuilder->addDefinitions([
-        SettingsInterface::class => function () {
-            $dev = true;
-            if (isset($_ENV['production'])) {
-                $dev = false;
-            }
+    $containerBuilder->addDefinitions(
+        [
+            SettingsInterface::class => function () {
+                $dev = true;
+                if (isset($_ENV['production'])) {
+                    $dev = false;
+                }
 
-            return new Settings([
-                'displayErrorDetails' => $dev,
-                'logError'            => false,
-                'logErrorDetails'     => false,
-                'logger' => [
-                    'name' => 'slim-app',
-                    'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/logs/app.log',
-                    'level' => Logger::DEBUG,
-                ],
-            ]);
-        }
-    ]);
+                return new Settings([
+                    'displayErrorDetails' => $dev,
+                    'logError'            => false,
+                    'logErrorDetails'     => false,
+                    'logger' => [
+                        'name' => 'slim-app',
+                        'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/logs/app.log',
+                        'level' => Logger::DEBUG,
+                    ],
+                ]);
+            }
+        ]
+    );
 };

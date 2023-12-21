@@ -7,8 +7,8 @@ declare(strict_types=1);
  *
  * @phpversion >= 8.1
  *
- * @package     Application
- * @subpackage  Configuration
+ * @package    Application
+ * @subpackage Configuration
  */
 $navigation = [
     [
@@ -25,6 +25,11 @@ $navigation = [
     ],
     [
         'href' => '/contact',
-        'label' => '<span class="show-for-medium"><i class="fa fa-phone"></i> Contact Us</span><span class="button show-for-small-only">Connect</span>',
+        'label' => '
+            <span class="show-for-medium">
+                <i class="fa fa-phone"></i> Contact Us
+            </span>
+            <span class="button show-for-small-only">Connect</span>
+        ',
     ],
 ];
