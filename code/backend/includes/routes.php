@@ -76,12 +76,11 @@ return function (App $app) {
         /**
          * @var     App $app
          * @var     Response $res
-         * @var     array $args
          * @return  Response
          *
          * Create Route
          */
-        $app->get($route, function (Request $req, Response $res, array $args) use ($config) {
+        $app->get($route, function (Request $req, Response $res) use ($config) {
             // pass parameters to use
             $config['get'] = $req->getQueryParams();
 
@@ -134,12 +133,11 @@ return function (App $app) {
     /**
      * @var     App $this
      * @var     Response $res
-     * @var     array $args
      * @return  Response
      *
      * Health Check
      */
-    $app->get('/health', function (Request $req, Response $res, array $args) {
+    $app->get('/health', function (Request $req, Response $res) {
         $res->getBody()->write('Ok');
         return $res;
     });
@@ -147,12 +145,11 @@ return function (App $app) {
     /**
      * @var     mixed $this
      * @var     Response $res
-     * @var     array $args
      * @return  Response
      *
      * Watcher
      */
-    $app->get('/watch', function (Request $req, Response $res, array $args) {
+    $app->get('/watch', function (Request $req, Response $res) {
         $watcher = $this->get('watcher');
         $latest_file = $watcher->check(__DIR__ . '/../../');
         $latest_time = filemtime($latest_file);
