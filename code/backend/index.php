@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Public index route.
+ *
+ * PHP version 8.1
+ * @phpversion >= 8.1
+ */
+
 declare(strict_types=1);
 
 use App\Application\Handlers\HttpErrorHandler;
@@ -42,14 +49,16 @@ $repositories($containerBuilder);
 // Build PHP-DI Container instance
 $container = $containerBuilder->build();
 
+// Set up watcher
+if (!isset($app->mode) || $app->mode !== 'production') {
+    $watcher = include __DIR__ . '/includes/watcher.php';
+    $watcher($container);
+}
+
 // Instantiate the app
 AppFactory::setContainer($container);
 $app = AppFactory::create();
 $callableResolver = $app->getCallableResolver();
-
-// Set up watcher
-$watcher = include __DIR__ . '/includes/watcher.php';
-$watcher($container);
 
 // Cache pages only on production
 $twig_config = [];
@@ -86,10 +95,17 @@ $request = $serverRequestCreator->createServerRequestFromGlobals();
 
 // Create Error Handler
 $responseFactory = $app->getResponseFactory();
-$errorHandler = new HttpErrorHandler($callableResolver, $responseFactory);
+$errorHandler = new HttpErrorHandler(
+    $callableResolver,
+    $responseFactory
+);
 
 // Create Shutdown Handler
-$shutdownHandler = new ShutdownHandler($request, $errorHandler, $displayErrorDetails);
+$shutdownHandler = new ShutdownHandler(
+    $request,
+    $errorHandler,
+    $displayErrorDetails
+);
 register_shutdown_function($shutdownHandler);
 
 // Add Routing Middleware
@@ -99,7 +115,11 @@ $app->addRoutingMiddleware();
 $app->addBodyParsingMiddleware();
 
 // Add Error Middleware
-$errorMiddleware = $app->addErrorMiddleware($displayErrorDetails, $logError, $logErrorDetails);
+$errorMiddleware = $app->addErrorMiddleware(
+    $displayErrorDetails,
+    $logError,
+    $logErrorDetails
+);
 $errorMiddleware->setDefaultErrorHandler($errorHandler);
 
 // Run App & Emit Response

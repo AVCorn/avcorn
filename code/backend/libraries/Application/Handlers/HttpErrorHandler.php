@@ -20,7 +20,9 @@ use Throwable;
 /**
  * Custom error handler that returns JSON.
  *
+ * PHP version 8.1
  * @phpversion >= 8.1
+ *
  * @package App\Application\Handlers
  */
 class HttpErrorHandler extends SlimErrorHandler

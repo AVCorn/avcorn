@@ -1,14 +1,21 @@
 <?php
 
+/**
+ * Information configuration
+ *
+ * PHP version 8.1
+ * @phpversion >= 8.1
+ *
+ * @package    Application
+ * @subpackage Configuration
+ */
+
 declare(strict_types=1);
 
 /**
  * Information configuration
  *
- * @phpversion >= 8.1
- *
- * @package    Application
- * @subpackage Configuration
+ * @var array   $information    Information configuration
  */
 $information = [
     'company' => 'Web Elements',

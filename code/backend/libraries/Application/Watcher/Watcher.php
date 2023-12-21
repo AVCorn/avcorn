@@ -15,7 +15,7 @@ class Watcher implements WatcherInterface
     /**
      * Check for the latest modified file.
      *
-     * @param   string $dir
+     * @param   string  $dir
      *
      * @return  string
      */

@@ -1,14 +1,21 @@
 <?php
 
+/**
+ * Theme switcher configuration
+ *
+ * PHP version 8.1
+ * @phpversion >= 8.1
+ *
+ * @package    Application
+ * @subpackage Configuration
+ */
+
 declare(strict_types=1);
 
 /**
  * Theme switcher configuration
  *
- * @phpversion >= 8.1
- *
- * @package    Application
- * @subpackage Configuration
+ * @var array   $themes     List of themes
  */
 $themes = [
     'default' => '_default',

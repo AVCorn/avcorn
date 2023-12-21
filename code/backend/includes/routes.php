@@ -3,9 +3,10 @@
 /**
  * Routes configuration
  *
+ * PHP version 8.1
  * @phpversion >= 8.1
  *
- * @param       App $app
+ * @param       App $app    The application
  *
  * @return      void
  */
@@ -74,18 +75,22 @@ return function (App $app) {
             . $config['page_file'];
 
         /**
-         * @var     App $app
-         * @var     Response $res
-         * @return  Response
-         *
          * Create Route
+         *
+         * @var     App         $app    The application
+         * @var     Response    $res    The response
+         *
+         * @return  Response
          */
         $app->get($route, function (Request $req, Response $res) use ($config) {
             // pass parameters to use
             $config['get'] = $req->getQueryParams();
 
             // Override main config with template's
-            if (isset($config['get']['design']) && isset($config['themes'][$config['get']['design']])) {
+            if (
+                isset($config['get']['design'])
+                && isset($config['themes'][$config['get']['design']])
+            ) {
                 $config['template'] = $config['get']['design'];
                 $config['template_path'] = $config['templates_root']
                     . $config['themes'][$config['get']['design']];
@@ -131,11 +136,12 @@ return function (App $app) {
     }
 
     /**
-     * @var     App $this
-     * @var     Response $res
-     * @return  Response
-     *
      * Health Check
+     *
+     * @var     App         $this   The application
+     * @var     Response    $res    The response
+     *
+     * @return  Response
      */
     $app->get('/health', function (Request $req, Response $res) {
         $res->getBody()->write('Ok');
@@ -143,11 +149,12 @@ return function (App $app) {
     });
 
     /**
-     * @var     mixed $this
-     * @var     Response $res
-     * @return  Response
-     *
      * Watcher
+     *
+     * @var     mixed       $this   The application
+     * @var     Response    $res    The response
+     *
+     * @return  Response
      */
     $app->get('/watch', function (Request $req, Response $res) {
         $watcher = $this->get('watcher');

@@ -14,7 +14,9 @@ use Slim\Exception\HttpNotFoundException;
 /**
  * Abstract action.
  *
+ * PHP version 8.1
  * @phpversion >= 8.1
+ *
  * @package App\Application\Actions
  */
 abstract class Action
@@ -25,7 +27,7 @@ abstract class Action
     protected array $args;
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @codeCoverageIgnore
      *
@@ -39,11 +41,11 @@ abstract class Action
     }
 
     /**
-     * Invoke action.
+     * Invoke action
      *
-     * @param   Request $req
-     * @param   Response $res
-     * @param   array $args
+     * @param   Request     $req    The request
+     * @param   Response    $res    The response
+     * @param   array       $args   The arguments
      *
      * @return  Response
      * @throws  HttpNotFoundException
@@ -63,7 +65,7 @@ abstract class Action
     }
 
     /**
-     * Action.
+     * Action
      *
      * @throws  DomainRecordNotFoundException
      * @throws  HttpBadRequestException
@@ -81,9 +83,9 @@ abstract class Action
     }
 
     /**
-     * Resolves argument.
+     * Resolves argument
      *
-     * @param   string $name
+     * @param   string  $name   The name
      *
      * @return  mixed
      * @throws  HttpBadRequestException
@@ -100,8 +102,8 @@ abstract class Action
     /**
      * Respond with JSON data.
      *
-     * @param   array|object|null $data
-     * @param   int $statusCode
+     * @param   array|object|null   $data       The data
+     * @param   int                 $statusCode The status code
      *
      * @return  Response
      */
@@ -115,7 +117,7 @@ abstract class Action
     /**
      * Respond with JSON payload.
      *
-     * @param   ActionPayload $payload
+     * @param   ActionPayload   $payload    The payload
      *
      * @return  Response
      */

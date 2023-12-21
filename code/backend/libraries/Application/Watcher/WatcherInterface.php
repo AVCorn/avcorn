@@ -15,7 +15,7 @@ interface WatcherInterface
     /**
      * Check for changes.
      *
-     * @param string $dir
+     * @param string    $dir
      *
      * @return string
      */
