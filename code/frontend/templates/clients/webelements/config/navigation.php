@@ -13,14 +13,18 @@ declare(strict_types=1);
 $navigation = [
     [
         'href' => '/about',
-        'label' => 'About Us',
+        'label' => '<i class="fa fa-users"></i> Who We Are',
     ],
     [
         'href' => '/clients',
-        'label' => 'Our Work',
+        'label' => '<i class="fa fa-briefcase"></i> Our Work',
+    ],
+    [
+        'href' => '/services',
+        'label' => '<i class="fa fa-globe"></i> What We Offer',
     ],
     [
         'href' => '/contact',
-        'label' => 'Contact Us',
+        'label' => '<i class="fa fa-phone"></i> Connect',
     ],
 ];

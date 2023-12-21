@@ -48,6 +48,8 @@
             .header .navigation {
                 padding: 1em 0;
                 font-weight: bold;
+                position: relative;
+                z-index: 50;
             }
 
             .header .navigation-inside {
@@ -63,6 +65,19 @@
                 font-size: 0.8em;
                 font-weight: normal;
                 padding: 0.5em 1em;
+            }
+
+            .header .dropdown.menu>li.is-dropdown-submenu-parent>a {
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+
+            .header .dropdown .is-dropdown-submenu a {
+                padding: 0.5rem 0;
+            }
+
+            .header .dropdown .is-dropdown-submenu a i {
+                padding-left: 0;
             }
 
             .header .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
@@ -437,7 +452,7 @@
                                 Menu
                                 <i class="fa fa-bars"></i>
                             </a>
-                            <ul class="menu text-left">
+                            <ul class="menu vertical text-left">
                                 {% include "/components/navigation.html" %}
                             </ul>
                         </li>
