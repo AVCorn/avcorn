@@ -183,27 +183,27 @@
 
     {% set creatives = {
             0: {
-                'Small Businesses': "background:url('/assets/images/creatives/creative-smallbusiness.jpg') center center no-repeat; background-size:100%;",
-                'Landscapers': "background:url('/assets/images/creatives/creative-lawncare.jpg') center center no-repeat; background-size:100%;",
-                'Lawyers': "background:url('/assets/images/creatives/creative-lawyer.jpg') center center no-repeat; background-size:100%;",
-                'Autoshops': "background:url('/assets/images/creatives/creative-mechanic.jpg') center center no-repeat; background-size:100%;",
-                'Chefs': "background:url('/assets/images/creatives/creative-chef.jpg') center center no-repeat; background-size:100%;",
+                'Small Businesses': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
+                'Landscapers': "background-image:url('/assets/images/creatives/creative-lawncare.jpg');",
+                'Lawyers': "background-image:url('/assets/images/creatives/creative-lawyer.jpg');",
+                'Autoshops': "background-image:url('/assets/images/creatives/creative-mechanic.jpg');",
+                'Chefs': "background-image:url('/assets/images/creatives/creative-chef.jpg');",
                 'Our Work': '',
             },
             1: {
-                'Gym': "background:url('/assets/images/creatives/creative-gym.jpg') center center no-repeat; background-size:100%;",
-                'Spas': "background:url('/assets/images/creatives/creative-massage.jpg') center center no-repeat; background-size:100%;",
+                'Gym': "background-image:url('/assets/images/creatives/creative-gym.jpg');",
+                'Spas': "background-image:url('/assets/images/creatives/creative-massage.jpg');",
                 'Our Designs': '',
-                'Chiropractor': "background:url('/assets/images/creatives/creative-chiropractor.jpg') center center no-repeat; background-size:100%;",
-                'Bakery': "background:url('/assets/images/creatives/creative-bakery.jpg') center center no-repeat; background-size:100%;",
-                'Accountant': "background:url('/assets/images/creatives/creative-accountant.jpg') center center no-repeat; background-size:100%;",
+                'Chiropractor': "background-image:url('/assets/images/creatives/creative-chiropractor.jpg');",
+                'Bakery': "background-image:url('/assets/images/creatives/creative-bakery.jpg');",
+                'Accountant': "background-image:url('/assets/images/creatives/creative-accountant.jpg');",
             },
             2: {
-                'Storage': "background:url('/assets/images/creatives/creative-storage.jpg') center center no-repeat; background-size:100%;",
-                'Church': "background:url('/assets/images/creatives/creative-church.jpg') center center no-repeat; background-size:100%;",
-                'Laundry': "background:url('/assets/images/creatives/creative-laundry.jpg') center center no-repeat; background-size:100%;",
-                'Coffeeshop': "background:url('/assets/images/creatives/creative-coffee.jpg') center center no-repeat; background-size:100%;",
-                'Insurance': "background:url('/assets/images/creatives/creative-insurance.jpg') center center no-repeat; background-size:100%;",
+                'Storage': "background-image:url('/assets/images/creatives/creative-storage.jpg');",
+                'Church': "background-image:url('/assets/images/creatives/creative-church.jpg');",
+                'Laundry': "background-image:url('/assets/images/creatives/creative-laundry.jpg');",
+                'Coffeeshop': "background-image:url('/assets/images/creatives/creative-coffee.jpg');",
+                'Insurance': "background-image:url('/assets/images/creatives/creative-insurance.jpg');",
                 'Our Creativity': '',
             },
         }
@@ -231,7 +231,7 @@
                 <div class="cell small-4">
                     <ul class="banner grid-x">
                         {% for creative, style in row %}
-                            <li class="cell small-12 medium-6 large-4 grid-x wow animate__fadeIn" style="{{ style | raw }}" data-wow-duration="2s">
+                            <li class="cell small-6 medium-4 grid-x wow animate__fadeIn" style="{{ style | raw }}" data-wow-duration="2s">
                                 <div class="overlay cell grid-x">
                                     <a class="cell grid-x align-bottom" href="#">
                                         <div class="banner-text cell medium-8 padding-1">
