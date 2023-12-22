@@ -20,6 +20,7 @@ use Slim\Factory\AppFactory;
 use Slim\Factory\ServerRequestCreatorFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
+use App\Application\Middleware\FormMiddleware;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -77,6 +78,10 @@ $app->add(TwigMiddleware::create($app, $twig));
 // Register middleware
 $middleware = include __DIR__ . '/includes/middleware.php';
 $middleware($app);
+
+// Register middleware
+$forms = include __DIR__ . '/includes/forms.php';
+$forms($app);
 
 // Register routes
 $routes = include __DIR__ . '/includes/routes.php';
