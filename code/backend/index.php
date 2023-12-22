@@ -48,14 +48,14 @@ $dependencies($containerBuilder);
 $repositories = include __DIR__ . '/includes/repositories.php';
 $repositories($containerBuilder);
 
-// Build PHP-DI Container instance
-$container = $containerBuilder->build();
-
 // Set up watcher
 if (!isset($app->mode) || $app->mode !== 'production') {
     $watcher = include __DIR__ . '/includes/watcher.php';
-    $watcher($container);
+    $watcher($containerBuilder);
 }
+
+// Build PHP-DI Container instance
+$container = $containerBuilder->build();
 
 // Instantiate the app
 AppFactory::setContainer($container);
@@ -83,6 +83,8 @@ $routes = include __DIR__ . '/includes/routes.php';
 $routes($app);
 
 /**
+ * Settings
+ *
  * @var SettingsInterface $settings
  */
 $settings = $container->get(SettingsInterface::class);

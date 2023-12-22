@@ -6,18 +6,24 @@
  * PHP version 8.1
  * @phpversion >= 8.1
  *
- * @param Container $container
+ * @param  Container $container
  *
  * @return void
  */
 
 declare(strict_types=1);
 
-use DI\Container;
+use DI\ContainerBuilder;
 use App\Application\Watcher\Watcher;
+use App\Application\Watcher\WatcherInterface;
 
-return function (Container $container) {
-    $container->set('watcher', function () {
-        return new Watcher();
-    });
+return function (ContainerBuilder $containerBuilder) {
+    // Global Settings Object
+    $containerBuilder->addDefinitions(
+        [
+            WatcherInterface::class => function () {
+                return new Watcher();
+            }
+        ]
+    );
 };
