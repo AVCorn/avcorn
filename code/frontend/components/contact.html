@@ -196,7 +196,7 @@
                             <figure class="orbit-figure">
                                 <div class="orbit-image orbit-image-placeholder"></div>
                                 <figcaption class="orbit-caption">
-                                    <h3>What is your email?</h3>
+                                    <h3>What is your contact information?</h3>
 
                                     <div class="input-group">
                                         <span class="input-group-label">
@@ -205,6 +205,13 @@
                                         <input id="contact-email" class="input-group-field" type="email" name="email" placeholder="Email" required {% if get.email %}value="{{ get.email }}"{% endif %} />
 
                                         <small class="form-error">An email address is required.</small>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-label">
+                                            <i class="fa fa-phone"></i>
+                                        </span>
+                                        <input id="contact-phone" class="input-group-field" type="phone" name="phone" placeholder="Phone (Optional)" required {% if get.phone %}value="{{ get.phone }}"{% endif %} />
                                     </div>
 
                                     <button class="prev" type="button">&lt; Back</button>
@@ -222,11 +229,7 @@
                                         <span class="input-group-label">
                                             <i class="fa fa-comment"></i>
                                         </span>
-                                        <textarea class="input-group-field" name="message" required rows="8" cols="16" placeholder="Message">
-                                            {% if get.message %}
-                                                {{ get.message }}
-                                            {% endif %}
-                                        </textarea>
+                                        <textarea class="input-group-field" name="message" required rows="8" cols="16" placeholder="Message">{% if get.message %}{{ get.message }}{% endif %}</textarea>
 
                                         <small class="form-error">An message is required.</small>
                                     </div>
