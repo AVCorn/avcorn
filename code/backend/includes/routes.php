@@ -36,7 +36,10 @@ return function (App $app) {
     }
 
     //load config
-    include_once __DIR__ . '../../../frontend/templates/' . $default_path . '/config.php';
+    include_once __DIR__
+        . '../../../frontend/templates/'
+        . $default_path
+        . '/config.php';
 
     $config['development'] = true;
     $config['production'] = false;
