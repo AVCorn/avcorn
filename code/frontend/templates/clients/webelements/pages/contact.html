@@ -11,6 +11,8 @@
 {% endblock %}
 
 {% block content %}
+    {% include "components/contact.html" %}
+    
     <div class="row padding-2 editable">
         <img style="width:200px;" class="float-right margin-2 hover-shake" src="assets/images/nutty/nutty-customerservice.png" title="How may I assist you today?" alt="" />
 
@@ -32,9 +34,4 @@
         <p>Warm regards,<br />
         The {{ info.company }} Team</p>
     </div>
-
-    <br class="clearfix" />
-
-    <!--{% include "components/contact.html" %}-->
-
 {% endblock %}
