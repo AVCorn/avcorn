@@ -3,12 +3,12 @@
 /**
  * Settings configuration
  *
+ * PHP version 8.1
  * @phpversion >= 8.1
  *
- * @param   ContainerBuilder $containerBuilder
+ * @param ContainerBuilder $containerBuilder
  *
- * PHP version 8.1
- * @return  void
+ * @return void
  */
 
 declare(strict_types=1);

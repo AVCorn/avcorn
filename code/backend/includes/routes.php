@@ -4,12 +4,11 @@
  * Routes configuration
  *
  * PHP version 8.1
- *
- * @param       App $app    The application
- *
- * @return      void
- *
  * @phpversion >= 8.1
+ *
+ * @param App $app The application
+ *
+ * @return void
  */
 
 declare(strict_types=1);
@@ -78,10 +77,10 @@ return function (App $app) {
         /**
          * Create Route
          *
-         * @var App         $app    The application
-         * @var Response    $res    The response
+         * @var App      $app The application
+         * @var Response $res The response
          *
-         * @return  Response
+         * @return Response
          */
         $app->get($route, function (Request $req, Response $res) use ($config) {
             // pass parameters to use
@@ -139,10 +138,10 @@ return function (App $app) {
     /**
      * Health Check
      *
-     * @var App         $this   The application
-     * @var Response    $res    The response
+     * @var App      $this The application
+     * @var Response $res  The response
      *
-     * @return  Response
+     * @return Response
      */
     $app->get('/health', function (Request $req, Response $res) {
         $res->getBody()->write('Ok');
@@ -152,10 +151,10 @@ return function (App $app) {
     /**
      * Watcher
      *
-     * @var mixed       $this   The application
-     * @var Response    $res    The response
+     * @var mixed    $this The application
+     * @var Response $res  The response
      *
-     * @return  Response
+     * @return Response
      */
     $app->get('/watch', function (Request $req, Response $res) {
         $watcher = $this->get('watcher');

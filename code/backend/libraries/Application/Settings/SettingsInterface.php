@@ -17,9 +17,9 @@ interface SettingsInterface
     /**
      * Get settings by key.
      *
-     * @param   string  $key    Settings key
+     * @param string $key Settings key
      *
-     * @return  mixed
+     * @return mixed
      */
     public function get(string $key = '');
 }

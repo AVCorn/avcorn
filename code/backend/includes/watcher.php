@@ -6,9 +6,9 @@
  * PHP version 8.1
  * @phpversion >= 8.1
  *
- * @param   Container   $container
+ * @param Container $container
  *
- * @return  void
+ * @return void
  */
 
 declare(strict_types=1);

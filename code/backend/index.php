@@ -5,6 +5,7 @@
  *
  * PHP version 8.1
  *
+ * @category   AVCorn
  * @phpversion >= 8.1
  */
 
