@@ -13,10 +13,9 @@
 
 declare(strict_types=1);
 
-use App\Application\Actions\User\ListUsersAction;
-use App\Application\Actions\User\ViewUserAction;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use App\Application\Watcher\WatcherInterface as Watcher;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 use Slim\Views\Twig;
@@ -141,7 +140,6 @@ return function (App $app) {
     /**
      * Health Check
      *
-     * @var App      $this The application
      * @var Response $res  The response
      *
      * @return Response
@@ -160,7 +158,7 @@ return function (App $app) {
      * @return Response
      */
     $app->get('/watch', function (Request $req, Response $res) {
-        $watcher = $this->get('watcher');
+        $watcher = $this->get(Watcher::class);
         $latest_file = $watcher->check(__DIR__ . '/../../');
         $latest_time = filemtime($latest_file);
 
