@@ -14,8 +14,10 @@ use Slim\Exception\HttpNotFoundException;
 /**
  * Abstract action.
  *
- * @phpversion >= 8.1
+ * PHP version 8.1
+ *
  * @package App\Application\Actions
+ * @phpversion >= 8.1
  */
 abstract class Action
 {
@@ -25,13 +27,13 @@ abstract class Action
     protected array $args;
 
     /**
-     * Constructor.
+     * Constructor
      *
      * @codeCoverageIgnore
      *
-     * @param   LoggerInterface $logger
+     * @param LoggerInterface $logger
      *
-     * @return  void
+     * @return void
      */
     public function __construct(LoggerInterface $logger)
     {
@@ -39,15 +41,15 @@ abstract class Action
     }
 
     /**
-     * Invoke action.
+     * Invoke action
      *
-     * @param   Request $req
-     * @param   Response $res
-     * @param   array $args
+     * @param Request  $req  The request
+     * @param Response $res  The response
+     * @param array    $args The arguments
      *
-     * @return  Response
-     * @throws  HttpNotFoundException
-     * @throws  HttpBadRequestException
+     * @return Response
+     * @throws HttpNotFoundException
+     * @throws HttpBadRequestException
      */
     public function __invoke(Request $req, Response $res, array $args): Response
     {
@@ -63,10 +65,10 @@ abstract class Action
     }
 
     /**
-     * Action.
+     * Action
      *
-     * @throws  DomainRecordNotFoundException
-     * @throws  HttpBadRequestException
+     * @throws DomainRecordNotFoundException
+     * @throws HttpBadRequestException
      */
     abstract protected function action(): Response;
 
@@ -81,12 +83,12 @@ abstract class Action
     }
 
     /**
-     * Resolves argument.
+     * Resolves argument
      *
-     * @param   string $name
+     * @param string $name The name
      *
-     * @return  mixed
-     * @throws  HttpBadRequestException
+     * @return mixed
+     * @throws HttpBadRequestException
      */
     protected function resolveArg(string $name)
     {
@@ -100,10 +102,10 @@ abstract class Action
     /**
      * Respond with JSON data.
      *
-     * @param   array|object|null $data
-     * @param   int $statusCode
+     * @param array|object|null $data       The data
+     * @param int               $statusCode The status code
      *
-     * @return  Response
+     * @return Response
      */
     protected function respondWithData($data = null, int $statusCode = 200): Response
     {
@@ -115,9 +117,9 @@ abstract class Action
     /**
      * Respond with JSON payload.
      *
-     * @param   ActionPayload $payload
+     * @param ActionPayload $payload The payload
      *
-     * @return  Response
+     * @return Response
      */
     protected function respond(ActionPayload $payload): Response
     {

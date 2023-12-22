@@ -1,14 +1,21 @@
 <?php
 
+/**
+ * Navigation configuration
+ *
+ * PHP version 8.1
+ *
+ * @package    Application
+ * @subpackage Configuration
+ * @phpversion >= 8.1
+ */
+
 declare(strict_types=1);
 
 /**
  * Navigation configuration
  *
- * @phpversion >= 8.1
- *
- * @package    Application
- * @subpackage Configuration
+ * @var array $navigation Navigation configuration
  */
 $navigation = [
     [

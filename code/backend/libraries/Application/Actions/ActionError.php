@@ -9,8 +9,10 @@ use JsonSerializable;
 /**
  * Class ActionError
  *
- * @phpversion >= 8.1
+ * PHP version 8.1
+ *
  * @package App\Application\Actions
+ * @phpversion >= 8.1
  */
 class ActionError implements JsonSerializable
 {
@@ -30,10 +32,10 @@ class ActionError implements JsonSerializable
     /**
      * ActionError constructor.
      *
-     * @param   string $type
-     * @param   string|null $description
+     * @param string      $type        The type
+     * @param string|null $description Description (optional)
      *
-     * @return  void
+     * @return void
      */
     public function __construct(string $type, ?string $description = null)
     {
@@ -44,7 +46,7 @@ class ActionError implements JsonSerializable
     /**
      * Get type.
      *
-     * @return  string
+     * @return string
      */
     public function getType(): string
     {
@@ -54,9 +56,9 @@ class ActionError implements JsonSerializable
     /**
      * Set type.
      *
-     * @param   string $type
+     * @param string $type The type
      *
-     * @return  self
+     * @return self
     */
     public function setType(string $type): self
     {
@@ -67,7 +69,7 @@ class ActionError implements JsonSerializable
     /**
      * Get description.
      *
-     * @return  string|null
+     * @return string|null
     */
     public function getDescription(): ?string
     {
@@ -77,7 +79,7 @@ class ActionError implements JsonSerializable
     /**
      * Set description.
      *
-     * @param  string|null $description
+     * @param string|null $description Description (optional)
     */
     public function setDescription(?string $description = null): self
     {

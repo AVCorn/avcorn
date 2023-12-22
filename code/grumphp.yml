@@ -26,19 +26,11 @@ grumphp:
         composer: ~
         eslint: ~
         grunt: ~
-        infection: ~
         jsonlint: ~
         phpcs: ~
-        phpcsfixer: ~
-        phplint: ~
-        phpmd: ~
-        phpmnd: ~
         phpparser: ~
-        phpspec: ~
         phpstan: ~
-        phpunit: ~
         phpversion: ~
-        stylelint: ~
         twigcs: ~
         xmllint: ~
         yamllint: ~

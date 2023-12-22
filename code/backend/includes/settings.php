@@ -3,11 +3,12 @@
 /**
  * Settings configuration
  *
+ * PHP version 8.1
  * @phpversion >= 8.1
  *
- * @param   ContainerBuilder $containerBuilder
+ * @param ContainerBuilder $containerBuilder
  *
- * @return  void
+ * @return void
  */
 
 declare(strict_types=1);
@@ -33,7 +34,9 @@ return function (ContainerBuilder $containerBuilder) {
                     'logErrorDetails'     => false,
                     'logger' => [
                         'name' => 'slim-app',
-                        'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/logs/app.log',
+                        'path' => isset($_ENV['docker'])
+                            ? 'php://stdout'
+                            : __DIR__ . '/logs/app.log',
                         'level' => Logger::DEBUG,
                     ],
                 ]);

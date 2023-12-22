@@ -7,17 +7,19 @@ namespace App\Application\Settings;
 /**
  * Interface SettingsInterface
  *
- * @phpversion >= 8.1
+ * PHP version 8.1
+ *
  * @package App\Application\Settings
+ * @phpversion >= 8.1
  */
 interface SettingsInterface
 {
     /**
      * Get settings by key.
      *
-     * @param   string $key
+     * @param string $key Settings key
      *
-     * @return  mixed
+     * @return mixed
      */
     public function get(string $key = '');
 }

@@ -3,11 +3,12 @@
 /**
  * Dependencies configuation
  *
+ * PHP version 8.1
  * @phpversion >= 8.1
  *
- * @param   ContainerBuilder $containerBuilder
+ * @param ContainerBuilder $containerBuilder
  *
- * @return  void
+ * @return void
  */
 
 declare(strict_types=1);
@@ -32,7 +33,10 @@ return function (ContainerBuilder $containerBuilder) {
                 $processor = new UidProcessor();
                 $logger->pushProcessor($processor);
 
-                $handler = new StreamHandler($loggerSettings['path'], $loggerSettings['level']);
+                $handler = new StreamHandler(
+                    $loggerSettings['path'],
+                    $loggerSettings['level']
+                );
                 $logger->pushHandler($handler);
 
                 return $logger;

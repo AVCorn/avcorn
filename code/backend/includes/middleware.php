@@ -3,11 +3,12 @@
 /**
  * Middleware configuration
  *
+ * PHP version 8.1
  * @phpversion >= 8.1
  *
- * @param   App $app
+ * @param App $app
  *
- * @return  void
+ * @return void
  */
 
 declare(strict_types=1);

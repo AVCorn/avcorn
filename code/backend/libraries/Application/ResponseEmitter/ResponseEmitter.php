@@ -10,8 +10,10 @@ use Slim\ResponseEmitter as SlimResponseEmitter;
 /**
  * Response emitter.
  *
- * @phpversion >= 8.1
+ * PHP version 8.1
+ *
  * @package App\Application\ResponseEmitter
+ * @phpversion >= 8.1
  */
 class ResponseEmitter extends SlimResponseEmitter
 {
