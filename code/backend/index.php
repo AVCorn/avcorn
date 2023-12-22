@@ -83,6 +83,8 @@ $routes = include __DIR__ . '/includes/routes.php';
 $routes($app);
 
 /**
+ * Settings
+ *
  * @var SettingsInterface $settings
  */
 $settings = $container->get(SettingsInterface::class);

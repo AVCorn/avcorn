@@ -125,7 +125,10 @@ return function (App $app) {
             if ($urlparams) {
                 $config['linkparams'] = '?a=vc' . $config['linkparams'];
             }
-            if (isset($config['enable_params']) && $config['enable_params'] === false) {
+            if (
+                isset($config['enable_params'])
+                && $config['enable_params'] === false
+            ) {
                 $config['linkparams'] = '';
             }
 

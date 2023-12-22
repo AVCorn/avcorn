@@ -16,7 +16,9 @@ FROM php:8.2-apache
 WORKDIR /var/www/
 
 RUN apt-get update
-RUN apt-get install -y curl git --no-install-recommends
+RUN apt-get install -y curl git --no-install-recommends \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY --from=vendor app/vendor/ ./vendor/
 COPY ./code/ .
