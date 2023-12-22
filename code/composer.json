@@ -24,6 +24,7 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
+        "google/apiclient": "^2.15",
         "monolog/monolog": "^3.5",
         "php-di/php-di": "^7.0",
         "slim/psr7": "^1.5",
