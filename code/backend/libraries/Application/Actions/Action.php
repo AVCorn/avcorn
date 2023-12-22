@@ -15,9 +15,9 @@ use Slim\Exception\HttpNotFoundException;
  * Abstract action.
  *
  * PHP version 8.1
- * @phpversion >= 8.1
  *
  * @package App\Application\Actions
+ * @phpversion >= 8.1
  */
 abstract class Action
 {

@@ -25,13 +25,11 @@ grumphp:
     tasks:
         composer: ~
         eslint: ~
-        grunt: ~
         jsonlint: ~
         phpcs: ~
         phpparser: ~
         phpstan: ~
         phpversion: ~
-        stylelint: ~
         twigcs: ~
         xmllint: ~
         yamllint: ~

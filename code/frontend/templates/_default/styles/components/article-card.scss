@@ -45,10 +45,9 @@ $shadow: #888;
 
     .hover-border {
         height: 10px;
-        width: 450px;
         background: $highlight;
-        width: 0;
         transition: width 1s ease;
+        width: 0;
     }
 
     &:hover .hover-border {

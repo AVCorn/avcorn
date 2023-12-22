@@ -4,11 +4,12 @@
  * Routes configuration
  *
  * PHP version 8.1
- * @phpversion >= 8.1
  *
  * @param       App $app    The application
  *
  * @return      void
+ *
+ * @phpversion >= 8.1
  */
 
 declare(strict_types=1);
@@ -77,8 +78,8 @@ return function (App $app) {
         /**
          * Create Route
          *
-         * @var     App         $app    The application
-         * @var     Response    $res    The response
+         * @var App         $app    The application
+         * @var Response    $res    The response
          *
          * @return  Response
          */
@@ -138,8 +139,8 @@ return function (App $app) {
     /**
      * Health Check
      *
-     * @var     App         $this   The application
-     * @var     Response    $res    The response
+     * @var App         $this   The application
+     * @var Response    $res    The response
      *
      * @return  Response
      */
@@ -151,8 +152,8 @@ return function (App $app) {
     /**
      * Watcher
      *
-     * @var     mixed       $this   The application
-     * @var     Response    $res    The response
+     * @var mixed       $this   The application
+     * @var Response    $res    The response
      *
      * @return  Response
      */

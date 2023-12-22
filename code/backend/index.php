@@ -4,6 +4,7 @@
  * Public index route.
  *
  * PHP version 8.1
+ *
  * @phpversion >= 8.1
  */
 
