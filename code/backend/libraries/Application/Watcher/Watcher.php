@@ -7,17 +7,19 @@ namespace App\Application\Watcher;
 /**
  * Class Watcher
  *
- * @phpversion >= 8.1
+ * PHP version 8.1
+ *
  * @package App\Application\Watcher
+ * @phpversion >= 8.1
  */
 class Watcher implements WatcherInterface
 {
     /**
      * Check for the latest modified file.
      *
-     * @param   string  $dir
+     * @param string $dir Directory to check
      *
-     * @return  string
+     * @return string
      */
     public function check(string $dir = '.'): ?string
     {

@@ -7,15 +7,15 @@ namespace App\Application\Watcher;
 /**
  * Interface WatcherInterface
  *
- * @phpversion >= 8.1
  * @package App\Application\Watcher
+ * @phpversion >= 8.1
  */
 interface WatcherInterface
 {
     /**
      * Check for changes.
      *
-     * @param string    $dir
+     * @param string $dir
      *
      * @return string
      */

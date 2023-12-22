@@ -10,9 +10,9 @@ use JsonSerializable;
  * Class ActionPayload
  *
  * PHP version 8.1
- * @phpversion >= 8.1
  *
  * @package App\Application\Actions
+ * @phpversion >= 8.1
  */
 class ActionPayload implements JsonSerializable
 {
@@ -26,11 +26,11 @@ class ActionPayload implements JsonSerializable
     /**
      * ActionPayload constructor.
      *
-     * @param   int                 $statusCode The status code
-     * @param   array|object|null   $data       The data
-     * @param   ActionError|null    $error      The error
+     * @param int               $statusCode The status code
+     * @param array|object|null $data       The data
+     * @param ActionError|null  $error      The error
      *
-     * @return  void
+     * @return void
      */
     public function __construct(
         int $statusCode = 200,
@@ -45,7 +45,7 @@ class ActionPayload implements JsonSerializable
     /**
      * Get status code.
      *
-     * @return  int
+     * @return int
      */
     public function getStatusCode(): int
     {
@@ -55,7 +55,7 @@ class ActionPayload implements JsonSerializable
     /**
      * Get data.
      *
-     * @return  array|null|object   The data
+     * @return array|null|object
      */
     public function getData()
     {
@@ -65,7 +65,7 @@ class ActionPayload implements JsonSerializable
     /**
      * Get error.
      *
-     * @return  ActionError|null
+     * @return ActionError|null
      */
     public function getError(): ?ActionError
     {
@@ -75,7 +75,7 @@ class ActionPayload implements JsonSerializable
     /**
      * Convert to array to be consumed by json.
      *
-     * @return  array
+     * @return array
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize(): array
