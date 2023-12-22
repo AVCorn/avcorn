@@ -7,7 +7,9 @@
 /node_modules
 /code/node_modules
 
-.phpunit.result.cache
+code/.phpunit.cache
+code/.phpunit.result.cache
+code/phpunit.xml.bak
 
 */.DS_Store
 .DS_Store

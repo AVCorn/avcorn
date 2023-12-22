@@ -36,7 +36,7 @@ return function (App $app) {
     }
 
     //load config
-    include_once '../frontend/templates/' . $default_path . '/config.php';
+    include_once __DIR__ . '../../../frontend/templates/' . $default_path . '/config.php';
 
     $config['development'] = true;
     $config['production'] = false;
@@ -52,6 +52,7 @@ return function (App $app) {
     $config['layouts_root'] = '/layouts/';
     $config['pages_root'] = '/pages/';
     $config['config_root'] = '/config.php';
+    $config['map'] = $config['map'] ?? [];
 
     // route through the map list
     foreach ($config['map'] as $route => $page) {
@@ -109,8 +110,8 @@ return function (App $app) {
                 $config_path = $config['frontend_path']
                     . $config['template_path']
                     . $config['config_root'];
-                if (file_exists($config_path)) {
-                    include_once $config_path;
+                if (file_exists(__DIR__ . '../../' . $config_path)) {
+                    include_once __DIR__ . '../../' . $config_path;
                 }
             }
 
