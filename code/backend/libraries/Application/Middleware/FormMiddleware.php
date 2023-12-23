@@ -37,6 +37,12 @@ class FormMiddleware implements Middleware
 
         // if a form is submitted
         if (isset($params['form']) && $params['form'] == 1) {
+            // set sheet info
+            $spreadsheetId = $params['form_id'];
+            unset($params['form_id']);
+            $range = $params['form_range'] ? $params['form_range'] : 'Sheet1';
+            unset($params['form_range']);
+
             // configure the Google Client
             $client = new Google_Client();
             $client->setAuthConfig(__DIR__ . '/../../../../_env/google.private.key.json');
@@ -60,26 +66,23 @@ class FormMiddleware implements Middleware
             // replace all keys of $params with integers
             $params = array_values($params);
 
-            // insert row
-            $spreadsheetId = '13xyVNGE1axQ9vu148DbuD3SBYq0brkaOmiVir3TIIsQ';
+            // build rows to insert
             $rows = [$params]; // you can append several rows at once
             $valueRange = new Google_Service_Sheets_ValueRange();
             $valueRange->setValues($rows);
-            $range = 'Sheet1'; // the service will detect the last row of this sheet
             $options = ['valueInputOption' => 'USER_ENTERED'];
 
             $status = 2;
             try {
+                // insert the row
                 $service->spreadsheets_values->append($spreadsheetId, $range, $valueRange, $options);
+
+                // get the request URI and redirect
+                $uri = (string)$request->getUri()->withQuery($request->getUri()->getQuery() . '&form=' . $status);
+                return $handler->handle($request)->withHeader('Location', $uri)->withStatus(302);
             } catch (\Exception $e) {
-                $status = 1;
+                return $handler->handle($request);
             }
-
-            // get the request URI
-            $uri = (string)$request->getUri()->withQuery($request->getUri()->getQuery() . '&form=' . $status);
-
-            // redirect to same page with query params stripped
-            return $handler->handle($request)->withHeader('Location', $uri)->withStatus(302);
         }
 
         return $handler->handle($request);
