@@ -22,36 +22,44 @@
         width: 1rem;
     }
 
+    .clean-hero-slider {
+        background: rgb(7, 48, 109);
+        background: linear-gradient(180deg, rgb(7, 31, 66) 0%, rgb(7, 48, 109) 20%);
+    }
+
+    .clean-hero-slide-intro {
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 60%);
+        padding: 3em;
+    }
+
+    .clean-hero-slide-intro h2 {
+        font-weight: bold;
+    }
+
     .clean-hero-slider .orbit-caption {
-        width: auto;
+        bottom: inherit;
+        top: 0;
         height: auto;
-        background: #0a0a0a;
         position: absolute;
         text-align: center;
         right: 0;
         left: 0;
-        padding: 0.2rem 2rem;
+        padding: 2rem 4rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 60%);
+        margin: 0 auto 4em;
     }
 
     @media print, screen and (min-width: 40em) {
         .clean-hero-slider .orbit-caption {
-            background: rgba(0, 0, 0, 0.6);
-            text-align: center;
+            width: 80%;
+        }
+    }
+
+    @media print, screen and (min-width: 60em) {
+        .clean-hero-slider .orbit-caption {
             width: 50%;
-            padding: 1rem 2rem;
-            margin: 4em auto;
-        }
-    }
-
-    @media screen and (min-width: 75em) {
-        .clean-hero-slider .orbit-caption {
-            padding-right: 10%;
-        }
-    }
-
-    @media screen and (min-width: 90em) {
-        .clean-hero-slider .orbit-caption {
-            padding-right: 20%;
         }
     }
 
@@ -68,32 +76,26 @@
 
     .clean-hero-slider .orbit-caption h3 {
         color: #ffae00;
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 0;
+        font-size: 2rem;
+        margin-bottom: 1em;
     }
 
-    @media print, screen and (min-width: 40em) {
-        .clean-hero-slider .orbit-caption h3 {
-            font-size: 2.5rem;
-            font-weight: normal;
-        }
+    .clean-hero-slider .orbit-figure {
+        height: 100%;
     }
 
     .clean-hero-slider .orbit-slide {
-        padding-bottom: 40%;
+        padding-bottom: 0;
         background: #0a0a0a;
-    }
-
-    @media print, screen and (min-width: 40em) {
-        .clean-hero-slider .orbit-slide {
-            padding-bottom: 0;
-        }
     }
 
     .clean-hero-slider .orbit-caption button {
         background: #ffae00;
-        padding: 1rem 0.5rem;
+        color: #000;
+        font-weight: bold;
+        padding: 1rem 2rem;
+        margin-top: 1em;
+        transition: all 0.25s ease;
     }
 
     .clean-hero-slider .orbit-caption button:hover {
@@ -125,8 +127,11 @@
 
     .orbit-image-placeholder {
         background: rgb(7, 48, 109);
-        height: 500px;
+        background: linear-gradient(0deg, rgb(7, 31, 66) 0%, rgb(7, 48, 109) 20%);
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 60%);;
         width: 100%;
+        min-height: 420px;
     }
 </style>
 
@@ -142,6 +147,15 @@
     }
 </script>
 <div id="contactForm" class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="false" data-prev-class="prev" data-next-class="next-empty">
+    <div class="clean-hero-slide-intro editable">
+        <h2>Contact Form</h2>
+        <p>
+            We would love to hear from you!
+            Please fill out this step-by-step form and we will get in touch with you shortly.
+            First...
+        </p>
+    </div>
+    
     {% if get.form == 2 %}
         <div class="orbit-wrapper">
             <ul class="orbit-container">
@@ -166,6 +180,15 @@
                                     <div class="orbit-image orbit-image-placeholder"></div>
                                     <figcaption class="orbit-caption">
                                         <h3 class="editable">Submission failed! Please try again later...</h3>
+                                        <p class="editable">
+                                            It's not you, it's us.
+                                            Something went wrong when submitting your request.
+                                            These things happen.
+                                            We refilled out the form you previously submitted, to make it easy.
+                                            Feel free to try sending again.
+                                            If it keeps happening, try again later or contact us directly at:
+                                            <a href="mailto: someemail@email.com">someemail@email.com</a>
+                                        </p>
 
                                         <button class="next next-empty editable" type="button">Try Again &gt;</button>
                                     </figcaption>
@@ -174,21 +197,22 @@
                         {% endif %}
                         <li class="orbit-slide">
                             <figure class="orbit-figure">
-                                <div class="orbit-image orbit-image-placeholder"></div>
-                                <figcaption class="orbit-caption">
-                                    <h3 class="editable">What is your name?</h3>
+                                <div class="orbit-image orbit-image-placeholder">
+                                    <figcaption class="orbit-caption">
+                                        <h3 class="editable">What is your name?</h3>
+    
+                                        <div class="input-group">
+                                            <span class="input-group-label">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                            <input id="contact-name" class="input-group-field" type="text" name="form_1_name" placeholder="Full name" required pattern="[a-zA-Z]+" {% if post.form_1_name %}value="{{ post.form_1_name }}"{% endif %} />
+                                        </div>
 
-                                    <div class="input-group">
-                                        <span class="input-group-label">
-                                            <i class="fa fa-user"></i>
-                                        </span>
-                                        <input id="contact-name" class="input-group-field" type="text" name="form_1_name" placeholder="Full name" required pattern="[a-zA-Z]+" {% if post.form_1_name %}value="{{ post.form_1_name }}"{% endif %} />
-
-                                        <small class="form-error editable">Name is required and must be a string.</small>
-                                    </div>
-
-                                    <button class="next editable" onclick="validateStep($('#contact-name'))" type="button">Next &gt;</button>
-                                </figcaption>
+                                        <small class="form-error editable" data-form-error-for="contact-name">Name is required and must be a string.</small>
+    
+                                        <button class="next editable" onclick="validateStep($('#contact-name'))" type="button">Next &gt;</button>
+                                    </figcaption>
+                                </div>
                             </figure>
                         </li>
                         <li class="orbit-slide">
@@ -202,9 +226,9 @@
                                             <i class="fa fa-envelope"></i>
                                         </span>
                                         <input id="contact-email" class="input-group-field" type="email" name="form_2_email" placeholder="Email" required {% if post.form_2_email %}value="{{ post.form_2_email }}"{% endif %} />
-
-                                        <small class="form-error editable">An email address is required.</small>
                                     </div>
+
+                                    <small class="form-error editable" data-form-error-for="contact-email">An email address is required.</small>
 
                                     <div class="input-group">
                                         <span class="input-group-label">
@@ -224,14 +248,10 @@
                                 <figcaption class="orbit-caption">
                                     <h3 class="editable">What is your message?</h3>
 
-                                    <div class="input-group">
-                                        <span class="input-group-label">
-                                            <i class="fa fa-comment"></i>
-                                        </span>
-                                        <textarea class="input-group-field" name="form_4_message" required rows="8" cols="16" placeholder="Message">{% if post.form_4_message %}{{ post.form_4_message }}{% endif %}</textarea>
+                                    <textarea id="contact-message" class="input-group-field" name="form_4_message" required rows="4" cols="16" placeholder="Message">{% if post.form_4_message %}{{ post.form_4_message }}{% endif %}</textarea>
+                                    <br />
 
-                                        <small class="form-error editable">An message is required.</small>
-                                    </div>
+                                    <small class="form-error editable" data-form-error-for="contact-message">An message is required.</small>
                                     
                                     <input type="hidden" name="form" value="1" />
                                     <input type="hidden" name="form_email_to" value="test@test.com" />
@@ -240,7 +260,7 @@
                                     <input type="hidden" name="form_sheet_range" value="Sheet1" />
                         
                                     <button class="prev editable" type="button">&lt; Back</button>
-                                    <button class="button editable" type="submit" name="send">Send</button>
+                                    <button class="button editable" type="submit" name="send">Send &gt;</button>
                                 </figcaption>
                             </figure>
                         </li>
