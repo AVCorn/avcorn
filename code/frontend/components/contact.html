@@ -141,9 +141,8 @@
         return false;
     }
 </script>
-
 <div id="contactForm" class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="false" data-prev-class="prev" data-next-class="next-empty">
-    {% if get.form == 1 %}
+    {% if get.form == 2 %}
         <div class="orbit-wrapper">
             <ul class="orbit-container">
                 <li class="orbit-slide">
@@ -158,10 +157,10 @@
         </div>
     {% else %}
         <div class="orbit-wrapper">
-            <form data-abide>
+            <form data-abide method="post">
                 <div class="form-icons">
                     <ul class="orbit-container">
-                        {% if get.form == 2 %}
+                        {% if post.form == 1 %}
                             <li class="orbit-slide">
                                 <figure class="orbit-figure">
                                     <div class="orbit-image orbit-image-placeholder"></div>
@@ -183,7 +182,7 @@
                                         <span class="input-group-label">
                                             <i class="fa fa-user"></i>
                                         </span>
-                                        <input id="contact-name" class="input-group-field" type="text" name="col1-name" placeholder="Full name" required pattern="[a-zA-Z]+" {% if get['col1-name'] %}value="{{ get['col1-name'] }}"{% endif %} />
+                                        <input id="contact-name" class="input-group-field" type="text" name="form_1_name" placeholder="Full name" required pattern="[a-zA-Z]+" {% if post.form_1_name %}value="{{ post.form_1_name }}"{% endif %} />
 
                                         <small class="form-error">Name is required and must be a string.</small>
                                     </div>
@@ -202,7 +201,7 @@
                                         <span class="input-group-label">
                                             <i class="fa fa-envelope"></i>
                                         </span>
-                                        <input id="contact-email" class="input-group-field" type="email" name="col2-email" placeholder="Email" required {% if get['col2-email'] %}value="{{ get['col2-email'] }}"{% endif %} />
+                                        <input id="contact-email" class="input-group-field" type="email" name="form_2_email" placeholder="Email" required {% if post.form_2_email %}value="{{ post.form_2_email }}"{% endif %} />
 
                                         <small class="form-error">An email address is required.</small>
                                     </div>
@@ -211,7 +210,7 @@
                                         <span class="input-group-label">
                                             <i class="fa fa-phone"></i>
                                         </span>
-                                        <input id="contact-phone" class="input-group-field" type="phone" name="col3-phone" placeholder="Phone (Optional)" {% if get['col3-phone'] %}value="{{ get['col3-phone'] }}"{% endif %} />
+                                        <input id="contact-phone" class="input-group-field" type="phone" name="form_3_phone" placeholder="Phone (Optional)" {% if post.form_3_phone %}value="{{ post.form_3_phone }}"{% endif %} />
                                     </div>
 
                                     <button class="prev" type="button">&lt; Back</button>
@@ -229,14 +228,11 @@
                                         <span class="input-group-label">
                                             <i class="fa fa-comment"></i>
                                         </span>
-                                        <textarea class="input-group-field" name="col4-message" required rows="8" cols="16" placeholder="Message">{% if get['col4-message'] %}{{ get['col4-message'] }}{% endif %}</textarea>
+                                        <textarea class="input-group-field" name="form_4_message" required rows="8" cols="16" placeholder="Message">{% if post.form_4_message %}{{ post.form_4_message }}{% endif %}</textarea>
 
                                         <small class="form-error">An message is required.</small>
                                     </div>
-
-                                    {% if get.design %}
-                                        <input type="hidden" name="design" value="{{ get.design }}" />
-                                    {% endif %}
+                                    
                                     <input type="hidden" name="form" value="1" />
                         
                                     <button class="prev" type="button">&lt; Back</button>
@@ -252,7 +248,7 @@
             <button disabled class="is-active" data-slide="1"><span class="show-for-sr"></span></button>
             <button disabled data-slide="2"><span class="show-for-sr"></span></button>
             <button disabled data-slide="3"><span class="show-for-sr"></span></button>
-            {% if get.form == 2 %}
+            {% if post.form < 0 %}
                 <button disabled data-slide="4"><span class="show-for-sr"></span></button>
             {% endif %}
         </nav>

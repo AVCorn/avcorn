@@ -13,3 +13,7 @@ code/phpunit.xml.bak
 
 */.DS_Store
 .DS_Store
+
+*.private.*
+*/_env/*
+!*/_env/.gitkeep
