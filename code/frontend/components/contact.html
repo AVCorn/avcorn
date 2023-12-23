@@ -165,9 +165,9 @@
                                 <figure class="orbit-figure">
                                     <div class="orbit-image orbit-image-placeholder"></div>
                                     <figcaption class="orbit-caption">
-                                        <h3>Submission failed! Please try again later...</h3>
+                                        <h3 class="editable">Submission failed! Please try again later...</h3>
 
-                                        <button class="next next-empty" type="button">Try Again &gt;</button>
+                                        <button class="next next-empty editable" type="button">Try Again &gt;</button>
                                     </figcaption>
                                 </figure>
                             </li>
@@ -176,7 +176,7 @@
                             <figure class="orbit-figure">
                                 <div class="orbit-image orbit-image-placeholder"></div>
                                 <figcaption class="orbit-caption">
-                                    <h3>What is your name?</h3>
+                                    <h3 class="editable">What is your name?</h3>
 
                                     <div class="input-group">
                                         <span class="input-group-label">
@@ -184,10 +184,10 @@
                                         </span>
                                         <input id="contact-name" class="input-group-field" type="text" name="form_1_name" placeholder="Full name" required pattern="[a-zA-Z]+" {% if post.form_1_name %}value="{{ post.form_1_name }}"{% endif %} />
 
-                                        <small class="form-error">Name is required and must be a string.</small>
+                                        <small class="form-error editable">Name is required and must be a string.</small>
                                     </div>
 
-                                    <button class="next" onclick="validateStep($('#contact-name'))" type="button">Next &gt;</button>
+                                    <button class="next editable" onclick="validateStep($('#contact-name'))" type="button">Next &gt;</button>
                                 </figcaption>
                             </figure>
                         </li>
@@ -195,7 +195,7 @@
                             <figure class="orbit-figure">
                                 <div class="orbit-image orbit-image-placeholder"></div>
                                 <figcaption class="orbit-caption">
-                                    <h3>What is your contact information?</h3>
+                                    <h3 class="editable">What is your contact information?</h3>
 
                                     <div class="input-group">
                                         <span class="input-group-label">
@@ -203,7 +203,7 @@
                                         </span>
                                         <input id="contact-email" class="input-group-field" type="email" name="form_2_email" placeholder="Email" required {% if post.form_2_email %}value="{{ post.form_2_email }}"{% endif %} />
 
-                                        <small class="form-error">An email address is required.</small>
+                                        <small class="form-error editable">An email address is required.</small>
                                     </div>
 
                                     <div class="input-group">
@@ -213,8 +213,8 @@
                                         <input id="contact-phone" class="input-group-field" type="phone" name="form_3_phone" placeholder="Phone (Optional)" {% if post.form_3_phone %}value="{{ post.form_3_phone }}"{% endif %} />
                                     </div>
 
-                                    <button class="prev" type="button">&lt; Back</button>
-                                    <button class="next" onclick="validateStep($('#contact-email'))" type="button">Next &gt;</button>
+                                    <button class="prev editable" type="button">&lt; Back</button>
+                                    <button class="next editable" onclick="validateStep($('#contact-email'))" type="button">Next &gt;</button>
                                 </figcaption>
                             </figure>
                         </li>
@@ -222,7 +222,7 @@
                             <figure class="orbit-figure">
                                 <div class="orbit-image-placeholder"></div>
                                 <figcaption class="orbit-caption">
-                                    <h3>What is your message?</h3>
+                                    <h3 class="editable">What is your message?</h3>
 
                                     <div class="input-group">
                                         <span class="input-group-label">
@@ -230,15 +230,17 @@
                                         </span>
                                         <textarea class="input-group-field" name="form_4_message" required rows="8" cols="16" placeholder="Message">{% if post.form_4_message %}{{ post.form_4_message }}{% endif %}</textarea>
 
-                                        <small class="form-error">An message is required.</small>
+                                        <small class="form-error editable">An message is required.</small>
                                     </div>
                                     
                                     <input type="hidden" name="form" value="1" />
-                                    <input type="hidden" name="form_id" value="13xyVNGE1axQ9vu148DbuD3SBYq0brkaOmiVir3TIIsQ" />
-                                    <input type="hidden" name="form_range" value="Sheet1" />
+                                    <input type="hidden" name="form_email_to" value="test@test.com" />
+                                    <input type="hidden" name="form_email_bcc" value="" />
+                                    <input type="hidden" name="form_sheet_id" value="13xyVNGE1axQ9vu148DbuD3SBYq0brkaOmiVir3TIIsQ" />
+                                    <input type="hidden" name="form_sheet_range" value="Sheet1" />
                         
-                                    <button class="prev" type="button">&lt; Back</button>
-                                    <button class="button" type="submit" name="send">Send</button>
+                                    <button class="prev editable" type="button">&lt; Back</button>
+                                    <button class="button editable" type="submit" name="send">Send</button>
                                 </figcaption>
                             </figure>
                         </li>
