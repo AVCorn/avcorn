@@ -60,6 +60,7 @@ If you want to clean up the docker containers made:
 
 ## Links
 
+*   [Templates](https://github.com/orgs/avcorn/avcorn-templates)
 *   [Development Progress](docs/TODO.md)
 *   [Contributing Guidelines](docs/CONTRIBUTING.md)
 *   [Reporting a Security Issue](docs/SECURITY.md)
@@ -70,4 +71,4 @@ If you want to clean up the docker containers made:
 *   [CLI Guide](docs/CLI.md)
 *   [License](docs/LICENSE.md)
 *   [Company Site](http://webelements.agency)
-*   [GitHub](https://github.com/blaher/avcorn)
+*   [GitHub](https://github.com/avcorn/avcorn)
