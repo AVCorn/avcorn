@@ -71,7 +71,7 @@ class FormMiddleware implements Middleware
                 $service = new Google_Service_Sheets($client);
 
                 // loop through $params
-                foreach ($params as $key => $param) {
+                foreach ($params as $key => $pval) {
                     // if the key is not a 'form-', unset it
                     if (substr($key, 0, 5) !== 'form_') {
                         unset($params[$key]);

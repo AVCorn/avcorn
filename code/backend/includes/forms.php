@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Middleware configuration
+ * Form configuration
  *
  * PHP version 8.1
  *
