@@ -12,8 +12,14 @@ use Slim\ResponseEmitter as SlimResponseEmitter;
  *
  * PHP version 8.1
  *
- * @package    App\Application\ResponseEmitter
  * @phpversion >= 8.1
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage App\Application\ResponseEmitter
+ * @author     Benjamin J. Young
+ * @copyright  2023 Web Elements
+ * @license    GPLv3
+ * @link       https://github.com/avcorn/avcorn
  */
 class ResponseEmitter extends SlimResponseEmitter
 {

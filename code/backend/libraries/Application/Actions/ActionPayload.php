@@ -11,8 +11,14 @@ use JsonSerializable;
  *
  * PHP version 8.1
  *
- * @package    App\Application\Actions
  * @phpversion >= 8.1
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage App\Application\Actions
+ * @author     Benjamin J. Young
+ * @copyright  2023 Web Elements
+ * @license    GPLv3
+ * @link       https://github.com/avcorn/avcorn
  */
 class ActionPayload implements JsonSerializable
 {
