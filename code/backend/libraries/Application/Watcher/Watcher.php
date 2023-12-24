@@ -9,7 +9,7 @@ namespace App\Application\Watcher;
  *
  * PHP version 8.1
  *
- * @package App\Application\Watcher
+ * @package    App\Application\Watcher
  * @phpversion >= 8.1
  */
 class Watcher implements WatcherInterface

@@ -5,7 +5,7 @@
  *
  * PHP version 8.1
  *
- * @param  ContainerBuilder $containerBuilder
+ * @param ContainerBuilder $containerBuilder
  *
  * @return void
  *

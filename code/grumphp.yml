@@ -25,7 +25,6 @@ grumphp:
     tasks:
         composer: ~
         eslint: ~
-        grunt: ~
         jsonlint: ~
         phpcs: ~
         phpparser: ~

@@ -11,7 +11,7 @@ use JsonSerializable;
  *
  * PHP version 8.1
  *
- * @package App\Application\Actions
+ * @package    App\Application\Actions
  * @phpversion >= 8.1
  */
 class ActionError implements JsonSerializable
@@ -59,7 +59,7 @@ class ActionError implements JsonSerializable
      * @param string $type The type
      *
      * @return self
-    */
+     */
     public function setType(string $type): self
     {
         $this->type = $type;
@@ -70,7 +70,7 @@ class ActionError implements JsonSerializable
      * Get description.
      *
      * @return string|null
-    */
+     */
     public function getDescription(): ?string
     {
         return $this->description;
@@ -80,7 +80,7 @@ class ActionError implements JsonSerializable
      * Set description.
      *
      * @param string|null $description Description (optional)
-    */
+     */
     public function setDescription(?string $description = null): self
     {
         $this->description = $description;

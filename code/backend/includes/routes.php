@@ -79,6 +79,7 @@ return function (App $app) {
             . $config['pages_root']
             . $config['page_file'];
 
+        // TODO: Break out main router into a class
         /**
          * Create Route
          *
@@ -155,10 +156,13 @@ return function (App $app) {
      *
      * @return Response
      */
-    $app->get('/health', function (Request $req, Response $res) {
-        $res->getBody()->write('Ok');
-        return $res;
-    });
+    $app->get(
+        '/health',
+        function (Request $req, Response $res) {
+            $res->getBody()->write('Ok');
+            return $res;
+        }
+    );
 
     /**
      * Watcher
@@ -168,14 +172,17 @@ return function (App $app) {
      *
      * @return Response
      */
-    $app->get('/watch', function (Request $req, Response $res) {
-        $watcher = $this->get(Watcher::class);
-        $latest_file = $watcher->check(__DIR__ . '/../../');
-        $latest_time = filemtime($latest_file);
+    $app->get(
+        '/watch',
+        function (Request $req, Response $res) {
+            $watcher = $this->get(Watcher::class);
+            $latest_file = $watcher->check(__DIR__ . '/../../');
+            $latest_time = filemtime($latest_file);
 
-        $json = '{"time": ' . (string)$latest_time . '}';
+            $json = '{"time": ' . (string)$latest_time . '}';
 
-        $res->getBody()->write($json);
-        return $res;
-    });
+            $res->getBody()->write($json);
+            return $res;
+        }
+    );
 };

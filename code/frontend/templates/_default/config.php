@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Default Template Configuration
+ *
+ * @phpversion >= 8.1
+ * @package    Application
+ * @subpackage Configuration
+ */
+
 declare(strict_types=1);
 
 require_once 'config/map.php';
@@ -11,11 +19,13 @@ require_once 'config/themes.php';
 require_once 'config/sitemap.php';
 
 /**
- * Configuration
- *
- * @phpversion >= 8.1
- * @package     Application
- * @subpackage  Configuration
+ * @var array $map
+ * @var array $navigation
+ * @var array $navigationFooter
+ * @var array $information
+ * @var array $social
+ * @var array $themes
+ * @var array $sitemap
  */
 $config = [
     'map' => $map,

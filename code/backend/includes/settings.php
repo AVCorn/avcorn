@@ -5,7 +5,7 @@
  *
  * PHP version 8.1
  *
- * @param  ContainerBuilder $containerBuilder
+ * @param ContainerBuilder $containerBuilder
  *
  * @return void
  *
@@ -30,7 +30,8 @@ return function (ContainerBuilder $containerBuilder) {
                     $dev = false;
                 }
 
-                return new Settings([
+                return new Settings(
+                    [
                     'displayErrorDetails' => $dev,
                     'logError'            => false,
                     'logErrorDetails'     => false,
@@ -41,7 +42,8 @@ return function (ContainerBuilder $containerBuilder) {
                             : __DIR__ . '/logs/app.log',
                         'level' => Logger::DEBUG,
                     ],
-                ]);
+                    ]
+                );
             }
         ]
     );

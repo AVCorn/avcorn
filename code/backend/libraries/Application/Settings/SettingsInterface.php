@@ -9,7 +9,7 @@ namespace App\Application\Settings;
  *
  * PHP version 8.1
  *
- * @package App\Application\Settings
+ * @package    App\Application\Settings
  * @phpversion >= 8.1
  */
 interface SettingsInterface

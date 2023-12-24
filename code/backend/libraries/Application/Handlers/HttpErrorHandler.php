@@ -22,7 +22,7 @@ use Throwable;
  *
  * PHP version 8.1
  *
- * @package App\Application\Handlers
+ * @package    App\Application\Handlers
  * @phpversion >= 8.1
  */
 class HttpErrorHandler extends SlimErrorHandler

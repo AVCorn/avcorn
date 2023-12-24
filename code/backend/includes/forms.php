@@ -5,7 +5,7 @@
  *
  * PHP version 8.1
  *
- * @param  App $app
+ * @param App $app
  *
  * @return void
  *
