@@ -3,6 +3,8 @@
 /**
  * Client Web Elements Configuration
  *
+ * PHP version 8.1
+ *
  * @phpversion >= 8.1
  * @package    Application
  * @subpackage Configuration
@@ -18,6 +20,8 @@ require_once 'config/sitemap.php';
 require_once 'config/trackers.php';
 
 /**
+ * Overriding default configuration.
+ *
  * @var array $map
  * @var array $information
  * @var array $navigation

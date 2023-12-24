@@ -3,6 +3,8 @@
 /**
  * Default Template Configuration
  *
+ * PHP version 8.1
+ *
  * @phpversion >= 8.1
  * @package    Application
  * @subpackage Configuration
@@ -19,6 +21,8 @@ require_once 'config/themes.php';
 require_once 'config/sitemap.php';
 
 /**
+ * Overriding default configuration.
+ *
  * @var array $map
  * @var array $navigation
  * @var array $navigationFooter
