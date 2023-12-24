@@ -13,8 +13,14 @@ use Slim\Exception\HttpInternalServerErrorException;
  *
  * PHP version 8.1
  *
- * @package App\Application\Handlers
  * @phpversion >= 8.1
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage App\Application\Handlers
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @copyright  2023 Web Elements
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
  */
 class ShutdownHandler
 {

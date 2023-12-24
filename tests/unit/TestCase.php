@@ -62,11 +62,11 @@ class TestCase extends PHPUnit_TestCase
     }
 
     /**
-     * @param string $method
-     * @param string $path
-     * @param array  $headers
-     * @param array  $cookies
-     * @param array  $serverParams
+     * @param  string $method
+     * @param  string $path
+     * @param  array  $headers
+     * @param  array  $cookies
+     * @param  array  $serverParams
      * @return Request
      */
     protected function createRequest(

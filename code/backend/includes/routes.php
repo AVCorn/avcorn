@@ -9,8 +9,14 @@
  *
  * @return void
  *
- * @category   AVCorn
  * @phpversion >= 8.1
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage Includes
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @copyright  2023 Web Elements
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
  */
 
 declare(strict_types=1);
@@ -26,6 +32,7 @@ return function (App $app) {
     // default sets
     $default = 'default';
     $default_path = '/_' . $default . '/';
+    $templates_dir = '/templates/';
 
     // override defaults if client is set in environment
     if (
@@ -34,15 +41,18 @@ return function (App $app) {
         && $_ENV['client'] !== 'avcorn'
     ) {
         $default = $_ENV['client'];
-        $default_path = '/clients/' . $default . '/';
+        $default_path = '/' . $default . '/';
+        $templates_dir = '/clients/';
     }
 
     //load config
     include_once __DIR__
-        . '../../../frontend/templates/'
+        . '../../../frontend/'
+        . $templates_dir
         . $default_path
         . '/config.php';
 
+    // set environment
     $config['development'] = true;
     $config['production'] = false;
     if (isset($_ENV['environment']) && $_ENV['environment'] === 'production') {
@@ -53,7 +63,7 @@ return function (App $app) {
     // commonly referred to paths
     $config['template_extension'] = '.html';
     $config['frontend_path'] = '../frontend/';
-    $config['templates_root'] = '/templates/';
+    $config['templates_root'] = $templates_dir;
     $config['layouts_root'] = '/layouts/';
     $config['pages_root'] = '/pages/';
     $config['config_root'] = '/config.php';
@@ -79,6 +89,7 @@ return function (App $app) {
             . $config['pages_root']
             . $config['page_file'];
 
+        // TODO: Break out main router into a class
         /**
          * Create Route
          *
@@ -155,10 +166,13 @@ return function (App $app) {
      *
      * @return Response
      */
-    $app->get('/health', function (Request $req, Response $res) {
-        $res->getBody()->write('Ok');
-        return $res;
-    });
+    $app->get(
+        '/health',
+        function (Request $req, Response $res) {
+            $res->getBody()->write('Ok');
+            return $res;
+        }
+    );
 
     /**
      * Watcher
@@ -168,14 +182,17 @@ return function (App $app) {
      *
      * @return Response
      */
-    $app->get('/watch', function (Request $req, Response $res) {
-        $watcher = $this->get(Watcher::class);
-        $latest_file = $watcher->check(__DIR__ . '/../../');
-        $latest_time = filemtime($latest_file);
+    $app->get(
+        '/watch',
+        function (Request $req, Response $res) {
+            $watcher = $this->get(Watcher::class);
+            $latest_file = $watcher->check(__DIR__ . '/../../');
+            $latest_time = filemtime($latest_file);
 
-        $json = '{"time": ' . (string)$latest_time . '}';
+            $json = '{"time": ' . (string)$latest_time . '}';
 
-        $res->getBody()->write($json);
-        return $res;
-    });
+            $res->getBody()->write($json);
+            return $res;
+        }
+    );
 };

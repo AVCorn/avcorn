@@ -5,12 +5,18 @@
  *
  * PHP version 8.1
  *
- * @param  ContainerBuilder $containerBuilder
+ * @param ContainerBuilder $containerBuilder
  *
  * @return void
  *
- * @category   AVCorn
  * @phpversion >= 8.1
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage Includes
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @copyright  2023 Web Elements
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
  */
 
 declare(strict_types=1);
@@ -30,7 +36,8 @@ return function (ContainerBuilder $containerBuilder) {
                     $dev = false;
                 }
 
-                return new Settings([
+                return new Settings(
+                    [
                     'displayErrorDetails' => $dev,
                     'logError'            => false,
                     'logErrorDetails'     => false,
@@ -41,7 +48,8 @@ return function (ContainerBuilder $containerBuilder) {
                             : __DIR__ . '/logs/app.log',
                         'level' => Logger::DEBUG,
                     ],
-                ]);
+                    ]
+                );
             }
         ]
     );

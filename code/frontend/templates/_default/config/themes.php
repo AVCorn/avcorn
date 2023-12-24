@@ -5,9 +5,13 @@
  *
  * PHP version 8.1
  *
- * @package    Application
- * @subpackage Configuration
  * @phpversion >= 8.1
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage Configuration
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
  */
 
 declare(strict_types=1);
@@ -20,15 +24,15 @@ declare(strict_types=1);
 $themes = [
     'default' => '_default',
 
-    'marketing' => 'examples/marketing',
-    'modern' => 'examples/modern',
-    'portfolio' => 'examples/portfolio',
-    'simple' => 'examples/simple',
+    'marketing' => 'examples/categories/marketing',
+    'modern' => 'examples/categories/modern',
+    'portfolio' => 'examples/categories/portfolio',
+    'simple' => 'examples/categories/simple',
 
-    'agency' => 'categories/agency',
-    'autoshop' => 'categories/autoshop',
-    'church' => 'categories/church',
-    'coffeeshop' => 'categories/coffeeshop',
-    'landscape' => 'categories/landscape',
-    'restaurant' => 'categories/restaurant',
+    'agency' => 'examples/categories/agency',
+    'autoshop' => 'examples/categories/autoshop',
+    'church' => 'examples/categories/church',
+    'coffeeshop' => 'examples/categories/coffeeshop',
+    'landscape' => 'examples/categories/lawncare',
+    'restaurant' => 'examples/categories/restaurant',
 ];

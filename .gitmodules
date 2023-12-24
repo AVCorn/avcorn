@@ -1,0 +1,3 @@
+[submodule "code/frontend/templates/examples"]
+	path = code/frontend/templates/examples
+	url = https://github.com/AVCorn/avcorn-templates.git

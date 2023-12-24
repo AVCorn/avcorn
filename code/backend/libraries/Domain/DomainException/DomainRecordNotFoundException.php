@@ -9,8 +9,14 @@ namespace App\Domain\DomainException;
  *
  * PHP version 8.1
  *
- * @package App\Domain\DomainException
  * @phpversion >= 8.1
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage App\Domain\DomainException
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @copyright  2023 Web Elements
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
  */
 class DomainRecordNotFoundException extends DomainException
 {
