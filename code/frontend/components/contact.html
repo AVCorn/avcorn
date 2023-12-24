@@ -1,51 +1,295 @@
-<div class="row padd-3">
-    <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit>
-        <ul class="orbit-container">
-            <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-            <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-            <li class="is-active orbit-slide">
-                <div class="docs-example-orbit-slide">
-                    <p><strong>This is dodgerblue.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </li>
-            <li class="orbit-slide">
-                <div class="docs-example-orbit-slide">
-                    <p><strong>This is rebeccapurple.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </li>
-            <li class="orbit-slide">
-                <div class="docs-example-orbit-slide">
-                    <p><strong>This is darkgoldenrod.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </li>
-            <li class="orbit-slide">
-                <div class="docs-example-orbit-slide">
-                    <p><strong>This is lightseagreen.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </li>
-        </ul>
-        <nav class="orbit-bullets">
-            <button class="is-active" data-slide="0">
-                <span class="show-for-sr">First slide details.</span>
-                <span class="show-for-sr" data-slide-active-label>Current Slide</span>
-            </button>
-            <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-            <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-            <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-        </nav>
+<style>
+    form .form-icons {
+        text-align: center;
+    }
+
+    form .form-icons h4 {
+        margin-bottom: 1rem;
+    }
+
+    form .form-icons .input-group-label {
+        background-color: #1779ba;
+        border-color: #1779ba;
+        padding: 0.65em 1.7em 0.65em 1em;
+    }
+
+    form .form-icons .input-group-field {
+        border-color: #1779ba;
+    }
+
+    form .form-icons .fa {
+        color: white;
+        width: 1rem;
+    }
+
+    .clean-hero-slider {
+        background: rgb(7, 48, 109);
+        background: linear-gradient(180deg, rgb(7, 31, 66) 0%, rgb(7, 48, 109) 20%);
+    }
+
+    .clean-hero-slide-intro {
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 60%);
+        padding: 3em;
+    }
+
+    .clean-hero-slide-intro h2 {
+        font-weight: bold;
+    }
+
+    .clean-hero-slider .orbit-caption {
+        bottom: inherit;
+        top: 0;
+        height: auto;
+        position: absolute;
+        text-align: center;
+        right: 0;
+        left: 0;
+        padding: 2rem 4rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 60%);
+        margin: 0 auto 4em;
+    }
+
+    @media print, screen and (min-width: 40em) {
+        .clean-hero-slider .orbit-caption {
+            width: 80%;
+        }
+    }
+
+    @media print, screen and (min-width: 60em) {
+        .clean-hero-slider .orbit-caption {
+            width: 50%;
+        }
+    }
+
+    .clean-hero-slider .orbit-caption p {
+        font-size: 0.9rem;
+        line-height: 1.25;
+    }
+
+    @media print, screen and (min-width: 40em) {
+        .clean-hero-slider .orbit-caption p {
+            font-size: 1.1rem;
+        }
+    }
+
+    .clean-hero-slider .orbit-caption h3 {
+        color: #ffae00;
+        font-size: 2rem;
+        margin-bottom: 1em;
+    }
+
+    .clean-hero-slider .orbit-figure {
+        height: 100%;
+    }
+
+    .clean-hero-slider .orbit-slide {
+        padding-bottom: 0;
+        background: #0a0a0a;
+    }
+
+    .clean-hero-slider .orbit-caption button {
+        background: #ffae00;
+        color: #000;
+        font-weight: bold;
+        padding: 1rem 2rem;
+        margin-top: 1em;
+        transition: all 0.25s ease;
+    }
+
+    .clean-hero-slider .orbit-caption button:hover {
+        background: #fefefe;
+        color: #0a0a0a;
+    }
+
+    .clean-hero-slider .orbit-bullets {
+        display: none;
+    }
+
+    @media print, screen and (min-width: 40em) {
+        .clean-hero-slider .orbit-bullets {
+            display: block;
+            margin-bottom: 0;
+            margin-top: -3rem;
+            background: none;
+        }
+    }
+
+    .clean-hero-slider .orbit-bullets button {
+        border-radius: 0;
+        background-color: #fefefe;
+    }
+
+    .clean-hero-slider .orbit-bullets button.is-active {
+        background-color: #ffae00;
+    }
+
+    .orbit-image-placeholder {
+        background: rgb(7, 48, 109);
+        background: linear-gradient(0deg, rgb(7, 31, 66) 0%, rgb(7, 48, 109) 20%);
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 60%);
+        width: 100%;
+        min-height: 420px;
+    }
+</style>
+
+<script type="text/javaScript">
+    function validateStep(element) {
+        $('#contactForm form').foundation('validateInput', element);
+
+        if (!$('.is-invalid-input').length) {
+            $('.orbit').foundation('changeSlide', 'next');
+        }
+
+        return false;
+    }
+
+    // Hault the enter key from submitting the entire form
+    $(document).ready(function() {
+        $('input').keydown(function(event) {
+            // if enter key
+            if (event.keyCode == 13) {
+                event.preventDefault();
+
+                // validate the step's input
+                validateStep($('.is-active input'));
+
+                return false;
+            }
+        });
+    });
+</script>
+<div id="contactForm" class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="false" data-prev-class="prev" data-next-class="next-empty">
+    <div class="clean-hero-slide-intro editable">
+        <h2>Contact Form</h2>
+        <p>
+            We would love to hear from you!
+            Please fill out this step-by-step form and we will get in touch with you shortly.
+            First...
+        </p>
     </div>
-</div>
+    
+    {% if get.form == 2 %}
+        <div class="orbit-wrapper">
+            <ul class="orbit-container">
+                <li class="orbit-slide">
+                    <figure class="orbit-figure">
+                        <div class="orbit-image orbit-image-placeholder"></div>
+                        <figcaption class="orbit-caption">
+                            <h3>Form Submitted!</h3>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    {% else %}
+        <div class="orbit-wrapper">
+            <form data-abide method="post">
+                <div class="form-icons">
+                    <ul class="orbit-container">
+                        {% if post.form == 1 %}
+                            <li class="orbit-slide">
+                                <figure class="orbit-figure">
+                                    <div class="orbit-image orbit-image-placeholder"></div>
+                                    <figcaption class="orbit-caption">
+                                        <h3 class="editable">Submission failed! Please try again later...</h3>
+                                        <p class="editable">
+                                            It's not you, it's us.
+                                            Something went wrong when submitting your request.
+                                            These things happen.
+                                            We refilled out the form you previously submitted, to make it easy.
+                                            Feel free to try sending again.
+                                            If it keeps happening, try again later or contact us directly at:
+                                            <a href="mailto: someemail@email.com">someemail@email.com</a>
+                                        </p>
 
-<form class="row">
-    <label>
-        <span class="editable">Email:</span>
-        <input name="email" type="email" />
-    </label>
+                                        <button class="next next-empty editable" type="button" tabindex="1">Try Again &gt;</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        {% endif %}
+                        <li class="orbit-slide">
+                            <figure class="orbit-figure">
+                                <div class="orbit-image orbit-image-placeholder">
+                                    <figcaption class="orbit-caption">
+                                        <h3 class="editable">What is your name?</h3>
+    
+                                        <div class="input-group">
+                                            <span class="input-group-label">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                            <input id="contact-name" class="input-group-field" type="text" name="form_1_name" placeholder="Full name" required pattern="[a-zA-Z]+" {% if post.form_1_name %}value="{{ post.form_1_name }}"{% endif %} tabindex="2" />
+                                        </div>
 
-    <label>
-        <span class="editable">Message:</span>
-        <textarea name="message" rows="16" cols="80"></textarea>
-    </label>
+                                        <small class="form-error editable" data-form-error-for="contact-name">Name is required and must be a string.</small>
+    
+                                        <button class="next editable" onclick="validateStep($('#contact-name'))" type="button" tabindex="3">Next &gt;</button>
+                                    </figcaption>
+                                </div>
+                            </figure>
+                        </li>
+                        <li class="orbit-slide">
+                            <figure class="orbit-figure">
+                                <div class="orbit-image orbit-image-placeholder"></div>
+                                <figcaption class="orbit-caption">
+                                    <h3 class="editable">What is your contact information?</h3>
 
-    <span class="editable"><input class="button" type="submit" name="submit" value="Submit" /></span>
-</form>
+                                    <div class="input-group">
+                                        <span class="input-group-label">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                        <input id="contact-email" class="input-group-field" type="email" name="form_2_email" placeholder="Email" required {% if post.form_2_email %}value="{{ post.form_2_email }}"{% endif %} tabindex="4" />
+                                    </div>
+
+                                    <small class="form-error editable" data-form-error-for="contact-email">An email address is required.</small>
+
+                                    <div class="input-group">
+                                        <span class="input-group-label">
+                                            <i class="fa fa-phone"></i>
+                                        </span>
+                                        <input id="contact-phone" class="input-group-field" type="phone" name="form_3_phone" placeholder="Phone (Optional)" {% if post.form_3_phone %}value="{{ post.form_3_phone }}"{% endif %} tabindex="5" />
+                                    </div>
+
+                                    <button class="prev editable" type="button" tabindex="7">&lt; Back</button>
+                                    <button class="next editable" onclick="validateStep($('#contact-email'))" type="button" tabindex="6">Next &gt;</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="orbit-slide">
+                            <figure class="orbit-figure">
+                                <div class="orbit-image-placeholder"></div>
+                                <figcaption class="orbit-caption">
+                                    <h3 class="editable">What is your message?</h3>
+
+                                    <textarea id="contact-message" class="input-group-field" name="form_4_message" required rows="4" cols="16" placeholder="Message" tabindex="8">{% if post.form_4_message %}{{ post.form_4_message }}{% endif %}</textarea>
+                                    <br />
+
+                                    <small class="form-error editable" data-form-error-for="contact-message">An message is required.</small>
+                                    
+                                    <input type="hidden" name="form" value="1" />
+                                    <input type="hidden" name="form_email_to" value="test@test.com" />
+                                    <input type="hidden" name="form_email_bcc" value="" />
+                                    <input type="hidden" name="form_sheet_id" value="13xyVNGE1axQ9vu148DbuD3SBYq0brkaOmiVir3TIIsQ" />
+                                    <input type="hidden" name="form_sheet_range" value="Sheet1" />
+                        
+                                    <button class="prev editable" type="button" tabindex="10">&lt; Back</button>
+                                    <button class="button editable" type="submit" name="send" tabindex="9">Send &gt;</button>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <nav class="orbit-bullets">
+            <button disabled class="is-active" data-slide="1"><span class="show-for-sr"></span></button>
+            <button disabled data-slide="2"><span class="show-for-sr"></span></button>
+            <button disabled data-slide="3"><span class="show-for-sr"></span></button>
+            {% if post.form < 0 %}
+                <button disabled data-slide="4"><span class="show-for-sr"></span></button>
+            {% endif %}
+        </nav>
+    {% endif %}
+  </div>

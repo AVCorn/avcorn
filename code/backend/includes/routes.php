@@ -4,11 +4,13 @@
  * Routes configuration
  *
  * PHP version 8.1
- * @phpversion >= 8.1
  *
  * @param App $app The application
  *
  * @return void
+ *
+ * @category   AVCorn
+ * @phpversion >= 8.1
  */
 
 declare(strict_types=1);
@@ -36,7 +38,10 @@ return function (App $app) {
     }
 
     //load config
-    include_once '../frontend/templates/' . $default_path . '/config.php';
+    include_once __DIR__
+        . '../../../frontend/templates/'
+        . $default_path
+        . '/config.php';
 
     $config['development'] = true;
     $config['production'] = false;
@@ -52,6 +57,7 @@ return function (App $app) {
     $config['layouts_root'] = '/layouts/';
     $config['pages_root'] = '/pages/';
     $config['config_root'] = '/config.php';
+    $config['map'] = $config['map'] ?? [];
 
     // route through the map list
     foreach ($config['map'] as $route => $page) {
@@ -81,9 +87,10 @@ return function (App $app) {
          *
          * @return Response
          */
-        $app->get($route, function (Request $req, Response $res) use ($config) {
+        $handler = function (Request $req, Response $res) use ($config) {
             // pass parameters to use
             $config['get'] = $req->getQueryParams();
+            $config['post'] = $req->getParsedBody();
 
             // Override main config with template's
             if (
@@ -109,8 +116,8 @@ return function (App $app) {
                 $config_path = $config['frontend_path']
                     . $config['template_path']
                     . $config['config_root'];
-                if (file_exists($config_path)) {
-                    include_once $config_path;
+                if (file_exists(__DIR__ . '../../' . $config_path)) {
+                    include_once __DIR__ . '../../' . $config_path;
                 }
             }
 
@@ -134,7 +141,11 @@ return function (App $app) {
             // Render the template with Twig
             $view = Twig::fromRequest($req);
             return $view->render($res, $config['page_path'], $config);
-        });
+        };
+
+        // setup for both GET and POST
+        $app->get($route, $handler);
+        $app->post($route, $handler);
     }
 
     /**

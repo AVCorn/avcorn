@@ -41,9 +41,9 @@ jobs:
               if: matrix.analysis
               run: vendor/bin/phpstan
 
-            #- name: Tests
-            #  working-directory: code
-            #  run: vendor/bin/phpunit --coverage-clover clover.xml .
+            - name: Tests
+              working-directory: code
+              run: vendor/bin/phpunit #--coverage-clover clover.xml
 
             #- name: Upload coverage results to Coveralls
             #  working-directory: code

@@ -12,9 +12,14 @@
 
 {% block content %}
     <div class="row padding-2 editable">
-        <img style="width:200px;" class="float-right margin-2 hover-shake" src="assets/images/nutty/nutty-customerservice.png" title="How may I assist you today?" alt="" />
+        <p>Thank you for considering reaching out to us. We value your feedback, inquiries, and suggestions. At {{ info.company }}, we are committed to ensuring a seamless and responsive communication experience for our visitors, clients, and partners. Below you will find a contact form.</p>
+    </div>
 
-        <p>Thank you for considering reaching out to us. We value your feedback, inquiries, and suggestions. At {{ info.company }}, we are committed to ensuring a seamless and responsive communication experience for our visitors, clients, and partners. Below you will find a contact form</p>
+    {% include "components/contact.html" %}
+    
+    <div class="row padding-2 editable">
+        <h2>Other Ways to Reach Us</h2>
+        <img style="width:200px;" class="float-right margin-2 hover-shake" src="assets/images/nutty/nutty-customerservice.png" title="How may I assist you today?" alt="" />
 
         <h3>General Inquiries:</h3>
         <p>For general queries, partnership opportunities, or any other non-urgent matters, please feel free to send us an email at [contact@companyname.com]. Our team endeavors to respond to all inquiries within 24-48 hours during our operating hours, Monday through Friday, 9:00 AM to 4:00 PM EST.</p>
@@ -32,9 +37,5 @@
         <p>Warm regards,<br />
         The {{ info.company }} Team</p>
     </div>
-
-    <br class="clearfix" />
-
-    {% include "components/contact.html" %}
 
 {% endblock %}

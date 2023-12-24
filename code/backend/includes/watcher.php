@@ -4,11 +4,13 @@
  * Watcher configuration
  *
  * PHP version 8.1
- * @phpversion >= 8.1
  *
  * @param  Container $container
  *
  * @return void
+ *
+ * @category   AVCorn
+ * @phpversion >= 8.1
  */
 
 declare(strict_types=1);
