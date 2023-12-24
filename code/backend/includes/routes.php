@@ -4,11 +4,13 @@
  * Routes configuration
  *
  * PHP version 8.1
- * @phpversion >= 8.1
  *
  * @param App $app The application
  *
  * @return void
+ *
+ * @category   AVCorn
+ * @phpversion >= 8.1
  */
 
 declare(strict_types=1);

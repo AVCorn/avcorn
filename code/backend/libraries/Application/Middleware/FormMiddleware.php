@@ -17,7 +17,8 @@ use Google_Service_Sheets_ValueRange;
  *
  * PHP version 8.1
  *
- * @package App\Application\Middleware
+ * @category   AVCorn
+ * @package    App\Application\Middleware
  * @phpversion >= 8.1
  */
 class FormMiddleware implements Middleware
@@ -25,8 +26,8 @@ class FormMiddleware implements Middleware
     /**
      * Example middleware invokable class
      *
-     * @param  Request        $request PSR-7 request
-     * @param  RequestHandler $handler PSR-15 request handler
+     * @param Request        $request PSR-7 request
+     * @param RequestHandler $handler PSR-15 request handler
      *
      * @return Response
      */
@@ -52,12 +53,17 @@ class FormMiddleware implements Middleware
                 // set sheet info
                 $spreadsheetId = $params['form_sheet_id'];
                 unset($params['form_sheet_id']);
-                $range = $params['form_sheet_range'] ? $params['form_sheet_range'] : 'Sheet1';
+                $range = $params['form_sheet_range']
+                    ? $params['form_sheet_range']
+                    : 'Sheet1';
                 unset($params['form_sheet_range']);
 
                 // configure the Google Client
                 $client = new Google_Client();
-                $client->setAuthConfig(__DIR__ . '/../../../../_env/google.private.key.json');
+                $client->setAuthConfig(
+                    __DIR__
+                    . '/../../../../_env/google.private.key.json'
+                );
                 $client->setApplicationName('Google Sheets API');
                 $client->setScopes([Google_Service_Sheets::SPREADSHEETS]);
 
@@ -65,7 +71,7 @@ class FormMiddleware implements Middleware
                 $service = new Google_Service_Sheets($client);
 
                 // loop through $params
-                foreach ($params as $key => $value) {
+                foreach ($params as $key => $param) {
                     // if the key is not a 'form-', unset it
                     if (substr($key, 0, 5) !== 'form_') {
                         unset($params[$key]);
@@ -86,7 +92,12 @@ class FormMiddleware implements Middleware
 
                 // insert the row
                 try {
-                    $service->spreadsheets_values->append($spreadsheetId, $range, $valueRange, $options);
+                    $service->spreadsheets_values->append(
+                        $spreadsheetId,
+                        $range,
+                        $valueRange,
+                        $options
+                    );
                 } catch (\Exception $e) {
                     $status = 0;
                 }
@@ -94,12 +105,21 @@ class FormMiddleware implements Middleware
 
             if ($status > 1) {
                 // get the request URI and redirect
-                $uri = (string)$request->getUri()->withQuery($request->getUri()->getQuery() . '&form=' . $status);
-                return $handler->handle($request)->withHeader('Location', $uri)->withStatus(302);
-            } else {
-                // continue to load form to handle erro
-                return $handler->handle($request);
+                $uri = (string)$request
+                    ->getUri()
+                    ->withQuery(
+                        $request->getUri()->getQuery()
+                            . '&form='
+                            . $status
+                    );
+
+                return $handler->handle($request)
+                    ->withHeader('Location', $uri)
+                    ->withStatus(302);
             }
+
+            // continue to load form to handle erro
+            return $handler->handle($request);
         }
 
         // no form handling was found, so continue
