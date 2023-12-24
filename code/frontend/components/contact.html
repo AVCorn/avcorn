@@ -205,7 +205,7 @@
                                             <a href="mailto: someemail@email.com">someemail@email.com</a>
                                         </p>
 
-                                        <button class="next next-empty editable" type="button">Try Again &gt;</button>
+                                        <button class="next next-empty editable" type="button" tabindex="1">Try Again &gt;</button>
                                     </figcaption>
                                 </figure>
                             </li>
@@ -220,12 +220,12 @@
                                             <span class="input-group-label">
                                                 <i class="fa fa-user"></i>
                                             </span>
-                                            <input id="contact-name" class="input-group-field" type="text" name="form_1_name" placeholder="Full name" required pattern="[a-zA-Z]+" {% if post.form_1_name %}value="{{ post.form_1_name }}"{% endif %} />
+                                            <input id="contact-name" class="input-group-field" type="text" name="form_1_name" placeholder="Full name" required pattern="[a-zA-Z]+" {% if post.form_1_name %}value="{{ post.form_1_name }}"{% endif %} tabindex="2" />
                                         </div>
 
                                         <small class="form-error editable" data-form-error-for="contact-name">Name is required and must be a string.</small>
     
-                                        <button class="next editable" onclick="validateStep($('#contact-name'))" type="button">Next &gt;</button>
+                                        <button class="next editable" onclick="validateStep($('#contact-name'))" type="button" tabindex="3">Next &gt;</button>
                                     </figcaption>
                                 </div>
                             </figure>
@@ -240,7 +240,7 @@
                                         <span class="input-group-label">
                                             <i class="fa fa-envelope"></i>
                                         </span>
-                                        <input id="contact-email" class="input-group-field" type="email" name="form_2_email" placeholder="Email" required {% if post.form_2_email %}value="{{ post.form_2_email }}"{% endif %} />
+                                        <input id="contact-email" class="input-group-field" type="email" name="form_2_email" placeholder="Email" required {% if post.form_2_email %}value="{{ post.form_2_email }}"{% endif %} tabindex="4" />
                                     </div>
 
                                     <small class="form-error editable" data-form-error-for="contact-email">An email address is required.</small>
@@ -249,11 +249,11 @@
                                         <span class="input-group-label">
                                             <i class="fa fa-phone"></i>
                                         </span>
-                                        <input id="contact-phone" class="input-group-field" type="phone" name="form_3_phone" placeholder="Phone (Optional)" {% if post.form_3_phone %}value="{{ post.form_3_phone }}"{% endif %} />
+                                        <input id="contact-phone" class="input-group-field" type="phone" name="form_3_phone" placeholder="Phone (Optional)" {% if post.form_3_phone %}value="{{ post.form_3_phone }}"{% endif %} tabindex="5" />
                                     </div>
 
-                                    <button class="prev editable" type="button">&lt; Back</button>
-                                    <button class="next editable" onclick="validateStep($('#contact-email'))" type="button">Next &gt;</button>
+                                    <button class="prev editable" type="button" tabindex="7">&lt; Back</button>
+                                    <button class="next editable" onclick="validateStep($('#contact-email'))" type="button" tabindex="6">Next &gt;</button>
                                 </figcaption>
                             </figure>
                         </li>
@@ -263,7 +263,7 @@
                                 <figcaption class="orbit-caption">
                                     <h3 class="editable">What is your message?</h3>
 
-                                    <textarea id="contact-message" class="input-group-field" name="form_4_message" required rows="4" cols="16" placeholder="Message">{% if post.form_4_message %}{{ post.form_4_message }}{% endif %}</textarea>
+                                    <textarea id="contact-message" class="input-group-field" name="form_4_message" required rows="4" cols="16" placeholder="Message" tabindex="8">{% if post.form_4_message %}{{ post.form_4_message }}{% endif %}</textarea>
                                     <br />
 
                                     <small class="form-error editable" data-form-error-for="contact-message">An message is required.</small>
@@ -274,8 +274,8 @@
                                     <input type="hidden" name="form_sheet_id" value="13xyVNGE1axQ9vu148DbuD3SBYq0brkaOmiVir3TIIsQ" />
                                     <input type="hidden" name="form_sheet_range" value="Sheet1" />
                         
-                                    <button class="prev editable" type="button">&lt; Back</button>
-                                    <button class="button editable" type="submit" name="send">Send &gt;</button>
+                                    <button class="prev editable" type="button" tabindex="10">&lt; Back</button>
+                                    <button class="button editable" type="submit" name="send" tabindex="9">Send &gt;</button>
                                 </figcaption>
                             </figure>
                         </li>
