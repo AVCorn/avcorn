@@ -23,5 +23,5 @@ $social = [
     'twitter' => 'https://twitter.com',
     //'linkedin' => 'https://linkedin.com',
     //'youtube' => 'https://youtube.com',
-    'github' => 'https://github.com/blaher/avcorn',
+    'github' => 'https://github.com/avcorn/avcorn',
 ];
