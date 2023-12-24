@@ -26,6 +26,7 @@ return function (App $app) {
     // default sets
     $default = 'default';
     $default_path = '/_' . $default . '/';
+    $templates_dir = '/templates/';
 
     // override defaults if client is set in environment
     if (
@@ -34,15 +35,18 @@ return function (App $app) {
         && $_ENV['client'] !== 'avcorn'
     ) {
         $default = $_ENV['client'];
-        $default_path = '/clients/' . $default . '/';
+        $default_path = '/' . $default . '/';
+        $templates_dir = '/clients/';
     }
 
     //load config
     include_once __DIR__
-        . '../../../frontend/templates/'
+        . '../../../frontend/'
+        . $templates_dir
         . $default_path
         . '/config.php';
 
+    // set environment
     $config['development'] = true;
     $config['production'] = false;
     if (isset($_ENV['environment']) && $_ENV['environment'] === 'production') {
@@ -53,7 +57,7 @@ return function (App $app) {
     // commonly referred to paths
     $config['template_extension'] = '.html';
     $config['frontend_path'] = '../frontend/';
-    $config['templates_root'] = '/templates/';
+    $config['templates_root'] = $templates_dir;
     $config['layouts_root'] = '/layouts/';
     $config['pages_root'] = '/pages/';
     $config['config_root'] = '/config.php';
