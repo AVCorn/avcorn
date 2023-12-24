@@ -15,9 +15,9 @@ use Exception;
  * @category   CMS
  * @package    AVCorn
  * @subpackage App\Domain\DomainException
- * @author     Benjamin J. Young
+ * @author     Benjamin J. Young <ben@blaher.me>
  * @copyright  2023 Web Elements
- * @license    GPLv3
+ * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
 abstract class DomainException extends Exception

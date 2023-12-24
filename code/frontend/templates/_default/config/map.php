@@ -5,9 +5,13 @@
  *
  * PHP version 8.1
  *
- * @package    Application
- * @subpackage Configuration
  * @phpversion >= 8.1
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage Configuration
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
  */
 
 declare(strict_types=1);

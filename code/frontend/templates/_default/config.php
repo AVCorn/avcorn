@@ -8,10 +8,9 @@
  * @phpversion >= 8.1
  * @category   CMS
  * @package    AVCorn
- * @subpackage Template Configuration
- * @author     Benjamin J. Young
- * @copyright  2023 Web Elements
- * @license    GPLv3
+ * @subpackage Configuration
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
 

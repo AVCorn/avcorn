@@ -8,10 +8,10 @@
  * @phpversion >= 8.1
  * @category   CMS
  * @package    AVCorn
- * @subpackage Client Configuration
- * @author     Benjamin J. Young
+ * @subpackage Client
+ * @author     Benjamin J. Young <ben@blaher.me>
  * @copyright  2023 Web Elements
- * @license    GPLv3
+ * @license    GNU General Public License, version 3
  * @link       http://webelements.agency/
  */
 
