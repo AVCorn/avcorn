@@ -145,6 +145,21 @@
 
         return false;
     }
+
+    // Hault the enter key from submitting the entire form
+    $(document).ready(function() {
+        $('input').keydown(function(event) {
+            // if enter key
+            if (event.keyCode == 13) {
+                event.preventDefault();
+
+                // validate the step's input
+                validateStep($('.is-active input'));
+
+                return false;
+            }
+        });
+    });
 </script>
 <div id="contactForm" class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="false" data-prev-class="prev" data-next-class="next-empty">
     <div class="clean-hero-slide-intro editable">

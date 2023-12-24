@@ -92,7 +92,6 @@ class FormMiddleware implements Middleware
                 }
             }
 
-
             if ($status > 1) {
                 // get the request URI and redirect
                 $uri = (string)$request->getUri()->withQuery($request->getUri()->getQuery() . '&form=' . $status);
