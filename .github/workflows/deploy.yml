@@ -55,6 +55,12 @@ jobs:
           echo "repo=$REPOSITORY" >> $GITHUB_OUTPUT
           echo "container=$CONTAINER" >> $GITHUB_OUTPUT
 
+      - name: Get Submodules
+        id: submodules
+        run: |
+          git submodule update --init --recursive
+          git submodule update --remote --merge --recursive
+
       - name: Build, tag, and push image to Private ECR
         id: build-private
         env:
