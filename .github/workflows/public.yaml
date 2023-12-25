@@ -32,6 +32,12 @@ jobs:
         with:
           registry-type: public
 
+      - name: Get Submodules
+        id: submodules
+        run: |
+          git submodule update --init --recursive
+          git submodule update --remote --merge --recursive
+
       - name: Build, tag, and push image to Public ECR
         id: build-public
         env:
