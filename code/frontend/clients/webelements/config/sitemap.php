@@ -69,7 +69,7 @@ $sitemap = [
             'link' => '/services',
         ],
         'clients' => [
-            'title' => 'Our CLients',
+            'title' => 'Our Clients',
             'description' => 'List of our clients.',
             'link' => '/clients',
         ],

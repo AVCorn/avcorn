@@ -38,6 +38,7 @@ $navigation = [
     [
         'href' => '/contact',
         'label' => '
+            <br class="show-for-small-only" />
             <span class="show-for-medium">
                 <i class="fa fa-phone"></i> Contact Us
             </span>
