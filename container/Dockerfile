@@ -38,9 +38,6 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
 #RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ && \
 #    docker-php-ext-install gd
 
-RUN git submodule update --init --recursive && \
-    git submodule update --remote --merge --recursive
-
 RUN service apache2 restart
 
 EXPOSE 80
