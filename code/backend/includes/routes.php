@@ -160,6 +160,54 @@ return function (App $app) {
     }
 
     /**
+     * Favicon
+     *
+     * @var Response $res  The response
+     *
+     * @return Response
+     */
+    $app->get(
+        '/{favicon:.*}.ico',
+        function (Request $req, Response $res, array $route) {
+            // amend '.ico' to uri
+            $file = $route['favicon'] . '.ico';
+
+            // default favicon path
+            $favicon_path = __DIR__
+                . '/../../public/assets/images/icons/'
+                . $file;
+
+            // figure out which favicon to use
+            if (isset($_ENV['client'])) {
+                $client_path = __DIR__
+                    . '/../../frontend/clients/'
+                    . $_ENV['client']
+                    . '/assets/images/icons/'
+                    . $file;
+
+                if (file_exists($client_path)) {
+                    $favicon_path = $client_path;
+                }
+            }
+
+            // check for favicon existence
+            if (!file_exists($favicon_path)) {
+                // respond with 404
+                $res->getBody()->write('Not Found');
+                return $res->withStatus(404);
+            }
+
+            // write file contents of favicon
+            $favicon = file_get_contents($favicon_path);
+            $res->getBody()->write($favicon);
+
+            return $res
+                ->withStatus(200)
+                ->withHeader('Content-type', 'image/x-icon');
+        }
+    );
+
+    /**
      * Health Check
      *
      * @var Response $res  The response
@@ -170,6 +218,7 @@ return function (App $app) {
         '/health',
         function (Request $req, Response $res) {
             $res->getBody()->write('Ok');
+
             return $res;
         }
     );
@@ -190,8 +239,8 @@ return function (App $app) {
             $latest_time = filemtime($latest_file);
 
             $json = '{"time": ' . (string)$latest_time . '}';
-
             $res->getBody()->write($json);
+
             return $res;
         }
     );
