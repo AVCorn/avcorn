@@ -94,6 +94,7 @@ return function (App $app) {
          * Create Route
          *
          * @var App      $app The application
+         * @var Request  $req The request
          * @var Response $res The response
          *
          * @return Response
@@ -162,13 +163,15 @@ return function (App $app) {
     /**
      * Favicon
      *
+     * @var Request  $req  The request
      * @var Response $res  The response
+     * @var array    $route The route
      *
      * @return Response
      */
     $app->get(
         '/{favicon:.*}.ico',
-        function (Request $req, Response $res, array $route) {
+        function (Request $req, Response $res, array $route) use ($config) {
             // amend '.ico' to uri
             $file = $route['favicon'] . '.ico';
 
@@ -180,8 +183,9 @@ return function (App $app) {
             // figure out which favicon to use
             if (isset($_ENV['client'])) {
                 $client_path = __DIR__
-                    . '/../../frontend/clients/'
-                    . $_ENV['client']
+                    . '/../'
+                    . $config['frontend_path']
+                    . $config['template_path']
                     . '/assets/images/icons/'
                     . $file;
 
@@ -208,8 +212,95 @@ return function (App $app) {
     );
 
     /**
+     * Assets
+     *
+     * @var Request  $req  The request
+     * @var Response $res  The response
+     * @var string   $path The path
+     *
+     * @return Response
+     */
+    $app->get(
+        '/assets/{file:.*}',
+        function (Request $req, Response $res, array $route) use ($config) {
+            // set file path
+            $file_root = __DIR__ . '/../' . $config['frontend_path'];
+            $file = '/assets/' . $route['file'];
+
+            $client_file = $file_root . $config['template_path'] . $file;
+            $assets_file = $file_root . $file;
+            $active_file = '';
+
+            if (file_exists($client_file)) {
+                // overwrite and use the client assest
+                $active_file = $client_file;
+            } elseif (file_exists($assets_file)) {
+                // use the default asset
+                $active_file = $assets_file;
+            } else {
+                // Not found
+                $res->getBody()->write('Not Found');
+                return $res->withStatus(404);
+            }
+
+            // write file contents
+            $file_contents = file_get_contents($active_file);
+            $res->getBody()->write($file_contents);
+
+            // get file type of $file
+            $file_type = mime_content_type($active_file);
+
+            return $res
+                ->withHeader('Content-type', $file_type)
+                ->withStatus(200);
+        }
+    );
+
+    /**
+     * Template Assets
+     *
+     * @var Request  $req  The request
+     * @var Response $res  The response
+     * @var string   $path The path
+     *
+     * @return Response
+     */
+    $app->get(
+        '/template/{template:.*}/assets/{file:.*}',
+        function (Request $req, Response $res, array $route) use ($config) {
+            // set file path
+            $file = __DIR__
+                . '/../'
+                . $config['frontend_path']
+                . $config['templates_root']
+                . $config['themes'][$route['template']]
+                . '/assets/'
+                . $route['file'];
+
+            // check for file existence
+            if (file_exists($file)) {
+                // write file contents
+                $file_contents = file_get_contents($file);
+                $res->getBody()->write($file_contents);
+
+                // get file type of $file
+                $file_type = mime_content_type($file);
+
+                return $res
+                    ->withHeader('Content-type', $file_type)
+                    ->withStatus(200);
+            }
+
+            // Not found
+            $res->getBody()->write('Not Found');
+            return $res->withStatus(404);
+        }
+    );
+
+    /**
      * Health Check
      *
+     * @var Request  $req  The request
      * @var Response $res  The response
      *
      * @return Response
@@ -227,6 +318,7 @@ return function (App $app) {
      * Watcher
      *
      * @var mixed    $this The application
+     * @var Request  $req  The request
      * @var Response $res  The response
      *
      * @return Response
