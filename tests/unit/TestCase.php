@@ -74,7 +74,7 @@ class TestCase extends PHPUnit_TestCase
      * @param  array  $headers
      * @param  array  $cookies
      * @param  array  $serverParams
-     * 
+     *
      * @return Request
      */
     protected function createRequest(
