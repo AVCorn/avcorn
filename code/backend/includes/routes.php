@@ -344,4 +344,65 @@ return function (App $app) {
             return $res;
         }
     );
+
+
+    /**
+     * Documentation
+     *
+     * @var Request  $req  The request
+     * @var Response $res  The response
+     * @var string   $path The path
+     *
+     * @return Response
+     */
+    $app->get(
+        '/docs{file:.*}',
+        function (Request $req, Response $res, array $route) {
+            // check if production
+            if (isset($_ENV['environment']) && $_ENV['environment'] === 'production') {
+                return;
+            }
+
+            // check if $file is '/docs' or '/docs/coverage'
+            if (
+                $route['file'] === ''
+                || $route['file'] === '/'
+                || $route['file'] === '/coverage'
+                || $route['file'] === '/coverage/'
+            ) {
+                $route['file'] .= '/index.html';
+            }
+
+            // set file path
+            $file_root = __DIR__ . '/../../';
+            $file = '/docs/' . $route['file'];
+            $doc_file = $file_root . $file;
+
+            if (!file_exists($doc_file)) {
+                // Not found
+                $res->getBody()->write('Not Found');
+                return $res->withStatus(404);
+            }
+
+            // write file contents
+            $file_contents = file_get_contents($doc_file);
+            $res->getBody()->write($file_contents);
+
+            // get file type of $file
+            $file_type = mime_content_type($doc_file);
+
+            // get the file extesion
+            $file_ext = pathinfo($doc_file, PATHINFO_EXTENSION);
+
+            if ($file_ext === 'css') {
+                $file_type = 'text/css';
+            } elseif ($file_ext === 'js') {
+                $file_type = 'text/javascript';
+            }
+
+            return $res
+                ->withHeader('Content-type', $file_type)
+                ->withStatus(200);
+        }
+    );
 };

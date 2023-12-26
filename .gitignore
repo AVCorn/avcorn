@@ -11,6 +11,9 @@ code/.phpunit.cache
 code/.phpunit.result.cache
 code/phpunit.xml.bak
 
+docs/coverage
+!docs/coverage/.gitkeep
+
 */.DS_Store
 .DS_Store
 
