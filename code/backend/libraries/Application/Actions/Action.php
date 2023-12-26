@@ -14,14 +14,13 @@ use Slim\Exception\HttpNotFoundException;
 /**
  * Abstract action.
  *
- * PHP version 8.1
+ * PHP version 8.2
  *
- * @phpversion >= 8.1
+ * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
  * @subpackage App\Application\Actions
  * @author     Benjamin J. Young <ben@blaher.me>
- * @copyright  2023 Web Elements
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
@@ -35,11 +34,11 @@ abstract class Action
     /**
      * Constructor
      *
-     * @codeCoverageIgnore
-     *
-     * @param LoggerInterface $logger
+     * @param LoggerInterface $logger The logger
      *
      * @return void
+     *
+     * @codeCoverageIgnore
      */
     public function __construct(LoggerInterface $logger)
     {
@@ -72,6 +71,8 @@ abstract class Action
 
     /**
      * Action
+     *
+     * @return Response
      *
      * @throws DomainRecordNotFoundException
      * @throws HttpBadRequestException

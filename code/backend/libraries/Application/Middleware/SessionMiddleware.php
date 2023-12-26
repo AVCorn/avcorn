@@ -12,14 +12,13 @@ use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 /**
  * Session middleware.
  *
- * PHP version 8.1
+ * PHP version 8.2
  *
- * @phpversion >= 8.1
+ * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
  * @subpackage App\Application\Middleware
  * @author     Benjamin J. Young <ben@blaher.me>
- * @copyright  2023 Web Elements
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
@@ -29,6 +28,8 @@ class SessionMiddleware implements Middleware
      * Process middleware.
      *
      * {@inheritdoc}
+     *
+     * @return Response
      */
     public function process(Request $request, RequestHandler $handler): Response
     {

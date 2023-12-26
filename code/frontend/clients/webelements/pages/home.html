@@ -10,12 +10,12 @@
         <div class="ribbon row expanded grid-x">
             <div class="cell show-for-medium medium-1"></div>
             <div class="ribbon-inside cell medium-10">
-                    <h1 class="text-center">Web Design For The Busy Small Business</h1>
+                    <h1 class="text-center">Web Services for Small Businesses</h1>
             </div>
             <div class="cell show-for-medium medium-1"></div>
         </div>
 
-        <div class="intro flat columns small-12 medium-8 medium-centered align-center padding-3">
+        <div class="intro flat columns small-12 medium-8 medium-centered align-center padding-1">
             <div class="text-center">
                 <img class="show-for-medium float-right" src="/assets/images/content/responsive.gif" title="Responsive Web Design Done Right" alt="" />
             </div>
@@ -27,7 +27,7 @@
             <br />
 
             <div class="row">
-                <div class="sale-list columns small-12 small-centered medium-11 large-9 padding-3">
+                <div class="sale-list columns small-12 small-centered medium-11 large-9 padding-2">
                     <ul class="no-bullet">
                         <li>
                             <svg class="bullet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" width="20" height="20" viewBox="0, 0, 193, 202">
@@ -114,7 +114,7 @@
 
     <div class="spacer"><br /></div>
 
-    <div class="content-prompt row show-for-medium h3 padding-3 text-justify rellax clearfix wow animate__fadeIn" data-rellax-speed="1" data-wow-duration="2s">
+    <div class="content-prompt row show-for-medium h3 padding-3 text-justify rellax clearfix wow animate__fadeIn" data-rellax-speed="0.5" data-wow-duration="2s">
         <p>Technology, design, and marketing that's first-in-class service for our clientele.</p>
     </div>
 
@@ -173,7 +173,7 @@
     </div>
 
     <div class="spacer"><br /></div>
-    <div class="spacer"><br /></div>
+    <div class="spacer show-for-medium"><br /></div>
 
     <div class="content-prompt row show-for-medium h3 text-justify clearfix rellax wow animate__fadeIn" data-rellax-speed="1" data-wow-duration="2s">
         <p>In a world of complexity, we offer ease and expertise by managing and maintaining your web presence.</p>
@@ -186,25 +186,30 @@
                 'Small Businesses': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
                 'Landscapers': "background-image:url('/assets/images/creatives/creative-lawncare.jpg');",
                 'Lawyers': "background-image:url('/assets/images/creatives/creative-lawyer.jpg');",
+                'Our Clients': '',
                 'Autoshops': "background-image:url('/assets/images/creatives/creative-mechanic.jpg');",
                 'Chefs': "background-image:url('/assets/images/creatives/creative-chef.jpg');",
-                'Our Work': '',
-            },
-            1: {
                 'Gym': "background-image:url('/assets/images/creatives/creative-gym.jpg');",
                 'Spas': "background-image:url('/assets/images/creatives/creative-massage.jpg');",
-                'Our Designs': '',
                 'Chiropractor': "background-image:url('/assets/images/creatives/creative-chiropractor.jpg');",
-                'Bakery': "background-image:url('/assets/images/creatives/creative-bakery.jpg');",
-                'Accountant': "background-image:url('/assets/images/creatives/creative-accountant.jpg');",
+                'Our Creativity': '',
+                '2': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
+                '3': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
+
             },
             2: {
+                'Our Work': '',
+                'Bakery': "background-image:url('/assets/images/creatives/creative-bakery.jpg');",
+                'Accountant': "background-image:url('/assets/images/creatives/creative-accountant.jpg');",
                 'Storage': "background-image:url('/assets/images/creatives/creative-storage.jpg');",
                 'Church': "background-image:url('/assets/images/creatives/creative-church.jpg');",
                 'Laundry': "background-image:url('/assets/images/creatives/creative-laundry.jpg');",
+                'Our Designs': '',
                 'Coffeeshop': "background-image:url('/assets/images/creatives/creative-coffee.jpg');",
                 'Insurance': "background-image:url('/assets/images/creatives/creative-insurance.jpg');",
-                'Our Creativity': '',
+                'Small Businesses': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
+                '2': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
+                '3': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
             },
         }
     %}
@@ -226,14 +231,14 @@
     </script>
     
     <div id="bannerWrapper" style="overflow:scroll;">
-        <div id="banner" style="width:300% !important;" class="row expanded grid-x">
+        <div id="banner" class="row expanded grid-x">
             {% for row in creatives %}
-                <div class="cell small-4">
+                <div class="cell small-12">
                     <ul class="banner grid-x">
                         {% for creative, style in row %}
-                            <li class="cell small-6 medium-4 grid-x wow animate__fadeIn" style="{{ style | raw }}" data-wow-duration="2s">
+                            <li class="cell small-1 grid-x wow animate__fadeIn" style="{{ style | raw }}" data-wow-duration="2s">
                                 <div class="overlay cell grid-x">
-                                    <a class="cell grid-x align-bottom" href="#">
+                                    <a class="cell grid-x align-bottom" href="/clients">
                                         <div class="banner-text cell medium-8 padding-1">
                                             {{ creative }}
                                         </div>
@@ -307,10 +312,10 @@
 
     <div class="spacer"><br /></div>
 
-    <div class="clients text-center padding-3">
+    <div class="clients text-center padding-1">
         <h2 class="h2 wow animate__fadeIn" data-wow-duration="2s">Our Clients</h2>
 
-        <ul class="menu grid-x grid-margin-x margin-3 wow animate__fadeIn" data-wow-duration="2s">
+        <ul class="menu grid-x grid-margin-x margin-1 wow animate__fadeIn" data-wow-duration="2s">
             {% for i in 0..7 %}
                 <li class="grid-x cell small-6 medium-4 large-3">
                     <a href="/clients">
@@ -326,4 +331,6 @@
             <strong class="h5" style="font-weight:bold;">Contact Today &gt;</strong>
         </a>
     </div>
+
+    <div class="spacer"><br /></div>
 {% endblock %}

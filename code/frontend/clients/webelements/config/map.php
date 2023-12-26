@@ -3,9 +3,9 @@
 /**
  * Map configuration
  *
- * PHP version 8.1
+ * PHP version 8.2
  *
- * @phpversion >= 8.1
+ * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
  * @subpackage Configuration
@@ -28,6 +28,7 @@ $map = [
     '/admin' => 'admin',
     '/clients' => 'clients',
     '/contact' => 'contact',
+    '/cookies' => 'cookies',
     '/designs' => 'clients',
     '/privacy-policy' => 'privacy',
     '/services' => 'services',

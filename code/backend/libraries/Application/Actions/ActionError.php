@@ -9,14 +9,13 @@ use JsonSerializable;
 /**
  * Class ActionError
  *
- * PHP version 8.1
+ * PHP version 8.2
  *
- * @phpversion >= 8.1
+ * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
  * @subpackage App\Application\Actions
  * @author     Benjamin J. Young <ben@blaher.me>
- * @copyright  2023 Web Elements
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
@@ -84,6 +83,8 @@ class ActionError implements JsonSerializable
 
     /**
      * Set description.
+     *
+     * @return self
      *
      * @param string|null $description Description (optional)
      */

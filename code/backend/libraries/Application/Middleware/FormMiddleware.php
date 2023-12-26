@@ -15,14 +15,13 @@ use Google_Service_Sheets_ValueRange;
 /**
  * Form middleware.
  *
- * PHP version 8.1
+ * PHP version 8.2
  *
- * @phpversion >= 8.1
+ * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
  * @subpackage App\Application\Middleware
  * @author     Benjamin J. Young <ben@blaher.me>
- * @copyright  2023 Web Elements
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
@@ -76,7 +75,7 @@ class FormMiddleware implements Middleware
                 $service = new Google_Service_Sheets($client);
 
                 // loop through $params
-                foreach ($params as $key => $pval) {
+                foreach (array_keys($params) as $key) {
                     // if the key is not a 'form-', unset it
                     if (substr($key, 0, 5) !== 'form_') {
                         unset($params[$key]);

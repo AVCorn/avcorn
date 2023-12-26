@@ -11,8 +11,26 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
 use Tests\TestCase;
 
+/**
+ * Test the Action class.
+ *
+ * PHP version 8.2
+ *
+ * @phpversion >= 8.2
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage Tests\Application\Actions
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
+ */
 class ActionTest extends TestCase
 {
+    /**
+     * Test action sets http code in respond.
+     *
+     * @return void
+     */
     public function testActionSetsHttpCodeInRespond()
     {
         $app = $this->getAppInstance();
@@ -40,6 +58,11 @@ class ActionTest extends TestCase
         $this->assertEquals(202, $response->getStatusCode());
     }
 
+    /**
+     * Test action sets http code in respond with data.
+     *
+     * @return void
+     */
     public function testActionSetsHttpCodeRespondData()
     {
         $app = $this->getAppInstance();

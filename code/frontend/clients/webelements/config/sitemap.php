@@ -3,9 +3,9 @@
 /**
  * Sitemap configuration
  *
- * PHP version 8.1
+ * PHP version 8.2
  *
- * @phpversion >= 8.1
+ * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
  * @subpackage Configuration
@@ -40,16 +40,17 @@ $sitemap = [
             'pages' => [
                 'services',
                 'clients',
+                'sitemap',
             ],
         ],
         'other' => [
-            'title' => 'Other Details',
+            'title' => 'Other',
             'description' => 'Additional information.',
             'link' => '/sitemap',
             'pages' => [
                 'terms',
                 'privacy',
-                'sitemap',
+                'cookies',
             ],
         ],
     ],
@@ -69,7 +70,7 @@ $sitemap = [
             'link' => '/services',
         ],
         'clients' => [
-            'title' => 'Our CLients',
+            'title' => 'Our Clients',
             'description' => 'List of our clients.',
             'link' => '/clients',
         ],
@@ -87,6 +88,11 @@ $sitemap = [
             'title' => 'Privacy Policy',
             'description' => 'Privacy policy of the website.',
             'link' => '/privacy-policy',
+        ],
+        'cookies' => [
+            'title' => 'Cookies Usage',
+            'description' => 'Our cookie usage.',
+            'link' => '/cookies',
         ],
         'sitemap' => [
             'title' => 'Sitemap',

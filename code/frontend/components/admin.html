@@ -1,26 +1,173 @@
-<!--<div id="admin-bar" class="top-bar-container" data-sticky-container>
-    <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
-        <div class="top-bar">
-            <div class="top-bar-left">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li class="menu-text">Admin</li>
-                    <li><a href="#">Navigation</a></li>
-                    <li><a href="#">Configuration</a></li>
-                </ul>
-            </div>
-            <div class="top-bar-right">
-                <ul class="menu">
-                    <li>
-                        <button type="button" class="button responsive-toggle" data-toggle="admin-bar">Logout</button>
-                    </li>
-                </ul>
-            </div>
+<script src="https://cdn.tiny.cloud/1/x9xy36zjzvlo5xr6e9t1udxx6gtrghktrfyedivqqj5gacbx/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zingtouch/1.0.6/zingtouch.min.js" referrerpolicy="origin"></script>
+
+<script type="text/javascript">
+    function toggleEditing() {
+        //check if 'is-editing' class is present on body
+        if (document.body.classList.contains('is-editing')) {
+            // remove class 'is-editing' from body
+            document.body.classList.remove('is-editing');
+            
+            // destroy tinymce
+            tinymce.remove('.editable');
+        } else {
+            // add class 'is-editing' to body
+            document.body.classList.add('is-editing');
+
+            // initialize tinymce
+            tinymce.init({
+                selector: '.editable',
+                inline: true
+            });
+        }
+    }
+
+    function toggleAdminBar() {
+        //check if 'hide' class is present on admin-bar
+        if (document.getElementById('admin-bar').classList.contains('hide')) {
+            // remove class 'hide' from admin-bar
+            document.getElementById('admin-bar').classList.remove('hide');
+        } else {
+            // add class 'hide' to admin-bar
+            document.getElementById('admin-bar').classList.add('hide');
+        }
+    }
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "header")) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV: 
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+    $(document).ready(function() {
+        dragElement(document.getElementById("admin-bar"));
+
+        var longTap = new ZingTouch.Tap({
+            maxDelay: 15000,
+            tolerance: 500
+        });
+        var swipeLogo = document.getElementById('designer-logo');
+        var swipeRegion = new ZingTouch.Region(document.body);
+        swipeRegion.bind(swipeLogo, longTap, function(e) {
+            if (e.detail.interval > 100) {
+                toggleAdminBar();
+                return;
+            }
+        });
+    });
+</script>
+
+<style>
+    .admin-bar {
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        top: 50%;
+        background-color: rgba(30, 30, 30, 80%);
+        position: absolute;
+        left: 0;
+        min-width: 200px;
+        border-radius: 10px;
+        font-weight: bold;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        z-index: 9002;
+    }
+
+    .admin-bar-move {
+        cursor: move;
+    }
+
+    .admin-bar-close {
+        background: rgba(255, 0, 0, 0.5) !important;
+        border-top-right-radius: 10px !important;
+        color: #fff !important;
+        font-weight: bold;
+    }
+
+    .admin-bar-save {
+        background: rgba(13, 255, 0, 0.4) !important;
+        border-bottom-right-radius: 10px !important;
+        color: #fff !important;
+        font-weight: bold;
+        margin: 0;
+    }
+</style>
+
+<div id="admin-bar" class="admin-bar hide">
+    <div class="float-right text-right">
+        <a href="#" class="button alert admin-bar-close" onclick="toggleAdminBar()">
+            X
+        </a>
+    </div>
+    <div class="admin-bar-move text-center">
+        ...
+    </div>
+
+    <br style="clear:both;" />
+
+    <div class="text-center hide">
+        <button type="button" class="button primary" data-toggle="loginModal">
+            Login
+        </button>
+    </div>
+
+    <div class="text-center">
+        <div class="switch">
+            <span style="font-size:1.2em; margin:0 5px;">
+                Edit
+            </span>
+            <input class="switch-input" id="editSwitch" type="checkbox" name="editSwitch" onclick="toggleEditing()" />
+            <label class="switch-paddle" for="editSwitch">
+                <span class="show-for-sr">Edit Mode</span>
+                <span class="switch-active" aria-hidden="true">On</span>
+                <span class="switch-inactive" aria-hidden="true">Off</span>
+            </label>
         </div>
+
+        <button class="button">Dashboard</button>
+    </div>
+    
+    <div class="text-right">
+        <button type="button" class="button success admin-bar-save">Save</button>
     </div>
 </div>
 
-
-<div class="sign-in-form reveal" id="exampleModal1" data-reveal>
+<div class="sign-in-form reveal" id="loginModal" data-reveal>
     <h4 class="text-center">Admin Access</h4>
 
     <form>
@@ -40,4 +187,4 @@
     <button class="close-button" data-close aria-label="Close modal" type="button">
         <span aria-hidden="true">&times;</span>
     </button>
-</div>-->
+</div>

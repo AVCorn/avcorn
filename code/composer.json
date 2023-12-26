@@ -22,7 +22,7 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.2",
         "ext-json": "*",
         "google/apiclient": "^2.15",
         "monolog/monolog": "^3.5",
@@ -34,6 +34,8 @@
     },
     "require-dev": {
         "jangregor/phpstan-prophecy": "^1.0.0",
+        "phpbench/phpbench": "^1.2",
+        "phpmd/phpmd": "^2.15",
         "phpro/grumphp": "*",
         "phpro/grumphp-shim": "^2.3",
         "phpspec/prophecy-phpunit": "^2.0",

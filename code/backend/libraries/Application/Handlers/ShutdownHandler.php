@@ -11,14 +11,13 @@ use Slim\Exception\HttpInternalServerErrorException;
 /**
  * Shutdown handler.
  *
- * PHP version 8.1
+ * PHP version 8.2
  *
- * @phpversion >= 8.1
+ * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
  * @subpackage App\Application\Handlers
  * @author     Benjamin J. Young <ben@blaher.me>
- * @copyright  2023 Web Elements
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
@@ -31,9 +30,9 @@ class ShutdownHandler
     /**
      * Constructor.
      *
-     * @param Request          $request
-     * @param HttpErrorHandler $errorHandler
-     * @param bool             $displayErrorDetails
+     * @param Request          $request             The request
+     * @param HttpErrorHandler $errorHandler        The error handler
+     * @param bool             $displayErrorDetails Display error details
      *
      * @return void
      */
@@ -84,7 +83,10 @@ class ShutdownHandler
                 }
             }
 
-            $exception = new HttpInternalServerErrorException($this->request, $message);
+            $exception = new HttpInternalServerErrorException(
+                $this->request,
+                $message
+            );
             $response = $this->errorHandler->__invoke(
                 $this->request,
                 $exception,

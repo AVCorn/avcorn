@@ -1,5 +1,9 @@
 # AVCorn
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2b09c4fbdcf94ae18406ae47b986be83)](https://app.codacy.com/gh/blaher/avcorn/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Coverage Status](https://coveralls.io/repos/github/AVCorn/avcorn/badge.svg?branch=main)](https://coveralls.io/github/AVCorn/avcorn?main)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 AVCorn is a simple VC CMS for basic content websites, no databases required.
 The original intent is for fast deploying, fast developing, and lightweight performance for low traffic website design clients.
 Written in PHP, and utilizing the Twig templating engine.
@@ -12,7 +16,7 @@ _"The nut doesn't fall from from the tree!"_
 
 ### Install the Application (Locally)
 
-You will require PHP 8.1 or newer.
+You will require PHP 8.2 or newer.
 
 To run the application in development, you can run this command:
 

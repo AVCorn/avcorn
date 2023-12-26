@@ -16,11 +16,26 @@ use Slim\Psr7\Headers;
 use Slim\Psr7\Request as SlimRequest;
 use Slim\Psr7\Uri;
 
+/**
+ * TestCase class
+ *
+ * PHP version 8.2
+ *
+ * @phpversion >= 8.2
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage Tests
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
+ */
 class TestCase extends PHPUnit_TestCase
 {
     use ProphecyTrait;
 
     /**
+     * Get App Instance
+     *
      * @return App
      * @throws Exception
      */
@@ -62,11 +77,14 @@ class TestCase extends PHPUnit_TestCase
     }
 
     /**
+     * Create Request
+     *
      * @param  string $method
      * @param  string $path
      * @param  array  $headers
      * @param  array  $cookies
      * @param  array  $serverParams
+     *
      * @return Request
      */
     protected function createRequest(

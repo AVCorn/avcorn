@@ -3,18 +3,17 @@
 /**
  * Routes configuration
  *
- * PHP version 8.1
+ * PHP version 8.2
  *
  * @param App $app The application
  *
  * @return void
  *
- * @phpversion >= 8.1
+ * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
  * @subpackage Includes
  * @author     Benjamin J. Young <ben@blaher.me>
- * @copyright  2023 Web Elements
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
@@ -94,6 +93,7 @@ return function (App $app) {
          * Create Route
          *
          * @var App      $app The application
+         * @var Request  $req The request
          * @var Response $res The response
          *
          * @return Response
@@ -160,8 +160,155 @@ return function (App $app) {
     }
 
     /**
+     * Favicon
+     *
+     * @var Request  $req  The request
+     * @var Response $res  The response
+     * @var array    $route The route
+     *
+     * @return Response
+     */
+    $app->get(
+        '/{favicon:.*}.ico',
+        function (Request $req, Response $res, array $route) use ($config) {
+            // amend '.ico' to uri
+            $file = $route['favicon'] . '.ico';
+
+            // default favicon path
+            $favicon_path = __DIR__
+                . '/../../public/assets/images/icons/'
+                . $file;
+
+            // figure out which favicon to use
+            if (isset($_ENV['client'])) {
+                $client_path = __DIR__
+                    . '/../'
+                    . $config['frontend_path']
+                    . $config['template_path']
+                    . '/assets/images/icons/'
+                    . $file;
+
+                if (file_exists($client_path)) {
+                    $favicon_path = $client_path;
+                }
+            }
+
+            // check for favicon existence
+            if (!file_exists($favicon_path)) {
+                // respond with 404
+                $res->getBody()->write('Not Found');
+                return $res->withStatus(404);
+            }
+
+            // write file contents of favicon
+            $favicon = file_get_contents($favicon_path);
+            $res->getBody()->write($favicon);
+
+            return $res
+                ->withStatus(200)
+                ->withHeader('Content-type', 'image/x-icon');
+        }
+    );
+
+    /**
+     * Assets
+     *
+     * @var Request  $req  The request
+     * @var Response $res  The response
+     * @var string   $path The path
+     *
+     * @return Response
+     */
+    $app->get(
+        '/assets/{file:.*}',
+        function (Request $req, Response $res, array $route) use ($config) {
+            // set file path
+            $file_root = __DIR__ . '/../' . $config['frontend_path'];
+            $file = '/assets/' . $route['file'];
+
+            $client_file = $file_root . $config['template_path'] . $file;
+            $assets_file = $file_root . $file;
+            $active_file = '';
+
+            if (file_exists($client_file)) {
+                // overwrite and use the client assest
+                $active_file = $client_file;
+            } elseif (file_exists($assets_file)) {
+                // use the default asset
+                $active_file = $assets_file;
+            } else {
+                // Not found
+                $res->getBody()->write('Not Found');
+                return $res->withStatus(404);
+            }
+
+            // write file contents
+            $file_contents = file_get_contents($active_file);
+            $res->getBody()->write($file_contents);
+
+            // get file type of $file
+            $file_type = mime_content_type($active_file);
+
+            // get the file extesion
+            $file_ext = pathinfo($active_file, PATHINFO_EXTENSION);
+
+            if ($file_ext === 'css') {
+                $file_type = 'text/css';
+            } elseif ($file_ext === 'js') {
+                $file_type = 'text/javascript';
+            }
+
+            return $res
+                ->withHeader('Content-type', $file_type)
+                ->withStatus(200);
+        }
+    );
+
+    /**
+     * Template Assets
+     *
+     * @var Request  $req  The request
+     * @var Response $res  The response
+     * @var string   $path The path
+     *
+     * @return Response
+     */
+    $app->get(
+        '/template/{template:.*}/assets/{file:.*}',
+        function (Request $req, Response $res, array $route) use ($config) {
+            // set file path
+            $file = __DIR__
+                . '/../'
+                . $config['frontend_path']
+                . $config['templates_root']
+                . $config['themes'][$route['template']]
+                . '/assets/'
+                . $route['file'];
+
+            // check for file existence
+            if (file_exists($file)) {
+                // write file contents
+                $file_contents = file_get_contents($file);
+                $res->getBody()->write($file_contents);
+
+                // get file type of $file
+                $file_type = mime_content_type($file);
+
+                return $res
+                    ->withHeader('Content-type', $file_type)
+                    ->withStatus(200);
+            }
+
+            // Not found
+            $res->getBody()->write('Not Found');
+            return $res->withStatus(404);
+        }
+    );
+
+    /**
      * Health Check
      *
+     * @var Request  $req  The request
      * @var Response $res  The response
      *
      * @return Response
@@ -170,6 +317,7 @@ return function (App $app) {
         '/health',
         function (Request $req, Response $res) {
             $res->getBody()->write('Ok');
+
             return $res;
         }
     );
@@ -178,6 +326,7 @@ return function (App $app) {
      * Watcher
      *
      * @var mixed    $this The application
+     * @var Request  $req  The request
      * @var Response $res  The response
      *
      * @return Response
@@ -190,9 +339,73 @@ return function (App $app) {
             $latest_time = filemtime($latest_file);
 
             $json = '{"time": ' . (string)$latest_time . '}';
-
             $res->getBody()->write($json);
+
             return $res;
+        }
+    );
+
+
+    /**
+     * Documentation
+     *
+     * @var Request  $req  The request
+     * @var Response $res  The response
+     * @var string   $path The path
+     *
+     * @return Response
+     */
+    $app->get(
+        '/docs{file:.*}',
+        function (Request $req, Response $res, array $route) {
+            // check if production
+            if (
+                isset($_ENV['environment'])
+                && $_ENV['environment'] === 'production'
+            ) {
+                return;
+            }
+
+            // check if $file is '/docs' or '/docs/coverage'
+            if (
+                $route['file'] === ''
+                || $route['file'] === '/'
+                || $route['file'] === '/coverage'
+                || $route['file'] === '/coverage/'
+            ) {
+                $route['file'] .= '/index.html';
+            }
+
+            // set file path
+            $file_root = __DIR__ . '/../../';
+            $file = '/docs/' . $route['file'];
+            $doc_file = $file_root . $file;
+
+            if (!file_exists($doc_file)) {
+                // Not found
+                $res->getBody()->write('Not Found');
+                return $res->withStatus(404);
+            }
+
+            // write file contents
+            $file_contents = file_get_contents($doc_file);
+            $res->getBody()->write($file_contents);
+
+            // get file type of $file
+            $file_type = mime_content_type($doc_file);
+
+            // get the file extesion
+            $file_ext = pathinfo($doc_file, PATHINFO_EXTENSION);
+
+            if ($file_ext === 'css') {
+                $file_type = 'text/css';
+            } elseif ($file_ext === 'js') {
+                $file_type = 'text/javascript';
+            }
+
+            return $res
+                ->withHeader('Content-type', $file_type)
+                ->withStatus(200);
         }
     );
 };
