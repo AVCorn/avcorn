@@ -45,6 +45,12 @@ jobs:
               working-directory: code
               run: php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-clover clover.xml
 
+            - name: Run codacy-coverage-reporter
+              uses: codacy/codacy-coverage-reporter-action@v1
+              with:
+                project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+                coverage-reports: clover.xml
+
             - name: Upload coverage results to Coveralls
               working-directory: code
               if: matrix.analysis
@@ -53,9 +59,3 @@ jobs:
               run: |
                   composer require php-coveralls/php-coveralls -n -W
                   vendor/bin/php-coveralls --coverage_clover=clover.xml -v
-
-            - name: Run codacy-coverage-reporter
-              uses: codacy/codacy-coverage-reporter-action@v1
-              with:
-                project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-                coverage-reports: clover.xml
