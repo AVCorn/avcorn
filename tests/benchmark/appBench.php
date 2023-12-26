@@ -19,13 +19,14 @@ use Slim\Psr7\Request as SlimRequest;
 use Slim\Psr7\Uri;
 
 /**
- * AppBench
+ * AppBench class
  *
  * PHP version 8.1
  *
  * @category   CMS
  * @package    AVCorn
  * @subpackage Benchmark
+ * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
@@ -35,6 +36,8 @@ class AppBench
      * Benchmark App Creation
      *
      * PHP version 8.1
+     *
+     * @return void
      *
      * @Revs(1000)
      * @Iterations(10)
@@ -77,12 +80,25 @@ class AppBench
         $routes = include __DIR__
             . '/../../code/backend/includes/routes.php';
         $routes($app);
+
+        unset(
+            $app,
+            $routes,
+            $middleware,
+            $container,
+            $repositories,
+            $dependencies,
+            $settings,
+            $containerBuilder
+        );
     }
 
     /**
      * Benchmark App Request
      *
      * PHP version 8.1
+     * 
+     * return void
      *
      * @Revs(1000)
      * @Iterations(10)
@@ -101,6 +117,14 @@ class AppBench
             [],
             [],
             $stream
+        );
+
+        unset(
+            $request,
+            $uri,
+            $handle,
+            $stream,
+            $heads
         );
     }
 }
