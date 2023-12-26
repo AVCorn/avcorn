@@ -1,0 +1,52 @@
+{% extends layout_path %}
+
+{% block title %}
+    {{ info.title }} - Cookies
+{% endblock %}
+
+{% block header %}
+    <div class="row padding-1 editable">
+        <h1>Cookie Disclosure</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row padding-2 text-justify editable">
+        <div class="callout secondary columns small-12 medium-6 large-4 end float-right margin-2 padding-2">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or concerns about our Terms of Use, please contact us at:</p>
+            <div class="padding-1">
+                <strong>{{ info.company }}</strong><br />
+                {{ info.address }}<br />
+                {{ info.city }}, {{ info.state }} {{ info.zip }}<br />
+                {{ info.phone }}<br />
+            </div>
+            <br />
+
+            <a class="button float-right" href="/contact{{ linkparams }}">Contact Us</a>
+        </div>
+
+        <h2>Cookie Usage for {{ info.company }}</h2>
+        <p><strong>Last Updated:</strong> <em>December 26th, 2023</em></p>
+
+        <h2 class="subheader">What are cookies?</h2>
+        <p>Cookies are small text files that websites place on your device as you are browsing. They are processed and stored by your web browser. In and of themselves, cookies are harmless and serve crucial functions for websites. However, they can be used maliciously as well, and therefore, it's important for you to understand how they work.</p>
+        
+        <h2 class="subheader">How do we use cookies?</h2>
+        <p>We use cookies to enhance your browsing experience by:</p>
+
+        <ul>
+            <li>Remembering your login details and providing secure login.</li>
+            <li>Remembering your personal preferences.</li>
+            <li>Analyzing how you navigate our content to help us tailor our website to your preferences.</li>
+            <li>Providing advertisements that are tailored to your interests.</li>
+            <li>Tracking which pages you visit on our site.</li>
+        </ul>
+        
+        <h2 class="subheader">Your control over cookies</h2>
+        <p>You have the right to decide whether to accept or reject cookies. You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website though your access to some functionality and areas of our site may be restricted.</p>
+        
+        <h2 class="subheader">Changes to our cookie policy</h2>
+        <p>We may update this policy from time to time. The updated version will be indicated by an updated <em>"Revised"</em> date.</p>
+    </div>
+{% endblock %}

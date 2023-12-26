@@ -53,6 +53,7 @@ $sitemap = [
             'pages' => [
                 'terms',
                 'privacy',
+                'cookies',
                 'sitemap',
             ],
         ],
@@ -76,6 +77,11 @@ $sitemap = [
             'title' => 'Contribute',
             'description' => 'How you can contribute to AVCorn.',
             'link' => '/contribute',
+        ],
+        'cookies' => [
+            'title' => 'Cookies',
+            'description' => 'Our cookie usage.',
+            'link' => '/cookies',
         ],
         'guide' => [
             'title' => 'Guide',

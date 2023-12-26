@@ -40,16 +40,17 @@ $sitemap = [
             'pages' => [
                 'services',
                 'clients',
+                'sitemap',
             ],
         ],
         'other' => [
-            'title' => 'Other Details',
+            'title' => 'Other',
             'description' => 'Additional information.',
             'link' => '/sitemap',
             'pages' => [
                 'terms',
                 'privacy',
-                'sitemap',
+                'cookies',
             ],
         ],
     ],
@@ -87,6 +88,11 @@ $sitemap = [
             'title' => 'Privacy Policy',
             'description' => 'Privacy policy of the website.',
             'link' => '/privacy-policy',
+        ],
+        'cookies' => [
+            'title' => 'Cookies Usage',
+            'description' => 'Our cookie usage.',
+            'link' => '/cookies',
         ],
         'sitemap' => [
             'title' => 'Sitemap',

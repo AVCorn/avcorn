@@ -27,6 +27,7 @@ $map = [
     '/admin' => 'admin',
     '/contact' => 'contact',
     '/contribute' => 'contribute',
+    '/cookies' => 'cookies',
     '/designs' => 'designs',
     '/gallery' => 'gallery',
     '/guide' => 'guide',
