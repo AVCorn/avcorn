@@ -32,7 +32,7 @@ class ShutdownHandler
      *
      * @param Request          $request             The request
      * @param HttpErrorHandler $errorHandler        The error handler
-     * @param bool             $displayErrorDetails Whether or not to display error details
+     * @param bool             $displayErrorDetails Display error details
      *
      * @return void
      */

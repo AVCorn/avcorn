@@ -34,11 +34,11 @@ abstract class Action
     /**
      * Constructor
      *
-     * @codeCoverageIgnore
-     *
      * @param LoggerInterface $logger The logger
      *
      * @return void
+     *
+     * @codeCoverageIgnore
      */
     public function __construct(LoggerInterface $logger)
     {

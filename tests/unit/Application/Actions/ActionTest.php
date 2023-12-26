@@ -20,6 +20,7 @@ use Tests\TestCase;
  * @category   CMS
  * @package    AVCorn
  * @subpackage Tests\Application\Actions
+ * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
@@ -27,6 +28,8 @@ class ActionTest extends TestCase
 {
     /**
      * Test action sets http code in respond.
+     *
+     * @return void
      */
     public function testActionSetsHttpCodeInRespond()
     {
@@ -57,6 +60,8 @@ class ActionTest extends TestCase
 
     /**
      * Test action sets http code in respond with data.
+     *
+     * @return void
      */
     public function testActionSetsHttpCodeRespondData()
     {
