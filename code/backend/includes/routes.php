@@ -250,6 +250,15 @@ return function (App $app) {
             // get file type of $file
             $file_type = mime_content_type($active_file);
 
+            // get the file extesion
+            $file_ext = pathinfo($active_file, PATHINFO_EXTENSION);
+
+            if ($file_ext === 'css') {
+                $file_type = 'text/css';
+            } elseif ($file_ext === 'js') {
+                $file_type = 'text/javascript';
+            }
+
             return $res
                 ->withHeader('Content-type', $file_type)
                 ->withStatus(200);
