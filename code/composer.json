@@ -35,6 +35,7 @@
     "require-dev": {
         "jangregor/phpstan-prophecy": "^1.0.0",
         "phpbench/phpbench": "^1.2",
+        "phpmd/phpmd": "^2.15",
         "phpro/grumphp": "*",
         "phpro/grumphp-shim": "^2.3",
         "phpspec/prophecy-phpunit": "^2.0",
