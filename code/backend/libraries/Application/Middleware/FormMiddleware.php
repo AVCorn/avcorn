@@ -22,7 +22,6 @@ use Google_Service_Sheets_ValueRange;
  * @package    AVCorn
  * @subpackage App\Application\Middleware
  * @author     Benjamin J. Young <ben@blaher.me>
- * @copyright  2023 Web Elements
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */

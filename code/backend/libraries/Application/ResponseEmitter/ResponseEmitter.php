@@ -17,7 +17,6 @@ use Slim\ResponseEmitter as SlimResponseEmitter;
  * @package    AVCorn
  * @subpackage App\Application\ResponseEmitter
  * @author     Benjamin J. Young <ben@blaher.me>
- * @copyright  2023 Web Elements
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
