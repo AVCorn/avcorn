@@ -36,6 +36,8 @@ class HttpErrorHandler extends SlimErrorHandler
      * Respond.
      *
      * @inheritdoc
+     *
+     * @return Response
      */
     protected function respond(): Response
     {

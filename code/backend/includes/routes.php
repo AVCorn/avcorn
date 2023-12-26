@@ -359,7 +359,10 @@ return function (App $app) {
         '/docs{file:.*}',
         function (Request $req, Response $res, array $route) {
             // check if production
-            if (isset($_ENV['environment']) && $_ENV['environment'] === 'production') {
+            if (
+                isset($_ENV['environment'])
+                && $_ENV['environment'] === 'production'
+            ) {
                 return;
             }
 

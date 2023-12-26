@@ -28,6 +28,8 @@ class SessionMiddleware implements Middleware
      * Process middleware.
      *
      * {@inheritdoc}
+     *
+     * @return Response
      */
     public function process(Request $request, RequestHandler $handler): Response
     {

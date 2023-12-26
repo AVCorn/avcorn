@@ -16,11 +16,16 @@ use Slim\Psr7\Headers;
 use Slim\Psr7\Request as SlimRequest;
 use Slim\Psr7\Uri;
 
+/**
+ * TestCase class
+ */
 class TestCase extends PHPUnit_TestCase
 {
     use ProphecyTrait;
 
     /**
+     * Get App Instance
+     *
      * @return App
      * @throws Exception
      */
@@ -62,11 +67,14 @@ class TestCase extends PHPUnit_TestCase
     }
 
     /**
+     * Create Request
+     *
      * @param  string $method
      * @param  string $path
      * @param  array  $headers
      * @param  array  $cookies
      * @param  array  $serverParams
+     * 
      * @return Request
      */
     protected function createRequest(

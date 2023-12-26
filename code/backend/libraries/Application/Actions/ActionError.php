@@ -84,6 +84,8 @@ class ActionError implements JsonSerializable
     /**
      * Set description.
      *
+     * @return self
+     *
      * @param string|null $description Description (optional)
      */
     public function setDescription(?string $description = null): self

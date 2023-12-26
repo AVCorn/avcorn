@@ -36,7 +36,7 @@ abstract class Action
      *
      * @codeCoverageIgnore
      *
-     * @param LoggerInterface $logger
+     * @param LoggerInterface $logger The logger
      *
      * @return void
      */
@@ -71,6 +71,8 @@ abstract class Action
 
     /**
      * Action
+     *
+     * @return Response
      *
      * @throws DomainRecordNotFoundException
      * @throws HttpBadRequestException

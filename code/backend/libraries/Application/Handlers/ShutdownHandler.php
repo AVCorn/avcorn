@@ -30,9 +30,9 @@ class ShutdownHandler
     /**
      * Constructor.
      *
-     * @param Request          $request
-     * @param HttpErrorHandler $errorHandler
-     * @param bool             $displayErrorDetails
+     * @param Request          $request             The request
+     * @param HttpErrorHandler $errorHandler        The error handler
+     * @param bool             $displayErrorDetails Whether or not to display error details
      *
      * @return void
      */
@@ -59,7 +59,8 @@ class ShutdownHandler
             $errorLine = $error['line'];
             $errorMessage = $error['message'];
             $errorType = $error['type'];
-            $message = 'An error while processing your request. Please try again later.';
+            $message =
+                'An error while processing your request. Please try again later.';
 
             if ($this->displayErrorDetails) {
                 switch ($errorType) {
@@ -83,7 +84,10 @@ class ShutdownHandler
                 }
             }
 
-            $exception = new HttpInternalServerErrorException($this->request, $message);
+            $exception = new HttpInternalServerErrorException(
+                $this->request,
+                $message
+            );
             $response = $this->errorHandler->__invoke(
                 $this->request,
                 $exception,
