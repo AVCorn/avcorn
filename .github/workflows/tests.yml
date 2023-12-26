@@ -53,3 +53,9 @@ jobs:
               run: |
                   composer require php-coveralls/php-coveralls -n -W
                   vendor/bin/php-coveralls --coverage_clover=clover.xml -v
+
+            - name: Run codacy-coverage-reporter
+              uses: codacy/codacy-coverage-reporter-action@v1
+              with:
+                project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+                coverage-reports: clover.xml

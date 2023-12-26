@@ -59,8 +59,7 @@ class ShutdownHandler
             $errorLine = $error['line'];
             $errorMessage = $error['message'];
             $errorType = $error['type'];
-            $message =
-                'An error while processing your request. Please try again later.';
+            $message = 'An error while processing your request. Please try again later.';
 
             if ($this->displayErrorDetails) {
                 switch ($errorType) {
