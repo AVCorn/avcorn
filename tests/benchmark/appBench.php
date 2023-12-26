@@ -21,7 +21,7 @@ use Slim\Psr7\Uri;
 /**
  * AppBench class
  *
- * PHP version 8.1
+ * PHP version 8.2
  *
  * @category   CMS
  * @package    AVCorn
@@ -34,8 +34,6 @@ class AppBench
 {
     /**
      * Benchmark App Creation
-     *
-     * PHP version 8.1
      *
      * @return void
      *
@@ -95,10 +93,8 @@ class AppBench
 
     /**
      * Benchmark App Request
-     *
-     * PHP version 8.1
      * 
-     * return void
+     * @return void
      *
      * @Revs(1000)
      * @Iterations(10)
