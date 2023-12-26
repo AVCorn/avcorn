@@ -20,9 +20,9 @@ use Throwable;
 /**
  * Custom error handler that returns JSON.
  *
- * PHP version 8.1
+ * PHP version 8.2
  *
- * @phpversion >= 8.1
+ * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
  * @subpackage App\Application\Handlers

@@ -3,13 +3,13 @@
 /**
  * Repositories configuration
  *
- * PHP version 8.1
+ * PHP version 8.2
  *
  * @param ContainerBuilder $containerBuilder
  *
  * @return void
  *
- * @phpversion >= 8.1
+ * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
  * @subpackage Includes

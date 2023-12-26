@@ -12,7 +12,7 @@ _"The nut doesn't fall from from the tree!"_
 
 ### Install the Application (Locally)
 
-You will require PHP 8.1 or newer.
+You will require PHP 8.2 or newer.
 
 To run the application in development, you can run this command:
 
