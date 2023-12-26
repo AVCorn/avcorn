@@ -16,7 +16,7 @@ FROM php:8.2-apache
 WORKDIR /var/www/
 
 RUN apt-get update
-RUN apt-get install -y curl=8.1.2 git=2.43.0 --no-install-recommends \
+RUN apt-get install -y curl git --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
