@@ -1,4 +1,4 @@
-{% set tmppath = template_path~layouts_root~"/home.html" %}
+{% set tmppath = paths.layouts~"/home.html" %}
 {% extends tmppath %}
 
 {% block title %}
@@ -12,8 +12,8 @@
             <div class="columns small-12 large-9">
 
                 <div class="row text-justify editable">
-                    <h1 style="color:#2c3840; font-weight:bold;">The Small Client CMS</h1>
-                    <h4 class="subheader">"The nut doesn't fall from from the tree!"</h4>
+                    <h1 style="color:#2c3840; font-weight:bold;">{{ info.slogan }}</h1>
+                    <h4 class="subheader">"{{ info.motto }}"</h4>
                     <p>
                         AVCorn is a simple VC CMS for basic content websites, no databases required.
                         The original intent is for fast deploying, fast developing, and lightweight performance for low traffic website design clients.

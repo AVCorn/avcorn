@@ -25,7 +25,7 @@ $information = [
     'company' => 'AVCorn',
     'title' => 'AVCorn',
     'slogan' => 'The Small Client CMS',
-    'motto' => "The Nut Doesn't Fall Far From The Tree",
+    'motto' => "The Nut Doesn't Fall Far From The Tree!",
     'bio' => "
         You're awesome.
         We're awesome.
