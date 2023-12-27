@@ -18,35 +18,37 @@
         <!-- admin functionality injection (hidden) -->
         {% include "components/admin.html" %}
 
-        <header>
+        <header class="top">
             <div class="top-bar">
                 <!-- company logo -->
                 <div class="logo">
-                    <a href="/">
-                        <img src="{{ info.logo }}" alt="{{ info.company }}" />
+                    <a class="logo-link" href="/">
+                        <img class="logo-img" src="{{ info.logo }}" alt="{{ info.company }}" />
                     </a>
                 </div>
 
                 <!-- basic navigation -->
-                <nav>
-                    <ul class="menu">
+                <nav class="navigation">
+                    <ul class="navigation-list menu">
                         {% include "components/navigation.html" %}
                     </ul>
                 </nav>
             </div>
 
-            <!-- content title overridden by each page -->
-            {% block header %}
-                <h1 class="editable">
-                    {{ info.title }}
-                </h1>
-            {% endblock %}
+            <div class="top-content">
+                <!-- content title overridden by each page -->
+                {% block header %}
+                    <h1 class="title editable">
+                        {{ info.title }}
+                    </h1>
+                {% endblock %}
+            </div>
         </header>
 
-        <article>
+        <article class="main">
             <!-- content overridden by each page -->
             {% block content %}
-                <div class="editable"></div>
+                <div class="main-content editable"></div>
             {% endblock %}
         </article>
 
@@ -55,10 +57,10 @@
             {% include "components/contact.html" %}
         </div>
 
-        <footer>
+        <footer class="bottom">
             <!-- footer overridden by each page -->
             {% block footer %}
-                <div class="editable"></div>
+                <div class="bottom-content editable"></div>
             {% endblock %}
 
             <!-- social icons -->
@@ -67,15 +69,16 @@
             </ul>
 
             <!-- basic navigation -->
-            <nav>
+            <nav class="bottom-navigation">
                 <ul class="menu">
                     {% include "components/navigation.html" %}
                 </ul>
             </nav>
 
             <!-- copyright info -->
-            <div class="copy">
+            <div class="copyright">
                 &copy; {{ info.copyright }} {{ "now"|date("Y") }} - {{ info.legal }}
+            </div>
         </footer>
     </body>
 </html>

@@ -12,9 +12,10 @@
 
 {% for key, icon in socialicons %}
     {% if social[key] %}
-        <li>
-            <a href="{{ social[key] }}" target="_blank" rel="noopener noreferrer">
-                <i class="{{ icon }}" aria-hidden="true"></i>
+        <li class="social-item">
+            <a class="social-link" href="{{ social[key] }}" target="_blank" rel="noopener noreferrer">
+                <i class="social-icon {{ icon }}" aria-hidden="true"></i>
+                <span class="social-icon-text hide">{{ key|capitalize }}</span>
             </a>
         </li>
     {% endif %}
