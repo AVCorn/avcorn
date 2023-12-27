@@ -1,35 +1,81 @@
 <!DOCTYPE html>
 <html class="whatinput-types-initial whatinput-types-mouse" lang="en">
     <head>
-        <title>{% block title %}{% endblock %}</title>
+        <!-- each page can override this -->
+        <title>{% block title %}{{ info.title }}{% endblock %}</title>
 
+        <!-- base avcorn meta -->
         {% include "components/head.html" %}
 
         <!-- Layout Styles/Scripts Here -->
 
+        <!-- use these as overrides for each individual page -->
         {% block styles %}{% endblock %}
         {% block scripts %}{% endblock %}
     </head>
 
     <body>
+        <!-- admin functionality injection (hidden) -->
         {% include "components/admin.html" %}
 
         <header>
+            <div class="top-bar">
+                <!-- company logo -->
+                <div class="logo">
+                    <a href="/">
+                        <img src="{{ info.logo }}" alt="{{ info.company }}" />
+                    </a>
+                </div>
+
+                <!-- basic navigation -->
+                <nav>
+                    <ul class="menu">
+                        {% include "components/navigation.html" %}
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- content title overridden by each page -->
             {% block header %}
-                <div class="editable"></div>
+                <h1 class="editable">
+                    {{ info.title }}
+                </h1>
             {% endblock %}
         </header>
 
         <article>
+            <!-- content overridden by each page -->
             {% block content %}
                 <div class="editable"></div>
             {% endblock %}
         </article>
 
+        <!-- a contact form -->
+        <div clas="contact">
+            {% include "components/contact.html" %}
+        </div>
+
         <footer>
+            <!-- footer overridden by each page -->
             {% block footer %}
                 <div class="editable"></div>
             {% endblock %}
+
+            <!-- social icons -->
+            <ul class="social">
+                {% include "components/social.html" %}
+            </ul>
+
+            <!-- basic navigation -->
+            <nav>
+                <ul class="menu">
+                    {% include "components/navigation.html" %}
+                </ul>
+            </nav>
+
+            <!-- copyright info -->
+            <div class="copy">
+                &copy; {{ info.copyright }} {{ "now"|date("Y") }} - {{ info.legal }}
         </footer>
     </body>
 </html>
