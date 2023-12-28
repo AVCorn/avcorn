@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Domain Exception
+ * Tracker configuration
  *
  * PHP version 8.2
  *
  * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
- * @subpackage App\Domain\DomainException
+ * @subpackage Configuration
  * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
@@ -16,15 +16,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\DomainException;
-
-use Exception;
-
 /**
- * Abstract Domain Exception Class
+ * Tracker configuration
  *
- * @category Exception
+ * @var array $trackers Tracker configuration
  */
-abstract class DomainException extends Exception
-{
-}
+$trackers = [];

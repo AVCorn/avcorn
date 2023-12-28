@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * Application Benchmarking
+ *
+ * PHP version 8.2
+ *
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage Benchmark
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
+ */
+
 declare(strict_types=1);
 
 namespace Benchmark;
@@ -21,14 +34,7 @@ use Slim\Psr7\Uri;
 /**
  * AppBench class
  *
- * PHP version 8.2
- *
- * @category   CMS
- * @package    AVCorn
- * @subpackage Benchmark
- * @author     Benjamin J. Young <ben@blaher.me>
- * @license    GNU General Public License, version 3
- * @link       https://github.com/avcorn/avcorn
+ * @category TestBenchmark
  */
 class AppBench
 {

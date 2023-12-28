@@ -1,35 +1,84 @@
 <!DOCTYPE html>
 <html class="whatinput-types-initial whatinput-types-mouse" lang="en">
     <head>
-        <title>{% block title %}{% endblock %}</title>
+        <!-- each page can override this -->
+        <title>{% block title %}{{ info.title }}{% endblock %}</title>
 
+        <!-- base avcorn meta -->
         {% include "components/head.html" %}
 
         <!-- Layout Styles/Scripts Here -->
 
+        <!-- use these as overrides for each individual page -->
         {% block styles %}{% endblock %}
         {% block scripts %}{% endblock %}
     </head>
 
     <body>
+        <!-- admin functionality injection (hidden) -->
         {% include "components/admin.html" %}
 
-        <header>
-            {% block header %}
-                <div class="editable"></div>
-            {% endblock %}
+        <header class="top">
+            <div class="top-bar">
+                <!-- company logo -->
+                <div class="logo">
+                    <a class="logo-link" href="/">
+                        <img class="logo-img" src="{{ info.logo }}" alt="{{ info.company }}" />
+                    </a>
+                </div>
+
+                <!-- basic navigation -->
+                <nav class="navigation">
+                    <ul class="navigation-list menu">
+                        {% include "components/navigation.html" %}
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="top-content">
+                <!-- content title overridden by each page -->
+                {% block header %}
+                    <h1 class="title editable">
+                        {{ info.title }}
+                    </h1>
+                {% endblock %}
+            </div>
         </header>
 
-        <article>
+        <article class="main">
+            <!-- content overridden by each page -->
             {% block content %}
-                <div class="editable"></div>
+                <div class="main-content editable"></div>
             {% endblock %}
         </article>
 
-        <footer>
+        <!-- a contact form -->
+        <div clas="contact">
+            {% include "components/contact.html" %}
+        </div>
+
+        <footer class="bottom">
+            <!-- footer overridden by each page -->
             {% block footer %}
-                <div class="editable"></div>
+                <div class="bottom-content editable"></div>
             {% endblock %}
+
+            <!-- social icons -->
+            <ul class="social">
+                {% include "components/social.html" %}
+            </ul>
+
+            <!-- basic navigation -->
+            <nav class="bottom-navigation">
+                <ul class="menu">
+                    {% include "components/navigation.html" %}
+                </ul>
+            </nav>
+
+            <!-- copyright info -->
+            <div class="copyright">
+                &copy; {{ info.copyright }} {{ "now"|date("Y") }} - {{ info.legal }}
+            </div>
         </footer>
     </body>
 </html>

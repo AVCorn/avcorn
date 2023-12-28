@@ -1,11 +1,7 @@
 <?php
 
-declare(strict_types=1);
-
-namespace App\Application\Watcher;
-
 /**
- * Interface WatcherInterface
+ * Watcher Interface
  *
  * PHP version 8.2
  *
@@ -17,12 +13,22 @@ namespace App\Application\Watcher;
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
+
+declare(strict_types=1);
+
+namespace App\Application\Watcher;
+
+/**
+ * Watcher Interface Class
+ *
+ * @category Middleware
+ */
 interface WatcherInterface
 {
     /**
      * Check for changes.
      *
-     * @param string $dir
+     * @param string $dir Directory to check
      *
      * @return string
      */

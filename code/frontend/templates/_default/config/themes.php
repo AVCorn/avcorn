@@ -33,6 +33,7 @@ $themes = [
     'autoshop' => 'examples/categories/autoshop',
     'church' => 'examples/categories/church',
     'coffeeshop' => 'examples/categories/coffeeshop',
+    'insurance' => 'examples/categories/insurance',
     'landscape' => 'examples/categories/lawncare',
     'restaurant' => 'examples/categories/restaurant',
 ];

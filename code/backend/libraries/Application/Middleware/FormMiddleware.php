@@ -1,6 +1,20 @@
 <?php
 
-declare(strict_types=1);
+/**
+ * Form Middleware
+ *
+ * PHP version 8.2
+ *
+ * @phpversion >= 8.2
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage App\Application\Middleware
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
+ */
+
+ declare(strict_types=1);
 
 namespace App\Application\Middleware;
 
@@ -13,17 +27,9 @@ use Google_Service_Sheets;
 use Google_Service_Sheets_ValueRange;
 
 /**
- * Form middleware.
+ * Form Middleware Class
  *
- * PHP version 8.2
- *
- * @phpversion >= 8.2
- * @category   CMS
- * @package    AVCorn
- * @subpackage App\Application\Middleware
- * @author     Benjamin J. Young <ben@blaher.me>
- * @license    GNU General Public License, version 3
- * @link       https://github.com/avcorn/avcorn
+ * @category Middleware
  */
 class FormMiddleware implements Middleware
 {

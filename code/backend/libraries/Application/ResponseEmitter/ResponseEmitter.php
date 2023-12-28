@@ -1,14 +1,7 @@
 <?php
 
-declare(strict_types=1);
-
-namespace App\Application\ResponseEmitter;
-
-use Psr\Http\Message\ResponseInterface;
-use Slim\ResponseEmitter as SlimResponseEmitter;
-
 /**
- * Response emitter.
+ * Response Emitter
  *
  * PHP version 8.2
  *
@@ -20,12 +13,26 @@ use Slim\ResponseEmitter as SlimResponseEmitter;
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
+
+declare(strict_types=1);
+
+namespace App\Application\ResponseEmitter;
+
+use Psr\Http\Message\ResponseInterface;
+use Slim\ResponseEmitter as SlimResponseEmitter;
+
+/**
+ * Response Emitter Class
+ *
+ * @category Emitter
+ */
 class ResponseEmitter extends SlimResponseEmitter
 {
     /**
      * Emit response.
      *
      * {@inheritdoc}
+     * @param ResponseInterface $response The response
      *
      * @return void
      */

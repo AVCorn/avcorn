@@ -1,13 +1,7 @@
 <?php
 
-declare(strict_types=1);
-
-namespace App\Application\Actions;
-
-use JsonSerializable;
-
 /**
- * Class ActionPayload
+ * Action Payload
  *
  * PHP version 8.2
  *
@@ -18,6 +12,18 @@ use JsonSerializable;
  * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
+ */
+
+ declare(strict_types=1);
+
+namespace App\Application\Actions;
+
+use JsonSerializable;
+
+/**
+ * Action Payload Class
+ *
+ * @category Action
  */
 class ActionPayload implements JsonSerializable
 {

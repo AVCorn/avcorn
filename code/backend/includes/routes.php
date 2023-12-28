@@ -29,64 +29,120 @@ use Slim\Views\Twig;
 
 return function (App $app) {
     // default sets
-    $default = 'default';
-    $default_path = '/_' . $default . '/';
-    $templates_dir = '/templates/';
+    $avcorn   = 'avcorn';
+    $default  = 'default';
+    $template = '_' . $default;
+
+    //TODO: Make a frontend paths object for this stuff
+    // define directories
+    $app_root           = '/../../';
+    $public_dir         = '/public/';
+    $frontend_dir       = '/frontend/';
+    $assets_dir         = '/assets/';
+    $clients_dir        = '/clients/';
+    $components_dir     = '/components/';
+    $templates_dir      = '/templates/';
+    $template_dir        = '/' . $template . '/';
+    $layouts_dir        = '/layouts/';
+    $template_extension = '.html';
+    $config_file        = '/config.php';
+    $pages_dir          = '/pages/';
+    $backend_dir        = '/backend/';
+    $docs_dir           = '/docs/';
+
+    // define paths
+    $app_path        = __DIR__         . $app_root;
+    $public_path     = $app_path       . $public_dir;
+    $frontend_path   = $app_path       . $frontend_dir;
+    $clients_path    = $frontend_path  . $clients_dir;
+    $assets_path     = $frontend_path  . $assets_dir;
+    $components_path = $frontend_path  . $components_dir;
+    $templates_path  = $frontend_path  . $templates_dir;
+    $template_path   = $templates_path . $template_dir;
+    $layouts_path    = $template_path  . $layouts_dir;
+    $config_path     = $template_path  . $config_file;
+    $pages_path      = $frontend_path  . $pages_dir;
+    $backend_path    = $app_path       . $backend_dir;
+    $docs_path       = $app_path       . $docs_dir;
+
+    // define to use client or not
+    $client = $_ENV['client'] ?? false;
 
     // override defaults if client is set in environment
     if (
-        isset($_ENV['client'])
-        && $_ENV['client'] !== 'default'
-        && $_ENV['client'] !== 'avcorn'
+        $client
+        && $client !== $default
+        && $client !== $avcorn
     ) {
-        $default = $_ENV['client'];
-        $default_path = '/' . $default . '/';
-        $templates_dir = '/clients/';
+        $template = $client;
+        $templates_dir = $clients_dir;
+        $template_dir  = '/' . $template . '/';
+
+        $templates_path = $frontend_path  . $templates_dir;
+        $template_path  = $templates_path . $template_dir;
+        $layouts_path   = $template_path  . $layouts_dir;
+        $pages_path     = $template_path  . $pages_dir;
+        $config_path    = $template_path  . $config_file;
     }
 
-    //load config
-    include_once __DIR__
-        . '../../../frontend/'
-        . $templates_dir
-        . $default_path
-        . '/config.php';
+    // load config
+    include_once $config_path;
 
     // set environment
     $config['development'] = true;
     $config['production'] = false;
-    if (isset($_ENV['environment']) && $_ENV['environment'] === 'production') {
+
+    // if we are in production
+    if (
+        isset($_ENV['environment'])
+        && $_ENV['environment'] === 'production'
+    ) {
         $config['development'] = false;
-        $config['production'] = true;
+        $config['production']  = true;
     }
 
+    $config['paths'] = [
+        'public'     => $public_path,
+        'docs'       => $docs_path,
+        'frontend'   => $frontend_path,
+        'assets'     => $assets_path,
+        'components' => $components_path,
+        'templates'  => $templates_path,
+        'template'   => $template_path,
+        'layouts'    => $layouts_path,
+        'extension'  => $template_extension,
+        'config'     => $config_path,
+        'pages'      => $pages_path,
+    ];
+
     // commonly referred to paths
-    $config['template_extension'] = '.html';
-    $config['frontend_path'] = '../frontend/';
-    $config['templates_root'] = $templates_dir;
-    $config['layouts_root'] = '/layouts/';
-    $config['pages_root'] = '/pages/';
-    $config['config_root'] = '/config.php';
-    $config['map'] = $config['map'] ?? [];
+    $config['template'] = $template;
+    $config['templates_path'] = $templates_dir;
+    $config['template_path'] = $templates_dir . $template_dir;
+    $config['assets_dir'] = $assets_dir;
+
+    // set map for the loop
+    $map = $config['map'] ?? [];
 
     // route through the map list
-    foreach ($config['map'] as $route => $page) {
+    foreach ($map as $route => $page) {
         // build out config for each route
-        $config['uri'] = $route;
-        $config['template'] = $default;
-        $config['template_path'] = $config['templates_root']
-            . $default_path;
+        $config['uri']    = $route;
         $config['layout'] = 'main';
-        $config['layout_file'] = $config['layout']
-            . $config['template_extension'];
-        $config['layout_path'] = $config['template_path']
-            . $config['layouts_root']
-            . $config['layout_file'];
-        $config['page'] = $page;
-        $config['page_file'] = $config['page']
-            . $config['template_extension'];
-        $config['page_path'] = $config['template_path']
-            . $config['pages_root']
-            . $config['page_file'];
+        $config['page']   = $page;
+
+        $config['paths']['layout'] = $config['paths']['layouts']
+            . $config['layout']
+            . $config['paths']['extension'];
+        $config['paths']['page'] = $config['paths']['pages']
+            . $config['page']
+            . $config['paths']['extension'];
+
+        $config['layout_path'] = $templates_dir
+            . $template_dir
+            . $layouts_dir
+            . $config['layout']
+            . $template_extension;
 
         // TODO: Break out main router into a class
         /**
@@ -100,35 +156,49 @@ return function (App $app) {
          */
         $handler = function (Request $req, Response $res) use ($config) {
             // pass parameters to use
-            $config['get'] = $req->getQueryParams();
-            $config['post'] = $req->getParsedBody();
+            $get  = $req->getQueryParams();
+            $post = $req->getParsedBody();
+
+            $config['get']  = $get;
+            $config['post'] = $post;
+
+            $design = $get['design'] ?? false;
+            $themes = $config['themes'];
 
             // Override main config with template's
-            if (
-                isset($config['get']['design'])
-                && isset($config['themes'][$config['get']['design']])
-            ) {
-                $config['template'] = $config['get']['design'];
-                $config['template_path'] = $config['templates_root']
-                    . $config['themes'][$config['get']['design']];
-                $config['layout_path'] = $config['template_path']
-                    . $config['layouts_root']
-                    . $config['layout_file'];
+            if ($design && isset($themes[$design])) {
+                // override template
+                $config['template'] = $design;
 
-                // Check to overwritte the page
-                $overwrite_page_path = $config['template_path']
-                    . $config['pages_root']
-                    . $config['page_file'];
-                if (file_exists($config['frontend_path'] . $overwrite_page_path)) {
-                    $config['page_path'] = $overwrite_page_path;
+                $old_temp_dir = $config['template_path'];
+                $new_temp_dir = $config['templates_path']
+                    . '/' . $themes[$design] . '/';
+
+                // replace $old_temp_dir with $new_temp_dir in paths
+                foreach ($config['paths'] as $key => $value) {
+                    $config['paths'][$key] = str_replace(
+                        $old_temp_dir,
+                        $new_temp_dir,
+                        $value
+                    );
                 }
 
+                // now do it for the other usage
+                $config['template_path'] = str_replace(
+                    $old_temp_dir,
+                    $new_temp_dir,
+                    $config['template_path']
+                );
+                $config['layout_path'] = str_replace(
+                    $old_temp_dir,
+                    $new_temp_dir,
+                    $config['layout_path']
+                );
+
                 // Check to overwrite the config
-                $config_path = $config['frontend_path']
-                    . $config['template_path']
-                    . $config['config_root'];
-                if (file_exists(__DIR__ . '../../' . $config_path)) {
-                    include_once __DIR__ . '../../' . $config_path;
+                $config_path = $config['paths']['config'];
+                if (file_exists($config_path)) {
+                    include_once $config_path;
                 }
             }
 
@@ -149,9 +219,21 @@ return function (App $app) {
                 $config['linkparams'] = '';
             }
 
+            // grab twig render director
+            $twig_dir = $config['paths']['frontend'];
+
+            // remove $twig_dir from ever $config['paths'] child
+            foreach ($config['paths'] as $key => $value) {
+                $config['paths'][$key] = str_replace(
+                    $twig_dir,
+                    '.',
+                    $value
+                );
+            }
+
             // Render the template with Twig
             $view = Twig::fromRequest($req);
-            return $view->render($res, $config['page_path'], $config);
+            return $view->render($res, $config['paths']['page'], $config);
         };
 
         // setup for both GET and POST
@@ -175,17 +257,15 @@ return function (App $app) {
             $file = $route['favicon'] . '.ico';
 
             // default favicon path
-            $favicon_path = __DIR__
-                . '/../../public/assets/images/icons/'
+            $favicon_path = $config['paths']['assets']
+                . '/images/icons/'
                 . $file;
 
             // figure out which favicon to use
             if (isset($_ENV['client'])) {
-                $client_path = __DIR__
-                    . '/../'
-                    . $config['frontend_path']
-                    . $config['template_path']
-                    . '/assets/images/icons/'
+                $client_path = $config['paths']['template']
+                    . $config['assets_dir']
+                    . '/images/icons/'
                     . $file;
 
                 if (file_exists($client_path)) {
@@ -223,19 +303,20 @@ return function (App $app) {
         '/assets/{file:.*}',
         function (Request $req, Response $res, array $route) use ($config) {
             // set file path
-            $file_root = __DIR__ . '/../' . $config['frontend_path'];
-            $file = '/assets/' . $route['file'];
+            $file = $route['file'];
 
-            $client_file = $file_root . $config['template_path'] . $file;
-            $assets_file = $file_root . $file;
-            $active_file = '';
+            $assets_file = $config['paths']['assets'] . $file;
+            $client_file = $config['paths']['template']
+                . $config['assets_dir']
+                . $file;
+            $use_file = $assets_file;
 
             if (file_exists($client_file)) {
                 // overwrite and use the client assest
-                $active_file = $client_file;
+                $use_file = $client_file;
             } elseif (file_exists($assets_file)) {
                 // use the default asset
-                $active_file = $assets_file;
+                $use_file = $assets_file;
             } else {
                 // Not found
                 $res->getBody()->write('Not Found');
@@ -243,14 +324,14 @@ return function (App $app) {
             }
 
             // write file contents
-            $file_contents = file_get_contents($active_file);
+            $file_contents = file_get_contents($use_file);
             $res->getBody()->write($file_contents);
 
             // get file type of $file
-            $file_type = mime_content_type($active_file);
+            $file_type = mime_content_type($use_file);
 
             // get the file extesion
-            $file_ext = pathinfo($active_file, PATHINFO_EXTENSION);
+            $file_ext = pathinfo($use_file, PATHINFO_EXTENSION);
 
             if ($file_ext === 'css') {
                 $file_type = 'text/css';
@@ -277,12 +358,9 @@ return function (App $app) {
         '/template/{template:.*}/assets/{file:.*}',
         function (Request $req, Response $res, array $route) use ($config) {
             // set file path
-            $file = __DIR__
-                . '/../'
-                . $config['frontend_path']
-                . $config['templates_root']
+            $file = $config['paths']['templates']
                 . $config['themes'][$route['template']]
-                . '/assets/'
+                . $config['assets_dir']
                 . $route['file'];
 
             // check for file existence
@@ -357,7 +435,7 @@ return function (App $app) {
      */
     $app->get(
         '/docs{file:.*}',
-        function (Request $req, Response $res, array $route) {
+        function (Request $req, Response $res, array $route) use ($config) {
             // check if production
             if (
                 isset($_ENV['environment'])
@@ -366,20 +444,20 @@ return function (App $app) {
                 return;
             }
 
+            $file = $route['file'] ?? '';
+
             // check if $file is '/docs' or '/docs/coverage'
             if (
-                $route['file'] === ''
-                || $route['file'] === '/'
-                || $route['file'] === '/coverage'
-                || $route['file'] === '/coverage/'
+                $file === ''
+                || $file === '/'
+                || $file === '/coverage'
+                || $file === '/coverage/'
             ) {
-                $route['file'] .= '/index.html';
+                $file .= '/index.html';
             }
 
             // set file path
-            $file_root = __DIR__ . '/../../';
-            $file = '/docs/' . $route['file'];
-            $doc_file = $file_root . $file;
+            $doc_file = $config['paths']['docs'] . $file;
 
             if (!file_exists($doc_file)) {
                 // Not found

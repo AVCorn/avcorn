@@ -1,5 +1,19 @@
 <?php
 
+/**
+ * Test the Action class
+ *
+ * PHP version 8.2
+ *
+ * @phpversion >= 8.2
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage Tests\Application\Actions
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
+ */
+
 declare(strict_types=1);
 
 namespace Tests\Application\Actions;
@@ -12,17 +26,9 @@ use Psr\Log\LoggerInterface;
 use Tests\TestCase;
 
 /**
- * Test the Action class.
+ * ActionTest Class
  *
- * PHP version 8.2
- *
- * @phpversion >= 8.2
- * @category   CMS
- * @package    AVCorn
- * @subpackage Tests\Application\Actions
- * @author     Benjamin J. Young <ben@blaher.me>
- * @license    GNU General Public License, version 3
- * @link       https://github.com/avcorn/avcorn
+ * @category TestUnit
  */
 class ActionTest extends TestCase
 {

@@ -1,9 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace App\Application\Settings;
-
 /**
  * Class Settings
  *
@@ -16,6 +12,16 @@ namespace App\Application\Settings;
  * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
+ */
+
+declare(strict_types=1);
+
+namespace App\Application\Settings;
+
+/**
+ * Settings Class
+ *
+ * @category Settings
  */
 class Settings implements SettingsInterface
 {
