@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TestCase
+ * Test Case
  *
  * PHP version 8.2
  *
@@ -31,7 +31,9 @@ use Slim\Psr7\Request as SlimRequest;
 use Slim\Psr7\Uri;
 
 /**
- * TestCase class
+ * Test Case Class
+ *
+ * @category TestUnit
  */
 class TestCase extends PHPUnit_TestCase
 {

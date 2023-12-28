@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ActionPayload
+ * Action Payload
  *
  * PHP version 8.2
  *
@@ -21,7 +21,9 @@ namespace App\Application\Actions;
 use JsonSerializable;
 
 /**
- * ActionPayload Class
+ * Action Payload Class
+ *
+ * @category Action
  */
 class ActionPayload implements JsonSerializable
 {

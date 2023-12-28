@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Form middleware.
+ * Form Middleware
  *
  * PHP version 8.2
  *
@@ -28,6 +28,8 @@ use Google_Service_Sheets_ValueRange;
 
 /**
  * Form Middleware Class
+ *
+ * @category Middleware
  */
 class FormMiddleware implements Middleware
 {

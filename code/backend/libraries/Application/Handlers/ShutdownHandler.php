@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Shutdown handler.
+ * Shutdown Handler
  *
  * PHP version 8.2
  *
@@ -24,6 +24,8 @@ use Slim\Exception\HttpInternalServerErrorException;
 
 /**
  * Shutdown Handler Class
+ *
+ * @category Handler
  */
 class ShutdownHandler
 {

@@ -22,6 +22,8 @@ use Exception;
 
 /**
  * Abstract Domain Exception Class
+ *
+ * @category Exception
  */
 abstract class DomainException extends Exception
 {

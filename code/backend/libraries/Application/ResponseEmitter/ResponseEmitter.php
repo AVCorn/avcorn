@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Response emitter.
+ * Response Emitter
  *
  * PHP version 8.2
  *
@@ -23,6 +23,8 @@ use Slim\ResponseEmitter as SlimResponseEmitter;
 
 /**
  * Response Emitter Class
+ *
+ * @category Emitter
  */
 class ResponseEmitter extends SlimResponseEmitter
 {

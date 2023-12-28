@@ -27,6 +27,8 @@ use Tests\TestCase;
 
 /**
  * ActionTest Class
+ *
+ * @category TestUnit
  */
 class ActionTest extends TestCase
 {

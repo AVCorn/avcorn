@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ActionError
+ * Action Error
  *
  * PHP version 8.2
  *
@@ -21,7 +21,9 @@ namespace App\Application\Actions;
 use JsonSerializable;
 
 /**
- * ActionError Class
+ * Action Error Class
+ *
+ * @category Action
  */
 class ActionError implements JsonSerializable
 {

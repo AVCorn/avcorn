@@ -27,6 +27,8 @@ use Slim\Exception\HttpNotFoundException;
 
 /**
  * Action Class
+ *
+ * @category Action
  */
 abstract class Action
 {

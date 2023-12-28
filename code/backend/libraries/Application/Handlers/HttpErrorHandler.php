@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Custom error handler that returns JSON.
+ * Custom error handler that returns JSON
  *
  * PHP version 8.2
  *
@@ -33,6 +33,8 @@ use Throwable;
 
 /**
  * Http Error Handler Class
+ *
+ * @category Handler
  */
 class HttpErrorHandler extends SlimErrorHandler
 {

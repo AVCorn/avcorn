@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Session middleware.
+ * Session Middleware
  *
  * PHP version 8.2
  *
@@ -25,6 +25,8 @@ use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 
 /**
  * Session Middleware Class
+ *
+ * @category Middleware
  */
 class SessionMiddleware implements Middleware
 {

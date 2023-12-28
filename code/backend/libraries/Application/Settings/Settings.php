@@ -20,6 +20,8 @@ namespace App\Application\Settings;
 
 /**
  * Settings Class
+ *
+ * @category Settings
  */
 class Settings implements SettingsInterface
 {

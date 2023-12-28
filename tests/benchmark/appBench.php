@@ -33,6 +33,8 @@ use Slim\Psr7\Uri;
 
 /**
  * AppBench class
+ *
+ * @category TestBenchmark
  */
 class AppBench
 {

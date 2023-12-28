@@ -20,6 +20,8 @@ namespace App\Domain\DomainException;
 
 /**
  * Domain Record Not Found Exception Class
+ *
+ * @category Exception
  */
 class DomainRecordNotFoundException extends DomainException
 {

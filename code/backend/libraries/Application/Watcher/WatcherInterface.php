@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Interface WatcherInterface
+ * Watcher Interface
  *
  * PHP version 8.2
  *
@@ -19,7 +19,9 @@ declare(strict_types=1);
 namespace App\Application\Watcher;
 
 /**
- * Watcher Interface
+ * Watcher Interface Class
+ *
+ * @category Middleware
  */
 interface WatcherInterface
 {

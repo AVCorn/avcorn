@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class Watcher
+ * Watcher
  *
  * PHP version 8.2
  *
@@ -20,6 +20,8 @@ namespace App\Application\Watcher;
 
 /**
  * Watcher Class
+ *
+ * @category Middleware
  */
 class Watcher implements WatcherInterface
 {

@@ -20,6 +20,8 @@ namespace App\Application\Settings;
 
 /**
  * Settings Interface
+ *
+ * @category Settings
  */
 interface SettingsInterface
 {
