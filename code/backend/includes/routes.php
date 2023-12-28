@@ -44,9 +44,9 @@ return function (App $app) {
     $templates_dir      = '/templates/';
     $template_dir        = '/' . $template . '/';
     $layouts_dir        = '/layouts/';
-    $pages_dir          = '/pages/';
     $template_extension = '.html';
     $config_file        = '/config.php';
+    $pages_dir          = '/pages/';
     $backend_dir        = '/backend/';
     $docs_dir           = '/docs/';
 
@@ -60,8 +60,8 @@ return function (App $app) {
     $templates_path  = $frontend_path  . $templates_dir;
     $template_path   = $templates_path . $template_dir;
     $layouts_path    = $template_path  . $layouts_dir;
-    $pages_path      = $template_path  . $pages_dir;
     $config_path     = $template_path  . $config_file;
+    $pages_path      = $frontend_path  . $pages_dir;
     $backend_path    = $app_path       . $backend_dir;
     $docs_path       = $app_path       . $docs_dir;
 
@@ -110,9 +110,9 @@ return function (App $app) {
         'templates'  => $templates_path,
         'template'   => $template_path,
         'layouts'    => $layouts_path,
-        'pages'      => $pages_path,
         'extension'  => $template_extension,
         'config'     => $config_path,
+        'pages'      => $pages_path,
     ];
 
     // commonly referred to paths
@@ -176,13 +176,11 @@ return function (App $app) {
 
                 // replace $old_temp_dir with $new_temp_dir in paths
                 foreach ($config['paths'] as $key => $value) {
-                    if ($key !== 'page') {
-                        $config['paths'][$key] = str_replace(
-                            $old_temp_dir,
-                            $new_temp_dir,
-                            $value
-                        );
-                    }
+                    $config['paths'][$key] = str_replace(
+                        $old_temp_dir,
+                        $new_temp_dir,
+                        $value
+                    );
                 }
 
                 // now do it for the other usage
@@ -190,6 +188,11 @@ return function (App $app) {
                     $old_temp_dir,
                     $new_temp_dir,
                     $config['template_path']
+                );
+                $config['layout_path'] = str_replace(
+                    $old_temp_dir,
+                    $new_temp_dir,
+                    $config['layout_path']
                 );
 
                 // Check to overwrite the config
