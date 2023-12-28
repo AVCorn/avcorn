@@ -1,11 +1,7 @@
 <?php
 
-declare(strict_types=1);
-
-namespace App\Application\Settings;
-
 /**
- * Interface SettingsInterface
+ * Settings Interface
  *
  * PHP version 8.2
  *
@@ -16,6 +12,14 @@ namespace App\Application\Settings;
  * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
+ */
+
+declare(strict_types=1);
+
+namespace App\Application\Settings;
+
+/**
+ * Settings Interface
  */
 interface SettingsInterface
 {

@@ -1,5 +1,19 @@
 <?php
 
+/**
+ * TestCase
+ *
+ * PHP version 8.2
+ *
+ * @phpversion >= 8.2
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage Tests
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
+ */
+
 declare(strict_types=1);
 
 namespace Tests;
@@ -18,16 +32,6 @@ use Slim\Psr7\Uri;
 
 /**
  * TestCase class
- *
- * PHP version 8.2
- *
- * @phpversion >= 8.2
- * @category   CMS
- * @package    AVCorn
- * @subpackage Tests
- * @author     Benjamin J. Young <ben@blaher.me>
- * @license    GNU General Public License, version 3
- * @link       https://github.com/avcorn/avcorn
  */
 class TestCase extends PHPUnit_TestCase
 {
@@ -47,15 +51,18 @@ class TestCase extends PHPUnit_TestCase
         // Container intentionally not compiled for tests.
 
         // Set up settings
-        $settings = include __DIR__ . '/../../code/backend/includes/settings.php';
+        $settings = include __DIR__
+            . '/../../code/backend/includes/settings.php';
         $settings($containerBuilder);
 
         // Set up dependencies
-        $dependencies = include __DIR__ . '/../../code/backend/includes/dependencies.php';
+        $dependencies = include __DIR__
+            . '/../../code/backend/includes/dependencies.php';
         $dependencies($containerBuilder);
 
         // Set up repositories
-        $repositories = include __DIR__ . '/../../code/backend/includes/repositories.php';
+        $repositories = include __DIR__
+            . '/../../code/backend/includes/repositories.php';
         $repositories($containerBuilder);
 
         // Build PHP-DI Container instance
@@ -66,11 +73,13 @@ class TestCase extends PHPUnit_TestCase
         $app = AppFactory::create();
 
         // Register middleware
-        $middleware = include __DIR__ . '/../../code/backend/includes/middleware.php';
+        $middleware = include __DIR__
+            . '/../../code/backend/includes/middleware.php';
         $middleware($app);
 
         // Register routes
-        $routes = include __DIR__ . '/../../code/backend/includes/routes.php';
+        $routes = include __DIR__
+            . '/../../code/backend/includes/routes.php';
         $routes($app);
 
         return $app;
@@ -79,11 +88,11 @@ class TestCase extends PHPUnit_TestCase
     /**
      * Create Request
      *
-     * @param  string $method
-     * @param  string $path
-     * @param  array  $headers
-     * @param  array  $cookies
-     * @param  array  $serverParams
+     * @param  string $method       HTTP Method
+     * @param  string $path         The Path
+     * @param  array  $headers      Headers Array
+     * @param  array  $cookies      Cookies Array
+     * @param  array  $serverParams Server Paremeters
      *
      * @return Request
      */

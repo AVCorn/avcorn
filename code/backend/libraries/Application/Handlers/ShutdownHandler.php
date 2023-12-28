@@ -1,13 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace App\Application\Handlers;
-
-use App\Application\ResponseEmitter\ResponseEmitter;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Exception\HttpInternalServerErrorException;
-
 /**
  * Shutdown handler.
  *
@@ -20,6 +12,18 @@ use Slim\Exception\HttpInternalServerErrorException;
  * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
+ */
+
+ declare(strict_types=1);
+
+namespace App\Application\Handlers;
+
+use App\Application\ResponseEmitter\ResponseEmitter;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Exception\HttpInternalServerErrorException;
+
+/**
+ * Shutdown Handler Class
  */
 class ShutdownHandler
 {
@@ -59,7 +63,10 @@ class ShutdownHandler
             $errorLine = $error['line'];
             $errorMessage = $error['message'];
             $errorType = $error['type'];
-            $message = 'An error while processing your request. Please try again later.';
+            $message = '
+                An error while processing your request.
+                Please try again later.
+            ';
 
             if ($this->displayErrorDetails) {
                 switch ($errorType) {

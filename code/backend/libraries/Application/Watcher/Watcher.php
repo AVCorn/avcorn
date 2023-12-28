@@ -1,9 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace App\Application\Watcher;
-
 /**
  * Class Watcher
  *
@@ -16,6 +12,14 @@ namespace App\Application\Watcher;
  * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
+ */
+
+declare(strict_types=1);
+
+namespace App\Application\Watcher;
+
+/**
+ * Watcher Class
  */
 class Watcher implements WatcherInterface
 {

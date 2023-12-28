@@ -1,6 +1,20 @@
 <?php
 
-declare(strict_types=1);
+/**
+ * Custom error handler that returns JSON.
+ *
+ * PHP version 8.2
+ *
+ * @phpversion >= 8.2
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage App\Application\Handlers
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
+ */
+
+ declare(strict_types=1);
 
 namespace App\Application\Handlers;
 
@@ -18,17 +32,7 @@ use Slim\Handlers\ErrorHandler as SlimErrorHandler;
 use Throwable;
 
 /**
- * Custom error handler that returns JSON.
- *
- * PHP version 8.2
- *
- * @phpversion >= 8.2
- * @category   CMS
- * @package    AVCorn
- * @subpackage App\Application\Handlers
- * @author     Benjamin J. Young <ben@blaher.me>
- * @license    GNU General Public License, version 3
- * @link       https://github.com/avcorn/avcorn
+ * Http Error Handler Class
  */
 class HttpErrorHandler extends SlimErrorHandler
 {

@@ -1,13 +1,7 @@
 <?php
 
-declare(strict_types=1);
-
-namespace App\Domain\DomainException;
-
-use Exception;
-
 /**
- * Class DomainException
+ * Domain Exception
  *
  * PHP version 8.2
  *
@@ -18,6 +12,16 @@ use Exception;
  * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
+ */
+
+declare(strict_types=1);
+
+namespace App\Domain\DomainException;
+
+use Exception;
+
+/**
+ * Abstract Domain Exception Class
  */
 abstract class DomainException extends Exception
 {

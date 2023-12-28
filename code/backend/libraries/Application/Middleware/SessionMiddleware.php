@@ -1,14 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace App\Application\Middleware;
-
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Server\MiddlewareInterface as Middleware;
-use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
-
 /**
  * Session middleware.
  *
@@ -22,12 +13,27 @@ use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
  */
+
+declare(strict_types=1);
+
+namespace App\Application\Middleware;
+
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Server\MiddlewareInterface as Middleware;
+use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
+
+/**
+ * Session Middleware Class
+ */
 class SessionMiddleware implements Middleware
 {
     /**
      * Process middleware.
      *
      * {@inheritdoc}
+     * @param Request        $request The request
+     * @param RequestHandler $handler The request handler
      *
      * @return Response
      */

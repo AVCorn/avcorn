@@ -1,6 +1,20 @@
 <?php
 
-declare(strict_types=1);
+/**
+ * Action
+ *
+ * PHP version 8.2
+ *
+ * @phpversion >= 8.2
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage App\Application\Actions
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
+ */
+
+ declare(strict_types=1);
 
 namespace App\Application\Actions;
 
@@ -12,17 +26,7 @@ use Slim\Exception\HttpBadRequestException;
 use Slim\Exception\HttpNotFoundException;
 
 /**
- * Abstract action.
- *
- * PHP version 8.2
- *
- * @phpversion >= 8.2
- * @category   CMS
- * @package    AVCorn
- * @subpackage App\Application\Actions
- * @author     Benjamin J. Young <ben@blaher.me>
- * @license    GNU General Public License, version 3
- * @link       https://github.com/avcorn/avcorn
+ * Action Class
  */
 abstract class Action
 {
@@ -100,7 +104,10 @@ abstract class Action
     protected function resolveArg(string $name)
     {
         if (!isset($this->args[$name])) {
-            throw new HttpBadRequestException($this->request, "Could not resolve argument `{$name}`.");
+            throw new HttpBadRequestException(
+                $this->request,
+                "Could not resolve argument `{$name}`."
+            );
         }
 
         return $this->args[$name];
