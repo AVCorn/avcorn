@@ -90,22 +90,22 @@ class TestCase extends PHPUnit_TestCase
     /**
      * Create Request
      *
-     * @param  string $method       HTTP Method
-     * @param  string $path         The Path
-     * @param  array  $headers      Headers Array
-     * @param  array  $cookies      Cookies Array
-     * @param  array  $serverParams Server Paremeters
+     * @param string $method       HTTP Method
+     * @param string $path         The Path
+     * @param array  $headers      Headers Array
+     * @param array  $cookies      Cookies Array
+     * @param array  $serverParams Server Paremeters
      *
      * @return Request
      */
     protected function createRequest(
         string $method,
         string $path,
-        array $headers = ['HTTP_ACCEPT' => 'application/json'],
-        array $cookies = [],
-        array $serverParams = []
+        array  $headers = ['HTTP_ACCEPT' => 'application/json'],
+        array  $cookies = [],
+        array  $serverParams = []
     ): Request {
-        $uri = new Uri('', '', 80, $path);
+        $uri    = new Uri('', '', 80, $path);
         $handle = fopen('php://temp', 'w+');
         $stream = (new StreamFactory())->createStreamFromResource($handle);
 
