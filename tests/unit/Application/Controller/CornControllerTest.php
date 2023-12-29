@@ -469,7 +469,7 @@ class CornControllerTest extends TestCase
             $controller,
             $config
         ) {
-            return $controller->lost($req, $res, $args, $config);
+            return $controller->lost($req, $res, $config);
         });
 
         $request = $this->createRequest('GET', '/404');
