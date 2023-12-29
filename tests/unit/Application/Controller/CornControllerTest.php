@@ -322,6 +322,9 @@ class CornControllerTest extends TestCase
      */
     public function testDocFileRoute()
     {
+        // Instantiate the controller
+        $controller = new CornController();
+        
         // Set up the app
         $app = $this->getAppInstance();
 
