@@ -67,6 +67,11 @@ class TestCase extends PHPUnit_TestCase
             . '/../../code/backend/includes/repositories.php';
         $repositories($containerBuilder);
 
+        // Set up watcher
+        $watcher = include __DIR__
+            . '/../../code/backend/includes/watcher.php';
+        $watcher($containerBuilder);
+
         // Build PHP-DI Container instance
         $container = $containerBuilder->build();
 
@@ -78,6 +83,11 @@ class TestCase extends PHPUnit_TestCase
         $middleware = include __DIR__
             . '/../../code/backend/includes/middleware.php';
         $middleware($app);
+
+        // Register forms
+        $forms = include __DIR__
+            . '/../../code/backend/includes/forms.php';
+        $forms($app);
 
         // Register routes
         $routes = include __DIR__

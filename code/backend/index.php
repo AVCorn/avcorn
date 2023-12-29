@@ -84,7 +84,7 @@ $app->add(TwigMiddleware::create($app, $twig));
 $middleware = include __DIR__ . '/includes/middleware.php';
 $middleware($app);
 
-// Register middleware
+// Register forms
 $forms = include __DIR__ . '/includes/forms.php';
 $forms($app);
 
