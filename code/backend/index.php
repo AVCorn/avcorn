@@ -77,6 +77,9 @@ if (isset($app->mode) && $app->mode === 'production') {
 // Create Twig
 $twig = Twig::create('../frontend/', $twig_config);
 
+// Set view on container
+$container->set('view', $twig);
+
 // Add Twig-View Middleware
 $app->add(TwigMiddleware::create($app, $twig));
 

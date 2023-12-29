@@ -22,13 +22,14 @@ use DI\ContainerBuilder;
 use Exception;
 use PHPUnit\Framework\TestCase as PHPUnit_TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Factory\AppFactory;
 use Slim\Psr7\Factory\StreamFactory;
 use Slim\Psr7\Headers;
-use Slim\Psr7\Request as SlimRequest;
+use Slim\Psr7\Request;
 use Slim\Psr7\Uri;
+use Slim\Views\Twig as Twig;
+use Slim\Views\TwigMiddleware;
 
 /**
  * Test Case Class
@@ -79,6 +80,17 @@ class TestCase extends PHPUnit_TestCase
         AppFactory::setContainer($container);
         $app = AppFactory::create();
 
+        // Create Twig
+        $twig_config = [];
+        $twig = Twig::create(
+            __DIR__
+                . '/../../code/frontend/',
+            $twig_config
+        );
+        
+        // Add Twig-View Middleware
+        $app->add(TwigMiddleware::create($app, $twig));
+
         // Register middleware
         $middleware = include __DIR__
             . '/../../code/backend/includes/middleware.php';
@@ -124,7 +136,7 @@ class TestCase extends PHPUnit_TestCase
             $heads->addHeader($name, $value);
         }
 
-        return new SlimRequest(
+        return new Request(
             $method,
             $uri,
             $heads,
@@ -132,5 +144,60 @@ class TestCase extends PHPUnit_TestCase
             $serverParams,
             $stream
         );
+    }
+
+    protected function createConfig(): array {
+        $config = [];
+
+        // build out config for each route
+        $config['uri']    = '/';
+        $config['layout'] = 'main';
+        $config['page']   = 'home';
+
+        $config['template'] = '/_default/';
+        $config['templates_path'] = '/templates/';
+        $config['template_path'] = '/templates/_default/';
+        $config['layout_path'] = '/templates/_default/layouts/main.html';
+        $config['assets_dir'] = '/assets/';
+
+        $config['themes'] = [
+            'default' => '/_default/',
+            'marketing' => '/examples/categories/marketing/',
+            'lawncare' => '/examples/categories/lawncare/',
+        ];
+
+        $root = '/../../';
+        $config['paths'] = [
+            'frontend'     => __DIR__
+                . $root
+                . '/code/frontend/',
+            'templates'    => __DIR__
+                . $root
+                . '/code/frontend/templates/',
+            'template'     => __DIR__
+                . $root
+                . '/code/frontend/templates/_default/',
+
+            'config'       => __DIR__
+                . $root
+                . '/code/frontend/templates/_default/config.php',
+            'layouts'      => __DIR__
+                . $root
+                . '/code/frontend/templates/_default/layouts/',
+            'layout' => __DIR__
+                . $root
+                . '/code/frontend/templates/_default/layouts/home.html',
+            'page'         => __DIR__
+                . $root
+                . '/code/frontend/pages/home.html',
+            'assets'       => __DIR__
+                . $root
+                . '/code/frontend/assets/',
+            'docs'         => __DIR__
+                . $root
+                . '/docs/',
+        ];
+
+        return $config;
     }
 }

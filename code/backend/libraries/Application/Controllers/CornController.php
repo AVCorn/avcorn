@@ -116,7 +116,7 @@ class CornController
         foreach ($config['paths'] as $key => $value) {
              $config['paths'][$key] = str_replace(
                  $twig_dir,
-                 '.',
+                 './',
                  $value
              );
         }
