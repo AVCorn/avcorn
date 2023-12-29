@@ -5,3 +5,4 @@ parameters:
     - backend/libraries
     - backend/index.php
     - public/index.php
+    - tests

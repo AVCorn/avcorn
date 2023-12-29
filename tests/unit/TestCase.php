@@ -87,7 +87,7 @@ class TestCase extends PHPUnit_TestCase
                 . '/../../code/frontend/',
             $twig_config
         );
-        
+
         // Add Twig-View Middleware
         $app->add(TwigMiddleware::create($app, $twig));
 
@@ -123,9 +123,9 @@ class TestCase extends PHPUnit_TestCase
     protected function createRequest(
         string $method,
         string $path,
-        array  $headers = ['HTTP_ACCEPT' => 'application/json'],
-        array  $cookies = [],
-        array  $serverParams = []
+        array $headers = ['HTTP_ACCEPT' => 'application/json'],
+        array $cookies = [],
+        array $serverParams = []
     ): Request {
         $uri    = new Uri('', '', 80, $path);
         $handle = fopen('php://temp', 'w+');
@@ -146,7 +146,13 @@ class TestCase extends PHPUnit_TestCase
         );
     }
 
-    protected function createConfig(): array {
+    /**
+     * Create Config
+     *
+     * @return array
+     */
+    protected function createConfig(): array
+    {
         $config = [];
 
         // build out config for each route

@@ -1,5 +1,23 @@
 <?php
 
+/**
+ * Test the Action class
+ *
+ * PHP version 8.2
+ *
+ * @phpversion >= 8.2
+ * @category   CMS
+ * @package    AVCorn
+ * @subpackage Tests\Application\Actions
+ * @author     Benjamin J. Young <ben@blaher.me>
+ * @license    GNU General Public License, version 3
+ * @link       https://github.com/avcorn/avcorn
+ */
+
+declare(strict_types=1);
+
+namespace Tests\Application\Controllers;
+
 use Slim\App;
 use Slim\Factory\AppFactory;
 use Slim\Psr7\Factory\ServerRequestFactory;
@@ -9,368 +27,454 @@ use Slim\Psr7\Stream;
 use App\Application\Controllers\CornController;
 use Tests\TestCase;
 
-class CornControllerTest extends TestCase {
+/**
+ * CornControllerTest Class
+ *
+ * @category TestUnit
+ */
+class CornControllerTest extends TestCase
+{
+  /**
+   * Test map() Route
+   */
+    public function testMapRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-  public function testMapRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    // Set up the app
-    $app = $this->getAppInstance();
+        // instantiate config
+        $config = $this->createConfig();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // Add the route to be tested
+        $app->get('/', function (
+            Request $req,
+            Response $res,
+            array $args
+        ) use (
+            $controller,
+            $config
+        ) {
+            return $controller->map($req, $res, $args, $config);
+        });
 
-    // Add the route to be tested
-    $app->get('/', function (
-        Request $req,
-        Response $res,
-        array $args
-    ) use ($controller, $config) {
-        return $controller->map($req, $res, $args, $config);
-    });
+        $request = $this->createRequest('GET', '/');
+        $response = $app->handle($request);
 
-    $request = $this->createRequest('GET', '/');
-    $response = $app->handle($request);
+        $this->assertEquals(200, $response->getStatusCode());
+    }
 
-    $this->assertEquals(200, $response->getStatusCode());
-  }
+    /**
+     * Test map() Route with design
+     */
+    public function testDesignRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-  public function testDesignRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    // Set up the app
-    $app = $this->getAppInstance();
+        // instantiate config
+        $config = $this->createConfig();
 
-    // instantiate config
-    $config = $this->createConfig();
-
-    // override path
-    $root = '/../../../../';
-    $config['paths']['config'] = __DIR__
+        // override path
+        $root = '/../../../../';
+        $config['paths']['config'] = __DIR__
         . $root
         . '/code/frontend/templates/examples/categories/lawncare/config.php';
 
-    // Add the route to be tested
-    $app->get('/', function (
-        Request $req,
-        Response $res,
-        array $args
-    ) use ($controller, $config) {
-        return $controller->map($req, $res, $args, $config);
-    });
+        // Add the route to be tested
+        $app->get('/', function (
+            Request $req,
+            Response $res,
+            array $args
+        ) use (
+            $controller,
+            $config
+        ) {
+            return $controller->map($req, $res, $args, $config);
+        });
 
-    $request = $this->createRequest('GET', '/')->withQueryParams(['design' => 'lawncare']);
-    $response = $app->handle($request);
+        $request = $this->createRequest('GET', '/')->withQueryParams(['design' => 'lawncare']);
+        $response = $app->handle($request);
 
-    $this->assertEquals(200, $response->getStatusCode());
-  }
+        $this->assertEquals(200, $response->getStatusCode());
+    }
 
-  public function testClientFaviconRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+    /**
+     * Test favicon() Route
+     */
+    public function testFaviconRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // Set up the app
-    $app = $this->getAppInstance();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // instantiate config
+        $config = $this->createConfig();
 
-    // set client
-    $_ENV['client'] = 'webelements';
+        $request = $this->createRequest('GET', '/favicon.ico');
+        $response = $app->handle($request);
 
-    // override path
-    $root = '/../../../../';
-    $config['paths']['template'] = __DIR__
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    /**
+     * Test favicon() Route with client
+     */
+    public function testClientFaviconRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
+
+        // Set up the app
+        $app = $this->getAppInstance();
+
+        // instantiate config
+        $config = $this->createConfig();
+
+        // set client
+        $_ENV['client'] = 'webelements';
+
+        // override path
+        $root = '/../../../../';
+        $config['paths']['template'] = __DIR__
         . $root
         . '/code/frontend/clients/webelements/';
 
-    $request = $this->createRequest('GET', '/favicon.ico');
-    $response = $app->handle($request);
+        $request = $this->createRequest('GET', '/favicon.ico');
+        $response = $app->handle($request);
 
-    $this->assertEquals(200, $response->getStatusCode());
-    
-    // unset client
-    unset($_ENV['client']);
-  }
+        $this->assertEquals(200, $response->getStatusCode());
 
-  public function testFaviconRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+        // unset client
+        unset($_ENV['client']);
+    }
 
-    // Set up the app
-    $app = $this->getAppInstance();
+    /**
+     * Test favicon() lost Route
+     */
+    public function testLostFaviconRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    $request = $this->createRequest('GET', '/favicon.ico');
-    $response = $app->handle($request);
+        // instantiate config
+        $config = $this->createConfig();
 
-    $this->assertEquals(200, $response->getStatusCode());
-  }
+        $request = $this->createRequest('GET', '/favicon-lost.ico');
+        $response = $app->handle($request);
 
-  public function testLostFaviconRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+        $this->assertEquals(404, $response->getStatusCode());
+    }
 
-    // Set up the app
-    $app = $this->getAppInstance();
+    /**
+     * Test file() Route
+     */
+    public function testFileRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    $request = $this->createRequest('GET', '/favicon-lost.ico');
-    $response = $app->handle($request);
+        // instantiate config
+        $config = $this->createConfig();
 
-    $this->assertEquals(404, $response->getStatusCode());
-  }
+        $request = $this->createRequest(
+            'GET',
+            '/assets/images/nutty/nutty.png'
+        );
+        $response = $app->handle($request);
 
-  public function testFileRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+        $this->assertEquals(200, $response->getStatusCode());
+    }
 
-    // Set up the app
-    $app = $this->getAppInstance();
+    /**
+     * Test file() Route with client
+     */
+    public function testClientFileRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    $request = $this->createRequest(
-        'GET',
-        '/assets/images/nutty/nutty.png'
-    );
-    $response = $app->handle($request);
+        // instantiate config
+        $config = $this->createConfig();
 
-    $this->assertEquals(200, $response->getStatusCode());
-  }
+        // set client
+        $_ENV['client'] = 'webelements';
 
-  public function testClientFileRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
-
-    // Set up the app
-    $app = $this->getAppInstance();
-
-    // instantiate config
-    $config = $this->createConfig();
-
-    // set client
-    $_ENV['client'] = 'webelements';
-
-    // override path
-    $root = '/../../../../';
-    $config['paths']['template'] = __DIR__
+        // override path
+        $root = '/../../../../';
+        $config['paths']['template'] = __DIR__
         . $root
         . '/code/frontend/clients/webelements/';
 
-    // Add the route to be tested
-    $app->get('/test/assets/{file:.*}', function (
-        Request $req,
-        Response $res,
-        array $args
-    ) use ($controller, $config) {
-        return $controller->file($req, $res, $args, $config);
-    });
+        // Add the route to be tested
+        $app->get('/test/assets/{file:.*}', function (
+            Request $req,
+            Response $res,
+            array $args
+        ) use (
+            $controller,
+            $config
+        ) {
+            return $controller->file($req, $res, $args, $config);
+        });
 
-    $request = $this->createRequest(
-        'GET',
-        '/test/assets/images/logos/logo.png'
-    );
-    $response = $app->handle($request);
+        $request = $this->createRequest(
+            'GET',
+            '/test/assets/images/logos/logo.png'
+        );
+        $response = $app->handle($request);
 
-    $this->assertEquals(200, $response->getStatusCode());
+        $this->assertEquals(200, $response->getStatusCode());
 
-    // unset client
-    unset($_ENV['client']);
-  }
+        // unset client
+        unset($_ENV['client']);
+    }
 
-  public function testLostFileRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+    /**
+     * Test file() lost Route
+     */
+    public function testLostFileRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // Set up the app
-    $app = $this->getAppInstance();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // instantiate config
+        $config = $this->createConfig();
 
-    $request = $this->createRequest(
-        'GET',
-        '/assets/images/lost/lost.png'
-    );
-    $response = $app->handle($request);
+        $request = $this->createRequest(
+            'GET',
+            '/assets/images/lost/lost.png'
+        );
+        $response = $app->handle($request);
 
-    $this->assertEquals(404, $response->getStatusCode());
-  }
+        $this->assertEquals(404, $response->getStatusCode());
+    }
 
-  public function testTemplateFileRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+    /**
+     * Test templateFile() Route
+     */
+    public function testTemplateFileRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // Set up the app
-    $app = $this->getAppInstance();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // instantiate config
+        $config = $this->createConfig();
 
-    // Add the route to be tested
-    $app->get('/test/template/{template:.*}/assets/{file:.*}', function (
-        Request $req,
-        Response $res,
-        array $args
-    ) use ($controller, $config) {
-        return $controller->templateFile($req, $res, $args, $config);
-    });
+        // Add the route to be tested
+        $app->get('/test/template/{template:.*}/assets/{file:.*}', function (
+            Request $req,
+            Response $res,
+            array $args
+        ) use (
+            $controller,
+            $config
+        ) {
+            return $controller->templateFile($req, $res, $args, $config);
+        });
 
-    $request = $this->createRequest(
-        'GET',
-        '/test/template/marketing/assets/images/nutty.png'
-    );
-    $response = $app->handle($request);
+        $request = $this->createRequest(
+            'GET',
+            '/test/template/marketing/assets/images/nutty.png'
+        );
+        $response = $app->handle($request);
 
-    $this->assertEquals(200, $response->getStatusCode());
-  }
+        $this->assertEquals(200, $response->getStatusCode());
+    }
 
-  public function testLostTemplateFileRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+    /**
+     * Test templateFile() lost Route
+     */
+    public function testLostTemplateFileRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // Set up the app
-    $app = $this->getAppInstance();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // instantiate config
+        $config = $this->createConfig();
 
-    // Add the route to be tested
-    $app->get('/test/template/{template:.*}/assets/{file:.*}', function (
-        Request $req,
-        Response $res,
-        array $args
-    ) use ($controller, $config) {
-        return $controller->templateFile($req, $res, $args, $config);
-    });
+        // Add the route to be tested
+        $app->get('/test/template/{template:.*}/assets/{file:.*}', function (
+            Request $req,
+            Response $res,
+            array $args
+        ) use (
+            $controller,
+            $config
+        ) {
+            return $controller->templateFile($req, $res, $args, $config);
+        });
 
-    $request = $this->createRequest(
-        'GET',
-        '/test/template/marketing/assets/images/lost.png'
-    );
-    $response = $app->handle($request);
+        $request = $this->createRequest(
+            'GET',
+            '/test/template/marketing/assets/images/lost.png'
+        );
+        $response = $app->handle($request);
 
-    $this->assertEquals(404, $response->getStatusCode());
-  }
+        $this->assertEquals(404, $response->getStatusCode());
+    }
 
-  public function testDocFileRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+    /**
+     * Test docFile() Route
+     */
+    public function testDocFileRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // Set up the app
-    $app = $this->getAppInstance();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // instantiate config
+        $config = $this->createConfig();
 
-    // Add the route to be tested
-    $app->get('/test/docs{file:.*}', function (
-        Request $req,
-        Response $res,
-        array $args
-    ) use ($controller, $config) {
-        return $controller->docFile($req, $res, $args, $config);
-    });
+        // Add the route to be tested
+        $app->get('/test/docs{file:.*}', function (
+            Request $req,
+            Response $res,
+            array $args
+        ) use (
+            $controller,
+            $config
+        ) {
+            return $controller->docFile($req, $res, $args, $config);
+        });
 
-    $request = $this->createRequest(
-        'GET',
-        '/test/docs/'
-    );
-    $response = $app->handle($request);
+        $request = $this->createRequest(
+            'GET',
+            '/test/docs/'
+        );
+        $response = $app->handle($request);
 
-    $this->assertEquals(200, $response->getStatusCode());
-  }
+        $this->assertEquals(200, $response->getStatusCode());
+    }
 
-  public function testLostDocFileRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+    /**
+     * Test docFile() lost Route
+     */
+    public function testLostDocFileRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // Set up the app
-    $app = $this->getAppInstance();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // instantiate config
+        $config = $this->createConfig();
 
-    // Add the route to be tested
-    $app->get('/test/docs{file:.*}', function (
-        Request $req,
-        Response $res,
-        array $args
-    ) use ($controller, $config) {
-        return $controller->docFile($req, $res, $args, $config);
-    });
+        // Add the route to be tested
+        $app->get('/test/docs{file:.*}', function (
+            Request $req,
+            Response $res,
+            array $args
+        ) use (
+            $controller,
+            $config
+        ) {
+            return $controller->docFile($req, $res, $args, $config);
+        });
 
-    $request = $this->createRequest(
-        'GET',
-        '/test/docs/lost.html'
-    );
-    $response = $app->handle($request);
+        $request = $this->createRequest(
+            'GET',
+            '/test/docs/lost.html'
+        );
+        $response = $app->handle($request);
 
-    $this->assertEquals(404, $response->getStatusCode());
-  }
+        $this->assertEquals(404, $response->getStatusCode());
+    }
 
-  public function testHealthRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+    /**
+     * Test health() Route
+     */
+    public function testHealthRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // Set up the app
-    $app = $this->getAppInstance();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // instantiate config
+        $config = $this->createConfig();
 
-    $request = $this->createRequest('GET', '/health');
-    $response = $app->handle($request);
+        $request = $this->createRequest('GET', '/health');
+        $response = $app->handle($request);
 
-    $this->assertEquals(200, $response->getStatusCode());
-  }
+        $this->assertEquals(200, $response->getStatusCode());
+    }
 
-  public function testWatchRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+    /**
+     * Test watch() Route
+     */
+    public function testWatchRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // Set up the app
-    $app = $this->getAppInstance();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // instantiate config
+        $config = $this->createConfig();
 
-    $request = $this->createRequest('GET', '/watch');
-    $response = $app->handle($request);
+        $request = $this->createRequest('GET', '/watch');
+        $response = $app->handle($request);
 
-    $this->assertEquals(200, $response->getStatusCode());
-  }
+        $this->assertEquals(200, $response->getStatusCode());
+    }
 
-  public function testLostRoute() {
-    // Instantiate the controller
-    $controller = new CornController();
+    public function testLostRoute()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
 
-    // Set up the app
-    $app = $this->getAppInstance();
+        // Set up the app
+        $app = $this->getAppInstance();
 
-    // instantiate config
-    $config = $this->createConfig();
+        // instantiate config
+        $config = $this->createConfig();
 
-    // Add the route to be tested
-    $app->get('/404', function (
-        Request $req,
-        Response $res,
-        array $args
-    ) use ($controller, $config) {
-        return $controller->lost($req, $res, $args, $config);
-    });
+        // Add the route to be tested
+        $app->get('/404', function (
+            Request $req,
+            Response $res,
+            array $args
+        ) use (
+            $controller,
+            $config
+        ) {
+            return $controller->lost($req, $res, $args, $config);
+        });
 
-    $request = $this->createRequest('GET', '/404');
-    $response = $app->handle($request);
+        $request = $this->createRequest('GET', '/404');
+        $response = $app->handle($request);
 
-    $this->assertEquals(404, $response->getStatusCode());
-  }
+        $this->assertEquals(404, $response->getStatusCode());
+    }
 }
