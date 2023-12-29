@@ -324,7 +324,7 @@ class CornControllerTest extends TestCase
     {
         // Instantiate the controller
         $controller = new CornController();
-        
+
         // Set up the app
         $app = $this->getAppInstance();
 
