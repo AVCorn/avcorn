@@ -155,7 +155,14 @@ return function (App $app) {
          *
          * @return Response
          */
-        $handler = function (Request $req, Response $res, array $args) use ($controller, $config) {
+        $handler = function (
+            Request $req,
+            Response $res,
+            array $args
+        ) use (
+            $controller,
+            $config
+) {
             return $controller->map($req, $res, $args, $config);
         };
 
@@ -178,7 +185,14 @@ return function (App $app) {
      */
     $app->get(
         '/{favicon:.*}.ico',
-        function (Request $req, Response $res, array $route) use ($controller, $config) {
+        function (
+            Request $req,
+            Response $res,
+            array $route
+        ) use (
+            $controller,
+            $config
+        ) {
             return $controller->favicon($req, $res, $route, $config);
         }
     )->setName('getFavicon');
@@ -194,7 +208,14 @@ return function (App $app) {
      */
     $app->get(
         '/assets/{file:.*}',
-        function (Request $req, Response $res, array $route) use ($controller, $config) {
+        function (
+            Request $req,
+            Response $res,
+            array $route
+        ) use (
+            $controller,
+            $config
+        ) {
             return $controller->file($req, $res, $route, $config);
         }
     )->setName('getAssetFile');
@@ -210,7 +231,14 @@ return function (App $app) {
      */
     $app->get(
         '/template/{template:.*}/assets/{file:.*}',
-        function (Request $req, Response $res, array $route) use ($controller, $config) {
+        function (
+            Request $req,
+            Response $res,
+            array $route
+        ) use (
+            $controller,
+            $config
+        ) {
             return $controller->templateFile($req, $res, $route, $config);
         }
     )->setName('getTemplateAssetFile');

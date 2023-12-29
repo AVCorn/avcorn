@@ -83,8 +83,8 @@ class CornControllerTest extends TestCase
         // override path
         $root = '/../../../../';
         $config['paths']['config'] = __DIR__
-        . $root
-        . '/code/frontend/templates/examples/categories/lawncare/config.php';
+            . $root
+            . '/code/frontend/templates/examples/categories/lawncare/config.php';
 
         // Add the route to be tested
         $app->get('/', function (
@@ -98,7 +98,9 @@ class CornControllerTest extends TestCase
             return $controller->map($req, $res, $args, $config);
         });
 
-        $request = $this->createRequest('GET', '/')->withQueryParams(['design' => 'lawncare']);
+        $request = $this->createRequest('GET', '/')->withQueryParams(
+            ['design' => 'lawncare']
+        );
         $response = $app->handle($request);
 
         $this->assertEquals(200, $response->getStatusCode());
@@ -109,14 +111,8 @@ class CornControllerTest extends TestCase
      */
     public function testFaviconRoute()
     {
-        // Instantiate the controller
-        $controller = new CornController();
-
         // Set up the app
         $app = $this->getAppInstance();
-
-        // instantiate config
-        $config = $this->createConfig();
 
         $request = $this->createRequest('GET', '/favicon.ico');
         $response = $app->handle($request);
@@ -144,8 +140,8 @@ class CornControllerTest extends TestCase
         // override path
         $root = '/../../../../';
         $config['paths']['template'] = __DIR__
-        . $root
-        . '/code/frontend/clients/webelements/';
+            . $root
+            . '/code/frontend/clients/webelements/';
 
         $request = $this->createRequest('GET', '/favicon.ico');
         $response = $app->handle($request);
@@ -161,14 +157,8 @@ class CornControllerTest extends TestCase
      */
     public function testLostFaviconRoute()
     {
-        // Instantiate the controller
-        $controller = new CornController();
-
         // Set up the app
         $app = $this->getAppInstance();
-
-        // instantiate config
-        $config = $this->createConfig();
 
         $request = $this->createRequest('GET', '/favicon-lost.ico');
         $response = $app->handle($request);
@@ -181,14 +171,8 @@ class CornControllerTest extends TestCase
      */
     public function testFileRoute()
     {
-        // Instantiate the controller
-        $controller = new CornController();
-
         // Set up the app
         $app = $this->getAppInstance();
-
-        // instantiate config
-        $config = $this->createConfig();
 
         $request = $this->createRequest(
             'GET',
@@ -219,8 +203,8 @@ class CornControllerTest extends TestCase
         // override path
         $root = '/../../../../';
         $config['paths']['template'] = __DIR__
-        . $root
-        . '/code/frontend/clients/webelements/';
+            . $root
+            . '/code/frontend/clients/webelements/';
 
         // Add the route to be tested
         $app->get('/test/assets/{file:.*}', function (
@@ -251,14 +235,8 @@ class CornControllerTest extends TestCase
      */
     public function testLostFileRoute()
     {
-        // Instantiate the controller
-        $controller = new CornController();
-
         // Set up the app
         $app = $this->getAppInstance();
-
-        // instantiate config
-        $config = $this->createConfig();
 
         $request = $this->createRequest(
             'GET',
@@ -344,9 +322,6 @@ class CornControllerTest extends TestCase
      */
     public function testDocFileRoute()
     {
-        // Instantiate the controller
-        $controller = new CornController();
-
         // Set up the app
         $app = $this->getAppInstance();
 
@@ -414,14 +389,8 @@ class CornControllerTest extends TestCase
      */
     public function testHealthRoute()
     {
-        // Instantiate the controller
-        $controller = new CornController();
-
         // Set up the app
         $app = $this->getAppInstance();
-
-        // instantiate config
-        $config = $this->createConfig();
 
         $request = $this->createRequest('GET', '/health');
         $response = $app->handle($request);
@@ -434,14 +403,8 @@ class CornControllerTest extends TestCase
      */
     public function testWatchRoute()
     {
-        // Instantiate the controller
-        $controller = new CornController();
-
         // Set up the app
         $app = $this->getAppInstance();
-
-        // instantiate config
-        $config = $this->createConfig();
 
         $request = $this->createRequest('GET', '/watch');
         $response = $app->handle($request);
@@ -449,6 +412,9 @@ class CornControllerTest extends TestCase
         $this->assertEquals(200, $response->getStatusCode());
     }
 
+    /**
+     * Test lost() Route
+     */
     public function testLostRoute()
     {
         // Instantiate the controller

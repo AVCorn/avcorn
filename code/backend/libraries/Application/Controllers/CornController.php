@@ -45,26 +45,26 @@ class CornController
         array $args,
         array $config
     ): ResponseInterface {
-         // pass parameters to use
-         $get  = $req->getQueryParams();
-         $post = $req->getParsedBody();
+        // pass parameters to use
+        $get  = $req->getQueryParams();
+        $post = $req->getParsedBody();
 
-         $config['get']  = $get;
-         $config['post'] = $post;
+        $config['get']  = $get;
+        $config['post'] = $post;
 
-         $design = $get['design'] ?? false;
-         $themes = $config['themes'];
+        $design = $get['design'] ?? false;
+        $themes = $config['themes'];
 
-         // Override main config with template's
+        // Override main config with template's
         if ($design && isset($themes[$design])) {
-             // override template
-             $config['template'] = $design;
+            // override template
+            $config['template'] = $design;
 
-             $old_temp_dir = $config['template_path'];
-             $new_temp_dir = $config['templates_path']
-                  . '/' . $themes[$design] . '/';
+            $old_temp_dir = $config['template_path'];
+            $new_temp_dir = $config['templates_path']
+                . '/' . $themes[$design] . '/';
 
-             // replace $old_temp_dir with $new_temp_dir in paths
+            // replace $old_temp_dir with $new_temp_dir in paths
             foreach ($config['paths'] as $key => $value) {
                 $config['paths'][$key] = str_replace(
                     $old_temp_dir,
@@ -73,218 +73,218 @@ class CornController
                 );
             }
 
-             // now do it for the other usage
-             $config['template_path'] = str_replace(
-                 $old_temp_dir,
-                 $new_temp_dir,
-                 $config['template_path']
-             );
-             $config['layout_path'] = str_replace(
-                 $old_temp_dir,
-                 $new_temp_dir,
-                 $config['layout_path']
-             );
+            // now do it for the other usage
+            $config['template_path'] = str_replace(
+                $old_temp_dir,
+                $new_temp_dir,
+                $config['template_path']
+            );
+            $config['layout_path'] = str_replace(
+                $old_temp_dir,
+                $new_temp_dir,
+                $config['layout_path']
+            );
 
-             // Check to overwrite the config
-             $config_path = $config['paths']['config'];
+            // Check to overwrite the config
+            $config_path = $config['paths']['config'];
             if (file_exists($config_path)) {
                 include_once $config_path;
             }
         }
 
-         // For template's {{ linkparams }}
-         $config['linkparams'] = '';
-         $urlparams = false;
+        // For template's {{ linkparams }}
+        $config['linkparams'] = '';
+        $urlparams = false;
         if (isset($config['template'])) {
-             $config['linkparams'] .= '&design=' . $config['template'];
-             $urlparams = true;
+            $config['linkparams'] .= '&design=' . $config['template'];
+            $urlparams = true;
         }
         if ($urlparams) {
-             $config['linkparams'] = '?a=vc' . $config['linkparams'];
+            $config['linkparams'] = '?a=vc' . $config['linkparams'];
         }
         if (
-              isset($config['enable_params'])
-              && $config['enable_params'] === false
+            isset($config['enable_params'])
+            && $config['enable_params'] === false
         ) {
-             $config['linkparams'] = '';
+            $config['linkparams'] = '';
         }
 
-         // grab twig render director
-         $twig_dir = $config['paths']['frontend'];
+        // grab twig render director
+        $twig_dir = $config['paths']['frontend'];
 
-         // remove $twig_dir from ever $config['paths'] child
+        // remove $twig_dir from ever $config['paths'] child
         foreach ($config['paths'] as $key => $value) {
-             $config['paths'][$key] = str_replace(
-                 $twig_dir,
-                 './',
-                 $value
-             );
+            $config['paths'][$key] = str_replace(
+                $twig_dir,
+                './',
+                $value
+            );
         }
 
-         // Render the template with Twig
-         $view = Twig::fromRequest($req);
-         return $view->render($res, $config['paths']['page'], $config);
+        // Render the template with Twig
+        $view = Twig::fromRequest($req);
+        return $view->render($res, $config['paths']['page'], $config);
     }
 
-     /**
-      * Asset File Handler
-      *
-      * @param ServerRequestInterface $req    Request
-      * @param ResponseInterface      $res    Response
-      * @param array                  $route  URL Parameters
-      * @param array                  $config Configuration
-      *
-      * @return ResponseInterface
-      */
+    /**
+     * Asset File Handler
+     *
+     * @param ServerRequestInterface $req    Request
+     * @param ResponseInterface      $res    Response
+     * @param array                  $route  URL Parameters
+     * @param array                  $config Configuration
+     *
+     * @return ResponseInterface
+     */
     public function file(
         ServerRequestInterface $req,
         ResponseInterface $res,
         array $route,
         array $config
     ): ResponseInterface {
-         // set file path
-         $file = $route['file'];
+        // set file path
+        $file = $route['file'];
 
-         $assets_file = $config['paths']['assets'] . $file;
-         $client_file = $config['paths']['template']
-              . $config['assets_dir']
-              . $file;
-         $use_file = $assets_file;
+        $assets_file = $config['paths']['assets'] . $file;
+        $client_file = $config['paths']['template']
+            . $config['assets_dir']
+            . $file;
+        $use_file = $assets_file;
 
         if (file_exists($client_file)) {
-             // overwrite and use the client assest
-             $use_file = $client_file;
+            // overwrite and use the client assest
+            $use_file = $client_file;
         } elseif (file_exists($assets_file)) {
-             // use the default asset
-             $use_file = $assets_file;
+            // use the default asset
+            $use_file = $assets_file;
         } else {
-             // Not found
-             $res->getBody()->write('Not Found');
-             return $res->withStatus(404);
+            // Not found
+            $res->getBody()->write('Not Found');
+            return $res->withStatus(404);
         }
 
-         // write file contents
-         $file_contents = file_get_contents($use_file);
-         $res->getBody()->write($file_contents);
+        // write file contents
+        $file_contents = file_get_contents($use_file);
+        $res->getBody()->write($file_contents);
 
-         // get file type of $file
-         $file_type = mime_content_type($use_file);
+        // get file type of $file
+        $file_type = mime_content_type($use_file);
 
-         // get the file extesion
-         $file_ext = pathinfo($use_file, PATHINFO_EXTENSION);
+        // get the file extesion
+        $file_ext = pathinfo($use_file, PATHINFO_EXTENSION);
 
         if ($file_ext === 'css') {
-             $file_type = 'text/css';
+            $file_type = 'text/css';
         } elseif ($file_ext === 'js') {
-             $file_type = 'text/javascript';
+            $file_type = 'text/javascript';
         }
 
-         return $res
-              ->withHeader('Content-type', $file_type)
-              ->withStatus(200);
+        return $res
+            ->withHeader('Content-type', $file_type)
+            ->withStatus(200);
     }
 
-     /**
-      * Template Asset File Handler
-      *
-      * @param ServerRequestInterface $req    Request
-      * @param ResponseInterface      $res    Response
-      * @param array                  $route  URL Parameters
-      * @param array                  $config Configuration
-      *
-      * @return ResponseInterface
-      */
+    /**
+     * Template Asset File Handler
+     *
+     * @param ServerRequestInterface $req    Request
+     * @param ResponseInterface      $res    Response
+     * @param array                  $route  URL Parameters
+     * @param array                  $config Configuration
+     *
+     * @return ResponseInterface
+     */
     public function templateFile(
         ServerRequestInterface $req,
         ResponseInterface $res,
         array $route,
         array $config
     ): ResponseInterface {
-         // set file path
-         $file = $config['paths']['templates']
-              . $config['themes'][$route['template']]
-              . $config['assets_dir']
-              . $route['file'];
+        // set file path
+        $file = $config['paths']['templates']
+            . $config['themes'][$route['template']]
+            . $config['assets_dir']
+            . $route['file'];
 
-         // check for file existence
+        // check for file existence
         if (file_exists($file)) {
-             // write file contents
-             $file_contents = file_get_contents($file);
-             $res->getBody()->write($file_contents);
+            // write file contents
+            $file_contents = file_get_contents($file);
+            $res->getBody()->write($file_contents);
 
-             // get file type of $file
-             $file_type = mime_content_type($file);
+            // get file type of $file
+            $file_type = mime_content_type($file);
 
-             return $res
-                  ->withHeader('Content-type', $file_type)
-                  ->withStatus(200);
+            return $res
+                ->withHeader('Content-type', $file_type)
+                ->withStatus(200);
         }
 
-         // Not found
-         return $this->lost($req, $res, $config);
+        // Not found
+        return $this->lost($req, $res, $config);
     }
 
      /**
-      * Favicon Handler
-      *
-      * @param ServerRequestInterface $req    Request
-      * @param ResponseInterface      $res    Response
-      * @param array                  $route  URL Parameters
-      * @param array                  $config Configuration
-      *
-      * @return ResponseInterface
-      */
+     * Favicon Handler
+     *
+     * @param ServerRequestInterface $req    Request
+     * @param ResponseInterface      $res    Response
+     * @param array                  $route  URL Parameters
+     * @param array                  $config Configuration
+     *
+     * @return ResponseInterface
+     */
     public function favicon(
         ServerRequestInterface $req,
         ResponseInterface $res,
         array $route,
         array $config
     ): ResponseInterface {
-         // amend '.ico' to uri
-         $file = $route['favicon'] . '.ico';
+        // amend '.ico' to uri
+        $file = $route['favicon'] . '.ico';
 
-         // default favicon path
-         $favicon_path = $config['paths']['assets']
-              . '/images/icons/'
-              . $file;
+        // default favicon path
+        $favicon_path = $config['paths']['assets']
+            . '/images/icons/'
+            . $file;
 
-         // figure out which favicon to use
+        // figure out which favicon to use
         if (isset($_ENV['client'])) {
-             $client_path = $config['paths']['template']
-             . $config['assets_dir']
-             . '/images/icons/'
-             . $file;
+            $client_path = $config['paths']['template']
+                . $config['assets_dir']
+                . '/images/icons/'
+                . $file;
 
             if (file_exists($client_path)) {
                 $favicon_path = $client_path;
             }
         }
 
-         // check for favicon existence
+        // check for favicon existence
         if (!file_exists($favicon_path)) {
-             // respond with 404
-             return $this->lost($req, $res, $config);
+            // respond with 404
+            return $this->lost($req, $res, $config);
         }
 
-         // write file contents of favicon
-         $favicon = file_get_contents($favicon_path);
-         $res->getBody()->write($favicon);
+        // write file contents of favicon
+        $favicon = file_get_contents($favicon_path);
+        $res->getBody()->write($favicon);
 
-         return $res
-              ->withStatus(200)
-              ->withHeader('Content-type', 'image/x-icon');
+        return $res
+            ->withStatus(200)
+            ->withHeader('Content-type', 'image/x-icon');
     }
 
      /**
-      * Health Check Handler
-      *
-      * @param ServerRequestInterface $req    Request
-      * @param ResponseInterface      $res    Response
-      * @param array                  $route  URL Parameters
-      * @param array                  $config Configuration
-      *
-      * @return ResponseInterface
-      */
+     * Health Check Handler
+     *
+     * @param ServerRequestInterface $req    Request
+     * @param ResponseInterface      $res    Response
+     * @param array                  $route  URL Parameters
+     * @param array                  $config Configuration
+     *
+     * @return ResponseInterface
+     */
     public function docFile(
         ServerRequestInterface $req,
         ResponseInterface $res,
@@ -293,82 +293,82 @@ class CornController
     ): ResponseInterface {
          // check if production
         if (
-              isset($_ENV['environment'])
-              && $_ENV['environment'] === 'production'
+            isset($_ENV['environment'])
+            && $_ENV['environment'] === 'production'
         ) {
-             // not found
-             return $this->lost($req, $res, $config);
+            // not found
+            return $this->lost($req, $res, $config);
         }
 
-         $file = $route['file'] ?? '';
+        $file = $route['file'] ?? '';
 
-         // check if $file is '/docs' or '/docs/coverage'
+        // check if $file is '/docs' or '/docs/coverage'
         if (
-              $file === ''
-              || $file === '/'
-              || $file === '/coverage'
-              || $file === '/coverage/'
+            $file === ''
+            || $file === '/'
+            || $file === '/coverage'
+            || $file === '/coverage/'
         ) {
-             $file .= '/index.html';
+            $file .= '/index.html';
         }
 
-         // set file path
-         $doc_file = $config['paths']['docs'] . $file;
+        // set file path
+        $doc_file = $config['paths']['docs'] . $file;
 
         if (!file_exists($doc_file)) {
-             // Not found
-             return $this->lost($req, $res, $config);
+            // Not found
+            return $this->lost($req, $res, $config);
         }
 
-         // write file contents
-         $file_contents = file_get_contents($doc_file);
-         $res->getBody()->write($file_contents);
+        // write file contents
+        $file_contents = file_get_contents($doc_file);
+        $res->getBody()->write($file_contents);
 
-         // get file type of $file
-         $file_type = mime_content_type($doc_file);
+        // get file type of $file
+        $file_type = mime_content_type($doc_file);
 
-         // get the file extesion
-         $file_ext = pathinfo($doc_file, PATHINFO_EXTENSION);
+        // get the file extesion
+        $file_ext = pathinfo($doc_file, PATHINFO_EXTENSION);
 
         if ($file_ext === 'css') {
-             $file_type = 'text/css';
+            $file_type = 'text/css';
         } elseif ($file_ext === 'js') {
-             $file_type = 'text/javascript';
+            $file_type = 'text/javascript';
         }
 
-         return $res
-              ->withHeader('Content-type', $file_type)
-              ->withStatus(200);
+        return $res
+            ->withHeader('Content-type', $file_type)
+            ->withStatus(200);
     }
 
-     /**
-      * Not Found Handler
-      *
-      * @param ServerRequestInterface $req    Request
-      * @param ResponseInterface      $res    Response
-      * @param array                  $config Configuration
-      *
-      * @return ResponseInterface
-      */
+    /**
+     * Not Found Handler
+     *
+     * @param ServerRequestInterface $req    Request
+     * @param ResponseInterface      $res    Response
+     * @param array                  $config Configuration
+     *
+     * @return ResponseInterface
+     */
     public function lost(
         ServerRequestInterface $req,
         ResponseInterface $res,
         array $config
     ): ResponseInterface {
-         $res->getBody()->write('Not Found');
-         return $res->withStatus(404);
+        $res->getBody()->write('Not Found');
+        return $res->withStatus(404);
     }
 
-     /**
-      * Watcher Check Handler
-      *
-      * @param ContainerInterface     $app    Application
-      * @param ServerRequestInterface $req    Request
-      * @param ResponseInterface      $res    Response
-      * @param array                  $config Configuration
-      *
-      * @return ResponseInterface
-      */
+    /**
+     * Watcher Check Handler
+     *
+     * @param ContainerInterface     $app    Application
+     * @param ServerRequestInterface $req    Request
+     * @param ResponseInterface      $res    Response
+     * @param array                  $config Configuration
+     *
+     * @return ResponseInterface
+     */
     public function watch(
         ContainerInterface $app,
         ServerRequestInterface $req,
@@ -385,21 +385,21 @@ class CornController
         return $res;
     }
 
-     /**
-      * Health Check Handler
-      *
-      * @param ServerRequestInterface $req    Request
-      * @param ResponseInterface      $res    Response
-      * @param array                  $config Configuration
-      *
-      * @return ResponseInterface
-      */
+    /**
+     * Health Check Handler
+     *
+     * @param ServerRequestInterface $req    Request
+     * @param ResponseInterface      $res    Response
+     * @param array                  $config Configuration
+     *
+     * @return ResponseInterface
+     */
     public function health(
         ServerRequestInterface $req,
         ResponseInterface $res,
         array $config
     ): ResponseInterface {
-         $res->getBody()->write('Ok');
-         return $res->withStatus(200);
+        $res->getBody()->write('Ok');
+        return $res->withStatus(200);
     }
 }
