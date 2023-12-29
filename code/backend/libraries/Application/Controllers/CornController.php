@@ -34,7 +34,6 @@ class CornController
      *
      * @param ServerRequestInterface $req    Request
      * @param ResponseInterface      $res    Response
-     * @param array                  $args   Arguments
      * @param array                  $config Configuration
      *
      * @return ResponseInterface
@@ -42,7 +41,6 @@ class CornController
     public function map(
         ServerRequestInterface $req,
         ResponseInterface $res,
-        array $args,
         array $config
     ): ResponseInterface {
         // pass parameters to use
@@ -224,7 +222,7 @@ class CornController
         return $this->lost($req, $res, $config);
     }
 
-     /**
+    /**
      * Favicon Handler
      *
      * @param ServerRequestInterface $req    Request
@@ -275,7 +273,7 @@ class CornController
             ->withHeader('Content-type', 'image/x-icon');
     }
 
-     /**
+    /**
      * Health Check Handler
      *
      * @param ServerRequestInterface $req    Request

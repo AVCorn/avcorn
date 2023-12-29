@@ -162,8 +162,8 @@ return function (App $app) {
         ) use (
             $controller,
             $config
-) {
-            return $controller->map($req, $res, $args, $config);
+        ) {
+            return $controller->map($req, $res, $config);
         };
 
         // strip '/' from $route and capitalize
@@ -285,7 +285,14 @@ return function (App $app) {
      */
     $app->get(
         '/docs{file:.*}',
-        function (Request $req, Response $res, array $route) use ($controller, $config) {
+        function (
+            Request $req,
+            Response $res,
+            array $route
+        ) use (
+            $controller,
+            $config
+        ) {
             return $controller->docFile($req, $res, $route, $config);
         }
     )->setName('getDocFile');

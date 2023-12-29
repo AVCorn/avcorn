@@ -34,9 +34,9 @@ use Tests\TestCase;
  */
 class CornControllerTest extends TestCase
 {
-  /**
-   * Test map() Route
-   */
+    /**
+     * Test map() Route
+     */
     public function testMapRoute()
     {
         // Instantiate the controller
@@ -57,7 +57,7 @@ class CornControllerTest extends TestCase
             $controller,
             $config
         ) {
-            return $controller->map($req, $res, $args, $config);
+            return $controller->map($req, $res, $config);
         });
 
         $request = $this->createRequest('GET', '/');
@@ -95,7 +95,7 @@ class CornControllerTest extends TestCase
             $controller,
             $config
         ) {
-            return $controller->map($req, $res, $args, $config);
+            return $controller->map($req, $res, $config);
         });
 
         $request = $this->createRequest('GET', '/')->withQueryParams(
@@ -125,9 +125,6 @@ class CornControllerTest extends TestCase
      */
     public function testClientFaviconRoute()
     {
-        // Instantiate the controller
-        $controller = new CornController();
-
         // Set up the app
         $app = $this->getAppInstance();
 
@@ -433,7 +430,6 @@ class CornControllerTest extends TestCase
         $app->get('/404', function (
             Request $req,
             Response $res,
-            array $args
         ) use (
             $controller,
             $config
