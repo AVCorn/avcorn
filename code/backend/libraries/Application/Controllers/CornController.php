@@ -30,6 +30,107 @@ use App\Application\Watcher\WatcherInterface as Watcher;
 class CornController
 {
     /**
+     * Override Config for Design
+     *
+     * @param array  $config Configuration
+     * @param string $design Design
+     * @param array  $themes Themes
+     *
+     * @return array
+     */
+    private function designOverride(
+        array $config,
+        string $design,
+        array $themes
+    ): array {
+        $config['template'] = $design;
+
+        $old_temp_dir = $config['template_path'];
+        $new_temp_dir = $config['templates_path']
+            . '/' . $themes[$design] . '/';
+
+        // replace $old_temp_dir with $new_temp_dir in paths
+        foreach ($config['paths'] as $key => $value) {
+            $config['paths'][$key] = str_replace(
+                $old_temp_dir,
+                $new_temp_dir,
+                $value
+            );
+        }
+
+        // now do it for the other usage
+        $config['template_path'] = str_replace(
+            $old_temp_dir,
+            $new_temp_dir,
+            $config['template_path']
+        );
+        $config['layout_path'] = str_replace(
+            $old_temp_dir,
+            $new_temp_dir,
+            $config['layout_path']
+        );
+
+        // Check to overwrite the config
+        $config_path = $config['paths']['config'];
+        if (file_exists($config_path)) {
+            include_once $config_path;
+        }
+
+        return $config;
+    }
+
+    /**
+     * Link Params
+     *
+     * @param array $config Configuration
+     *
+     * @return string
+     */
+    private function linkParams(array $config): string
+    {
+        $linkparams = '';
+        $urlparams = false;
+        if (isset($config['template'])) {
+            $linkparams .= '&design=' . $config['template'];
+            $urlparams = true;
+        }
+        if ($urlparams) {
+            $linkparams = '?a=vc' . $linkparams;
+        }
+        if (
+            isset($config['enable_params'])
+            && $config['enable_params'] === false
+        ) {
+            $linkparams = '';
+        }
+
+        return $linkparams;
+    }
+
+    /**
+     * Localize Paths
+     *
+     * @param array $paths Paths
+     * @param string $twig_dir Twig Directory
+     *
+     * @return array
+     */
+    private function localizePaths(
+        array $paths,
+        string $twig_dir
+    ): array {
+        foreach ($paths as $key => $value) {
+            $paths[$key] = str_replace(
+                $twig_dir,
+                './',
+                $value
+            );
+        }
+
+        return $paths;
+    }
+
+    /**
      * Main Route Map Handler
      *
      * @param ServerRequestInterface $req    Request
@@ -56,72 +157,57 @@ class CornController
         // Override main config with template's
         if ($design && isset($themes[$design])) {
             // override template
-            $config['template'] = $design;
-
-            $old_temp_dir = $config['template_path'];
-            $new_temp_dir = $config['templates_path']
-                . '/' . $themes[$design] . '/';
-
-            // replace $old_temp_dir with $new_temp_dir in paths
-            foreach ($config['paths'] as $key => $value) {
-                $config['paths'][$key] = str_replace(
-                    $old_temp_dir,
-                    $new_temp_dir,
-                    $value
-                );
-            }
-
-            // now do it for the other usage
-            $config['template_path'] = str_replace(
-                $old_temp_dir,
-                $new_temp_dir,
-                $config['template_path']
+            $config = $this->designOverride(
+                $config,
+                $design,
+                $themes
             );
-            $config['layout_path'] = str_replace(
-                $old_temp_dir,
-                $new_temp_dir,
-                $config['layout_path']
-            );
-
-            // Check to overwrite the config
-            $config_path = $config['paths']['config'];
-            if (file_exists($config_path)) {
-                include_once $config_path;
-            }
         }
 
         // For template's {{ linkparams }}
-        $config['linkparams'] = '';
-        $urlparams = false;
-        if (isset($config['template'])) {
-            $config['linkparams'] .= '&design=' . $config['template'];
-            $urlparams = true;
-        }
-        if ($urlparams) {
-            $config['linkparams'] = '?a=vc' . $config['linkparams'];
-        }
-        if (
-            isset($config['enable_params'])
-            && $config['enable_params'] === false
-        ) {
-            $config['linkparams'] = '';
-        }
+        $config['linkparams'] = $this->linkParams($config);
 
         // grab twig render director
         $twig_dir = $config['paths']['frontend'];
 
         // remove $twig_dir from ever $config['paths'] child
-        foreach ($config['paths'] as $key => $value) {
-            $config['paths'][$key] = str_replace(
-                $twig_dir,
-                './',
-                $value
-            );
-        }
+        $config['paths'] = $this->localizePaths(
+            $config['paths'],
+            $twig_dir
+        );
 
         // Render the template with Twig
         $view = Twig::fromRequest($req);
-        return $view->render($res, $config['paths']['page'], $config);
+        return $view->render(
+            $res,
+            $config['paths']['page'],
+            $config
+        );
+    }
+
+    /**
+     * File Mime Type Results
+     *
+     * @param string $filePath File Path
+     *
+     * @return string
+     */
+    private function fileType(string $filePath)
+    {
+        // get file type of $file
+        $file_type = mime_content_type($filePath);
+
+        // get the file extesion
+        $file_ext = pathinfo($filePath, PATHINFO_EXTENSION);
+
+        // redo text files
+        if ($file_ext === 'css') {
+            $file_type = 'text/css';
+        } elseif ($file_ext === 'js') {
+            $file_type = 'text/javascript';
+        }
+
+        return $file_type;
     }
 
     /**
@@ -166,16 +252,7 @@ class CornController
         $res->getBody()->write($file_contents);
 
         // get file type of $file
-        $file_type = mime_content_type($use_file);
-
-        // get the file extesion
-        $file_ext = pathinfo($use_file, PATHINFO_EXTENSION);
-
-        if ($file_ext === 'css') {
-            $file_type = 'text/css';
-        } elseif ($file_ext === 'js') {
-            $file_type = 'text/javascript';
-        }
+        $file_type = $this->fileType($use_file);
 
         return $res
             ->withHeader('Content-type', $file_type)
@@ -323,16 +400,7 @@ class CornController
         $res->getBody()->write($file_contents);
 
         // get file type of $file
-        $file_type = mime_content_type($doc_file);
-
-        // get the file extesion
-        $file_ext = pathinfo($doc_file, PATHINFO_EXTENSION);
-
-        if ($file_ext === 'css') {
-            $file_type = 'text/css';
-        } elseif ($file_ext === 'js') {
-            $file_type = 'text/javascript';
-        }
+        $file_type = $this->fileType($doc_file);
 
         return $res
             ->withHeader('Content-type', $file_type)

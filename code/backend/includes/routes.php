@@ -42,7 +42,7 @@ return function (App $app) {
     $clients_dir        = '/clients/';
     $components_dir     = '/components/';
     $templates_dir      = '/templates/';
-    $template_dir        = '/' . $template . '/';
+    $template_dir       = '/' . $template . '/';
     $layouts_dir        = '/layouts/';
     $template_extension = '.html';
     $config_file        = '/config.php';
