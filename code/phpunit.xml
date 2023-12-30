@@ -20,7 +20,7 @@
   </testsuites>
   <source>
     <include>
-      <directory suffix=".php">code/backend/</directory>
+      <directory suffix=".php">backend/</directory>
     </include>
   </source>
 </phpunit>
