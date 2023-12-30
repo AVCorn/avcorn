@@ -36,6 +36,7 @@
         "codeception/codeception": "^5.0",
         "codeception/module-asserts": "*",
         "codeception/module-phpbrowser": "*",
+        "friendsoftwig/twigcs": "^6.4",
         "jangregor/phpstan-prophecy": "^1.0.0",
         "phpbench/phpbench": "^1.2",
         "phpcsstandards/phpcsutils": "^1.0",
