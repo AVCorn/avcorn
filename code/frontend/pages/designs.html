@@ -67,85 +67,88 @@
             We offer a handful of general designs to show off certain design aspects.
             No content is changed around, as every change is design oriented.
         </p>
+
         <div class="grid-x grid-margin-x text-center" data-equalizer data-equalize-on="medium">
+            {% set designs = [
+                {
+                    'name': 'marketing',
+                    'title': 'Marketing',
+                    'link': '/designs?design=marketing',
+                    'description': 'Good enough for any website, that we use for our own demo. We guarentee it!'
+                },
+                {
+                    'name': 'modern',
+                    'title': 'Modern',
+                    'link': '/designs?design=modern',
+                    'description': 'Another creative design that\'s more modern and appeasing to the eye.'
+                },
+                {
+                    'name': 'simple',
+                    'title': 'Simple',
+                    'link': '/designs?design=simple',
+                    'description': 'Simple. Minimal.'
+                },
+                {
+                    'name': 'blog',
+                    'title': 'Blog',
+                    'src': 'assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'Want a blog to share your thoughts and ideas? Find out more.'
+                },
+                {
+                    'name': 'shopping',
+                    'title': 'Shopping',
+                    'src': 'assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'Buy in to this design today!'
+                },
+                {
+                    'name': 'portfolio',
+                    'title': 'Portfolio',
+                    'src': 'assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'Let your person projects be free on the web.'
+                }
+            ] %}
 
-            <div class="cell large-4 medium-4 small-6">
-                <h3 style="font-weight:bold;">
-                    <a href="/designs?design=marketing">Marketing</a>
-                </h3>
+            {% for design in designs%}
+                <div class="cell large-4 medium-4 small-6">
+                    <h3 style="font-weight:bold;">
+                        {%if design.link %}
+                            <a href="{{ design.link }}">{{ design.title }}</a>
+                        {% else %}
+                            {{ design.title }}
+                        {% endif %}
+                    </h3>
 
-                <a href="/designs?design=marketing">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-marketing-lg.png" data-interchange="[assets/images/designs/design-marketing-sm.png, small], [assets/images/designs/design-marketing-md.png, medium], [assets/images/designs/design-marketing-lg.png, large]" alt="Marketing Design" title="Marketing Design" />
-                </a>
+                    {%if design.link %}
+                        <a href="{{ design.link }}">
+                            <img class="thumbnail small-12"
+                                src="/assets/images/designs/design-{{ design.name }}-lg.png"
+                                data-interchange="
+                                    [/assets/images/designs/design-{{ design.name }}-sm.png, small],
+                                    [/assets/images/designs/design-{{ design.name }}-md.png, medium],
+                                    [/assets/images/designs/design-{{ design.name }}-lg.png, large]"
+                                title="{{ design.title }}"
+                                alt="{{ design.title }} Preview" />
+                        </a>
+                    {% else %}
+                        <img class="thumbnail small-12"
+                            src="{{ design.src }}"
+                            title="Coming Soon!"
+                            alt="Coming Soon!" />
+                    {% endif %}
 
-                <p style="font-size:0.8em; font-style:italic; text-align:justify;">
-                    Good enough for a marketing website, that we use it ourselves.
-                    We guarentee it!
-                </p>
+                    <p style="font-size:0.8em; font-style:italic; text-align:justify;">
+                        {{ design.description }}
+                    </p>
 
-                <u><a href="/designs?design=marketing">View Design</a></u>
-            </div>
-
-            <div class="cell large-4 medium-4 small-6">
-                <h3 style="font-weight:bold;">
-                    <a href="/designs?design=modern">Modern</a>
-                </h3>
-
-                <a href="/designs?design=modern">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-modern-lg.png" data-interchange="[assets/images/designs/design-modern-sm.png, small], [assets/images/designs/design-modern-md.png, medium], [assets/images/designs/design-modern-lg.png, large]" alt="Modern Design" title="Modern Design" />
-                </a>
-
-                <p style="font-size:0.8em; font-style:italic; text-align:justify;">
-                    Another creative design that's more modern and appeasing to the eye.
-                </p>
-
-                <u><a href="/designs?design=modern">View Design</a></u>
-            </div>
-
-            <div class="cell large-4 medium-4 small-6">
-                <h3 style="font-weight:bold;">
-                    <a href="/designs?design=simple">Simple</a>
-                </h3>
-
-                <a href="/designs?design=simple">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-simple-lg.png" data-interchange="[assets/images/designs/design-simple-sm.png, small], [assets/images/designs/design-simple-md.png, medium], [assets/images/designs/design-simple-lg.png, large]" alt="Simple Design" title="Simple Design" />
-                </a>
-
-                <p style="font-size:0.8em; font-style:italic; text-align:justify;">
-                    Simple. Minimal.
-                </p>
-
-                <u><a href="/designs?design=simple">View Design</a></u>
-            </div>
-
-            <div class="cell large-4 medium-4 small-6">
-                <h3 style="font-weight:bold;">Blog</h3>
-                <img class="thumbnail shake" src="assets/images/nutty/nutty-comingsoon.png" />
-                <p style="font-size:0.8em; font-style:italic; text-align:justify;">
-                    Want a blog to share your thoughts and ideas?
-                </p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-4 medium-4 small-6">
-                <h3 style="font-weight:bold;">Shopping</h3>
-                <img class="thumbnail shake" src="assets/images/nutty/nutty-comingsoon.png" />
-                <p style="font-size:0.8em; font-style:italic; text-align:justify;">
-                    Even small businesses need to sometimes sell online.
-                </p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-4 medium-4 small-6">
-                <h3 style="font-weight:bold;">Portfolio</h3>
-                <img class="thumbnail shake" src="assets/images/nutty/nutty-comingsoon.png" />
-                <p style="font-size:0.8em; font-style:italic; text-align:justify;">
-                    Are you a photographer, freelancer, or designer?
-                    This would be perfect for you!
-                </p>
-                <del>View Design</del>
-            </div>
-
+                    {%if design.link %}
+                        <u><a href="{{ design.link }}">View Design</a></u>
+                    {% else %}
+                        <del>View Design</del>
+                        <br />
+                        <em>(Coming Soon)</em>
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
 
         <br />
@@ -156,184 +159,190 @@
             Just to offer a quick selection and list of ideas to start from.
             Each design might incorporate content differences, based on the business' needs.
         </p>
+
         <div class="grid-x text-center" data-equalizer data-equalize-on="medium">
+            {% set designs = [
+                {
+                    'name': 'agency',
+                    'title': 'Agency',
+                    'link': '/designs?design=agency',
+                    'description': 'Our own company design.'
+                },
+                {
+                    'name': 'autoshop',
+                    'title': 'Autoshop',
+                    'link': '/designs?design=autoshop',
+                    'description': 'Fixing up against your competition.'
+                },
+                {
+                    'name': 'insurance',
+                    'title': 'Insurance',
+                    'link': '/designs?design=insurance',
+                    'description': 'Insurance agent landing and leads template.'
+                },
+                {
+                    'name': 'artist',
+                    'title': 'Artist',
+                    'src': '/assets/images/logos/logo-artist.png',
+                    'description': 'Creative and inspiring.'
+                },
+                {
+                    'name': 'bakery',
+                    'title': 'Bakery',
+                    'src': '/assets/images/logos/logo-bakery.png',
+                    'description': 'Baking up some tasty websites.'
+                },
+                {
+                    'name': 'barbershop',
+                    'title': 'Barbershop',
+                    'src': '/assets/images/logos/logo-barber.png',
+                    'description': 'Stylish, neat, and fitting.'
+                },
+                {
+                    'name': 'chiropractor',
+                    'title': 'Chiropractor',
+                    'src': '/assets/images/logos/logo-chiropractor.png',
+                    'description': 'Let our design have a crack at your customers.'
+                },
+                {
+                    'name': 'cleaning',
+                    'title': 'Cleaning',
+                    'src': '/assets/images/logos/logo-maid.png',
+                    'description': 'A clean and tidy design.'
+                },
+                {
+                    'name': 'coffeeshop',
+                    'title': 'Coffeeshop',
+                    'src': '/assets/images/logos/logo-coffeeshop.png',
+                    'description': 'We brewed up a decitate design.'
+                },
+                {
+                    'name': 'finance',
+                    'title': 'Finance',
+                    'src': '/assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'We\'ve crunched the numbers to make this design afforadable.'
+                },
+                {
+                    'name': 'fitness',
+                    'title': 'Fitness',
+                    'src': '/assets/images/logos/logo-gym.png',
+                    'description': 'A fit design for health.'
+                },
+                {
+                    'name': 'generalstore',
+                    'title': 'General Store',
+                    'src': '/assets/images/logos/logo-market.png',
+                    'description': 'Has everything you need!'
+                },
+                {
+                    'name': 'laundry',
+                    'title': 'Laundry',
+                    'src': '/assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'Clean and fresh websites.'
+                },
+                {
+                    'name': 'lawyer',
+                    'title': 'Lawyer',
+                    'src': '/assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'We make your website right!'
+                },
+                {
+                    'name': 'personal',
+                    'title': 'Personal',
+                    'src': '/assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'All about you.'
+                },
+                {
+                    'name': 'petshop',
+                    'title': 'Pet Shop',
+                    'src': '/assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'So cute and adorable!'
+                },
+                {
+                    'name': 'photographer',
+                    'title': 'Photographer',
+                    'src': '/assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'A snappy looking design.'
+                },
+                {
+                    'name': 'massage',
+                    'title': 'Massage',
+                    'src': '/assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'Relax, with our massage design.'
+                },
+                {
+                    'name': 'religious',
+                    'title': 'Religious',
+                    'src': '/assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'Praise be this design!'
+                },
+                {
+                    'name': 'restaurant',
+                    'title': 'Restaurant',
+                    'src': '/assets/images/logos/logo-kitchen.png',
+                    'description': 'Delcious.'
+                },
+                {
+                    'name': 'tattooshop',
+                    'title': 'Tattoo Parlor',
+                    'src': '/assets/images/logos/logo-tattooshop.png',
+                    'description': 'Let us draw you up your website.'
+                },
+                {
+                    'name': 'storage',
+                    'title': 'Storage',
+                    'src': '/assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'Find a home to store all your business information online.'
+                },
+                {
+                    'name': 'toyshop',
+                    'title': 'Toy Shop',
+                    'src': '/assets/images/nutty/nutty-comingsoon.png',
+                    'description': 'Checking off all the needs on your list, twice!'
+                }
+            ] %}
 
-            <div class="cell large-3 medium-4 small-6">
-                <h3 style="font-weight:bold;">
-                    <a href="/designs?design=agency">Agency</a>
-                </h3>
-                <a href="/designs?design=agency">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-agency-lg.png" data-interchange="[assets/images/designs/design-agency-sm.png, small], [assets/images/designs/design-agency-md.png, medium], [assets/images/designs/design-agency-lg.png, large]" alt="Agency Design" title="Agency Design" />
-                </a>
-                <p style="font-size:0.8em; font-style:italic;">
-                    Our own design.
-                </p>
-                <u><a href="/designs?design=agency">View Design</a></u>
-            </div>
+            {% for design in designs%}
+                <div class="cell large-3 medium-4 small-6">
+                    <h3 style="font-weight:bold;">
+                        {%if design.link %}
+                            <a href="{{ design.link }}">{{ design.title }}</a>
+                        {% else %}
+                            {{ design.title }}
+                        {% endif %}
+                    </h3>
 
-            <div class="cell large-3 medium-4 small-6">
-                <h3 style="font-weight:bold;">Artist</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Artist Design" title="Artist Design" />
-                <p style="font-size:0.8em; font-style:italic;">Creative and inspiring.</p>
-                <del>View Design</del>
-            </div>
+                    {%if design.link %}
+                        <a href="{{ design.link }}">
+                            <img class="thumbnail small-12"
+                                src="/assets/images/designs/design-{{ design.name }}-lg.png"
+                                data-interchange="
+                                    [/assets/images/designs/design-{{ design.name }}-sm.png, small],
+                                    [/assets/images/designs/design-{{ design.name }}-md.png, medium],
+                                    [/assets/images/designs/design-{{ design.name }}-lg.png, large]"
+                                title="{{ design.title }}"
+                                alt="{{ design.title }} Preview" />
+                        </a>
+                    {% else %}
+                        <img class="thumbnail small-12"
+                            src="{{ design.src }}"
+                            title="Coming Soon!"
+                            alt="Coming Soon!" />
+                    {% endif %}
 
-            <div class="cell large-3 medium-4 small-6">
-                <h3 style="font-weight:bold;">
-                    <a href="/designs?design=autoshop">Autoshop</a>
-                </h3>
-                <a href="/designs?design=autoshop">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-autoshop-lg.png" data-interchange="[assets/images/designs/design-autoshop-sm.png, small], [assets/images/designs/design-autoshop-md.png, medium], [assets/images/designs/design-autoshop-lg.png, large]" alt="Autoshop Design" title="Autoshop Design" />
-                </a>
-                <p style="font-size:0.8em; font-style:italic;">
-                    For auto body, repair, mechanic, or oil change shops.
-                </p>
-                <u><a href="/designs?design=autoshop">View Design</a></u>
-            </div>
+                    <p style="font-size:0.8em; font-style:italic; text-align:justify;">
+                        {{ design.description }}
+                    </p>
 
-            <div class="cell large-3 medium-4 small-6">
-                <h3 style="font-weight:bold;">Bakery</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Bakery Design" title="Bakery Design" />
-                <p style="font-size:0.8em; font-style:italic;">Baking up some websites.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Barbershop</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Barber Design" title="Barber Design" />
-                <p style="font-size:0.8em; font-style:italic;">Stylish, neat, and fitting.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Chiropractor</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Chiropractor Design" title="Chiropractor Design" />
-                <p style="font-size:0.8em; font-style:italic;">Let our design have a crack at your customers.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Cleaning</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Maid Design" title="Maid Design" />
-                <p style="font-size:0.8em; font-style:italic;">A clean and tidy design.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Coffeeshop</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-coffeebean.png" alt="Coffeeshop Design" title="Coffeeshop Design" />
-                <p style="font-size:0.8em; font-style:italic;">We brewed up a decitate design.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Finance</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Accounting Design" title="Accounting Design" />
-                <p style="font-size:0.8em; font-style:italic;">We've crunched the numbers to make this design afforadable.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Fitness</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-bodybuilder.png" alt="Fitness Design" title="Fitness Design" />
-                <p style="font-size:0.8em; font-style:italic;">A fit design for health.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">General Store</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Store Design" title="Store Design" />
-                <p style="font-size:0.8em; font-style:italic;">Has everything you need.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6">
-                <h3 style="font-weight:bold;">
-                    <a href="/designs?design=insurance">Insurance</a>
-                </h3>
-                <a href="/designs?design=insurance">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-insurance-lg.png" data-interchange="[assets/images/designs/design-insurance-sm.png, small], [assets/images/designs/design-insurance-md.png, medium], [assets/images/designs/design-insurance-lg.png, large]" alt="Insurance Design" title="Insurance Design" />
-                </a>
-                <p style="font-size:0.8em; font-style:italic;">
-                    Insurance agent landing and leads template.
-                </p>
-                <u><a href="/designs?design=insurance">View Design</a></u>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Laundry</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Laundry Design" title="Laundry Design" />
-                <p style="font-size:0.8em; font-style:italic;">Clean and fresh websites.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">
-                    <a href="/designs?design=landscape">Lawn Service</a>
-                </h3>
-                <a href="/designs?design=landscape">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-lawncare-lg.png" data-interchange="[assets/images/designs/design-lawncare-sm.png, small], [assets/images/designs/design-lawncare-md.png, medium], [assets/images/designs/design-lawncare-lg.png, large]" alt="Lawn Service" title="Lawn Service" />
-                </a>
-                <p style="font-size:0.8em; font-style:italic;">Mowing down the compeition.</p>
-                <u><a href="/designs?design=landscape">View Design</a></u>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Lawyer</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Lawyer Design" title="Lawyer Design" />
-                <p style="font-size:0.8em; font-style:italic;">We make it right!</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Personal</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Personal Website" title="Personal Website" />
-                <p style="font-size:0.8em; font-style:italic;">Me, me, me, and me!</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Pet Shop</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Petshop Design" title="Petshop Design" />
-                <p style="font-size:0.8em; font-style:italic;">So cute and adorable!</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Massage</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Massage Design" title="Massage Design" />
-                <p style="font-size:0.8em; font-style:italic;">Relax with our massage design.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Religious</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Religious Design" title="Religious Design" />
-                <p style="font-size:0.8em; font-style:italic;">Praise be this design!</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Restaurant</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/logos/logo-kitchen.png" alt="Restaurant Design" title="Restaurant Design" />
-                <p style="font-size:0.8em; font-style:italic;">So tasty.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Storage</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Storage Design" title="Storage Design" />
-                <p style="font-size:0.8em; font-style:italic;">Find a home to store all your contact information online.</p>
-                <del>View Design</del>
-            </div>
-
-            <div class="cell large-3 medium-4 small-6 padding-1">
-                <h3 style="font-weight:bold;">Toy Shop</h3>
-                <img style="max-height:148px; width:auto;" class="thumbnail small-12 hover-shake" src="assets/images/nutty/nutty-comingsoon.png" alt="Toyshop Design" title="Toyshop Design" />
-                <p style="font-size:0.8em; font-style:italic;">Checking off all the needs on your list, twice!</p>
-                <del>View Design</del>
-            </div>
-
+                    {%if design.link %}
+                        <u><a href="{{ design.link }}">View Design</a></u>
+                    {% else %}
+                        <del>View Design</del>
+                        <br />
+                        <em>(Coming Soon)</em>
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
 
         <br />
