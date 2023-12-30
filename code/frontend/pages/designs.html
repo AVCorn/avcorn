@@ -130,7 +130,7 @@
                                 alt="{{ design.title }} Preview" />
                         </a>
                     {% else %}
-                        <img class="thumbnail small-12"
+                        <img class="thumbnail small-12 shake"
                             src="{{ design.src }}"
                             title="Coming Soon!"
                             alt="Coming Soon!" />
@@ -143,10 +143,10 @@
                     {%if design.link %}
                         <u><a href="{{ design.link }}">View Design</a></u>
                     {% else %}
-                        <del>View Design</del>
-                        <br />
-                        <em>(Coming Soon)</em>
+                        <a href="#"><del>View Design</del></a>
                     {% endif %}
+                    <br />
+                    <br />
                 </div>
             {% endfor %}
         </div>
@@ -305,12 +305,18 @@
             {% for design in designs%}
                 <div class="cell large-3 medium-4 small-6">
                     <h3 style="font-weight:bold;">
-                        {%if design.link %}
-                            <a href="{{ design.link }}">{{ design.title }}</a>
-                        {% else %}
-                            {{ design.title }}
-                        {% endif %}
+
                     </h3>
+                    {%if design.link %}
+                        <h3 style="font-weight:bold;">
+                            <a href="{{ design.link }}">{{ design.title }}</a>
+                        </h3>
+                    {% else %}
+                        <h4 style="font-weight:bold;">
+                            {{ design.title }}
+                            <em class="subheader" style="display:block; font-size:0.6em;">(Coming Soon)</em>
+                        </h4>
+                    {% endif %}
 
                     {%if design.link %}
                         <a href="{{ design.link }}">
@@ -324,10 +330,12 @@
                                 alt="{{ design.title }} Preview" />
                         </a>
                     {% else %}
-                        <img class="thumbnail small-12"
-                            src="{{ design.src }}"
-                            title="Coming Soon!"
-                            alt="Coming Soon!" />
+                        <div style="padding:0 2em;">
+                            <img class="thumbnail small-12 shake"
+                                src="{{ design.src }}"
+                                title="Coming Soon!"
+                                alt="Coming Soon!" />
+                        </div>
                     {% endif %}
 
                     <p style="font-size:0.8em; font-style:italic; text-align:justify;">
@@ -337,10 +345,10 @@
                     {%if design.link %}
                         <u><a href="{{ design.link }}">View Design</a></u>
                     {% else %}
-                        <del>View Design</del>
-                        <br />
-                        <em>(Coming Soon)</em>
+                        <a href="#"><del>View Design</del></a>
                     {% endif %}
+                    <br />
+                    <br />
                 </div>
             {% endfor %}
         </div>
