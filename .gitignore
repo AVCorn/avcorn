@@ -1,22 +1,11 @@
+*/.DS_Store
+.DS_Store
+
 .idea/
 .vscode/
 *.sublime-workspace
 
-/vendor
-/code/vendor
-/node_modules
-/code/node_modules
-
-code/.phpunit.cache
-code/.phpunit.result.cache
-code/phpunit.xml.bak
-
-docs/coverage
-!docs/coverage/.gitkeep
-
-*/.DS_Store
-.DS_Store
+vendor
+node_modules
 
 *.private.*
-*/_env/*
-!*/_env/.gitkeep

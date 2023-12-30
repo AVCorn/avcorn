@@ -8,19 +8,19 @@
   colors="true"
   processIsolation="false"
   stopOnFailure="false"
-  bootstrap="../tests/unit/bootstrap.php"
+  bootstrap="tests/bootstrap.php"
   cacheDirectory=".phpunit.cache"
   displayDetailsOnTestsThatTriggerWarnings="true"
   backupStaticProperties="false">
   <coverage/>
   <testsuites>
     <testsuite name="Test Suite">
-      <directory>../tests/unit/</directory>
+      <directory>tests/Unit/</directory>
     </testsuite>
   </testsuites>
   <source>
     <include>
-      <directory suffix=".php">../code/backend/</directory>
+      <directory suffix=".php">backend/</directory>
     </include>
   </source>
 </phpunit>

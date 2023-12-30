@@ -47,7 +47,12 @@ jobs:
               if: matrix.analysis
               run: vendor/bin/phpstan
 
-            - name: Tests
+            - name: Twig standards
+              working-directory: code
+              if: matrix.analysis
+              run: vendor/bin/twigcs
+
+            - name: Unit Tests
               working-directory: code
               run: php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-clover clover.xml
 
