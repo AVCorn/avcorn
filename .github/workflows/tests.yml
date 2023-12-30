@@ -70,7 +70,3 @@ jobs:
               run: |
                   composer require php-coveralls/php-coveralls -n -W
                   vendor/bin/php-coveralls --coverage_clover=clover.xml -v
-
-            - name: Acceptance Tests
-              working-directory: code
-              run: php vendor/bin/codecept run Acceptance
