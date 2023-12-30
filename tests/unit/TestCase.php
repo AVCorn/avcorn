@@ -16,7 +16,7 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Unit;
 
 use DI\ContainerBuilder;
 use Exception;
@@ -43,34 +43,51 @@ class TestCase extends PHPUnit_TestCase
     /**
      * Get App Instance
      *
+     * @param bool $production Production Flag (optional)
+     *
      * @return App
      * @throws Exception
      */
-    protected function getAppInstance(): App
+    protected function getAppInstance(bool $production = false): App
     {
         // Instantiate PHP-DI ContainerBuilder
         $containerBuilder = new ContainerBuilder();
+
+        $code_dir = '/../../code/';
+
+        // Setup caching
+        if ($production) {
+            $containerBuilder->enableCompilation(
+                __DIR__
+                    . $code_dir
+                    . '/cache'
+            );
+        }
 
         // Container intentionally not compiled for tests.
 
         // Set up settings
         $settings = include __DIR__
-            . '/../../code/backend/includes/settings.php';
+            . $code_dir
+            . '/backend/source/settings.php';
         $settings($containerBuilder);
 
         // Set up dependencies
         $dependencies = include __DIR__
-            . '/../../code/backend/includes/dependencies.php';
+            . $code_dir
+            . '/backend/source/dependencies.php';
         $dependencies($containerBuilder);
 
         // Set up repositories
         $repositories = include __DIR__
-            . '/../../code/backend/includes/repositories.php';
+            . $code_dir
+            . '/backend/source/repositories.php';
         $repositories($containerBuilder);
 
         // Set up watcher
         $watcher = include __DIR__
-            . '/../../code/backend/includes/watcher.php';
+            . $code_dir
+            . '/backend/source/watcher.php';
         $watcher($containerBuilder);
 
         // Build PHP-DI Container instance
@@ -84,7 +101,8 @@ class TestCase extends PHPUnit_TestCase
         $twig_config = [];
         $twig = Twig::create(
             __DIR__
-                . '/../../code/frontend/',
+            . $code_dir
+                . '/frontend/',
             $twig_config
         );
 
@@ -93,17 +111,20 @@ class TestCase extends PHPUnit_TestCase
 
         // Register middleware
         $middleware = include __DIR__
-            . '/../../code/backend/includes/middleware.php';
+            . $code_dir
+            . '/backend/source/middleware.php';
         $middleware($app);
 
         // Register forms
         $forms = include __DIR__
-            . '/../../code/backend/includes/forms.php';
+            . $code_dir
+            . '/backend/source/forms.php';
         $forms($app);
 
         // Register routes
         $routes = include __DIR__
-            . '/../../code/backend/includes/routes.php';
+            . $code_dir
+            . '/backend/source/routes.php';
         $routes($app);
 
         return $app;

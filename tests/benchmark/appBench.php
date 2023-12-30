@@ -17,8 +17,6 @@ declare(strict_types=1);
 
 namespace Benchmark;
 
-require __DIR__ . '/../../code/vendor/autoload.php';
-
 use DI\ContainerBuilder;
 use Exception;
 use PHPUnit\Framework\TestCase as PHPUnit_TestCase;
@@ -55,17 +53,17 @@ class AppBench
 
         // Set up settings
         $settings = include __DIR__
-            . '/../../code/backend/includes/settings.php';
+            . '/../../code/backend/source/settings.php';
         $settings($containerBuilder);
 
         // Set up dependencies
         $dependencies = include __DIR__
-            . '/../../code/backend/includes/dependencies.php';
+            . '/../../code/backend/source/dependencies.php';
         $dependencies($containerBuilder);
 
         // Set up repositories
         $repositories = include __DIR__
-            . '/../../code/backend/includes/repositories.php';
+            . '/../../code/backend/source/repositories.php';
         $repositories($containerBuilder);
 
         // Build PHP-DI Container instance
@@ -77,12 +75,12 @@ class AppBench
 
         // Register middleware
         $middleware = include __DIR__
-            . '/../../code/backend/includes/middleware.php';
+            . '/../../code/backend/source/middleware.php';
         $middleware($app);
 
         // Register routes
         $routes = include __DIR__
-            . '/../../code/backend/includes/routes.php';
+            . '/../../code/backend/source/routes.php';
         $routes($app);
 
         unset(
@@ -99,7 +97,7 @@ class AppBench
 
     /**
      * Benchmark App Request
-     * 
+     *
      * @return void
      *
      * @Revs(1000)

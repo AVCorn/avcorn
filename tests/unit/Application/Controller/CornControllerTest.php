@@ -16,7 +16,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Application\Controllers;
+namespace Tests\Unit\Application\Controllers;
 
 use Slim\App;
 use Slim\Factory\AppFactory;
@@ -25,7 +25,7 @@ use Slim\Psr7\Response as Response;
 use Slim\Psr7\Request as Request;
 use Slim\Psr7\Stream;
 use App\Application\Controllers\CornController;
-use Tests\TestCase;
+use Tests\Unit\TestCase;
 
 /**
  * CornControllerTest Class
@@ -61,6 +61,45 @@ class CornControllerTest extends TestCase
             return $controller->map($req, $res, $config);
         });
 
+        // make an HTTP request to the application
+        $request = $this->createRequest('GET', '/');
+        $response = $app->handle($request);
+
+        $this->assertEquals(200, $response->getStatusCode());
+    }
+
+    /**
+     * Test map() Route
+     *
+     * @return void
+     */
+    public function testProduction()
+    {
+        // Instantiate the controller
+        $controller = new CornController();
+
+        // Set up the app
+        $app = $this->getAppInstance(true);
+
+        // instantiate config
+        $config = $this->createConfig();
+
+        // Add the route to be tested
+        $app->get('/', function (
+            Request $req,
+            Response $res
+        ) use (
+            $controller,
+            $config
+        ) {
+            return $controller->map($req, $res, $config);
+        });
+
+        // one time for good luck
+        $request = $this->createRequest('GET', '/');
+        $response = $app->handle($request);
+
+        // re-do for cache
         $request = $this->createRequest('GET', '/');
         $response = $app->handle($request);
 

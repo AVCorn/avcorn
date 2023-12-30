@@ -16,14 +16,14 @@
 
 declare(strict_types=1);
 
-namespace Tests\Application\Actions;
+namespace Tests\Unit\Application\Actions;
 
 use App\Application\Actions\Action;
 use App\Application\Actions\ActionPayload;
 use DateTimeImmutable;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
-use Tests\TestCase;
+use Tests\Unit\TestCase;
 
 /**
  * ActionTest Class

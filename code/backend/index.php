@@ -43,20 +43,20 @@ if (isset($_ENV['production'])) {
 }
 
 // Set up settings
-$settings = include __DIR__ . '/includes/settings.php';
+$settings = include __DIR__ . '/source/settings.php';
 $settings($containerBuilder);
 
 // Set up dependencies
-$dependencies = include __DIR__ . '/includes/dependencies.php';
+$dependencies = include __DIR__ . '/source/dependencies.php';
 $dependencies($containerBuilder);
 
 // Set up repositories
-$repositories = include __DIR__ . '/includes/repositories.php';
+$repositories = include __DIR__ . '/source/repositories.php';
 $repositories($containerBuilder);
 
 // Set up watcher
 if (!isset($app->mode) || $app->mode !== 'production') {
-    $watcher = include __DIR__ . '/includes/watcher.php';
+    $watcher = include __DIR__ . '/source/watcher.php';
     $watcher($containerBuilder);
 }
 
@@ -84,15 +84,15 @@ $container->set('view', $twig);
 $app->add(TwigMiddleware::create($app, $twig));
 
 // Register middleware
-$middleware = include __DIR__ . '/includes/middleware.php';
+$middleware = include __DIR__ . '/source/middleware.php';
 $middleware($app);
 
 // Register forms
-$forms = include __DIR__ . '/includes/forms.php';
+$forms = include __DIR__ . '/source/forms.php';
 $forms($app);
 
 // Register routes
-$routes = include __DIR__ . '/includes/routes.php';
+$routes = include __DIR__ . '/source/routes.php';
 $routes($app);
 
 /**

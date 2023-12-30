@@ -428,9 +428,9 @@ class CornController
     /**
      * Watcher Check Handler
      *
-     * @param ContainerInterface     $app    Application
-     * @param ServerRequestInterface $req    Request
-     * @param ResponseInterface      $res    Response
+     * @param ContainerInterface     $app Application
+     * @param ServerRequestInterface $req Request
+     * @param ResponseInterface      $res Response
      *
      * @return ResponseInterface
      */

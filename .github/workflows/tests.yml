@@ -47,7 +47,7 @@ jobs:
               if: matrix.analysis
               run: vendor/bin/phpstan
 
-            - name: Tests
+            - name: Unit Tests
               working-directory: code
               run: php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-clover clover.xml
 
@@ -65,3 +65,7 @@ jobs:
               run: |
                   composer require php-coveralls/php-coveralls -n -W
                   vendor/bin/php-coveralls --coverage_clover=clover.xml -v
+
+            - name: Acceptance Tests
+              working-directory: code
+              run: php vendor/bin/codecept run Acceptance

@@ -1,8 +1,8 @@
 parameters:
   level: 5
   paths:
-    - backend/includes
-    - backend/libraries
+    - backend/source
+    - backend/library
     - backend/index.php
     - public/index.php
     - tests

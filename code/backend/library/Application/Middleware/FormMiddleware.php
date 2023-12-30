@@ -72,7 +72,7 @@ class FormMiddleware implements Middleware
                 $client = new Google_Client();
                 $client->setAuthConfig(
                     __DIR__
-                    . '/../../../../_env/google.private.key.json'
+                    . '/../../../../../_env/google.private.key.json'
                 );
                 $client->setApplicationName('Google Sheets API');
                 $client->setScopes([Google_Service_Sheets::SPREADSHEETS]);

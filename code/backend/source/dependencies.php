@@ -12,7 +12,7 @@
  * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
- * @subpackage Includes
+ * @subpackage Source
  * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn

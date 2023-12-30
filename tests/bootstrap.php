@@ -8,7 +8,7 @@
  * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
- * @subpackage App\Domain\DomainException
+ * @subpackage Tests
  * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
@@ -16,4 +16,4 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/../../code/vendor/autoload.php';
+require __DIR__ . '/../code/vendor/autoload.php';

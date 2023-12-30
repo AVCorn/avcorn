@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Middleware configuration
+ * Form configuration
  *
  * PHP version 8.2
  *
@@ -12,7 +12,7 @@
  * @phpversion >= 8.2
  * @category   CMS
  * @package    AVCorn
- * @subpackage Includes
+ * @subpackage Source
  * @author     Benjamin J. Young <ben@blaher.me>
  * @license    GNU General Public License, version 3
  * @link       https://github.com/avcorn/avcorn
@@ -20,9 +20,9 @@
 
 declare(strict_types=1);
 
-use App\Application\Middleware\SessionMiddleware;
+use App\Application\Middleware\FormMiddleware;
 use Slim\App;
 
 return function (App $app) {
-    $app->add(SessionMiddleware::class);
+    $app->add(FormMiddleware::class);
 };
