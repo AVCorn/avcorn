@@ -110,7 +110,7 @@ class CornController
     /**
      * Localize Paths
      *
-     * @param array $paths Paths
+     * @param array  $paths    Paths
      * @param string $twig_dir Twig Directory
      *
      * @return array
@@ -431,15 +431,13 @@ class CornController
      * @param ContainerInterface     $app    Application
      * @param ServerRequestInterface $req    Request
      * @param ResponseInterface      $res    Response
-     * @param array                  $config Configuration
      *
      * @return ResponseInterface
      */
     public function watch(
         ContainerInterface $app,
         ServerRequestInterface $req,
-        ResponseInterface $res,
-        array $config
+        ResponseInterface $res
     ): ResponseInterface {
         $watcher = $app->get(Watcher::class);
         $latest_file = $watcher->check(__DIR__ . '/../../');

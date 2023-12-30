@@ -269,8 +269,8 @@ return function (App $app) {
      */
     $app->get(
         '/watch',
-        function (Request $req, Response $res) use ($controller, $config) {
-            return $controller->watch($this, $req, $res, $config);
+        function (Request $req, Response $res) use ($controller) {
+            return $controller->watch($this, $req, $res);
         }
     )->setName('getWatch');
 

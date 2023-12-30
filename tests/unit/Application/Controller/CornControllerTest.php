@@ -36,6 +36,8 @@ class CornControllerTest extends TestCase
 {
     /**
      * Test map() Route
+     *
+     * @return void
      */
     public function testMapRoute()
     {
@@ -51,8 +53,7 @@ class CornControllerTest extends TestCase
         // Add the route to be tested
         $app->get('/', function (
             Request $req,
-            Response $res,
-            array $args
+            Response $res
         ) use (
             $controller,
             $config
@@ -68,6 +69,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test map() Route with design
+     *
+     * @return void
      */
     public function testDesignRoute()
     {
@@ -89,8 +92,7 @@ class CornControllerTest extends TestCase
         // Add the route to be tested
         $app->get('/', function (
             Request $req,
-            Response $res,
-            array $args
+            Response $res
         ) use (
             $controller,
             $config
@@ -108,6 +110,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test favicon() Route
+     *
+     * @return void
      */
     public function testFaviconRoute()
     {
@@ -122,6 +126,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test favicon() Route with client
+     *
+     * @return void
      */
     public function testClientFaviconRoute()
     {
@@ -151,6 +157,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test favicon() lost Route
+     *
+     * @return void
      */
     public function testLostFaviconRoute()
     {
@@ -165,6 +173,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test file() Route
+     *
+     * @return void
      */
     public function testFileRoute()
     {
@@ -182,6 +192,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test file() Route with client
+     *
+     * @return void
      */
     public function testClientFileRoute()
     {
@@ -229,6 +241,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test file() lost Route
+     *
+     * @return void
      */
     public function testLostFileRoute()
     {
@@ -246,6 +260,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test templateFile() Route
+     *
+     * @return void
      */
     public function testTemplateFileRoute()
     {
@@ -281,6 +297,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test templateFile() lost Route
+     *
+     * @return void
      */
     public function testLostTemplateFileRoute()
     {
@@ -316,6 +334,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test docFile() Route
+     *
+     * @return void
      */
     public function testDocFileRoute()
     {
@@ -351,6 +371,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test docFile() lost Route
+     *
+     * @return void
      */
     public function testLostDocFileRoute()
     {
@@ -386,6 +408,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test health() Route
+     *
+     * @return void
      */
     public function testHealthRoute()
     {
@@ -400,6 +424,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test watch() Route
+     *
+     * @return void
      */
     public function testWatchRoute()
     {
@@ -414,6 +440,8 @@ class CornControllerTest extends TestCase
 
     /**
      * Test lost() Route
+     *
+     * @return void
      */
     public function testLostRoute()
     {
@@ -429,7 +457,7 @@ class CornControllerTest extends TestCase
         // Add the route to be tested
         $app->get('/404', function (
             Request $req,
-            Response $res,
+            Response $res
         ) use (
             $controller,
             $config
