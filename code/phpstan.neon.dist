@@ -12,6 +12,3 @@ parameters:
     - tests/Intergration
     - tests/Regression
     - tests/Unit
-    - tests/Support/AcceptanceTester.php
-    - tests/Support/FunctionalTester.php
-    - tests/Support/UnitTester.php
