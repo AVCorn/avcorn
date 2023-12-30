@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bash "./scripts/cli.sh" $1 $2
+bash "./scripts/cli.sh" "$1" "$2"
