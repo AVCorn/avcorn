@@ -6,9 +6,7 @@ parameters:
     - backend/index.php
     - public/index.php
     - tests
-    - tests/Acceptance
     - tests/Benchmark
-    - tests/Functional
     - tests/Intergration
     - tests/Regression
     - tests/Unit
