@@ -26,6 +26,12 @@ jobs:
                   php-version: ${{ matrix.php }}
                   coverage: xdebug
 
+            - name: Get Submodules
+              id: submodules
+              run: |
+                git submodule update --init --recursive
+                git submodule update --remote --merge --recursive
+
             - name: Install dependencies with Composer
               uses: ramsey/composer-install@v2
               with:

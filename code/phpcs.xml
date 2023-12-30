@@ -16,5 +16,5 @@
     <file>backend/libraries</file>
     <file>backend/index.php</file>
     <file>public/index.php</file>
-    <file>../tests/unit</file>
+    <file>tests</file>
 </ruleset>

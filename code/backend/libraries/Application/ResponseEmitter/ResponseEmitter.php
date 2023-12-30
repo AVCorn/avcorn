@@ -32,6 +32,7 @@ class ResponseEmitter extends SlimResponseEmitter
      * Emit response.
      *
      * {@inheritdoc}
+     *
      * @param ResponseInterface $response The response
      *
      * @return void

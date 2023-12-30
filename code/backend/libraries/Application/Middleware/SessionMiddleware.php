@@ -34,6 +34,7 @@ class SessionMiddleware implements Middleware
      * Process middleware.
      *
      * {@inheritdoc}
+     *
      * @param Request        $request The request
      * @param RequestHandler $handler The request handler
      *
