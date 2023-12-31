@@ -22,18 +22,18 @@ declare(strict_types=1);
  * @var array $themes List of themes
  */
 $themes = [
-    'default' => '_default',
+    'default'    => '_default',
 
-    'marketing' => 'examples/categories/marketing',
-    'modern' => 'examples/categories/modern',
-    'portfolio' => 'examples/categories/portfolio',
-    'simple' => 'examples/categories/simple',
+    'marketing'  => 'examples/categories/marketing',
+    'modern'     => 'examples/categories/modern',
+    'portfolio'  => 'examples/categories/portfolio',
+    'simple'     => 'examples/categories/simple',
 
-    'agency' => 'examples/categories/agency',
-    'autoshop' => 'examples/categories/autoshop',
-    'church' => 'examples/categories/church',
+    'agency'     => 'examples/categories/agency',
+    'autoshop'   => 'examples/categories/autoshop',
+    'church'     => 'examples/categories/church',
     'coffeeshop' => 'examples/categories/coffeeshop',
-    'insurance' => 'examples/categories/insurance',
-    'landscape' => 'examples/categories/lawncare',
+    'insurance'  => 'examples/categories/insurance',
+    'landscape'  => 'examples/categories/lawncare',
     'restaurant' => 'examples/categories/restaurant',
 ];

@@ -24,9 +24,9 @@ declare(strict_types=1);
 $sitemap = [
     'sections' => [
         'main' => [
-            'title' => 'AVCorn',
-            'link' => '/',
-            'pages' => [
+            'title'       => 'AVCorn',
+            'link'        => '/',
+            'pages'       => [
                 'home',
                 'about',
                 'services',
@@ -36,10 +36,10 @@ $sitemap = [
             ],
         ],
         'secondary' => [
-            'title' => 'Resources',
+            'title'       => 'Resources',
             'description' => 'Find out more about us.',
-            'link' => '/about',
-            'pages' => [
+            'link'        => '/about',
+            'pages'       => [
                 'guide',
                 'designs',
                 'playground',
@@ -47,10 +47,10 @@ $sitemap = [
             ],
         ],
         'other' => [
-            'title' => 'Other Details',
+            'title'       => 'Other Details',
             'description' => 'Additional information.',
-            'link' => '/sitemap',
-            'pages' => [
+            'link'        => '/sitemap',
+            'pages'       => [
                 'terms',
                 'privacy',
                 'cookies',
@@ -60,73 +60,73 @@ $sitemap = [
     ],
     'pages' => [
         'home' => [
-            'title' => 'Home',
-            'link' => '/',
+            'title'       => 'Home',
+            'link'        => '/',
         ],
         'about' => [
-            'title' => 'About Us',
+            'title'       => 'About Us',
             'description' => 'Information and history of AVCorn.',
             'link' => '/about',
         ],
         'contact' => [
-            'title' => 'Contact Us',
+            'title'       => 'Contact Us',
             'description' => 'How to contact us.',
-            'link' => '/contact',
+            'link'        => '/contact',
         ],
         'contribute' => [
-            'title' => 'Contribute',
+            'title'       => 'Contribute',
             'description' => 'How you can contribute to AVCorn.',
-            'link' => '/contribute',
+            'link'        => '/contribute',
         ],
         'cookies' => [
-            'title' => 'Cookies',
+            'title'       => 'Cookies',
             'description' => 'Our cookie usage.',
-            'link' => '/cookies',
+            'link'        => '/cookies',
         ],
         'guide' => [
-            'title' => 'Guide',
+            'title'       => 'Guide',
             'description' => 'Walkthrough of how to use AVCorn.',
-            'link' => '/guide',
+            'link'        => '/guide',
         ],
         'designs' => [
-            'title' => 'Designs',
+            'title'       => 'Designs',
             'description' => 'List of our designs.',
-            'link' => '/designs',
+            'link'        => '/designs',
         ],
         'gallery' => [
-            'title' => 'Gallery',
+            'title'       => 'Gallery',
             'description' => 'Photo gallery.',
-            'link' => '/gallery',
+            'link'        => '/gallery',
         ],
         'playground' => [
-            'title' => 'Styles Playground',
+            'title'       => 'Styles Playground',
             'description' => 'Everything on demo, but the kitchen sink.',
-            'link' => '/playground',
+            'link'        => '/playground',
         ],
         'services' => [
-            'title' => 'Services',
+            'title'       => 'Services',
             'description' => 'Services we offer.',
-            'link' => '/services',
+            'link'        => '/services',
         ],
         'testimonials' => [
-            'title' => 'Testimonials',
+            'title'       => 'Testimonials',
             'description' => 'Testimonials of our customers.',
-            'link' => '/testimonials',
+            'link'        => '/testimonials',
         ],
         'terms' => [
-            'title' => 'Terms of Use',
+            'title'       => 'Terms of Use',
             'description' => 'Terms of use of the website.',
-            'link' => '/terms-of-use',
+            'link'        => '/terms-of-use',
         ],
         'privacy' => [
-            'title' => 'Privacy Policy',
+            'title'       => 'Privacy Policy',
             'description' => 'Privacy policy of the website.',
-            'link' => '/privacy-policy',
+            'link'        => '/privacy-policy',
         ],
         'sitemap' => [
-            'title' => 'Sitemap',
+            'title'       => 'Sitemap',
             'description' => 'Navigation map of the website.',
-            'link' => '/sitemap',
+            'link'        => '/sitemap',
         ],
     ],
 ];

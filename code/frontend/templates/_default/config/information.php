@@ -22,11 +22,11 @@ declare(strict_types=1);
  * @var array $information Information configuration
  */
 $information = [
-    'company' => 'AVCorn',
-    'title' => 'AVCorn',
-    'slogan' => 'The Small Client CMS',
-    'motto' => "The Nut Doesn't Fall Far From The Tree!",
-    'bio' => "
+    'company'   => 'AVCorn',
+    'title'     => 'AVCorn',
+    'slogan'    => 'The Small Client CMS',
+    'motto'     => "The Nut Doesn't Fall Far From The Tree!",
+    'bio'       => "
         You're awesome.
         We're awesome.
         Our mascot is awesome.
@@ -37,11 +37,11 @@ $information = [
     ",
 
     'copyright' => '2023',
-    'legal' => 'No rights reserved',
+    'legal'     => 'No rights reserved',
 
-    'address' => '100 W Rincon',
-    'city' => 'San Francisco, CA',
-    'zip' => '94015',
-    'phone' => '1 (800) 555-5555',
-    'email' => 'notreal@fakeemail.com',
+    'address'   => '100 W Rincon',
+    'city'      => 'San Francisco, CA',
+    'zip'       => '94015',
+    'phone'     => '1 (800) 555-5555',
+    'email'     => 'notreal@fakeemail.com',
 ];

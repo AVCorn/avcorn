@@ -23,19 +23,19 @@ declare(strict_types=1);
  */
 $navigation = [
     [
-        'href' => '/',
+        'href'  => '/',
         'label' => 'Home',
     ],
     [
-        'href' => '/designs',
+        'href'  => '/designs',
         'label' => 'Designs',
     ],
     [
-        'href' => '/guide',
+        'href'  => '/guide',
         'label' => 'Guide',
     ],
     [
-        'href' => '/contribute',
+        'href'  => '/contribute',
         'label' => 'Contribute',
     ],
 ];
