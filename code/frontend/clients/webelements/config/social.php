@@ -23,9 +23,9 @@ declare(strict_types=1);
  * @var array $social Social icons configuration
  */
 $social = [
-    'facebook' => 'https://facebook.com',
-    //'instagram' => 'https://instagram.com',
-    'twitter' => 'https://twitter.com',
-    'linkedin' => 'https://linkedin.com',
-    //'youtube' => 'https://youtube.com',
+    'facebook'  => 'https://www.facebook.com/WebElementsAgency',
+    'instagram' => 'https://instagram.com/webelementsagency',
+    'twitter'   => 'https://twitter.com/WebElementsCo',
+    'linkedin'  => 'https://linkedin.com/company/web-elements',
+    'github'    => 'https://github.com/organizations/Elements-Agency',
 ];
