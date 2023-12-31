@@ -27,5 +27,5 @@ $social = [
     'instagram' => 'https://instagram.com/webelementsagency',
     'twitter'   => 'https://twitter.com/WebElementsCo',
     'linkedin'  => 'https://linkedin.com/company/web-elements',
-    'github'    => 'https://github.com/organizations/Elements-Agency',
+    'github'    => 'https://github.com/Elements-Agency',
 ];
