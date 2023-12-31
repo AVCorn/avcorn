@@ -25,15 +25,15 @@ declare(strict_types=1);
 $information = [
     'company'   => 'Web Elements',
     'title'     => 'Elements Web Design',
-    'slogan'    => 'We Are WEB Elements',
-    'motto'     => 'We Are WEB Elements',
+    'slogan'    => 'Managing the digital footprint of small businesses.',
+    'motto'     => 'We Are Web Elements',
 
     'copyright' => '2023',
     'legal'     => 'All rights reserved',
 
     'address'   => '',
-    'city'      => 'East Sparta, OH',
+    'city'      => 'Canton, OH',
     'zip'       => '44626',
-    'phone'     => '1 (800) 555-5555',
+    'phone'     => '',
     'email'     => '',
 ];

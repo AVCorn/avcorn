@@ -54,25 +54,25 @@ class FormMiddleware implements Middleware
             // TODO: split up cases in to seperate classes
 
             // for SES emails
-            if (isset($params['form_email_to'])) {
+            if (isset($params['email_to'])) {
                 // email here using SES
             }
 
             // for google sheets
-            if (isset($params['form_sheet_id'])) {
+            if (isset($params['sheet_id'])) {
                 // set sheet info
-                $spreadsheetId = $params['form_sheet_id'];
-                unset($params['form_sheet_id']);
-                $range = $params['form_sheet_range']
-                    ? $params['form_sheet_range']
+                $spreadsheetId = $params['sheet_id'];
+                unset($params['sheet_id']);
+                $range = $params['sheet_range']
+                    ? $params['sheet_range']
                     : 'Sheet1';
-                unset($params['form_sheet_range']);
+                unset($params['sheet_range']);
 
                 // configure the Google Client
                 $client = new Google_Client();
                 $client->setAuthConfig(
                     __DIR__
-                    . '/../../../../../_env/google.private.key.json'
+                    . '/../../../../_env/google.private.key.json'
                 );
                 $client->setApplicationName('Google Sheets API');
                 $client->setScopes([Google_Service_Sheets::SPREADSHEETS]);

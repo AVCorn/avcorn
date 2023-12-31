@@ -22,6 +22,7 @@ RUN apt-get install -y curl git --no-install-recommends \
 
 COPY --from=vendor app/vendor/ ./vendor/
 COPY ./code/ .
+COPY ./_env/ ./_env/
 
 RUN chmod a+rwx -R backend/cache/
 
