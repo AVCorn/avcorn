@@ -1,4 +1,4 @@
-{% set tmppath = template_path~layouts_root~"/home.html" %}
+{% set tmppath = paths.layouts~"/home.html" %}
 {% extends tmppath %}
 
 {% block title %}
@@ -179,7 +179,9 @@
         <p>In a world of complexity, we offer ease and expertise by managing and maintaining your web presence.</p>
     </div>
 
-    <h2 class="text-center padding-2 wow animate__fadeIn" data-wow-duration="2s">Creativites</h2>
+    <h2 class="text-center padding-2 wow animate__fadeIn" data-wow-duration="2s">
+        Small Businesses We Serve
+    </h2>
 
     {% set creatives = {
             0: {
@@ -189,27 +191,27 @@
                 'Our Clients': '',
                 'Autoshops': "background-image:url('/assets/images/creatives/creative-mechanic.jpg');",
                 'Chefs': "background-image:url('/assets/images/creatives/creative-chef.jpg');",
-                'Gym': "background-image:url('/assets/images/creatives/creative-gym.jpg');",
+                'Gyms': "background-image:url('/assets/images/creatives/creative-gym.jpg');",
                 'Spas': "background-image:url('/assets/images/creatives/creative-massage.jpg');",
-                'Chiropractor': "background-image:url('/assets/images/creatives/creative-chiropractor.jpg');",
+                'Chiropractors': "background-image:url('/assets/images/creatives/creative-chiropractor.jpg');",
                 'Our Creativity': '',
-                '2': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
-                '3': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
+                'Markets': "background-image:url('/assets/images/creatives/creative-market.jpg');",
+                'Your Business': "background-image:url('/assets/images/creatives/creative-code.jpg');",
 
             },
             2: {
                 'Our Work': '',
-                'Bakery': "background-image:url('/assets/images/creatives/creative-bakery.jpg');",
-                'Accountant': "background-image:url('/assets/images/creatives/creative-accountant.jpg');",
-                'Storage': "background-image:url('/assets/images/creatives/creative-storage.jpg');",
-                'Church': "background-image:url('/assets/images/creatives/creative-church.jpg');",
-                'Laundry': "background-image:url('/assets/images/creatives/creative-laundry.jpg');",
+                'Bakeries': "background-image:url('/assets/images/creatives/creative-bakery.jpg');",
+                'Accountants': "background-image:url('/assets/images/creatives/creative-accountant.jpg');",
+                'Storage Units': "background-image:url('/assets/images/creatives/creative-storage.jpg');",
+                'Churchs': "background-image:url('/assets/images/creatives/creative-church.jpg');",
+                'Laundries': "background-image:url('/assets/images/creatives/creative-laundry.jpg');",
                 'Our Designs': '',
-                'Coffeeshop': "background-image:url('/assets/images/creatives/creative-coffee.jpg');",
-                'Insurance': "background-image:url('/assets/images/creatives/creative-insurance.jpg');",
+                'Coffeeshops': "background-image:url('/assets/images/creatives/creative-coffee.jpg');",
+                'Insurance Agents': "background-image:url('/assets/images/creatives/creative-insurance.jpg');",
+                'Barbers': "background-image:url('/assets/images/creatives/creative-barber.jpg');",
                 'Small Businesses': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
-                '2': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
-                '3': "background-image:url('/assets/images/creatives/creative-smallbusiness.jpg');",
+                'Others': '',
             },
         }
     %}
@@ -312,7 +314,13 @@
 
     <div class="spacer"><br /></div>
 
-    <div class="clients text-center padding-1">
+    <p class="text-center">
+        <a class="large button" href="/contact">Connect Today</a>
+    </p>
+
+    <div class="spacer"><br /></div>
+
+    <!--<div class="clients text-center padding-1">
         <h2 class="h2 wow animate__fadeIn" data-wow-duration="2s">Our Clients</h2>
 
         <ul class="menu grid-x grid-margin-x margin-1 wow animate__fadeIn" data-wow-duration="2s">
@@ -332,5 +340,5 @@
         </a>
     </div>
 
-    <div class="spacer"><br /></div>
+    <div class="spacer"><br /></div>-->
 {% endblock %}
