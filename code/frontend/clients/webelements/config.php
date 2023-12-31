@@ -34,11 +34,11 @@ require_once 'config/trackers.php';
  * @var array $sitemap
  * @var array $trackers
  */
-$config['map'] = $map;
-$config['info'] = $information;
+$config['map']        = $map;
+$config['info']       = $information;
 $config['navigation'] = $navigation;
-$config['social'] = $social;
-$config['sitemap'] = $sitemap;
-$config['trackers'] = $trackers;
+$config['social']     = $social;
+$config['sitemap']    = $sitemap;
+$config['trackers']   = $trackers;
 
 $config['enable_params'] = false;

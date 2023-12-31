@@ -152,7 +152,7 @@ class CornController
         $config['post'] = $post;
 
         $design = $get['design'] ?? false;
-        $themes = $config['themes'];
+        $themes = $config['themes'] ?? [];
 
         // Override main config with template's
         if ($design && isset($themes[$design])) {

@@ -12,18 +12,7 @@
 
 {% block content %}
     <div class="row padding-2 editable">
-        <div class="thumbnail float-right margin-2 padding-1 text-center">
-            <a href="http://webelements.agency/about">
-                <img src="/assets/images/content/ben.jpg" title="Some dude really in need of help." alt="The Project Owner of AVCorn" />
-            </a>
-            <p></p>
-            <p>
-                <strong>Ben Young</strong>,
-                <br />
-                <em class="subheader">Project Owner</em>
-            </p>
-        </div>
-
+        <iframe class="float-right" src="https://github.com/sponsors/blaher/button" title="Sponsor blaher" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
         <p class="h3 subheader" title="FOR THE LOVE OF GOD, HELP!">Please, help us! PLEASE! HEEEELLLLPPP!!!</p>
         <p>
             Ignoring our team's (<em>possibly insane</em>) antics...
@@ -45,6 +34,32 @@
             Other than that, our developers just need money for coffee and fuel to keep on coding.
             You can sponsor our development on <a href="https://github.com/blaher">GitHub</a>.
             Or if you have any questions, feel free to head over to <a href="http://webelements.agency">Web Elements</a> to use the <a <a href="http://webelements.agency/contact">contact form</a>.
+        </p>
+
+        <br style="clear:both;" />
+
+        <div class="text-center">
+            <div class="thumbnail">
+                <img src="/assets/images/content/team.png" title="" alt="" />
+                <div class="h5">
+                    <br />
+                    <strong>Thank you!</strong> <span class="subheader"></span>- {{ info.company }} Team</span><br />
+                    <br />
+                    <iframe src="https://github.com/sponsors/blaher/button" title="Sponsor blaher" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            It's not just code we need help with.
+            If you would like to provide help in any way possible, every little effort would be appreciated.
+            If it be graphic design, writing documentation, giving constructive feedback, or even just a few words of encouragement, we would be grateful.
+            Every bit helps!
+        </p>
+
+        <p>
+            Warm regards,<br />
+            <strong>The <em>{{ info.company }}</em> Team</strong>
         </p>
 
         <iframe src="https://github.com/sponsors/blaher/button" title="Sponsor blaher" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>

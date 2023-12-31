@@ -23,19 +23,19 @@ declare(strict_types=1);
  */
 $navigationFooter = [
     [
-        'href' => '/',
+        'href'  => '/',
         'label' => 'Home',
     ],
     [
-        'href' => '/about',
+        'href'  => '/about',
         'label' => 'About',
     ],
     [
-        'href' => '/services',
+        'href'  => '/services',
         'label' => 'Services',
     ],
     [
-        'href' => '/contact',
+        'href'  => '/contact',
         'label' => 'Contact',
     ],
 ];

@@ -36,11 +36,11 @@ require_once 'config/sitemap.php';
  * @var array $sitemap
  */
 $config = [
-    'map' => $map,
-    'navigation' => $navigation,
+    'map'              => $map,
+    'navigation'       => $navigation,
     'navigationFooter' => $navigationFooter,
-    'info' => $information,
-    'social' => $social,
-    'themes' => $themes,
-    'sitemap' => $sitemap,
+    'info'             => $information,
+    'social'           => $social,
+    'themes'           => $themes,
+    'sitemap'          => $sitemap,
 ];

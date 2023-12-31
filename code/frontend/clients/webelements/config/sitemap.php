@@ -26,7 +26,7 @@ $sitemap = [
     'sections' => [
         'main' => [
             'title' => 'AVCorn',
-            'link' => '/',
+            'link'  => '/',
             'pages' => [
                 'home',
                 'about',
@@ -34,20 +34,20 @@ $sitemap = [
             ],
         ],
         'secondary' => [
-            'title' => 'Resources',
+            'title'       => 'Resources',
             'description' => 'Find out more about us.',
-            'link' => '/about',
-            'pages' => [
+            'link'        => '/about',
+            'pages'       => [
                 'services',
                 'clients',
                 'sitemap',
             ],
         ],
         'other' => [
-            'title' => 'Other',
+            'title'       => 'Other',
             'description' => 'Additional information.',
-            'link' => '/sitemap',
-            'pages' => [
+            'link'        => '/sitemap',
+            'pages'       => [
                 'terms',
                 'privacy',
                 'cookies',
@@ -56,48 +56,48 @@ $sitemap = [
     ],
     'pages' => [
         'home' => [
-            'title' => 'Home',
-            'link' => '/',
+            'title'       => 'Home',
+            'link'        => '/',
         ],
         'about' => [
-            'title' => 'About Us',
+            'title'       => 'About Us',
             'description' => 'Information and history of AVCorn.',
-            'link' => '/about',
+            'link'        => '/about',
         ],
         'services' => [
-            'title' => 'Services',
+            'title'       => 'Services',
             'description' => 'Services we offer.',
-            'link' => '/services',
+            'link'        => '/services',
         ],
         'clients' => [
-            'title' => 'Our Clients',
+            'title'       => 'Our Clients',
             'description' => 'List of our clients.',
-            'link' => '/clients',
+            'link'        => '/clients',
         ],
         'contact' => [
-            'title' => 'Contact Us',
+            'title'       => 'Contact Us',
             'description' => 'How to contact us.',
-            'link' => '/contact',
+            'link'        => '/contact',
         ],
         'terms' => [
-            'title' => 'Terms of Use',
+            'title'       => 'Terms of Use',
             'description' => 'Terms of use of the website.',
-            'link' => '/terms-of-use',
+            'link'        => '/terms-of-use',
         ],
         'privacy' => [
-            'title' => 'Privacy Policy',
+            'title'       => 'Privacy Policy',
             'description' => 'Privacy policy of the website.',
-            'link' => '/privacy-policy',
+            'link'        => '/privacy-policy',
         ],
         'cookies' => [
-            'title' => 'Cookies Usage',
+            'title'       => 'Cookies Usage',
             'description' => 'Our cookie usage.',
-            'link' => '/cookies',
+            'link'        => '/cookies',
         ],
         'sitemap' => [
-            'title' => 'Sitemap',
+            'title'       => 'Sitemap',
             'description' => 'Navigation map of the website.',
-            'link' => '/sitemap',
+            'link'        => '/sitemap',
         ],
     ],
 ];

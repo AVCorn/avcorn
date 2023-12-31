@@ -24,7 +24,7 @@ declare(strict_types=1);
  */
 $navigation = [
     [
-        'href' => '/about',
+        'href'  => '/about',
         'label' => '
             <span class="show-for-medium">
                 <i class="show-for-medium fa fa-users"></i> Who We Are
@@ -33,7 +33,7 @@ $navigation = [
         ',
     ],
     [
-        'href' => '/clients',
+        'href'  => '/clients',
         'label' => '
             <span class="show-for-medium">
                 <i class="show-for-medium fa fa-briefcase"></i> Our Work
@@ -42,7 +42,7 @@ $navigation = [
         ',
     ],
     [
-        'href' => '/services',
+        'href'  => '/services',
         'label' => '
             <span class="show-for-medium">
                 <i class="show-for-medium fa fa-globe"></i> What We Offer
@@ -51,7 +51,7 @@ $navigation = [
         ',
     ],
     [
-        'href' => '/contact',
+        'href'  => '/contact',
         'label' => '
             <br class="show-for-small-only" />
             <span class="show-for-medium">

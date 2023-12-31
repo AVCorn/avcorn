@@ -19,43 +19,53 @@
         <br />
 
         <div class="grid-x grid-margin-x text-center" data-equalizer data-equalize-on="medium">
-            <div class="cell large-4 medium-4 small-12">
-                <h3 style="font-weight:bold;">
-                    <a href="#">Lawn Care</a>
-                </h3>
-                <a href="#">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-lawncare-lg.png" data-interchange="[assets/images/designs/design-lawncare-sm.png, small], [assets/images/designs/design-lawncare-md.png, medium], [assets/images/designs/design-lawncare-lg.png, large]" alt="Lawn Service" title="Lawn Service" />
-                </a>
-                <p style="font-size:0.8em; font-style:italic;">
-                    An autoshop template for AVCorn.
-                </p>
-            </div>
+            {% set designs = [
+                {
+                    'name': 'lawncare',
+                    'title': 'Lawncare',
+                    'link': 'https://github.com/avcorn/avcorn-templates-lawncare',
+                    'description': 'A generic lawncare template we designed.'
+                },
+                {
+                    'name': 'insurance',
+                    'title': 'Insurance',
+                    'link': 'https://github.com/avcorn/avcorn-templates-insurance',
+                    'description': 'An autoshop template for AVCorn.'
+                },
+                {
+                    'name': 'marketing',
+                    'title': 'AVCorn',
+                    'link': 'https://github.com/avcorn/avcorn',
+                    'description': 'The template designed for our open source CMS.'
+                },
+                {
+                    'name': 'agency',
+                    'title': 'Web Elements',
+                    'link': 'http://webelements.agency',
+                    'description': 'Our own website design.'
+                }
+            ] %}
 
-            <div class="cell large-4 medium-4 small-12">
-                <h3 style="font-weight:bold;">
-                    <a href="https://github.com/avcorn/avcorn">AVCorn</a>
-                </h3>
-
-                <a href="https://github.com/avcorn/avcorn">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-marketing-lg.png" data-interchange="[assets/images/designs/design-marketing-sm.png, small], [assets/images/designs/design-marketing-md.png, medium], [assets/images/designs/design-marketing-lg.png, large]" alt="Marketing Design" title="Marketing Design" />
-                </a>
-
-                <p style="font-size:0.8em; font-style:italic;">
-                    The template designed for our open source CMS.
-                </p>
-            </div>
-
-            <div class="cell large-4 medium-4 small-12">
-                <h3 style="font-weight:bold;">
-                    <a href="/">Web Elements</a>
-                </h3>
-                <a href="/">
-                    <img class="thumbnail small-12" src="assets/images/designs/design-agency-lg.png" data-interchange="[assets/images/designs/design-agency-sm.png, small], [assets/images/designs/design-agency-md.png, medium], [assets/images/designs/design-agency-lg.png, large]" alt="Web Elements" title="Web Elements" />
-                </a>
-                <p style="font-size:0.8em; font-style:italic;">
-                    Our own website design.
-                </p>
-            </div>
+            {% for design in designs%}
+                <div class="cell large-4 medium-4 small-12">
+                    <h3 style="font-weight:bold;">
+                        <a href="#">{{ design.title }}</a>
+                    </h3>
+                    <a href="#">
+                        <img class="thumbnail small-12"
+                            src="assets/images/designs/design-{{ design.name }}-lg.png"
+                            data-interchange="
+                                [assets/images/designs/design-{{ design.name }}-sm.png, small],
+                                [assets/images/designs/design-{{ design.name }}-md.png, medium],
+                                [assets/images/designs/design-{{ design.name }}-lg.png, large]"
+                            title="Preview {{ design.title  }}"
+                            alt="{{ design.title  }} {{ design.title  }}" />
+                    </a>
+                    <p style="font-size:0.8em; font-style:italic;">
+                        {{ design.description  }}
+                    </p>
+                </div>
+            {% endfor %}
         </div>
 
         <br />

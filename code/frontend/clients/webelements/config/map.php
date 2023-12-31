@@ -23,16 +23,16 @@ declare(strict_types=1);
  * @var array $map Routing configuration
  */
 $map = [
-    '/' => 'home',
-    '/about' => 'about',
-    '/admin' => 'admin',
-    '/clients' => 'clients',
-    '/contact' => 'contact',
-    '/cookies' => 'cookies',
-    '/designs' => 'clients',
+    '/'               => 'home',
+    '/about'          => 'about',
+    '/admin'          => 'admin',
+    '/clients'        => 'clients',
+    '/contact'        => 'contact',
+    '/cookies'        => 'cookies',
+    '/designs'        => 'clients',
     '/privacy-policy' => 'privacy',
-    '/services' => 'services',
-    '/sitemap' => 'sitemap',
-    '/sitemap.xml' => 'sitemap.xml',
-    '/terms-of-use' => 'terms',
+    '/services'       => 'services',
+    '/sitemap'        => 'sitemap',
+    '/sitemap.xml'    => 'sitemap.xml',
+    '/terms-of-use'   => 'terms',
 ];

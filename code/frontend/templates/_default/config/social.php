@@ -22,10 +22,10 @@ declare(strict_types=1);
  * @var array $social Social icons configuration
  */
 $social = [
-    'facebook' => 'https://facebook.com',
-    'instagram' => 'https://instagram.com',
-    'twitter' => 'https://twitter.com',
+    'facebook'   => 'https://facebook.com',
+    'instagram'  => 'https://instagram.com',
+    'twitter'    => 'https://twitter.com',
     //'linkedin' => 'https://linkedin.com',
-    //'youtube' => 'https://youtube.com',
-    'github' => 'https://github.com/avcorn/avcorn',
+    //'youtube'  => 'https://youtube.com',
+    'github'     => 'https://github.com/avcorn/avcorn',
 ];
