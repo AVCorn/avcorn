@@ -16,4 +16,5 @@ services:
             - "8080:80"
         volumes:
             - ./code:/var/www
+            - ./_env:/var/www/_env
             - ./docs:/var/www/docs
