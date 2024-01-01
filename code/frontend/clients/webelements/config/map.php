@@ -30,6 +30,7 @@ $map = [
     '/contact'        => 'contact',
     '/cookies'        => 'cookies',
     '/designs'        => 'clients',
+    '/get-a-website'  => 'lander',
     '/privacy-policy' => 'privacy',
     '/services'       => 'services',
     '/sitemap'        => 'sitemap',

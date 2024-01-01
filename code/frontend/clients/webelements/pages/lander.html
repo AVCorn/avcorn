@@ -1,0 +1,54 @@
+{% extends layout_path %}
+
+{% block title %}
+    Get a Website Designed by {{ info.company }}
+{% endblock %}
+
+{% block meta-description %}Fill out a form to have someone speak to you, about designing your website{% endblock %}
+{% block meta-keywords %}website, design, service, web, development{% endblock %}
+
+{% block styles %}
+    <style>
+        .clean-hero-slider {
+            background: linear-gradient(180deg, rgb(15, 15, 15) 0%, rgb(32, 32, 32) 20%) !important;
+        }
+
+        .orbit-image-placeholder {
+            background: linear-gradient(0deg, rgb(15, 15, 15) 0%, rgb(32, 32, 32) 20%) !important;
+        }
+    </style>
+{% endblock %}
+
+{% block header %}
+    <div class="row padding-1 editable">
+        <h1>Get a Website</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="lander">
+        <div class="wow animate__fadeOut" data-wow-duration="2s" data-wow-delay="4s">
+            Do you need a website?
+        </div>
+
+        <div class="hide wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="6s">
+            <div class="wow animate__fadeOut" data-wow-duration="2s" data-wow-delay="8s">
+                Website outdated?
+            </div>
+        </div>
+
+        <div class="hide wow animate__fadeIn" data-wow-duration="2s" data-wow-delay="10s">
+            <div class="wow animate__fadeOut" data-wow-duration="2s" data-wow-delay="12s">
+                Don't Have One?
+            </div>
+        </div>
+    </div>
+    
+    <div class="row padding-2 editable">
+        <p>Fill out the form below, and someone will contact you about designing your website.</p>
+    </div>
+    
+    <div class="lander-form form">
+        Lander Form Here
+    </div>
+{% endblock %}
