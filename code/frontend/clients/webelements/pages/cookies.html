@@ -1,8 +1,11 @@
 {% extends layout_path %}
 
 {% block title %}
-    {{ info.title }} - Cookies
+    Cookies for {{ info.company }}
 {% endblock %}
+
+{% block meta-description %}Learn about the cookies policy for {{ info.company }}{% endblock %}
+{% block meta-keywords %}cookies, policy{% endblock %}
 
 {% block header %}
     <div class="row padding-1 editable">

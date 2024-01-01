@@ -1,8 +1,11 @@
 {% extends layout_path %}
 
 {% block title %}
-    {{ info.title }} - Clients
+    Clients of {{ info.company }}
 {% endblock %}
+
+{% block meta-description %}Find out what clients {{ info.company }} has{% endblock %}
+{% block meta-keywords %}clients, customers, preview, designs{% endblock %}
 
 {% block header %}
     <div class="row padding-1 editable">

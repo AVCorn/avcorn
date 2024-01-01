@@ -1,8 +1,11 @@
 {% extends layout_path %}
 
 {% block title %}
-    {{ info.title }}  - Terms of Use
+    Terms of Use for {{ info.company }}
 {% endblock %}
+
+{% block meta-description %}The terms of usage agreement for using {{ info.company }}'s website{% endblock %}
+{% block meta-keywords %}terms, usage, terms of usage, agreement{% endblock %}
 
 {% block header %}
     <div class="row padding-1 editable">

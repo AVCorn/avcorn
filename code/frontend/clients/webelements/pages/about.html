@@ -1,8 +1,11 @@
 {% extends layout_path %}
 
 {% block title %}
-    {{ info.title }} - About
+    About {{ info.company }}
 {% endblock %}
+
+{% block meta-description %}Learn more about {{ info.company }}{% endblock %}
+{% block meta-keywords %}About, {{ info.company }}, History, Information{% endblock %}
 
 {% block styles %}
     <style>
