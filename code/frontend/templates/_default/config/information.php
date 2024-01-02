@@ -44,4 +44,6 @@ $information = [
     'zip'       => '94015',
     'phone'     => '1 (800) 555-5555',
     'email'     => 'notreal@fakeemail.com',
+
+    'domain'    => 'avcorn.com',
 ];
