@@ -29,6 +29,7 @@ $map = [
     '/clients'        => 'clients',
     '/contact'        => 'contact',
     '/cookies'        => 'cookies',
+    '/evaluation'     => 'evaluation',
     '/designs'        => 'clients',
     '/get-a-website'  => 'lander',
     '/privacy-policy' => 'privacy',
