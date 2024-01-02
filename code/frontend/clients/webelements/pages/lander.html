@@ -1,0 +1,260 @@
+{% set tmppath = paths.layouts~"/lander.html" %}
+{% extends tmppath %}
+
+{% block title %}
+    Get a Website Designed by {{ info.company }}
+{% endblock %}
+
+{% block description %}Fill out a form to have someone speak to you, about designing your website{% endblock %}
+{% block keywords %}website, design, service, web, development{% endblock %}
+
+{% block styles %}
+    <style>
+        .page {
+            background: #111111;
+        }
+
+        .clean-hero-slider {
+            background: linear-gradient(180deg, rgb(15, 15, 15) 0%, rgb(32, 32, 32) 20%) !important;
+        }
+
+        .orbit-image-placeholder {
+            background: linear-gradient(0deg, rgb(15, 15, 15) 0%, rgb(32, 32, 32) 20%) !important;
+        }
+
+        .lander {
+            background: #111111;
+            min-height: 600px;
+            padding: 4em 0;
+            position: relative;
+            text-align: center;
+        }
+
+        .fiao {
+            color: #fff;
+            font-size: 3em;
+            font-weight: bold;
+            position: absolute;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 50%);
+            top: 40%;
+            width: 100%;
+        }
+
+        @keyframes fiao1 {
+            0%   { opacity: 1; }
+            10%  { opacity: 0; }
+            20%  { opacity: 0; }
+            30%  { opacity: 0; }
+            40%  { opacity: 0; }
+            50%  { opacity: 0; }
+            60%  { opacity: 0; }
+            70%  { opacity: 0; }
+            80%  { opacity: 0; }
+            90%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fiao2 {
+            0%   { opacity: 0; }
+            10%  { opacity: 0; }
+            20%  { opacity: 1; }
+            30%  { opacity: 0; }
+            40%  { opacity: 0; }
+            50%  { opacity: 0; }
+            60%  { opacity: 0; }
+            70%  { opacity: 0; }
+            80%  { opacity: 0; }
+            90%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fiao3 {
+            0%   { opacity: 0; }
+            10%  { opacity: 0; }
+            20%  { opacity: 0; }
+            30%  { opacity: 0; }
+            40%  { opacity: 1; }
+            50%  { opacity: 0; }
+            60%  { opacity: 0; }
+            70%  { opacity: 0; }
+            80%  { opacity: 0; }
+            90%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fiao4 {
+            0%   { opacity: 0; }
+            10%  { opacity: 0; }
+            20%  { opacity: 0; }
+            30%  { opacity: 0; }
+            40%  { opacity: 0; }
+            50%  { opacity: 0; }
+            60%  { opacity: 1; }
+            70%  { opacity: 0; }
+            80%  { opacity: 0; }
+            90%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fiao5 {
+            0%   { opacity: 0; }
+            10%  { opacity: 0; }
+            20%  { opacity: 0; }
+            30%  { opacity: 0; }
+            40%  { opacity: 0; }
+            50%  { opacity: 0; }
+            60%  { opacity: 0; }
+            70%  { opacity: 0; }
+            80%  { opacity: 1; }
+            90%  { opacity: 1; }
+            100% { opacity: 1; }
+        }
+
+        .fiao-1 {
+            animation: fiao1 20s linear forwards;
+            opacity: 1;
+        }
+
+        .fiao-2 {
+            animation: fiao2 20s linear forwards;
+            opacity: 0;
+        }
+
+        .fiao-3 {
+            animation: fiao3 20s linear forwards;
+            opacity: 0;
+        }
+
+        .fiao-4 {
+            animation: fiao4 20s linear forwards;
+            opacity: 0;
+        }
+
+        .fiao-5 {
+            animation: fiao5 20s linear forwards;
+            opacity: 0;
+        }
+
+        .pointer {
+            bottom: 10%;
+            font-size: 2em;
+            position: absolute;
+            width: 100%;
+        }
+
+        .pointer svg {
+            rotate: 90deg;
+            animation: bounce 1.8s infinite;
+        }
+
+        .lander-form {
+            background: #111111;
+            color: #fff;
+            text-align: center;
+        }
+
+        .form-box {
+            background:rgba(0, 23, 68, 50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 80%);
+            display: inline-block;
+            margin: 4em 0 8em;
+            padding: 2em 4em;
+        }
+
+        form .form-icons {
+            text-align: center;
+        }
+
+        form .form-icons h4 {
+            margin-bottom: 1rem;
+        }
+
+        form .form-icons .input-group-label {
+            background-color: #1779ba;
+            border-color: #1779ba;
+            padding: 0.65em 1.7em 0.65em 1em;
+        }
+
+        form .form-icons .input-group-field {
+            border-color: #1779ba;
+        }
+
+        form .form-icons .fa {
+            color: white;
+            width: 1rem;
+        }
+    </style>
+{% endblock %}
+
+{% block header %}
+    <div class="row padding-1 editable">
+        <h1>Get a Website</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="lander">
+        <div class="fiao fiao-1">
+            <p>Do you need a Small Business Website?</p>
+        </div>
+
+        <div class="fiao fiao-2">
+            <p>Is Your Website Outdated?</p>
+        </div>
+
+        <div class="fiao fiao-3">
+            <p>Don't Have a Current Website?</p>
+        </div>
+
+        <div class="fiao fiao-4">
+            <p>Current Web Agency Costing Too Much?</p>
+        </div>
+
+        <div class="fiao fiao-5">
+            <p>Get a Website Designed by {{ info.company }}!</p>
+        </div>
+
+        <div class="pointer fiao-5 text-center" data-magellan data-threshold="0">
+            <a href="#landerForm">
+                <svg viewBox="0 0 20 25" width="1em">
+                    <path d="M7.3 0L0 7.1l5.5 5.4L0 17.9 7.3 25 20 12.5 7.3 0zm-5 17.9l5.5-5.4-5.5-5.4 5-4.9 10.4 10.3L7.3 22.8l-5-4.9z" fill="#fff" />
+                </svg>
+            </a>
+        </div>
+    </div>
+    
+    <div id="landerForm" class="lander-form">
+        <h2>What website does your small business need?</h2>
+        <p style="margin:0 auto; width:50%;">
+            Start by filling out this form with your business information and details, so we know how to better understand your business needs for it's online web footprint.
+        </p>
+
+        <form data-abide method="post" action="/evaluation">
+            <div class="form-box">
+                <h3 class="editable">What are your contact details?</h3>
+
+                <div class="form-icons">
+                    <div class="input-group">
+                        <span class="input-group-label">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <input id="contact-name" class="input-group-field" type="text" name="form_1_name" placeholder="Full name" required pattern="[a-zA-Z]+" {% if post.form_1_name %}value="{{ post.form_1_name }}"{% endif %} tabindex="2" />
+                    </div>
+
+                    <small class="form-error editable" data-form-error-for="contact-name">Name is required and must be a string.</small>
+
+                    <div class="input-group">
+                        <span class="input-group-label">
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                        <input id="contact-email" class="input-group-field" type="email" name="form_2_email" placeholder="Email" required {% if post.form_2_email %}value="{{ post.form_2_email }}"{% endif %} tabindex="4" />
+                    </div>
+
+                    <small class="form-error editable" data-form-error-for="contact-email">An email address is required.</small>
+
+                    <button class="button submit" type="submit">Continue &gt;</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

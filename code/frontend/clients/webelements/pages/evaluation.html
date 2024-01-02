@@ -1,0 +1,483 @@
+{% set tmppath = paths.layouts~"/lander.html" %}
+{% extends tmppath %}
+
+{% block title %}
+    Evalution Form for Web Design Estimate
+{% endblock %}
+
+{% block description %}Fill out your information to seek a web design estimate{% endblock %}
+{% block keywords %}website, web, design, evaluation, estimate, form{% endblock %}
+
+{% block styles %}
+    <style>
+        .page {
+            background: rgb(7, 31, 66);
+        }
+
+        .clean-hero-slider {
+            background: linear-gradient(180deg, rgb(15, 15, 15) 0%, rgb(32, 32, 32) 20%) !important;
+        }
+
+        .orbit-image-placeholder {
+            background: linear-gradient(0deg, rgb(15, 15, 15) 0%, rgb(32, 32, 32) 20%) !important;
+        }
+
+        .lander {
+            background: rgb(7, 31, 66);
+            min-height: 600px;
+            padding: 4em 0;
+            position: relative;
+            text-align: center;
+        }
+
+        .fiao {
+            color: #fff;
+            font-size: 3em;
+            font-weight: bold;
+            position: absolute;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 50%);
+            top: 40%;
+            width: 100%;
+        }
+
+        @keyframes fiao1 {
+            0%   { opacity: 1; }
+            10%  { opacity: 0; }
+            20%  { opacity: 0; }
+            30%  { opacity: 0; }
+            40%  { opacity: 0; }
+            50%  { opacity: 0; }
+            60%  { opacity: 0; }
+            70%  { opacity: 0; }
+            80%  { opacity: 0; }
+            90%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fiao2 {
+            0%   { opacity: 0; }
+            10%  { opacity: 0; }
+            20%  { opacity: 1; }
+            30%  { opacity: 0; }
+            40%  { opacity: 0; }
+            50%  { opacity: 0; }
+            60%  { opacity: 0; }
+            70%  { opacity: 0; }
+            80%  { opacity: 0; }
+            90%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fiao3 {
+            0%   { opacity: 0; }
+            10%  { opacity: 0; }
+            20%  { opacity: 0; }
+            30%  { opacity: 0; }
+            40%  { opacity: 1; }
+            50%  { opacity: 0; }
+            60%  { opacity: 0; }
+            70%  { opacity: 0; }
+            80%  { opacity: 0; }
+            90%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fiao4 {
+            0%   { opacity: 0; }
+            10%  { opacity: 0; }
+            20%  { opacity: 0; }
+            30%  { opacity: 0; }
+            40%  { opacity: 0; }
+            50%  { opacity: 0; }
+            60%  { opacity: 1; }
+            70%  { opacity: 0; }
+            80%  { opacity: 0; }
+            90%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fiao5 {
+            0%   { opacity: 0; }
+            10%  { opacity: 0; }
+            20%  { opacity: 0; }
+            30%  { opacity: 0; }
+            40%  { opacity: 0; }
+            50%  { opacity: 0; }
+            60%  { opacity: 0; }
+            70%  { opacity: 0; }
+            80%  { opacity: 1; }
+            90%  { opacity: 1; }
+            100% { opacity: 1; }
+        }
+
+        .fiao-1 {
+            animation: fiao1 20s linear forwards;
+            opacity: 1;
+        }
+
+        .fiao-2 {
+            animation: fiao2 20s linear forwards;
+            opacity: 0;
+        }
+
+        .fiao-3 {
+            animation: fiao3 20s linear forwards;
+            opacity: 0;
+        }
+
+        .fiao-4 {
+            animation: fiao4 20s linear forwards;
+            opacity: 0;
+        }
+
+        .fiao-5 {
+            animation: fiao5 20s linear forwards;
+            opacity: 0;
+        }
+
+        .pointer {
+            bottom: 10%;
+            font-size: 2em;
+            position: absolute;
+            width: 100%;
+        }
+
+        .pointer svg {
+            rotate: 90deg;
+            animation: bounce 1.8s infinite;
+        }
+
+        .form-box {
+            background:rgba(0, 23, 68, 50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 80%);
+            display: inline-block;
+            margin: 4em 0 8em;
+            padding: 2em 4em;
+        }
+
+        form .form-icons {
+            text-align: center;
+        }
+
+        form .form-icons h4 {
+            margin-bottom: 1rem;
+        }
+
+        form .form-icons .input-group-label {
+            background-color: #1779ba;
+            border-color: #1779ba;
+            padding: 0.65em 1.7em 0.65em 1em;
+        }
+
+        form .form-icons .disabled .input-group-label {
+            background-color: #5b5b5b;
+            border-color: #5b5b5b;
+        }
+
+        form .form-icons .input-group-field {
+            border-color: #1779ba;
+        }
+
+        form .form-icons .disabled .input-group-field {
+            border-color: #303030;
+        }
+
+        form .form-icons .fa {
+            color: white;
+            width: 1rem;
+        }
+
+        form .form-icons .disabled .fa {
+            color: #303030;
+        }
+
+        form .disabled input {
+            background: #999999;
+            color: #707070;
+        }
+
+        form .disabled input::placeholder {
+            color: #707070;
+        }
+
+        .clean-hero-slider {
+            background: rgb(7, 48, 109);
+            background: linear-gradient(180deg, rgb(7, 31, 66) 0%, rgb(7, 48, 109) 20%);
+        }
+
+        .clean-hero-slide-intro {
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 60%);
+            padding: 3em;
+        }
+
+        .clean-hero-slide-intro h2 {
+            font-weight: bold;
+        }
+
+        .clean-hero-slider .orbit-caption {
+            bottom: inherit;
+            top: 0;
+            height: auto;
+            position: absolute;
+            text-align: center;
+            right: 0;
+            left: 0;
+            padding: 2rem 4rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 60%);
+            margin: 0 auto 4em;
+        }
+
+        @media print, screen and (min-width: 40em) {
+            .clean-hero-slider .orbit-caption {
+                width: 80%;
+            }
+        }
+
+        @media print, screen and (min-width: 60em) {
+            .clean-hero-slider .orbit-caption {
+                width: 50%;
+            }
+        }
+
+        .clean-hero-slider .orbit-caption p {
+            font-size: 0.9rem;
+            line-height: 1.25;
+        }
+
+        @media print, screen and (min-width: 40em) {
+            .clean-hero-slider .orbit-caption p {
+                font-size: 1.1rem;
+            }
+        }
+
+        .clean-hero-slider .orbit-caption h3 {
+            color: #ffae00;
+            font-size: 2rem;
+            margin-bottom: 1em;
+        }
+
+        .clean-hero-slider .orbit-figure {
+            height: 100%;
+        }
+
+        .clean-hero-slider .orbit-slide {
+            padding-bottom: 0;
+            background: #0a0a0a;
+        }
+
+        .clean-hero-slider .orbit-caption button {
+            background: #ffae00;
+            color: #000;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            margin-top: 1em;
+            transition: all 0.25s ease;
+        }
+
+        .clean-hero-slider .orbit-caption button:hover {
+            background: #fefefe;
+            color: #0a0a0a;
+        }
+
+        .clean-hero-slider .orbit-bullets {
+            display: none;
+        }
+
+        @media print, screen and (min-width: 40em) {
+            .clean-hero-slider .orbit-bullets {
+                display: block;
+                margin-bottom: 0;
+                margin-top: -3rem;
+                background: none;
+            }
+        }
+
+        .clean-hero-slider .orbit-bullets button {
+            border-radius: 0;
+            background-color: #fefefe;
+        }
+
+        .clean-hero-slider .orbit-bullets button.is-active {
+            background-color: #ffae00;
+        }
+
+        .orbit-image-placeholder {
+            background: rgb(7, 48, 109);
+            background: linear-gradient(0deg, rgb(7, 31, 66) 0%, rgb(7, 48, 109) 20%);
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 60%);
+            width: 100%;
+            min-height: 480px;
+        }
+
+        .white {
+            color: #fff !important;
+        }
+    </style>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        function validateStep(element) {
+            $('#contactForm form').foundation('validateInput', element);
+
+            if (!$('.is-invalid-input').length) {
+                $('.orbit').foundation('changeSlide', 'next');
+            }
+
+            return false;
+        }
+
+        // Hault the enter key from submitting the entire form
+        $(document).ready(function() {
+            $('input').keydown(function(event) {
+                // if enter key
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+
+                    // validate the step's input
+                    validateStep($('.is-active input'));
+
+                    return false;
+                }
+            });
+
+            $('#websiteSwitch').click(function () {
+                $('#websiteInput input').prop('disabled', (i, v) => !v);
+                $('#websiteInput').toggleClass('disabled');
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block header %}
+    <div class="row padding-1 editable">
+        <h1>Get a Website</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div id="contactForm" class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="false" data-prev-class="prev" data-next-class="next-empty">
+        <div class="clean-hero-slide-intro editable">
+            <h2>Web Design Evalution Form</h2>
+            <p>
+                Please provide further details of your small business.
+            </p>
+        </div>
+        
+        {% if get.form == 2 %}
+            <div class="orbit-wrapper">
+                <ul class="orbit-container">
+                    <li class="orbit-slide">
+                        <figure class="orbit-figure">
+                            <div class="orbit-image orbit-image-placeholder"></div>
+                            <figcaption class="orbit-caption">
+                                <h3>Form Submitted! We will be in touch!</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        {% else %}
+            <div class="orbit-wrapper">
+                <form data-abide method="post">
+                    <div class="form-icons">
+                        <ul class="orbit-container">
+                            {% if post.form == 1 %}
+                                <li class="orbit-slide">
+                                    <figure class="orbit-figure">
+                                        <div class="orbit-image orbit-image-placeholder"></div>
+                                        <figcaption class="orbit-caption">
+                                            <h3 class="editable">Submission failed! Please try again later...</h3>
+                                            <p class="editable">
+                                                It's not you, it's us.
+                                                Something went wrong when submitting your request.
+                                                These things happen.
+                                                We refilled out the form you previously submitted, to make it easy.
+                                                Feel free to try sending again.
+                                                If it keeps happening, try again later or contact us directly at:
+                                                <a href="mailto:{{ info.email }}">{{ info.email }}</a>
+                                            </p>
+
+                                            <button class="next next-empty editable" type="button" tabindex="1">Try Again &gt;</button>
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            {% endif %}
+                            <li class="orbit-slide">
+                                <figure class="orbit-figure">
+                                    <div class="orbit-image orbit-image-placeholder"></div>
+                                    <figcaption class="orbit-caption">
+                                        <h3 class="editable">Do you currently have a website?</h3>
+
+                                        <div class="switch large">
+                                            <input class="switch-input" id="websiteSwitch" type="checkbox" name="websiteSwitch" checked />
+                                            <label class="switch-paddle" for="websiteSwitch">
+                                                <span class="show-for-sr">Do you currently have a website?</span>
+                                                <span class="switch-active" aria-hidden="true">Yes</span>
+                                                <span class="switch-inactive" aria-hidden="true">No</span>
+                                            </label>
+                                        </div>
+
+                                        <div id="websiteInput" class="input-group">
+                                            <span class="input-group-label">
+                                                <i class="fa fa-globe"></i>
+                                            </span>
+                                            <input id="contact-website" class="input-group-field" type="text" name="form_3_website" placeholder="Website URL" required {% if post.form_3_website %}value="{{ post.form_3_website }}"{% endif %} tabindex="5" />
+                                        </div>
+
+                                        <button class="next next-empty editable" type="button" tabindex="6">Next &gt;</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="orbit-slide">
+                                <figure class="orbit-figure">
+                                    <div class="orbit-image-placeholder"></div>
+                                    <figcaption class="orbit-caption">
+                                        <h3 class="editable">Other Comments?</h3>
+
+                                        <p>
+                                            Feel free to explain more in depth of what you are looking for.
+                                            Include websites or web pages you like.
+                                        </p>
+
+                                        <textarea id="contact-message" class="input-group-field" name="form_4_message" rows="4" cols="16" placeholder="Comments" tabindex="8">{% if post.form_4_message %}{{ post.form_4_message }}{% endif %}</textarea>
+
+                                        <input type="hidden" name="form" value="1" />
+                                        <input type="hidden" name="email_to" value="{{ info.email }}" />
+                                        <input type="hidden" name="email_bcc" value="" />
+                                        <input type="hidden" name="sheet_id" value="13xyVNGE1axQ9vu148DbuD3SBYq0brkaOmiVir3TIIsQ" />
+                                        <input type="hidden" name="sheet_range" value="Sheet2" />
+
+                                        {% if post.form_1_name %}
+                                            <input type="hidden" name="form_1_name" value="{{ post.form_1_name }}" />
+                                        {% endif %}
+
+                                        {% if post.form_2_email %}
+                                            <input type="hidden" name="form_2_email" value="{{ post.form_2_email }}" />
+                                        {% endif %}
+
+                                        <br />
+                            
+                                        <button class="prev editable" type="button" tabindex="10">&lt; Back</button>
+                                        <button class="button editable" type="submit" name="send" tabindex="9">Send &gt;</button>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <nav class="orbit-bullets">
+                <button disabled class="is-active" data-slide="1"><span class="show-for-sr"></span></button>
+                <button disabled data-slide="2"><span class="show-for-sr"></span></button>
+                <button disabled data-slide="3"><span class="show-for-sr"></span></button>
+                {% if post.form < 0 %}
+                    <button disabled data-slide="4"><span class="show-for-sr"></span></button>
+                {% endif %}
+            </nav>
+        {% endif %}
+    </div>
+{% endblock %}

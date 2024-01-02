@@ -1,8 +1,11 @@
 {% extends layout_path %}
 
 {% block title %}
-    {{ info.title }} - Clients
+    Clients of {{ info.company }}
 {% endblock %}
+
+{% block description %}Find out what clients {{ info.company }} has{% endblock %}
+{% block keywords %}clients, customers, preview, designs{% endblock %}
 
 {% block header %}
     <div class="row padding-1 editable">
@@ -70,7 +73,7 @@
 
         <br />
 
-        <p class="text-center"><a class="button" href="/contact">Get Your Own Website</a></p>
+        <p class="text-center"><a class="button" href="/get-a-website">Get Your Own Website</a></p>
 
         <br />
     </div>

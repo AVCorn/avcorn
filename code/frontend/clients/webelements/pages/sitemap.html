@@ -1,8 +1,11 @@
 {% extends layout_path %}
 
 {% block title %}
-    {{ info.title }} - Sitemap
+    Sitemap
 {% endblock %}
+
+{% block description %}The sitemap for {{ info.company }}'s website{% endblock %}
+{% block keywords %}sitemap, navigation, website{% endblock %}
 
 {% block header %}
     <div class="row padding-1 editable">
