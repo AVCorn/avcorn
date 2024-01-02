@@ -82,7 +82,10 @@ $sitemap = [
         ],
         'lander' => [
             'title'       => 'Get a Website',
-            'description' => 'Need a website for your small business? We\'ve got you!',
+            'description' => '
+                Need a website for your small business?
+                We\'ve got you!
+            ',
             'link'        => '/get-a-website',
         ],
         'terms' => [
