@@ -64,7 +64,7 @@ If you want to clean up the docker containers made:
 
 ## Links
 
-*   [Templates](https://github.com/orgs/avcorn/avcorn-templates)
+*   [Templates](https://github.com/avcorn/avcorn-templates)
 *   [Development Progress](docs/TODO.md)
 *   [Contributing Guidelines](docs/CONTRIBUTING.md)
 *   [Reporting a Security Issue](docs/SECURITY.md)
