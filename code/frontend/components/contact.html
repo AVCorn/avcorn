@@ -201,7 +201,7 @@
                                             We refilled out the form you previously submitted, to make it easy.
                                             Feel free to try sending again.
                                             If it keeps happening, try again later or contact us directly at:
-                                            <a href="mailto: someemail@email.com">someemail@email.com</a>
+                                            <a href="mailto:{{ info.email }}">{{ info.email }}</a>
                                         </p>
 
                                         <button class="next next-empty editable" type="button" tabindex="1">Try Again &gt;</button>
@@ -268,7 +268,7 @@
                                     <small class="form-error editable" data-form-error-for="contact-message">An message is required.</small>
                                     
                                     <input type="hidden" name="form" value="1" />
-                                    <input type="hidden" name="email_to" value="test@test.com" />
+                                    <input type="hidden" name="email_to" value="{{ info.email }}" />
                                     <input type="hidden" name="email_bcc" value="" />
                                     <input type="hidden" name="sheet_id" value="13xyVNGE1axQ9vu148DbuD3SBYq0brkaOmiVir3TIIsQ" />
                                     <input type="hidden" name="sheet_range" value="Sheet1" />
@@ -291,4 +291,4 @@
             {% endif %}
         </nav>
     {% endif %}
-  </div>
+</div>
