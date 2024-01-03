@@ -4,8 +4,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/AVCorn/avcorn/badge.svg?branch=main)](https://coveralls.io/github/AVCorn/avcorn?main)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-AVCorn is a simple VC CMS for basic content websites, no databases required.
-The original intent is for fast deploying, fast developing, and lightweight performance for low traffic website design clients.
+AVCorn is a simple AVC Content Management System for basic content websites, no databases required.
+AVC standing for Actions, Views Controllers; no Models nessicary.
+The intent for AVCorn is easy deploying, fast developing, low complexity, and lightweight performance for low traffic website design clients.
+Yet still scalable and capable of handling larger content traffic.
 Written in PHP, and utilizing the Twig templating engine.
 
 ![AVCorn Logo](docs/images/github-card.png "The nut doesn't fall from from the tree!")
@@ -64,15 +66,15 @@ If you want to clean up the docker containers made:
 
 ## Links
 
-*   [Templates](https://github.com/avcorn/avcorn-templates)
-*   [Development Progress](docs/TODO.md)
-*   [Contributing Guidelines](docs/CONTRIBUTING.md)
-*   [Reporting a Security Issue](docs/SECURITY.md)
-*   [Coding Standards](docs/STANDARDS.md)
-*   [Pattern Design](docs/PATTERNS.md)
-*   [Infastructure Design](docs/INFASTRUCTURE.md)
-*   [Developer Tools](docs/TOOLS.md)
-*   [CLI Guide](docs/CLI.md)
-*   [License](docs/LICENSE.md)
-*   [Company Site](http://webelements.agency)
-*   [GitHub](https://github.com/avcorn/avcorn)
+*   [Templates](https://github.com/avcorn/avcorn-templates) - Where to find all the example templates.
+*   [Progress](docs/TODO.md) - Check on how development is progressing.
+*   [Contributing](docs/CONTRIBUTING.md) - Guidlines for Contributing to AVCorn.
+*   [Standards](docs/STANDARDS.md) - Code Standards and best practices for the AVCorn project.
+*   [Patterns](docs/PATTERNS.md) - Pattern design documentation.
+*   [Infastructure](docs/INFASTRUCTURE.md) - Infastructure design documentation.
+*   [Developer Tools](docs/TOOLS.md) - Documentation on developer tools in AVCorn.
+*   [CLI](docs/CLI.md) - The CLI Guide for AVCorn.
+*   [License](docs/LICENSE.md) - GPL v3 Open Source License.
+*   [Report a Security Issue](docs/SECURITY.md) - How to report a security issue.
+*   [Web Elements](http://webelements.agency) - Parent and Web Design Company of the AVCorn project.
+*   [GitHub](https://github.com/avcorn/avcorn) - AVCorn's GitHub website.

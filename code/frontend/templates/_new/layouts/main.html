@@ -4,6 +4,11 @@
         <!-- each page can override this -->
         <title>{% block title %}{{ info.title }}{% endblock %}</title>
 
+        <meta name="author" content="WebElements.agency">
+        <meta name="description" content="{% block description %}{% endblock %}">
+        <meta name="keywords" content="{% block keywords %}{% endblock %}">
+        <meta name="generator" content="AVCorn">
+
         <!-- base avcorn meta -->
         {% include "components/head.html" %}
 

@@ -14,6 +14,7 @@ services:
             docker: "true"
         ports:
             - "8080:80"
+            - "8083:443"
         volumes:
             - ./code:/var/www
             - ./_env:/var/www/_env
