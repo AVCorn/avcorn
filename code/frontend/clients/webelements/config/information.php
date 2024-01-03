@@ -36,4 +36,6 @@ $information = [
     'zip'       => '44626',
     'phone'     => '',
     'email'     => '',
+
+    'domain'    => 'webelements.agency',
 ];

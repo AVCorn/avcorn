@@ -31,6 +31,7 @@ $sitemap = [
                 'home',
                 'about',
                 'contact',
+                'lander',
             ],
         ],
         'secondary' => [
@@ -78,6 +79,14 @@ $sitemap = [
             'title'       => 'Contact Us',
             'description' => 'How to contact us.',
             'link'        => '/contact',
+        ],
+        'lander' => [
+            'title'       => 'Get a Website',
+            'description' => '
+                Need a website for your small business?
+                We\'ve got you!
+            ',
+            'link'        => '/get-a-website',
         ],
         'terms' => [
             'title'       => 'Terms of Use',

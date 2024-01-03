@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for page in sitemap.pages %}
         <url>
-            <loc>{{ page.link }}</loc>
+            <loc>http://{{ info.domain }}{{ page.link }}</loc>
             <lastmod>{{ "now"|date('Y-m-d') }}</lastmod>
         </url>
     {% endfor %}

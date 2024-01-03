@@ -183,6 +183,34 @@
             color: white;
             width: 1rem;
         }
+
+        .served {
+            color: #ccc;
+            margin: 0;
+            margin-block-end: 0;
+            padding: 0;
+        }
+
+        .served h5 {
+            font-weight: bold;
+        }
+
+        .served ul {
+            color: #aaa;
+        }
+
+        .served ul li::before {
+            content: "\2022";
+            font-family: FontAwesome;
+            margin-left: 0.3em;
+            margin-right: 0.5em;
+        }
+
+        .served ul li:first-child::before {
+            content: "";
+            margin-left: 0;
+            margin-right: 0;
+        }
     </style>
 {% endblock %}
 
@@ -222,15 +250,17 @@
             </a>
         </div>
     </div>
+
+    <br />
     
     <div id="landerForm" class="lander-form">
-        <h2>What website does your small business need?</h2>
-        <p style="margin:0 auto; width:50%;">
+        <h2 class="wow animate__fadeIn" data-wow-duration="2s">What website does your small business need?</h2>
+        <p class="wow animate__fadeIn" data-wow-duration="2s" style="margin:0 auto; width:50%;">
             Start by filling out this form with your business information and details, so we know how to better understand your business needs for it's online web footprint.
         </p>
 
         <form data-abide method="post" action="/evaluation">
-            <div class="form-box">
+            <div class="form-box" class="wow animate__bounceInUp" data-wow-duration="4s">
                 <h3 class="editable">What are your contact details?</h3>
 
                 <div class="form-icons">
@@ -256,5 +286,61 @@
                 </div>
             </div>
         </form>
+
+        <h2 class="wow animate__fadeIn" data-wow-duration="2s" style="color:#eee;">Areas Served</h2>
+        <ul class="served menu no-bullet columns text-center padding-3">
+            <li class="columns small-4 padding-1">
+                <h5 class="wow animate__fadeIn" data-wow-duration="2s">Stark County, Ohio</h5>
+                <ul>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Canton</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Massillon</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Louisville</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Canal Fulton</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">East Sparta</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Beach City</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Navarre</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">East Canton</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Minerva</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Magnolia</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Brewester</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Waynesburg</li>
+                </ul>
+            </li>
+            <li class="columns small-4 padding-1">
+                <h5 class="wow animate__fadeIn" data-wow-duration="2s">Tuscarawas County, Ohio</h5>
+                <ul>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">New Philadalpia</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Dover</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Uhrichsville</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Bolivar</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Strasburg</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Newcomerstown</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Port Washington</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Sugarcreek</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Mineral City</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Schoenbrunn</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Tuscarawas</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Zoar</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Sandyville</li>
+                </ul>
+            </li>
+            <li class="columns small-4 padding-1">
+                <h5 class="wow animate__fadeIn" data-wow-duration="2s">North East Ohio</h5>
+                <ul>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Orrville</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Carrollton</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Malvern</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Fredericksburg</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Dellroy</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Sherrodsville</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Dalton</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Mount Eaton</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Mogador</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Berlin</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Portage Lakes</li>
+                    <li class="wow animate__fadeIn" data-wow-duration="2s">Clinton</li>
+                </ul>
+            </li>
+        </ul>
     </div>
 {% endblock %}
