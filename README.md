@@ -4,8 +4,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/AVCorn/avcorn/badge.svg?branch=main)](https://coveralls.io/github/AVCorn/avcorn?main)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-AVCorn is a simple VC CMS for basic content websites, no databases required.
-The original intent is for fast deploying, fast developing, and lightweight performance for low traffic website design clients.
+AVCorn is a simple AVC Content Management System for basic content websites, no databases required.
+AVC standing for Actions, Views Controllers; no Models nessicary.
+The intent for AVCorn is easy deploying, fast developing, low complexity, and lightweight performance for low traffic website design clients.
+Yet still scalable and capable of handling larger content traffic.
 Written in PHP, and utilizing the Twig templating engine.
 
 ![AVCorn Logo](docs/images/github-card.png "The nut doesn't fall from from the tree!")
@@ -74,5 +76,5 @@ If you want to clean up the docker containers made:
 *   [Developer Tools](docs/TOOLS.md)
 *   [CLI Guide](docs/CLI.md)
 *   [License](docs/LICENSE.md)
-*   [Company Site](http://webelements.agency)
+*   [Web Elements (Parent Company)](http://webelements.agency)
 *   [GitHub](https://github.com/avcorn/avcorn)
