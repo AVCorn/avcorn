@@ -66,15 +66,15 @@ If you want to clean up the docker containers made:
 
 ## Links
 
-*   [Templates](https://github.com/avcorn/avcorn-templates)
-*   [Development Progress](docs/TODO.md)
-*   [Contributing Guidelines](docs/CONTRIBUTING.md)
-*   [Reporting a Security Issue](docs/SECURITY.md)
-*   [Coding Standards](docs/STANDARDS.md)
-*   [Pattern Design](docs/PATTERNS.md)
-*   [Infastructure Design](docs/INFASTRUCTURE.md)
-*   [Developer Tools](docs/TOOLS.md)
-*   [CLI Guide](docs/CLI.md)
-*   [License](docs/LICENSE.md)
-*   [Web Elements (Parent Company)](http://webelements.agency)
-*   [GitHub](https://github.com/avcorn/avcorn)
+*   [Templates](https://github.com/avcorn/avcorn-templates) - Where to find all the example templates.
+*   [Progress](docs/TODO.md) - Check on how development is progressing.
+*   [Contributing](docs/CONTRIBUTING.md) - Guidlines for Contributing to AVCorn.
+*   [Standards](docs/STANDARDS.md) - Code Standards and best practices for the AVCorn project.
+*   [Patterns](docs/PATTERNS.md) - Pattern design documentation.
+*   [Infastructure](docs/INFASTRUCTURE.md) - Infastructure design documentation.
+*   [Developer Tools](docs/TOOLS.md) - Documentation on developer tools in AVCorn.
+*   [CLI](docs/CLI.md) - The CLI Guide for AVCorn.
+*   [License](docs/LICENSE.md) - GPL v3 Open Source License.
+*   [Report a Security Issue](docs/SECURITY.md) - How to report a security issue.
+*   [Web Elements](http://webelements.agency) - Parent and Web Design Company of the AVCorn project.
+*   [GitHub](https://github.com/avcorn/avcorn) - AVCorn's GitHub website.
