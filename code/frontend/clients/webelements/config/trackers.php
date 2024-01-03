@@ -24,4 +24,5 @@ declare(strict_types=1);
  */
 $trackers = [
     'gtag' => 'G-6WBEBBGDPH',
+    'clarity' => 'kg8sdtw75o',
 ];
