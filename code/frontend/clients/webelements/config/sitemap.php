@@ -108,5 +108,46 @@ $sitemap = [
             'description' => 'Navigation map of the website.',
             'link'        => '/sitemap',
         ],
+
+        // These are only included in sitemap.xml
+        'website-design' => [
+            'link'        => '/website-design',
+        ],
+        'lead-generation' => [
+            'link'        => '/lead-generation',
+        ],
+        'marketing-analytics' => [
+            'link'        => '/marketing-analytics',
+        ],
+        'search-engine-optimization' => [
+            'link'        => '/search-engine-optimization',
+        ],
+        'search-engine-marketing' => [
+            'link'        => '/search-engine-marketing',
+        ],
+        'social-media-marketing' => [
+            'link'        => '/social-media-marketing',
+        ],
+        'content-marketing' => [
+            'link'        => '/content-marketing',
+        ],
+        'social-media-management' => [
+            'link'        => '/social-media-management',
+        ],
+        'email-marketing' => [
+            'link'        => '/email-marketing',
+        ],
+        'online-footprint' => [
+            'link'        => '/online-footprint',
+        ],
+        'web-hosting' => [
+            'link'        => '/web-hosting',
+        ],
+        'security-management' => [
+            'link'        => '/security-management',
+        ],
+        'technology-automation' => [
+            'link'        => '/technology-automation',
+        ],
     ],
 ];
