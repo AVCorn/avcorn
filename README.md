@@ -66,15 +66,15 @@ If you want to clean up the docker containers made:
 
 ## Links
 
-*   [Templates](https://github.com/avcorn/avcorn-templates) - Where to find all the example templates.
-*   [Progress](docs/TODO.md) - Check on how development is progressing.
-*   [Contributing](docs/CONTRIBUTING.md) - Guidlines for Contributing to AVCorn.
-*   [Standards](docs/STANDARDS.md) - Followed code standards and best practices.
-*   [Patterns](docs/PATTERNS.md) - Pattern design documentation.
-*   [Infastructure](docs/INFASTRUCTURE.md) - Infastructure design documentation.
-*   [Tools](docs/TOOLS.md) - Documentation on developer tools in AVCorn.
-*   [CLI Usage](docs/CLI.md) - The CLI Guide for AVCorn.
-*   [License](docs/LICENSE.md) - GPL v3 Open Source License.
-*   [Report a Security Issue](docs/SECURITY.md) - How to report a security issue.
-*   [Web Elements](http://webelements.agency) - Web Design Company of the AVCorn project.
-*   [AVCorn GitHub](https://github.com/avcorn/avcorn) - AVCorn's GitHub website.
+*   **[Templates](https://github.com/avcorn/avcorn-templates)** - Where to find all the example templates.
+*   **[Progress](docs/TODO.md)** - Check on how development is progressing.
+*   **[Contributing](docs/CONTRIBUTING.md)** - Guidlines for Contributing to AVCorn.
+*   **[Standards](docs/STANDARDS.md)** - Followed code standards and best practices.
+*   **[Patterns](docs/PATTERNS.md)** - Pattern design documentation.
+*   **[Infastructure](docs/INFASTRUCTURE.md)** - Infastructure design documentation.
+*   **[Tools](docs/TOOLS.md)** - Documentation on developer tools in AVCorn.
+*   **[CLI Usage](docs/CLI.md)** - The CLI Command Guide for AVCorn.
+*   **[License](docs/LICENSE.md)** - GPL v3 Open Source License.
+*   **[Report a Security Issue](docs/SECURITY.md)** - How to report a security issue.
+*   **[Web Elements](http://webelements.agency)** - Web Design Company of the AVCorn project.
+*   **[AVCorn GitHub](https://github.com/avcorn/avcorn)** - AVCorn's GitHub repository website.
