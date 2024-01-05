@@ -74,7 +74,7 @@ If you want to clean up the docker containers made:
 *   **[Infastructure](docs/INFASTRUCTURE.md)** - Infastructure design documentation.
 *   **[Tools](docs/TOOLS.md)** - Documentation on developer tools in AVCorn.
 *   **[CLI Usage](docs/CLI.md)** - The CLI Command Guide for AVCorn.
-*   **[License](docs/LICENSE.md)** - The GPL v3 Open Source License.
+*   **[License](docs/LICENSE.md)** - The GNU GPL v3 Open Source License.
 *   **[Report a Security Issue](docs/SECURITY.md)** - How to report a security issue.
 *   **[Web Elements](http://webelements.agency)** - Web Design Company of the AVCorn project.
 *   **[AVCorn GitHub](https://github.com/avcorn/avcorn)** - AVCorn's GitHub repository website.
