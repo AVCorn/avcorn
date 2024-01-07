@@ -25,28 +25,29 @@ declare(strict_types=1);
 $sitemap = [
     'sections' => [
         'main' => [
-            'title' => 'AVCorn',
+            'title' => 'Web Elements',
+            'description' => 'Web Design and Development for North East Ohio Small Businesses.',
             'link'  => '/',
             'pages' => [
-                'home',
                 'about',
+                'services',
+                'clients',
                 'contact',
-                'lander',
             ],
         ],
         'secondary' => [
-            'title'       => 'Resources',
-            'description' => 'Find out more about us.',
+            'title'       => 'Information',
+            'description' => 'Find out more information about the Web Elements Agency.',
             'link'        => '/about',
             'pages'       => [
-                'services',
-                'clients',
+                'lander',
+                'software',
                 'sitemap',
             ],
         ],
         'other' => [
-            'title'       => 'Other',
-            'description' => 'Additional information.',
+            'title'       => 'Agreements',
+            'description' => 'Legal and agreement information.',
             'link'        => '/sitemap',
             'pages'       => [
                 'terms',
@@ -62,7 +63,7 @@ $sitemap = [
         ],
         'about' => [
             'title'       => 'About Us',
-            'description' => 'Information and history of AVCorn.',
+            'description' => 'Information on Web Elements.',
             'link'        => '/about',
             'modified'    => filemtime(__DIR__ . '/../pages/about.html'),
         ],
@@ -93,21 +94,27 @@ $sitemap = [
             'link'        => '/get-a-website',
             'modified'    => filemtime(__DIR__ . '/../pages/lander.html'),
         ],
+        'software' => [
+            'title'       => 'Free Software',
+            'description' => 'Free software we have created for others to use.',
+            'link'        => '/free-software',
+            'modified'    => filemtime(__DIR__ . '/../pages/software.html'),
+        ],
         'terms' => [
             'title'       => 'Terms of Use',
-            'description' => 'Terms of use of the website.',
+            'description' => 'Terms of use for the website.',
             'link'        => '/terms-of-use',
             'modified'    => filemtime(__DIR__ . '/../pages/terms.html'),
         ],
         'privacy' => [
             'title'       => 'Privacy Policy',
-            'description' => 'Privacy policy of the website.',
+            'description' => 'Privacy policy for the website.',
             'link'        => '/privacy-policy',
             'modified'    => filemtime(__DIR__ . '/../pages/privacy.html'),
         ],
         'cookies' => [
             'title'       => 'Cookies Usage',
-            'description' => 'Our cookie usage.',
+            'description' => 'Our cookie usage agreement.',
             'link'        => '/cookies',
             'modified'    => filemtime(__DIR__ . '/../pages/cookies.html'),
         ],

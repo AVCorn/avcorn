@@ -1,0 +1,78 @@
+{% extends layout_path %}
+
+{% block title %}
+    Free Software By {{ info.company }}
+{% endblock %}
+
+{% block description %}Free and Open Source Software and tools provided by The {{ info.company }} Agency{% endblock %}
+{% block keywords %}free, open, source, software, tools{% endblock %}
+
+{% block header %}
+    <div class="row padding-1 editable">
+        <h1>Free Software</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row padding-2 editable">
+        <p class="text-justify">
+            We like to give back to the open source community, so we have made all the tools and software we have developed free to use.
+            Here's a current list of our projects and where to find them.
+        </p>
+
+        <h2>Open Source</h2>
+        <p>
+            Here is the Open Source software we both use and write oursevles.
+        </p>
+
+        <dl>
+            <dt>
+                <img class="float-right" width="200px" src="/assets/images/nutty/nutty.png" alt="AVCorn CMS" />
+                <h3><a href="https://github.com/avcorn/avcorn">AVCorn CMS</a></h3>
+            </dt>
+            <dd>
+                AVCorn is a simple AVC Content Management System for basic content websites, no databases required.
+                The intent for AVCorn is easy deploying, fast developing, low complexity, and lightweight performance for low traffic website design clients.
+                Yet still scalable and capable of handling larger content traffic.
+                <br />
+                <br />
+                <a href="https://github.com/avcorn/avcorn">
+                    Find Out More &gt;
+                </a>
+            </dd>
+        </dl>
+
+        <br />
+
+        <h2>Free Tools</h2>
+        <p>
+            Here's some free tools to use for your own web needs.
+        </p>
+
+        <dl>
+            <dt>
+                <img class="float-left margin-2" width="300px" src="https://elements-agency.github.io/ig-follow-differ-tool/src/img/banner.png" alt="Instagram Marketing Tool" />
+                <h3 class="padding-1">
+                    <a href="https://elements-agency.github.io/ig-follow-differ-tool/">
+                        Instagram Follower vs Following Comparison
+                    </a>
+                </h3>
+            </dt>
+            <dd class="padding-1">
+                This tool is to compare the followers and following of your own Instagram account.
+                To help with your own social media marketing growth.
+                <br />
+                <br />
+                <a class="float-right" href="https://elements-agency.github.io/ig-follow-differ-tool/">
+                    Use Tool &gt;
+                </a>
+            </dd>
+        </dl>
+
+        <br style="clear:both;" />
+
+        <p class="text-center">
+            <a class="button" href="/contact">Contact Us</a>
+        </p>
+    </div>
+{% endblock %}
