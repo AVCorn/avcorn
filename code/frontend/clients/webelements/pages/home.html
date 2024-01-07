@@ -20,7 +20,7 @@
 
         <div class="intro flat columns small-12 medium-8 medium-centered align-center padding-1">
             <div class="text-center">
-                <img class="intro-img show-for-medium float-right" src="/assets/images/content/responsive.gif" title="Responsive Web Design Done Right" alt="Image depicting responsive website design" />
+                <img class="intro-img show-for-medium float-right lazyload" data-src="/assets/images/content/responsive.gif" width="300px" height="225px" title="Responsive Web Design Done Right" alt="Image depicting responsive website design" />
             </div>
 
             <br class="show-for-medium" />
@@ -93,11 +93,11 @@
 
     <div class="owners row expanded">
         <div class="owners-left show-for-medium medium-8 large-6 float-left shadow rellax wow animate__fadeIn" data-rellax-speed="1" data-wow-duration="2s">
-            <img src="/assets/images/content/owners.webp" title="Mr. Deep Clean and some nerd" alt="The Owners of {{ info.company }} Web Design Agency, in Stark County" />
+            <img class="owners-img lazyload" data-src="/assets/images/content/owners.webp" title="Mr. Deep Clean and some nerd" alt="The Owners of {{ info.company }} Web Design Agency, in Stark County" />
         </div>
 
         <div class="show-for-small-only">
-            <img src="/assets/images/content/owners.webp" title="Mr. Deep Clean and some nerd" alt="The Owners of {{ info.company }} Web Design Agency, in Summit County" />
+            <img class="owners-img lazyload" data-src="/assets/images/content/owners.webp" title="Mr. Deep Clean and some nerd" alt="The Owners of {{ info.company }} Web Design Agency, in Summit County" />
         </div>
 
         <div class="grid-x grid-margin-x">
@@ -216,7 +216,7 @@
                                             {{ creative }}
                                         </div>
                                         <div class="cell medium-4 text-right padding-1">
-                                            <img src="/assets/images/content/arrow.svg" title="View More" alt=">" />
+                                            <img class="creative-img lazyload" data-src="/assets/images/content/arrow.svg" title="View More" alt=">" />
                                         </div>
                                     </a>
                                 </div>
@@ -241,7 +241,7 @@
             <div class="spacer show-for-medium"><br /></div>
 
             <div class="columns show-for-medium medium-6 large-5">
-                <img class="shadow wow animate__fadeIn" src="/assets/images/content/webdesign.gif" data-wow-duration="2s" title="North East Ohio Web Design" alt="Depiction for small business web design in Canton, Ohio" />
+                <img class="shadow wow animate__fadeIn lazyload" src="/assets/images/content/webdesign.gif" data-wow-duration="2s" title="North East Ohio Web Design" alt="Depiction for small business web design in Canton, Ohio" />
             </div>
         </div>
 
@@ -297,7 +297,7 @@
             {% for i in 0..7 %}
                 <li class="grid-x cell small-6 medium-4 large-3">
                     <a href="/clients">
-                        <img class="cell small-12" src="/assets/images/brands/logo-{{ random(1, 53) }}.svg" style="height:100px" alt="Web Agency Client #{{ i }}" />
+                        <img class="client-img cell small-12 lazyload" data-src="/assets/images/brands/logo-{{ random(1, 53) }}.svg" style="height:100px" alt="Web Agency Client #{{ i }}" />
                     </a>
                 </li>
             {% endfor %}
