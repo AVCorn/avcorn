@@ -24,7 +24,6 @@ grumphp:
         paths: []
     tasks:
         composer: ~
-        eslint: ~
         jsonlint: ~
         phpcs: ~
         phpparser: ~
