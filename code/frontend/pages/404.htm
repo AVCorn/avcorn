@@ -1,0 +1,25 @@
+{% extends layout_path %}
+
+{% block title %}
+    Page Not Found (404)
+{% endblock %}
+
+{% block description %}This web page was note found.{% endblock %}
+{% block keywords %}missing, not found, 404{% endblock %}
+
+{% block header %}
+    <div class="row padding-1 editable">
+        <h1>Page Not Found (404)</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row padding-2 editable">
+        <p class="text-justify">
+            We're sorry, but the page you're looking for was not found. Please check the URL and try again.
+        </p>
+        <p class="text-center">
+            <a class="button" href="/contact">Contact Us</a>
+        </p>
+    </div>
+{% endblock %}

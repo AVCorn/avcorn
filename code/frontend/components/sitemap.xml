@@ -2,8 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for page in sitemap.pages %}
         <url>
-            <loc>https://{{ info.domain }}{{ page.link }}</loc>
-            <lastmod>{{ "now"|date('Y-m-d') }}</lastmod>
+            <loc>
+                https://{{ info.domain }}{{ page.link }}
+            </loc>
+            <lastmod>
+                {% if page.modified %}
+                    {{ page.modified|date('Y-m-d') }}
+                {% else %}
+                    {{ "now"|date('Y-m-d') }}
+                {% endif %}
+            </lastmod>
         </url>
     {% endfor %}
 </urlset>

@@ -1,6 +1,6 @@
 /* TEAM */
 Developer: Benjamin Young
-contact: http://webelements.agency/contact
+contact: https://webelements.agency/contact
 Github: blaher
 Location: Ohio, USA
 
