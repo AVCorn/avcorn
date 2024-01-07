@@ -67,37 +67,49 @@ $sitemap = [
             'title'       => 'About Us',
             'description' => 'Information and history of AVCorn.',
             'link'        => '/about',
-            'modified'    => filemtime(__DIR__ . '/../../../pages/about.html'),
+            'modified'    => filemtime(
+                __DIR__ . '/../../../pages/about.html'
+            ),
         ],
         'contact' => [
             'title'       => 'Contact Us',
             'description' => 'How to contact us.',
             'link'        => '/contact',
-            'modified'    => filemtime(__DIR__ . '/../../../pages/contact.html'),
+            'modified'    => filemtime(
+                __DIR__ . '/../../../pages/contact.html'
+            ),
         ],
         'contribute' => [
             'title'       => 'Contribute',
             'description' => 'How you can contribute to AVCorn.',
             'link'        => '/contribute',
-            'modified'    => filemtime(__DIR__ . '/../../../pages/contribute.html'),
+            'modified'    => filemtime(
+                __DIR__ . '/../../../pages/contribute.html'
+            ),
         ],
         'cookies' => [
             'title'       => 'Cookies',
             'description' => 'Our cookie usage.',
             'link'        => '/cookies',
-            'modified'    => filemtime(__DIR__ . '/../../../pages/cookies.html'),
+            'modified'    => filemtime(
+                __DIR__ . '/../../../pages/cookies.html'
+            ),
         ],
         'guide' => [
             'title'       => 'Guide',
             'description' => 'Walkthrough of how to use AVCorn.',
             'link'        => '/guide',
-            'modified'    => filemtime(__DIR__ . '/../../../pages/guide.html'),
+            'modified'    => filemtime(
+                __DIR__ . '/../../../pages/guide.html'
+            ),
         ],
         'designs' => [
             'title'       => 'Designs',
             'description' => 'List of our designs.',
             'link'        => '/designs',
-            'modified'    => filemtime(__DIR__ . '/../../../pages/designs.html'),
+            'modified'    => filemtime(
+                __DIR__ . '/../../../pages/designs.html'
+            ),
         ],
         'gallery' => [
             'title'       => 'Gallery',
@@ -108,31 +120,41 @@ $sitemap = [
             'title'       => 'Styles Playground',
             'description' => 'Everything on demo, but the kitchen sink.',
             'link'        => '/playground',
-            'modified'    => filemtime(__DIR__ . '/../../../pages/playground.html'),
+            'modified'    => filemtime(
+                __DIR__ . '/../../../pages/playground.html'
+            ),
         ],
         'services' => [
             'title'       => 'Services',
             'description' => 'Services we offer.',
             'link'        => '/services',
-            'modified'    => filemtime(__DIR__ . '/../../../pages/services.html'),
+            'modified'    => filemtime(
+                __DIR__ . '/../../../pages/services.html'
+            ),
         ],
         'testimonials' => [
             'title'       => 'Testimonials',
             'description' => 'Testimonials of our customers.',
             'link'        => '/testimonials',
-            'modified'    => filemtime(__DIR__ . '/../../../pages/testimonials.html'),
+            'modified'    => filemtime(
+                __DIR__ . '/../../../pages/testimonials.html'
+            ),
         ],
         'terms' => [
             'title'       => 'Terms of Use',
             'description' => 'Terms of use of the website.',
             'link'        => '/terms-of-use',
-            'modified'    => filemtime(__DIR__ . '/../../../pages/terms.html'),
+            'modified'    => filemtime(
+                __DIR__ . '/../../../pages/terms.html'
+            ),
         ],
         'privacy' => [
             'title'       => 'Privacy Policy',
             'description' => 'Privacy policy of the website.',
             'link'        => '/privacy-policy',
-            'modified'    => filemtime(__DIR__ . '/../../../pages/privacy.html'),
+            'modified'    => filemtime(
+                __DIR__ . '/../../../pages/privacy.html'
+            ),
         ],
         'sitemap' => [
             'title'       => 'Sitemap',
