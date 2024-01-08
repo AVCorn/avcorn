@@ -22,6 +22,7 @@ declare(strict_types=1);
  * @var array $config Configuration
  */
 $config['info']['company'] = 'Company';
-$config['info']['title'] = 'Title';
-$config['info']['motto'] = 'Motto!';
-$config['info']['slogan'] = 'Slogan.';
+$config['info']['title']   = 'Title';
+$config['info']['motto']   = 'Motto!';
+$config['info']['slogan']  = 'Slogan.';
+$config['home']            = '/';
