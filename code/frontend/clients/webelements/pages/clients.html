@@ -4,8 +4,8 @@
     Website Design Clients of {{ info.company }}
 {% endblock %}
 
-{% block description %}Find out what clients {{ info.company }} has{% endblock %}
-{% block keywords %}clients, customers, preview, designs{% endblock %}
+{% block description %}Find out what clients {{ info.company }} has and see their spectacular website designs.{% endblock %}
+{% block keywords %}clients, customers, preview, client, website, designs, web, design{% endblock %}
 
 {% block header %}
     <div class="row padding-1 editable">
@@ -24,28 +24,40 @@
         <div class="grid-x grid-margin-x text-center" data-equalizer data-equalize-on="medium">
             {% set designs = [
                 {
+                    'name': 'coffeeshop',
+                    'title': 'Coffeeshop',
+                    'link': 'https://github.com/avcorn/avcorn-templates-coffeeshop',
+                    'description': 'A demo for a coffeeshop we implemented for AVCorn.'
+                },
+                {
                     'name': 'lawncare',
                     'title': 'Lawncare',
                     'link': 'https://github.com/avcorn/avcorn-templates-lawncare',
-                    'description': 'A generic lawncare template we designed.'
+                    'description': 'A generic lawncare template we designed for AVCorn.'
                 },
                 {
                     'name': 'insurance',
                     'title': 'Insurance',
                     'link': 'https://github.com/avcorn/avcorn-templates-insurance',
-                    'description': 'An autoshop template for AVCorn.'
+                    'description': 'An insurance template we developed for AVCorn.'
+                },
+                {
+                    'name': 'modern',
+                    'title': 'Modern',
+                    'link': 'https://github.com/avcorn/avcorn-templates-modern',
+                    'description': 'A more modern design approach to a website.'
                 },
                 {
                     'name': 'marketing',
                     'title': 'AVCorn',
                     'link': 'https://github.com/avcorn/avcorn',
-                    'description': 'The template designed for our open source CMS.'
+                    'description': 'AVCorn is a free and open-source CMS we use for our small business clients.'
                 },
                 {
                     'name': 'agency',
                     'title': 'Web Elements',
                     'link': 'https://webelements.agency',
-                    'description': 'Our own website design.'
+                    'description': 'Yes, we designed our own website to sell the world website development.'
                 }
             ] %}
 
@@ -54,7 +66,7 @@
                     <h3 style="font-weight:bold;">
                         <a href="#">{{ design.title }}</a>
                     </h3>
-                    <a href="#">
+                    <a href="{{ design.link }}">
                         <img class="thumbnail small-12"
                             src="assets/images/designs/design-{{ design.name }}-lg.png"
                             data-interchange="
