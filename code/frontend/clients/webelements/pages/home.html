@@ -156,33 +156,33 @@
 
     {% set creatives = {
             0: {
-                'Small Businesses': "background-image:url('/assets/images/creatives/creative-smallbusiness.webp');",
-                'Landscapers': "background-image:url('/assets/images/creatives/creative-lawncare.webp');",
-                'Lawyers': "background-image:url('/assets/images/creatives/creative-lawyer.webp');",
-                'Our Clients': '',
-                'Autoshops': "background-image:url('/assets/images/creatives/creative-mechanic.webp');",
-                'Chefs': "background-image:url('/assets/images/creatives/creative-chef.webp');",
-                'Gyms': "background-image:url('/assets/images/creatives/creative-gym.webp');",
-                'Spas': "background-image:url('/assets/images/creatives/creative-massage.webp');",
-                'Chiropractors': "background-image:url('/assets/images/creatives/creative-chiropractor.webp');",
-                'Our Creativity': '',
-                'Markets': "background-image:url('/assets/images/creatives/creative-market.webp');",
-                'Your Business': "background-image:url('/assets/images/creatives/creative-code.webp');",
+                'Small Businesses': '/assets/images/creatives/creative-smallbusiness.webp',
+                'Landscapers':      '/assets/images/creatives/creative-lawncare.webp',
+                'Lawyers':          '/assets/images/creatives/creative-lawyer.webp',
+                'Our Clients':      false,
+                'Autoshops':        '/assets/images/creatives/creative-mechanic.webp',
+                'Chefs':            '/assets/images/creatives/creative-chef.webp',
+                'Gyms':             '/assets/images/creatives/creative-gym.webp',
+                'Spas':             '/assets/images/creatives/creative-massage.webp',
+                'Chiropractors':    '/assets/images/creatives/creative-chiropractor.webp',
+                'Our Creativity':   false,
+                'Markets':          '/assets/images/creatives/creative-market.webp',
+            'Your Business':        '/assets/images/creatives/creative-code.webp',
 
             },
             2: {
-                'Our Work': '',
-                'Bakeries': "background-image:url('/assets/images/creatives/creative-bakery.webp');",
-                'Accountants': "background-image:url('/assets/images/creatives/creative-accountant.webp');",
-                'Storage Units': "background-image:url('/assets/images/creatives/creative-storage.webp');",
-                'Churchs': "background-image:url('/assets/images/creatives/creative-church.webp');",
-                'Laundromats': "background-image:url('/assets/images/creatives/creative-laundry.webp');",
-                'Our Designs': '',
-                'Coffeeshops': "background-image:url('/assets/images/creatives/creative-coffee.webp');",
-                'Insurance Agents': "background-image:url('/assets/images/creatives/creative-insurance.webp');",
-                'Barbers': "background-image:url('/assets/images/creatives/creative-barber.webp');",
-                'Small Businesses': "background-image:url('/assets/images/creatives/creative-smallbusiness.webp');",
-                'Others': '',
+                'Our Work':         false,
+                'Bakeries':         '/assets/images/creatives/creative-bakery.webp',
+                'Accountants':      '/assets/images/creatives/creative-accountant.webp',
+                'Storage Units':    '/assets/images/creatives/creative-storage.webp',
+                'Churchs':          '/assets/images/creatives/creative-church.webp',
+                'Laundromats':      '/assets/images/creatives/creative-laundry.webp',
+                'Our Designs':      false,
+                'Coffeeshops':      '/assets/images/creatives/creative-coffee.webp',
+                'Insurance Agents': '/assets/images/creatives/creative-insurance.webp',
+                'Barbers':          '/assets/images/creatives/creative-barber.webp',
+                'Small Businesses': '/assets/images/creatives/creative-smallbusiness.webp',
+                'Others':           false,
             },
         }
     %}
@@ -208,8 +208,8 @@
             {% for row in creatives %}
                 <div class="cell small-12">
                     <ul class="banner grid-x">
-                        {% for creative, style in row %}
-                            <li class="cell small-1 grid-x wow animate__fadeIn" style="{{ style | raw }}" data-wow-duration="2s">
+                        {% for creative, img in row %}
+                            <li class="cell small-1 grid-x wow animate__fadeIn" data-background-image="{{ img }}" style="--background-image-lazy:url({{ img }}); background-image:var(--background-image-lazy);" data-wow-duration="2s">
                                 <div class="overlay cell grid-x">
                                     <a class="cell grid-x align-bottom" href="/clients">
                                         <div class="banner-text cell medium-8 padding-1">
@@ -241,7 +241,7 @@
             <div class="spacer show-for-medium"><br /></div>
 
             <div class="columns show-for-medium medium-6 large-5">
-                <img class="shadow wow animate__fadeIn lazyload" src="/assets/images/content/webdesign.gif" data-wow-duration="2s" title="North East Ohio Web Design" alt="Depiction for small business web design in Canton, Ohio" />
+                <img class="shadow wow animate__fadeIn lazyload" data-src="/assets/images/content/webdesign.gif" data-wow-duration="2s" title="North East Ohio Web Design" alt="Depiction for small business web design in Canton, Ohio" />
             </div>
         </div>
 
