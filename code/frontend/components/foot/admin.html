@@ -8,7 +8,7 @@
             // Try re-creating the element (yep... this sucks)
             // jQuery has no html() method for the element, so we have to put into a div first
             var html = $("<div>").append(x.clone()).html();
-            var regex = /type=(\")?([^\"\s]+)(\")?/; // matches type=text or type="text"
+            var regex = "/type=(\")?([^\"\s]+)(\")?/"; // matches type=text or type="text"
             // If no match, we add the type attribute to the end; otherwise, we replace
             var tmp = $(html.match(regex) == null ?
                 html.replace(">", ' type="' + type + '">') :
