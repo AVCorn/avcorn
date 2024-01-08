@@ -287,8 +287,7 @@ class CornController
             $file_contents = file_get_contents($file);
             $res->getBody()->write($file_contents);
 
-            // get file type of $file
-            $file_type = mime_content_type($file);
+            $file_type = $this->fileType($file);
 
             return $res
                 ->withHeader('Content-type', $file_type)

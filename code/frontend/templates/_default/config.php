@@ -43,4 +43,5 @@ $config = [
     'social'           => $social,
     'themes'           => $themes,
     'sitemap'          => $sitemap,
+    'home'             => '/',
 ];
