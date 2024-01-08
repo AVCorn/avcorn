@@ -85,5 +85,9 @@
                 &copy; {{ info.copyright }} {{ "now"|date("Y") }} - {{ info.legal }}
             </div>
         </footer>
+
+        <!-- base avcorn post-load -->
+        {% include "components/foot.html" %}
+        {% block loaded %}{% endblock %}
     </body>
 </html>
