@@ -64,7 +64,9 @@
             {% for design in designs%}
                 <div class="cell large-4 medium-4 small-12">
                     <h3 style="font-weight:bold;">
-                        <a href="#">{{ design.title }}</a>
+                        <a href="{{ design.link }}">
+                            {{ design.title }}
+                        </a>
                     </h3>
                     <a href="{{ design.link }}">
                         <img class="thumbnail small-12"
@@ -74,7 +76,7 @@
                                 [assets/images/designs/design-{{ design.name }}-md.png, medium],
                                 [assets/images/designs/design-{{ design.name }}-lg.png, large]"
                             title="Preview {{ design.title  }}"
-                            alt="Preview of {{ design.title  }} Web Design" />
+                            alt="Preview of {{ design.title  }} Website Design" />
                     </a>
                     <p style="font-size:0.8em; font-style:italic;">
                         {{ design.description  }}
@@ -85,7 +87,9 @@
 
         <br />
 
-        <p class="text-center"><a class="button" href="/get-a-website">Get Your Own Website</a></p>
+        <p class="text-center">
+            <a class="button" href="/get-a-website">Get Your Own Website</a>
+        </p>
 
         <br />
     </div>
