@@ -41,4 +41,5 @@ $map = [
 
     '/home/coffeeshop' => 'homepages/coffeeshop',
     '/home/insurance'  => 'homepages/insurance',
+    '/home/lawncare'  => 'homepages/lawncare',
 ];
