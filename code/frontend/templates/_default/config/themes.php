@@ -35,5 +35,5 @@ $themes = [
     'coffeeshop' => 'examples/categories/coffeeshop',
     'insurance'  => 'examples/categories/insurance',
     'landscape'  => 'examples/categories/lawncare',
-    'restaurant' => 'examples/categories/restaurant',
+    'spa'        => 'examples/categories/spa',
 ];
