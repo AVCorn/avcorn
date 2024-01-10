@@ -31,13 +31,14 @@
 
 {% block header %}
     <div class="row padding-1">
-        <h1 class="editable">Different Designs</h1>
+        <h1 class="editable" style="width:100%;">Different Designs</h1>
 
-        <br class="clearfix" />
-        <a href="/designs?design=marketing" class="button large {% if design == "marketing" %}disabled{% endif %}">Marketing</a>
-        <a href="/designs?design=portfolio" class="button large {% if design == "portfolio" %}disabled{% endif %}">Portfolio</a>
-        <a href="/designs?design=modern" class="button large {% if design == "modern" %}disabled{% endif %}">Modern</a>
-        <a href="/designs?design=simple" class="button large {% if design == "simple" %}disabled{% endif %}">Simple</a>
+        <div style="width:100%;">
+            <a href="/designs?design=marketing" class="button large {% if design == "marketing" %}disabled{% endif %}">Marketing</a>
+            <a href="/designs?design=portfolio" class="button large {% if design == "portfolio" %}disabled{% endif %}">Portfolio</a>
+            <a href="/designs?design=modern" class="button large {% if design == "modern" %}disabled{% endif %}">Modern</a>
+            <a href="/designs?design=simple" class="button large {% if design == "simple" %}disabled{% endif %}">Simple</a>
+        </div>
     </div>
 {% endblock %}
 
@@ -206,13 +207,20 @@
                     'link': '/home/insurance?design=insurance',
                     'description': 'Insurance agent landing and leads template.'
                 },
-
                 {
                     'name': 'lawncare',
                     'title': 'Lawncare',
                     'link': '/home/lawncare?design=landscape',
                     'description': 'Mowing down the competition with a great website.'
                 },
+                {
+                    'name': 'spa',
+                    'title': 'Spa',
+                    'link': '/home/spa?design=spa',
+                    'description': 'Relax, with our massage design.'
+                },
+                
+
                 {
                     'name': 'artist',
                     'title': 'Artist',
@@ -290,12 +298,6 @@
                     'title': 'Photographer',
                     'src': '/assets/images/nutty/nutty-comingsoon.png',
                     'description': 'A snappy looking design.'
-                },
-                {
-                    'name': 'massage',
-                    'title': 'Massage',
-                    'src': '/assets/images/logos/logo-spa.png',
-                    'description': 'Relax, with our massage design.'
                 },
                 {
                     'name': 'religious',
